@@ -5,3 +5,165 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-crimson: "Crimson Text", sans-serif;
 }
+body{
+  size: 144rem;
+  background-color:  #FFFAF5;
+  
+}
+
+main{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+input{
+width: 20em;
+height: 3em;
+top: 29.3rem;
+left: 21.3rem;
+gap: 0px;
+border-radius: 5px 0px 0px 0px;
+border: 1px 0px 0px 0px;
+opacity: 0px;
+background-color: #FFFFFF;
+
+}
+.text{
+  display: flex;
+  flex-direction: column;
+}
+.text h2{
+  margin-left:25rem;
+  font-size: 35px;
+  font-weight: 700;
+  color: #241400;
+}
+.input{
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-left:25rem;
+}
+.search{
+  height: 4.5rem;
+  width: 20.3rem;
+  font-size: 1em;
+  padding: 0.5em;
+  font-weight: 4rem;
+  color: #241400;
+  outline: none;
+  padding-left: 27px;
+  border: 1px solid #CECECE;
+  border-radius: 5px;
+}
+button{
+margin-top: 2.9em;
+width: 20.3rem;
+height: 4rem;
+background-color: #E16A00;
+border: none;
+cursor: pointer;
+font-family: 'Crimson Text', sans-serif;
+color:#FFFFFF;
+border-radius: 0.4em;
+font-family: Crimson Text;
+font-size: 1em;
+text-align: center;
+
+}
+
+.aboutBook{
+display: flex;
+justify-content: space-evenly;
+background-color: #FFFFFF;
+width: 50rem;
+height: 504px;
+margin: 6.1rem;
+margin-left: 4.8em;
+opacity: 0px;
+
+}
+.book{
+  display: flex;
+  flex-direction: column;
+}
+.book h2{
+width: 457px;
+height: 238px;
+margin-top: 1.5rem;
+margin-left: 3rem;
+left: 1028px;
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 700;
+line-height: 47.08px;
+text-align: left;
+
+
+}
+h3{
+margin-left: 3rem;
+font-family: Montserrat;
+font-size: 1rem;
+line-height: 35.31px;
+text-align: left;
+
+
+}
+p{
+width: 457px;
+height: 238px;
+left: 10.28rem;
+font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
+line-height: 27.47px;
+text-align: left;
+
+}
+.author{
+  margin-bottom: 20.8rem;
+}
+img{
+width: 190px;
+height: 306px;
+margin-top: 2rem;
+margin-left: 1.5rem;
+
+}
+.swiper {
+  margin-bottom: 190px;
+  width: 90rem;
+  height: 70rem;
+}
+
+.swiper-slide{
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-button-next,.swiper-button-prev{
+  color: #720418 !important;
+  margin-right: 27rem !important;
+}
+
+
+
+
+@media screen and (max-width: 520px){
+  body{
+      size: 52rem;
+  }
+  .text{
+display: flex;
+flex-direction: column;
+width:24.3rem;
+height: 11rem;
+margin-left:500rem;
+border-radius: 0.5rem 0rem 0rem 0rem;
+
+  }
+
+}
