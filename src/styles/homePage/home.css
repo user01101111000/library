@@ -1,6 +1,10 @@
+/* ===================================> IMPORT <===================================  */
+
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/fonts/crimsonTextFont.css");
 @import url("../general/fonts/robotoFont.css");
+
+/* ===================================> BASE <===================================  */
 
 :root {
   --font-montserrat: "Montserrat", sans-serif;
