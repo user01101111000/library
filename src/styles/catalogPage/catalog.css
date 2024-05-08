@@ -1,0 +1,9 @@
+@import url("../general/fonts/montserratFont.css");
+@import url("../general/fonts/robotoFont.css");
+@import url("../general/fonts/rubik.css");
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
+}

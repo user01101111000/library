@@ -1,0 +1,5 @@
+@import url("../general/fonts/montserratFont.css");
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+}

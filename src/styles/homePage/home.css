@@ -1,0 +1,20 @@
+@import url("../general/fonts/montserratFont.css");
+@import url("../general/fonts/crimsonTextFont.css");
+@import url("../general/fonts/robotoFont.css");
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-crimson: "Crimson Text", sans-serif;
+
+  --button-color: #e16a00;
+
+  --text-color1: #000000;
+  --text-color2: #241400;
+  --text-color3: #ffffff;
+  --text-color4: #797667;
+
+  --modal-backgroundColor: rgba(0, 0, 0, 0.5);
+
+  --footer-color: #391f00;
+}

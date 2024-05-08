@@ -1,0 +1,7 @@
+@import url("../general/fonts/montserratFont.css");
+@import url("../general/fonts/crimsonTextFont.css");
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-crimson: "Crimson Text", sans-serif;
+}

@@ -1,0 +1,18 @@
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 3rem;
+  width: 3rem;
+  border: 0.4rem solid black;
+  border-top: 0.4rem solid transparent;
+  border-radius: 50%;
+  animation: rotate 0.4s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

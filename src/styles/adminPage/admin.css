@@ -1,0 +1,13 @@
+@import url("../general/fonts/montserratFont.css");
+@import url("../general/fonts/crimsonTextFont.css");
+@import url("../general/fonts/preahvihear.css");
+@import url("../general/fonts/nunitoSansFont.css");
+@import url("../general/fonts/robotoFont.css");
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-crimson: "Crimson Text", sans-serif;
+  --font-preahvihear: "Preahvihear", sans-serif;
+  --font-nunitoSans: "Nunito Sans", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+}
