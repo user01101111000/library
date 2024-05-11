@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-
     <link rel="stylesheet" href="../styles/general/reset.css" />
     <link rel="stylesheet" href="../styles/searchPage/search.css" />
 
@@ -13,8 +12,86 @@
       href="../assets/icons/booksStackWhite.svg"
       type="image/x-icon"
     />
+                                            <!-- slide css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   </head>
+
+
   <body>
-    <h1>Hello</h1>
+ 
+    <main>
+
+      <!-- Search part -->
+
+<div class="searchArea">
+
+<h2>Search</h2>
+<input class="input" type="search" placeholder="Add book name">
+<button>Search</button>
+
+
+</div>
+
+
+     <!-- Slider main container -->
+
+
+<div class="swiper-wrapper">
+
+<div class="aboutBook">
+<div class="book">
+<img src="./assets/images/book.svg" >
+<div class="headline">
+<h2 class="title">Order Book</h2>
+<h3  class="title_author">Author</h3>
+
+<div class="author">                                                              
+<p>
+We work without holidays and weekends! Residents of Kiev can receive an order on the day                                                        
+of its registration. Customers from other cities of Ukraine can receive an order within
+1-5 days, depending on the location of the settlement and the selected delivery method.                                                     
+Orders over UAH 1000 are delivered free of charge *. You can see the available methods,                                                      
+exact terms and cost of delivery during checkout in the order basket, after selecting                                                      
+the delivery city</p>
+        
+</div>
+</div>  
+
+</div>
+
+
+
+
+
+</div>
+
+</div>   
+
+
+                                                             <!-- Navigation buttons -->
+<div class="swiper-button-next">
+<i class="ri-arrow-right-s-line"></i>
+</div>
+
+<div class="swiper-button-prev">
+<i class="ri-arrow-left-s-line"></i>
+</div>
+
+
+
+
+
+
+</main>
+
+
+         
+                                                                <!-- Slide JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- MAIN JS -->
+<script type="module" src="./scripts/searchPage/search.js"></script>
+
+
+
   </body>
 </html>
