@@ -1,0 +1,485 @@
+/* ===================================> IMPORT <===================================  */
+
+@import url("../general/fonts/montserratFont.css");
+@import url("../general/fonts/crimsonTextFont.css");
+@import url("../general/fonts/robotoFont.css");
+
+/* ===================================> HELPER CLASSES <===================================  */
+
+.showNavMenu {
+  left: 0 !important;
+  opacity: 1 !important;
+}
+
+.showModal {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) rotate(720deg) !important;
+}
+.showModalArea {
+  visibility: visible !important;
+}
+
+.showAlertModal {
+  display: block !important;
+}
+.showSuccessAlert {
+  background-color: green !important;
+  color: white !important;
+}
+
+/* ===================================> JOIN US MODAL <===================================  */
+
+.joinUsModalArea {
+  visibility: hidden;
+  font-size: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  z-index: 100;
+}
+.joinUsModal {
+  opacity: 0;
+
+  background-color: #ffffff;
+  width: 42.188em;
+  height: 33.688em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 3.438em;
+  transition: all 0.3s;
+}
+
+.joinUsModal h1 {
+  font-size: 2.25em;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+.inputBoxes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.125em;
+}
+.inputBox {
+  padding: 1.2em;
+  border: 1px solid #797667;
+  outline: none;
+  font-size: 1.125em;
+  font-weight: 400;
+}
+.joinUsModalBtn {
+  width: 100%;
+  background-color: #e16a00;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1.438em;
+  color: #ffffff;
+  font-size: 1.125em;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  z-index: 2;
+}
+.joinUsModalBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: white;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.joinUsModalBtn:hover::before {
+  height: 100%;
+  border: none;
+}
+.joinUsModalBtn:hover {
+  color: #e16a00;
+}
+
+.alertModal {
+  display: none;
+  width: 100%;
+  color: red;
+  padding-block: 1.438em;
+}
+.alertModalP {
+  text-align: center;
+
+  font-size: 1.2em;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ===================================> HEADER <===================================  */
+
+.navBar {
+  font-size: 16px;
+  height: 4.7em;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  font-family: "Montserrat", sans-serif;
+  backdrop-filter: blur(10px);
+  padding-inline: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.hamburger {
+  display: none;
+}
+.navBar .logo {
+  cursor: pointer;
+}
+
+.navBar .navMenu {
+  display: flex;
+  gap: 1.1em;
+  transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  position: relative;
+  z-index: 101;
+}
+
+.navBar .navMenu a {
+  color: #241400;
+  font-size: 0.85em;
+}
+
+.navBar .joinUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375em;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 0.813em;
+}
+
+.navBar .iconP {
+  height: auto;
+  width: 2.4em;
+}
+
+.navBar .iconH {
+  height: auto;
+  width: 2.4em;
+}
+
+.closeBtn {
+  cursor: pointer;
+  display: none;
+}
+
+/* ===================================> FOLLOW US <===================================  */
+
+.followUs {
+  font-size: 16px;
+  margin-bottom: 8.313em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.followUsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875em;
+  justify-content: center;
+  align-items: center;
+}
+.followUsBox h1 {
+  text-align: center;
+  font-size: 1.563em;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+.iconArea {
+  display: flex;
+  gap: 3.375em;
+}
+.iconArea .iconF {
+  width: 4em;
+  height: auto;
+  cursor: pointer;
+}
+
+/* ===================================> FOOTER <===================================  */
+
+.footer {
+  font-size: 16px;
+  padding-inline: 8%;
+  height: 17.25em;
+  width: 100%;
+  background-color: #391f00;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerMiddlePart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.footerMiddlePartBoxes {
+  gap: 5.688em;
+  display: flex;
+}
+.footerMiddlePartBox {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+}
+.footerMiddlePartBox ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.563em;
+}
+
+.footerMiddlePartBox ul li:first-child {
+  font-size: 1.125em !important;
+}
+
+.footerMiddlePartBox ul li {
+  cursor: pointer;
+  font-size: 0.813em;
+}
+.footerMiddlePartBox ul li:hover {
+  text-decoration: underline;
+}
+
+.footerTel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.563em;
+}
+
+.footerTel h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-size: 0.875em;
+  font-weight: 700;
+}
+.footerTelBtn {
+  display: inline-block;
+  border: 2px solid #e16a00;
+  padding: 0.25em 0.375em;
+  font-size: 0.875em;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  color: #e16a00;
+}
+.footerEndPart {
+  margin-top: auto;
+  margin-bottom: 0.5em;
+}
+
+.footerEndPart h1 {
+  text-align: center;
+  font-size: 0.813em;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+.footerMobile {
+  display: none;
+}
+/* ===================================> MEDIA QUERIES <===================================  */
+
+@media screen and (max-width: 1400px) {
+  .footer {
+    font-size: 15px;
+  }
+  .followUs {
+    font-size: 15px;
+  }
+  .iconArea {
+    gap: 2em;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .footer {
+    font-size: 14px;
+  }
+  .followUs {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    font-size: 13px;
+  }
+  .followUs {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .footer {
+    font-size: 12px;
+  }
+  .followUs {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* ===================================> HEADER <===================================  */
+
+  .navBar .joinUs p {
+    display: none;
+  }
+  .navBar .navMenu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+    background-color: rgba(36, 20, 0, 0.9);
+    height: 100vh;
+    width: 100%;
+    font-size: 30px;
+    flex-direction: column;
+    align-items: end;
+    padding: 3em 1em;
+  }
+
+  .navBar .navMenu a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+  .closeBtn {
+    display: inline-block;
+    width: 0.8em;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  .navBar .joinUs .hamburger {
+    display: block;
+  }
+  .navBar .joinUs {
+    gap: 1em;
+  }
+  .navBar .iconH {
+    height: auto;
+    width: 1.5em;
+  }
+
+  /* ===================================> FOLLOW US  <===================================  */
+
+  .followUs {
+    font-size: 11px;
+  }
+
+  /* ===================================> FOOTER  <===================================  */
+
+  .footerMiddlePart {
+    display: none;
+  }
+  .footerEndPart {
+    display: none;
+  }
+
+  .footerMobile {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footerMobileUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .footerMobileUpLinks {
+    display: flex;
+    gap: 1em;
+  }
+
+  .footerMobileUpLinks a {
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.813em;
+    font-family: "Montserrat", sans-serif;
+  }
+  .footerMobileDown {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .footerMobileDown h1 {
+    color: #ffffff;
+    font-size: 0.813em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+
+  .footerMobile .divider {
+    background-color: #ffffff;
+    height: 1px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+
+  .joinUsModalArea {
+    font-size: 14px;
+  }
+
+  /* ===================================> FOLLOW US  <===================================  */
+
+  .followUs {
+    margin-bottom: 4em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+  .joinUsModalArea {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+  .joinUsModalArea {
+    font-size: 7px;
+  }
+}

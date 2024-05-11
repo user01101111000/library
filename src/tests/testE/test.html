@@ -7,6 +7,197 @@
     <link rel="stylesheet" href="test.css" />
   </head>
   <body>
+    <!-- ========================> HEADER <======================== -->
+
+    <header class="navBar">
+      <figure class="logo">
+        <img
+          src="/library/src/assets/icons/logoColored.svg"
+          alt="logoColored"
+          class="logoImg"
+        />
+      </figure>
+
+      <nav class="navMenu">
+        <a href="/library/index.html" class="homeLink">Home</a>
+        <a href="/library/src/pages/catalog.html" class="catalogLink"
+          >Catalog</a
+        >
+        <a href="/library/src/pages/about.html" class="aboutStoreLink"
+          >About Store</a
+        >
+        <a href="/library/src/pages/contact.html" class="contactUsLink"
+          >Contact Us</a
+        >
+        <a href="/library/src/pages/search.html" class="searchLink">Search</a>
+
+        <img
+          src="/library/src/assets/icons/close.svg"
+          alt="close"
+          class="closeBtn"
+        />
+      </nav>
+
+      <div class="joinUsIcon joinUs">
+        <figure>
+          <img
+            src="/library/src/assets/icons/person.svg"
+            alt="person"
+            class="joinUsIcon iconP"
+          />
+        </figure>
+        <figure class="hamburger">
+          <img
+            src="/library/src/assets/icons/hamburger.svg"
+            alt="hamburger"
+            class="iconH"
+          />
+        </figure>
+        <p class="joinUsIcon joinerName">Join Us</p>
+      </div>
+    </header>
+
+    <!-- ========================> JOIN US MODAL <======================== -->
+
+    <article class="joinUsModalArea">
+      <article class="joinUsModal">
+        <h1>Join Us</h1>
+
+        <form class="inputBoxes">
+          <input
+            type="text"
+            class="inputBox inputName"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            class="inputBox inputEmail"
+            placeholder="Email"
+            required
+          />
+        </form>
+        <div class="alertModal">
+          <p class="alertModalP">
+            Please fill in all fields, or enter a valid email
+          </p>
+        </div>
+        <button type="submit" class="joinUsModalBtn">Join</button>
+      </article>
+    </article>
+
+    <!-- ========================> YOUR WORK <======================== -->
+
+    <section class="test"></section>
+
+    <!-- ========================> FOLLOW US <======================== -->
+
+    <section class="followUs">
+      <article class="followUsBox">
+        <h1>Follow us on social media</h1>
+        <div class="iconArea">
+          <img
+            src="/library/src/assets/icons/facebook.svg"
+            alt="fb"
+            class="iconF"
+          />
+          <img
+            src="/library/src/assets/icons/twitter.svg"
+            alt="tw"
+            class="iconF"
+          />
+          <img
+            src="/library/src/assets/icons/instagram.svg"
+            alt="ig"
+            class="iconF"
+          />
+        </div>
+      </article>
+    </section>
+
+    <!-- ========================> FOOTER <======================== -->
+
+    <footer class="footer">
+      <article class="footerMiddlePart">
+        <figure class="footerLogo">
+          <img src="/library/src/assets/icons/logoWhite.svg" alt="logoWhite" />
+        </figure>
+
+        <article class="footerMiddlePartBoxes">
+          <div class="footerMiddlePartBox">
+            <ul>
+              <li>Popular</li>
+              <li>Programming</li>
+              <li>Books for children</li>
+              <li>Psychology</li>
+              <li>Business</li>
+            </ul>
+          </div>
+
+          <div class="footerMiddlePartBox">
+            <ul>
+              <li>Information</li>
+              <li>Delivery</li>
+              <li>Payment</li>
+              <li>About the store</li>
+            </ul>
+          </div>
+
+          <div class="footerMiddlePartBox">
+            <ul>
+              <li>Help</li>
+              <li>Contacts</li>
+              <li>Purchase returns</li>
+              <li>Buyer help</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="footerTel">
+          <h1>+38 (071) 339-16-26</h1>
+          <a href="" class="footerTelBtn">Request a call</a>
+        </article>
+      </article>
+      <article class="footerEndPart">
+        <h1>
+          All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+        </h1>
+      </article>
+
+      <!-- =======================> MOBILE VERSION <======================== -->
+
+      <article class="footerMobile">
+        <article class="footerMobileUp">
+          <figure class="footerLogo">
+            <img
+              src="/library/src/assets/icons/logoWhite.svg"
+              alt="logoWhite"
+            />
+          </figure>
+
+          <div class="footerMobileUpLinks">
+            <a href="/library/index.html" class="homeLink">Home</a>
+            <a href="/library/src/pages/catalog.html" class="catalogLink"
+              >Catalog</a
+            >
+            <a href="/library/src/pages/about.html" class="aboutStoreLink"
+              >About Store</a
+            >
+            <a href="/library/src/pages/contact.html" class="contactUsLink"
+              >Contact Us</a
+            >
+            <a href="/library/src/pages/search.html" class="searchLink"
+              >Search</a
+            >
+          </div>
+        </article>
+        <article class="footerMobileDown">
+          <div class="divider"></div>
+          <h1>Library BookStore EACamp © 2003-2021</h1>
+        </article>
+      </article>
+    </footer>
+
     <script src="test.js"></script>
   </body>
 </html>

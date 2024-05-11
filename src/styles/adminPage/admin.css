@@ -1,3 +1,5 @@
+/* ===============> IMPORT <============= */
+
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/fonts/crimsonTextFont.css");
 @import url("../general/fonts/preahvihear.css");
@@ -5,9 +7,550 @@
 @import url("../general/fonts/robotoFont.css");
 
 :root {
+  /* =============> FONTS <============= */
+
   --font-montserrat: "Montserrat", sans-serif;
   --font-crimson: "Crimson Text", sans-serif;
   --font-preahvihear: "Preahvihear", sans-serif;
   --font-nunitoSans: "Nunito Sans", sans-serif;
   --font-roboto: "Roboto", sans-serif;
+
+  /* =============> COLORS <============= */
+
+  --button-color: #ff8b00;
+
+  --text-color1: #000000;
+  --text-color2: #241400;
+  --text-color3: #ffffff;
+  --text-color4: #797667;
+
+  --admin-bgColor: #720418;
+  --home-bgColor: #fffaf5;
+
+  --hamburgerMenu-bgColor: rgba(36, 20, 0, 0.7);
+
+  /* =============> FONT SIZES <============= */
+
+  --fontSize1: 1em;
+  /* 16px */
+  --fontSize2: 2.75em;
+  /* 44px */
+  --fontSize3: 1.875em;
+  /* 30px */
+  --fontSize4: 0.875em;
+  /* 14px */
+  --fontSize5: 0.983em;
+  /* 15px */
+  --fontSize6: 1.125em;
+  /* 18px */
+
+  /* =============> FONT WEIGHTS <============= */
+
+  --fontWeight1: 400;
+  --fontWeight2: 700;
+  --fontWeight3: 900;
+
+  /* =============> PADDINGS <============= */
+
+  --globalPadding: 3%;
+}
+
+/* ======================================================> GENERAL <====================================================== */
+
+::-webkit-scrollbar {
+  width: 0.4em;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f0f0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--admin-bgColor);
+}
+
+/* !======================================================> LOGIN PAGE <====================================================== */
+
+.loginMain {
+  background-color: var(--admin-bgColor);
+  height: 100vh;
+  width: 100%;
+}
+
+/* ======================================================> HEADER <====================================================== */
+
+.adminLogo {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+.adminLogo img {
+  width: 100%;
+  width: 100%;
+}
+
+/* ======================================================> LOGIN BOX <====================================================== */
+
+.loginBox {
+  background-color: #ffffff;
+  width: 38.188em;
+  height: 29.688em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 3.438em;
+  transition: all 0.3s;
+}
+
+.loginBox h1 {
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+}
+
+.inputBoxes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.125em;
+}
+.inputBox {
+  padding: 1em;
+  border: 1px solid #797667;
+  outline: none;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeight1);
+}
+.loginBtn {
+  width: 100%;
+  background-color: var(--button-color);
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1.2em;
+  color: #ffffff;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeight2);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  z-index: 2;
+}
+.loginBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: white;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.loginBtn:hover::before {
+  height: 100%;
+  border: none;
+}
+.loginBtn:hover {
+  color: #e16a00;
+}
+
+/* !======================================================> ADMIN PAGE <====================================================== */
+
+/* ======================================================> ADMIN MAIN <====================================================== */
+
+.adminMain {
+  width: 100%;
+  background-color: var(--home-bgColor);
+
+  display: flex;
+}
+
+/* ======================================================> ADMIN MAIN <====================================================== */
+
+.adminAside {
+  background-color: var(--admin-bgColor);
+}
+
+/* ======================================================> ADMIN MAIN <====================================================== */
+
+.adminArea {
+  width: 100%;
+  padding-inline: var(--globalPadding);
+}
+
+/* ======================================================> ASIDE MENU <====================================================== */
+
+.adminAside {
+  padding: 1.5em;
+}
+
+.adminAsideLogo {
+  margin-bottom: 1.5em;
+}
+.adminAsideMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.asideListItem {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+}
+
+.asideListItem h1 {
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  color: var(--text-color3);
+}
+.asideListIcon {
+  width: 2.5em;
+  height: auto;
+}
+
+/* ======================================================> ADMIN HEADER <====================================================== */
+
+.adminHeader {
+  display: flex;
+  justify-content: end;
+  padding-block: 1.5em;
+}
+.adminHeaderPerson {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+.adminHeaderPerson h1 {
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+}
+
+/* ======================================================> ADD BOOK SECTION <====================================================== */
+
+.addBookSec {
+  margin-bottom: 10.75em;
+}
+
+.addBookSec > h1 {
+  font-size: var(--fontSize3);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 1.625em;
+}
+
+.searchBookArea > h1 {
+  font-size: var(--fontSize6);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 0.5em;
+}
+.searchInputBox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5em;
+}
+.searchInputArea {
+  width: 30em;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  border: 2px solid rgba(57, 31, 0, 0.48);
+  outline: none;
+  border-radius: 34px;
+  padding: 0.5em 1em;
+  font-size: var(--fontSize6);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+}
+
+.searchBtn {
+  border: none;
+  outline: none;
+  border-radius: 34px;
+  padding: 0.5em 1.5em;
+  background-color: var(--button-color);
+  cursor: pointer;
+}
+
+.results {
+  width: 25em;
+  background-color: #f1f0f0;
+  position: absolute;
+  top: 120%;
+  left: 1%;
+  border-radius: 34px;
+  max-height: 30em;
+  padding-inline: 1em;
+  overflow: auto;
+  font-size: var(--fontSize5);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+}
+.results ul {
+  padding: 0.5em;
+}
+.searchListItem {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+  border-radius: 17px;
+  user-select: none;
+}
+
+.searchListItem:hover {
+  background-color: #d9d9d9;
+}
+
+.searchListImage {
+  width: 2em;
+  height: auto;
+}
+.searchListTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+.searchListItem h1 {
+  font-size: var(--fontSize5);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+}
+
+.searchListItem h2 {
+  font-size: calc(var(--fontSize1) - 0.2em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+}
+
+/* ======================================================> BOOK FORM SECTION <====================================================== */
+
+.bookFormSec {
+  margin-bottom: 10.75em;
+}
+
+.bookFormSec > h1 {
+  font-size: var(--fontSize6);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 1em;
+}
+.bookForm {
+  padding: 1em;
+  font-family: var(--font-montserrat);
+  background-color: var(--text-color3);
+}
+.bookFormBox {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.bookFormBox > h1 {
+  font-size: calc(var(--fontSize6) - 0.2em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 0.5em;
+}
+
+.bookFormBox > input[type="text"] {
+  width: 100%;
+  border: 1px solid #e2e6ee;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: calc(var(--fontSize6) - 0.3em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.bookFormBox > textarea {
+  width: 100%;
+  height: 10em;
+  border: 1px solid #e2e6ee;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: calc(var(--fontSize6) - 0.3em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.bookFormBox > select {
+  width: 100%;
+  border: 1px solid #e2e6ee;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: calc(var(--fontSize6) - 0.3em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.bookFomrSubmitBtn {
+  width: 100%;
+  border: 1px solid #e2e6ee;
+  outline: none;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: calc(var(--fontSize6) - 0.3em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+  background-color: var(--button-color);
+  color: var(--text-color3);
+  cursor: pointer;
+}
+
+.bookFormBoxRadio > h1 {
+  margin-bottom: 1em;
+}
+
+.bookFormRadios {
+  display: flex;
+  gap: 2em;
+}
+.bookFormRadio {
+  user-select: none;
+  display: flex;
+  gap: 0.5em;
+}
+
+.bookFormRadio > input {
+  cursor: pointer;
+}
+
+.bookFormRadio > label {
+  cursor: pointer;
+  font-size: calc(var(--fontSize6) - 0.2em);
+}
+
+/* ======================================================> ABOUT STORE SECTION <====================================================== */
+
+.aboutStoreSec {
+  margin-bottom: 10.75em;
+}
+.aboutStoreSec > h1 {
+  font-size: var(--fontSize6);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 1em;
+}
+.bookFormAbout {
+  padding: 1em;
+  font-family: var(--font-montserrat);
+  background-color: var(--text-color3);
+}
+.bookFormAboutBox {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.bookFormAboutBox > h1 {
+  font-size: calc(var(--fontSize6) - 0.2em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 0.5em;
+}
+
+.bookFormAboutBox > input[type="text"] {
+  width: 100%;
+  border: 1px solid #e2e6ee;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: calc(var(--fontSize6) - 0.3em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.bookFormAboutBox > textarea {
+  width: 100%;
+  height: 10em;
+  border: 1px solid #e2e6ee;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: calc(var(--fontSize6) - 0.3em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+.bookFomrSubmitBtnAbout {
+  width: 100%;
+  border: 1px solid #e2e6ee;
+  outline: none;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: calc(var(--fontSize6) - 0.3em);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+  background-color: var(--button-color);
+  color: var(--text-color3);
+  cursor: pointer;
+}
+/* !======================================================> MEDIA QUERIES <====================================================== */
+
+@media screen and (max-width: 900px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+
+  .loginBox {
+    font-size: 14px;
+  }
+
+  /* ===================================> ADMIN LOGO <===================================  */
+  .adminLogo {
+    width: 15.438em;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+  .loginBox {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+  .loginBox {
+    font-size: 7px;
+  }
+  /* ===================================> ADMIN LOGO <===================================  */
+  .adminLogo {
+    width: 9.438em;
+    height: auto;
+  }
 }

@@ -14,5 +14,266 @@
       type="image/x-icon"
     />
   </head>
-  <body></body>
+  <body>
+    <!-- ================ LOGIN PAGE ================= -->
+
+    <main class="loginMain">
+      <figure class="adminLogo">
+        <img src="../assets/icons/adminLogo.svg" alt="adminLogo" />
+      </figure>
+
+      <article class="loginBox">
+        <h1>Welcome Admin</h1>
+
+        <form class="inputBoxes">
+          <input
+            type="text"
+            class="inputBox userName"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            class="inputBox inputPassword"
+            placeholder="Password"
+            required
+          />
+        </form>
+
+        <button type="submit" class="loginBtn">Login</button>
+      </article>
+    </main>
+
+    <!-- ================ ADMIN PAGE ================= -->
+
+    <main class="adminMain">
+      <!-- ================ ASIDE MENU ================= -->
+
+      <aside class="adminAside">
+        <article class="adminAsideMenu">
+          <figure class="adminAsideLogo">
+            <img src="../assets/icons/adminLogo.svg" alt="adminLogo" />
+          </figure>
+
+          <ul class="adminAsideMenuList">
+            <li class="asideListItem">
+              <img
+                src="../assets/icons/adminBookLogo.svg"
+                alt=""
+                class="asideListIcon"
+              />
+              <h1>Home</h1>
+            </li>
+            <li class="asideListItem">
+              <img
+                src="../assets/icons/adminBookLogo.svg"
+                alt=""
+                class="asideListIcon"
+              />
+              <h1>Books</h1>
+            </li>
+            <li class="asideListItem">
+              <img
+                src="../assets/icons/adminBookLogo.svg"
+                alt=""
+                class="asideListIcon"
+              />
+              <h1>About</h1>
+            </li>
+            <li class="asideListItem">
+              <img
+                src="../assets/icons/adminBookLogo.svg"
+                alt=""
+                class="asideListIcon"
+              />
+              <h1>Join Us</h1>
+            </li>
+            <li class="asideListItem">
+              <img
+                src="../assets/icons/adminBookLogo.svg"
+                alt=""
+                class="asideListIcon"
+              />
+              <h1>Contact</h1>
+            </li>
+            <li class="asideListItem logout">
+              <img
+                src="../assets/icons/adminBookLogo.svg"
+                alt=""
+                class="asideListIcon"
+              />
+              <h1>Logout</h1>
+            </li>
+          </ul>
+        </article>
+      </aside>
+
+      <!-- ================ ADMIN AREA ================= -->
+
+      <section class="adminArea">
+        <!-- ================ HEADER ================= -->
+
+        <header class="adminHeader">
+          <article class="adminHeaderPerson">
+            <img src="../assets/icons/person.svg" alt="adminPerson" />
+            <h1>Admin</h1>
+          </article>
+        </header>
+
+        <!-- ================ ADD BOOK ================= -->
+
+        <section class="addBookSec">
+          <h1>Add Book</h1>
+
+          <article class="searchBookArea">
+            <h1>Search book</h1>
+
+            <div class="searchInputArea">
+              <div class="searchInputBox">
+                <input
+                  type="text"
+                  class="searchInput"
+                  placeholder="Etika, Spinoza"
+                />
+                <button class="searchBtn">
+                  <img src="../assets/icons/search.svg" alt="searchIcon" />
+                </button>
+              </div>
+
+              <div class="results">
+                <template class="searchListItemTemp">
+                  <li class="searchListItem">
+                    <img src="" alt="" class="searchListImage" />
+                    <div class="searchListTitle">
+                      <h1></h1>
+                      <h2></h2>
+                    </div>
+                  </li>
+                </template>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- ================ BOOK FORM ================= -->
+
+        <section class="bookFormSec">
+          <h1>Book Form</h1>
+          <form class="bookForm">
+            <article class="bookFormBox">
+              <h1>Book Name</h1>
+              <input type="text" placeholder="Book Name" class="bookNameInp" />
+            </article>
+            <article class="bookFormBox">
+              <h1>Author Name</h1>
+              <input
+                type="text"
+                placeholder="Author Name"
+                class="authorNameInp"
+              />
+            </article>
+            <article class="bookFormBox">
+              <h1>Book Image Url</h1>
+              <input
+                type="text"
+                placeholder="Book Image Url"
+                class="bookUrlInp"
+              />
+            </article>
+            <article class="bookFormBox">
+              <h1>Description</h1>
+              <textarea
+                placeholder="Description"
+                class="bookDescInp"
+              ></textarea>
+            </article>
+
+            <article class="bookFormBox bookFormBoxRadio">
+              <h1>Book Type</h1>
+
+              <div class="bookFormRadios">
+                <div class="bookFormRadio">
+                  <label for="new">New</label>
+                  <input
+                    type="radio"
+                    name="bookType"
+                    id="new"
+                    value="new"
+                    checked
+                  />
+                </div>
+
+                <div class="bookFormRadio">
+                  <label for="bestseller">Bestseller</label>
+                  <input
+                    type="radio"
+                    name="bookType"
+                    id="bestseller"
+                    value="bestseller"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article class="bookFormBox">
+              <h1>New Category</h1>
+              <input
+                type="text"
+                placeholder="Add new category (not required)"
+                class="newCategory"
+              />
+            </article>
+
+            <article class="bookFormBox">
+              <h1>Category</h1>
+              <select class="bookCategoryInp">
+                <option value="fiction">Fiction</option>
+                <option value="novel">Novel</option>
+                <option value="mystery">Mystery</option>
+                <option value="historical-fiction">Historical Fiction</option>
+              </select>
+            </article>
+
+            <input type="submit" class="bookFomrSubmitBtn" value="Add" />
+          </form>
+        </section>
+
+        <!-- ================ ABOUT STORE================= -->
+
+        <section class="aboutStoreSec">
+          <h1>About Store</h1>
+          <form class="bookFormAbout">
+            <article class="bookFormAboutBox">
+              <h1>Title</h1>
+              <input type="text" placeholder="Title" class="bookNameAboutInp" />
+            </article>
+
+            <article class="bookFormAboutBox">
+              <h1>Book Image Url</h1>
+              <input
+                type="text"
+                placeholder="Book Image Url"
+                class="bookUrlAboutInp"
+              />
+            </article>
+            <article class="bookFormAboutBox">
+              <h1>Description</h1>
+              <textarea
+                placeholder="Description"
+                class="bookDescAboutInp"
+              ></textarea>
+            </article>
+
+            <input
+              type="submit"
+              class="bookFomrSubmitBtnAbout"
+              value="About info add"
+            />
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="../scripts/adminPage/admin.js"></script>
+  </body>
 </html>
