@@ -1,5 +1,12 @@
 /* ===================================> IMPORT <===================================  */
 
+/* coomon style */
+@import url("../general/commonStyle.css");
+
+/* loading spinnder */
+@import url("../general/loadingSpinner.css");
+
+/* fonts */
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/fonts/crimsonTextFont.css");
 @import url("../general/fonts/robotoFont.css");
@@ -7,9 +14,13 @@
 /* ===================================> BASE <===================================  */
 
 :root {
+  /* =============> FONTS <============= */
+
   --font-montserrat: "Montserrat", sans-serif;
   --font-roboto: "Roboto", sans-serif;
   --font-crimson: "Crimson Text", sans-serif;
+
+  /* =============> COLORS <============= */
 
   --button-color: #e16a00;
 
@@ -18,7 +29,403 @@
   --text-color3: #ffffff;
   --text-color4: #797667;
 
-  --modal-backgroundColor: rgba(0, 0, 0, 0.5);
+  --home-bgColor: #fffaf5;
 
-  --footer-color: #391f00;
+  --hamburgerMenu-bgColor: rgba(36, 20, 0, 0.9);
+
+  --modal-bgColor: rgba(0, 0, 0, 0.5);
+
+  --footer-bgColor: #391f00;
+
+  /* =============> FONT SIZES <============= */
+
+  --fontSize1: 0.75em;
+  /* 12px  */
+  --fontSize2: 0.813em;
+  /* 13px */
+  --fontSize3: 0.875em;
+  /* 14px */
+  --fontSize4: 0.983em;
+  /* 15px */
+  --fontSize5: 1.125em;
+  /* 18px */
+  --fontSize6: 1.563em;
+  /* 25px */
+  --fontSize7: 2.25em;
+  /* 36px */
+  --fontSize8: 3.125em;
+  /* 50px */
+
+  /* =============> FONT WEIGHTS <============= */
+
+  --fontWeight1: 400;
+  --fontWeight2: 700;
+  --fontWeight3: 900;
+
+  /* =============> OTHER THINGS <============= */
+
+  --header-height: 4.7em;
+  --globalPadding: 8%;
+}
+/* ===================================> HELPER CLASSES <===================================  */
+
+/* import edilib */
+
+/* ===================================> JOIN US MODAL <===================================  */
+
+/* import edilib */
+
+/* ===================================> BODY <===================================  */
+
+body {
+  background-color: var(--home-bgColor);
+}
+
+/* ===================================> HEADER <===================================  */
+
+.navBar .navMenu a:first-child {
+  color: var(--button-color);
+  text-decoration: underline !important;
+  font-weight: var(--fontWeight2);
+}
+
+/* ===================================> MAIN <===================================  */
+
+.main {
+  padding-inline: var(--globalPadding);
+}
+
+/* ===================================> HOME <===================================  */
+
+.home {
+  height: calc(100vh - var(--header-height));
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+.homeTitleArea {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  flex: 1;
+
+  font-family: var(--font-montserrat);
+  gap: 1em;
+}
+
+.homeTitleArea .homeTitleAreaH1 {
+  font-size: var(--fontSize7);
+  font-weight: var(--fontWeight3);
+  color: var(--text-color2);
+}
+
+.homeTitleArea .homeTitleAreaP {
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeight1);
+  color: var(--text-color2);
+  line-height: 1.625em;
+}
+
+.homeTitleArea .homeTitleAreaBtn {
+  background-color: var(--button-color);
+  color: var(--text-color3);
+  font-weight: var(--fontWeight2);
+  font-size: var(--fontSize4);
+  width: 13.25em;
+  height: 3.125em;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: all 0.5s;
+}
+
+.homeTitleArea .homeTitleAreaBtn:hover {
+  transform: translateX(1em);
+  background-color: transparent;
+  border: 2px solid var(--button-color);
+  color: var(--button-color);
+}
+
+.homeImgArea {
+  display: flex;
+  justify-content: end;
+  flex: 1;
+}
+
+.homeImg {
+  width: 43.188em;
+  height: auto;
+}
+.bookImg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===================================> CATALOG AREA <===================================  */
+
+.catalogArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 8.5em;
+}
+.catalogBoxArea {
+  width: 50em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  position: relative;
+  z-index: -1;
+}
+
+.catalogBoxArea > h1 {
+  text-align: center;
+  font-size: var(--fontSize6);
+  font-weight: var(--fontWeight3);
+  font-family: var(--font-montserrat);
+}
+.catalogBoxesArea {
+  width: 100%;
+  gap: 2.25em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.catalogBox {
+  width: 15.125em;
+  height: 4.75em;
+  background-color: var(--text-color3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 15.125em;
+  border-radius: 10px;
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+}
+
+.catalogBox h1 {
+  font-size: var(--fontSize3);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+}
+
+/* ===================================> ABOUT STORE <===================================  */
+
+.aboutStoreArea {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 10em;
+}
+
+.aboutStoreArea > h1 {
+  font-size: var(--fontSize6);
+  font-weight: var(--fontWeight3);
+  font-family: var(--font-montserrat);
+}
+
+.aboutStoreBoxArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.75em;
+  flex-wrap: wrap;
+}
+.aboutStoreBox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.688em;
+  flex: 1 0 16em;
+}
+.aboutStoreBox h1 {
+  font-size: var(--fontSize8);
+  font-weight: var(--fontWeight3);
+  font-family: var(--font-montserrat);
+}
+.aboutStoreBox p {
+  font-size: var(--fontSize3);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+}
+
+/* ===================================> DELIVERY <===================================  */
+
+.delivery {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.625em;
+  margin-bottom: 8.375em;
+}
+
+.delivery h1 {
+  text-align: center;
+  font-size: var(--fontSize6);
+  font-weight: var(--fontWeight3);
+  font-family: var(--font-montserrat);
+}
+
+.delivery p {
+  text-align: center;
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeight1);
+  font-family: var(--font-montserrat);
+  line-height: 1.625em;
+}
+
+/* ===================================> FOLLOW US <===================================  */
+
+/* import edilib */
+
+/* ===================================> FOOTER <===================================  */
+
+/* import edilib */
+
+/* ===================================> MEDIA QUERIES <===================================  */
+
+@media screen and (max-width: 1400px) {
+  /* ===================================> HOME <===================================  */
+  .home {
+    font-size: 15px;
+    margin-bottom: 4.125em;
+  }
+  /* ===================================> FOOTER <===================================  */
+
+  /* import edilib */
+}
+
+@media screen and (max-width: 1300px) {
+  /* ===================================> HOME <===================================  */
+  .home {
+    font-size: 14px;
+  }
+  /* ===================================> FOOTER <===================================  */
+
+  /* import edilib */
+}
+
+@media screen and (max-width: 1200px) {
+  /* ===================================> HOME <===================================  */
+  .home {
+    font-size: 13px;
+  }
+  /* ===================================> FOOTER <===================================  */
+
+  /* import edilib */
+}
+
+@media screen and (max-width: 1100px) {
+  /* ===================================> HOME <===================================  */
+  .home {
+    font-size: 12px;
+  }
+  /* ===================================> FOOTER <===================================  */
+
+  /* import edilib */
+}
+
+@media screen and (max-width: 1000px) {
+  /* ===================================> HEADER <===================================  */
+
+  /* import edilib */
+
+  /* ===================================> HOME <===================================  */
+
+  .home {
+    height: auto;
+    font-size: 16px;
+    margin-top: 3em;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  .homeTitleArea .homeTitleAreaBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .homeImgArea {
+    flex: 1;
+  }
+
+  /* ===================================> CATALOG <===================================  */
+
+  .catalogArea {
+    font-size: 12px;
+  }
+  .catalogBoxArea {
+    gap: 2em;
+  }
+  .catalogBoxesArea {
+    gap: 1.25em;
+  }
+  /* ===================================> ABPOUT STORE <===================================  */
+
+  .aboutStoreArea {
+    font-size: 12px;
+  }
+
+  /* ===================================> FOLLOW US  <===================================  */
+
+  /* import edilib */
+
+  /* ===================================> FOOTER  <===================================  */
+
+  /* import edilib */
+}
+
+@media screen and (max-width: 900px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+
+  /* import edilib */
+
+  /* ===================================> HOME <===================================  */
+
+  .home {
+    font-size: 13px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+
+  /* import edilib */
+
+  /* ===================================> HOME <===================================  */
+
+  .home .homeImg {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  /* ===================================> JOIN US MODAL <===================================  */
+
+  /* import edilib */
+
+  /* ===================================> HOME <===================================  */
+  .home {
+    font-size: 11px;
+  }
+  .home .homeImg {
+    width: 17.188rem;
+    height: auto;
+  }
 }
