@@ -3,3 +3,99 @@
 :root {
   --font-montserrat: "Montserrat", sans-serif;
 }
+
+.main{
+  display: flex;
+  max-width: 1440px;
+  padding-inline: 8%;
+  
+
+}
+.heading{
+  width: 14.7rem;
+  height: 4.4rem;
+  margin-top:11.5rem;
+  
+}
+
+.h1{
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 2.25rem;
+  line-height: 4.4rem;
+}
+
+.paragraph{
+  width: 42.9rem;
+  height: 15.9rem;
+
+ 
+  
+}
+
+.p{
+  font-family:"Montserrat", sans-serif ;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+  color: black;
+  padding: 0.188rem;
+}
+.image{
+  display: flex;
+  margin-top: 16.6rem;
+  margin-left: 31.25rem;
+  margin-bottom: 52.5rem;
+  height: 26rem;
+  
+ }
+
+ .img{
+  width: 30rem;
+  height: 15rem;
+  
+  }
+
+  
+
+  @media screen and (max-width: 768px) {
+    
+
+    .main {
+      flex-direction: column-reverse; 
+      
+    }
+  
+   .heading {
+    
+    margin-top: 5rem; 
+    }
+  
+    .h1{
+      margin-left: 11rem;
+      width:100%;
+    }
+   .paragraph {
+      width: 400px; 
+      height: auto; 
+      
+    }
+
+    .p{
+      margin-left: 4rem;
+      width: 100%;
+    
+    }
+  
+   .image {
+      margin-top: 0; 
+      margin-left: 0; 
+      margin-bottom: 0; 
+      height: auto; 
+    }
+  
+   .img {
+      width: 100%; 
+      height: auto; 
+    }}
