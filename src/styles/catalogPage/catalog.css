@@ -19,20 +19,14 @@
 /* =================================================================== */
 
  body {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
-  background-color: #FFFAF5;
-  /* margin: 10rem auto; */
-  max-width: 1440px; 
+   background-color: #FFFAF5;
 } 
 .main {
-  /* margin: 0 auto; */
-  display: flex;
+   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-block: 200px;
+  /* margin-block: 200px; */
 }
 /* .swiper-wrapper {
   flex-wrap: nowrap !important;
@@ -40,14 +34,14 @@
 .navBook {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Center items vertically */
+  align-items: center; 
   background-color: #FFFAF5;
-  max-width: 1440px; /* Adjusted */
-  margin: 0 auto; /* Centered */
+  /* max-width: 1440px; */
+  margin: 0 auto;
 }
 .allBooks-h2 {
-  margin-left: 0.5em; /* Adjusted */
-  margin-right: 3.5em; /* Adjusted */
+  margin-left: 0.5em;
+  margin-right: 3.5em; 
   font-family: Montserrat;
   font-size: 2rem;
   font-weight: 900;
@@ -80,6 +74,7 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  margin-bottom: 60px;
 }
 .navBook li {
  color: #241400;
@@ -106,6 +101,14 @@
   line-height: 49.05px;
   text-align: left;
 }
+
+
+
+
+
+
+
+
 .card__article {
   background-color: #FFFAF5;
   display: flex;
@@ -147,36 +150,31 @@
 
 }
 
-.card img {
-  padding: 24px 0;
-  width: 55%;
-  /* margin-left: auto;  */
-  /* margin-right: auto;  */
-  cursor: pointer;
-  transition: transform 0.3s ease; 
-}
-.card img:hover {
-  transform: scale(1.1);
-}
 /* FOR ADJUSTING IMAGES INTO SAME SIZE */
 .imgBookWrapper{
-   /* height:200px;
-   width: 120px; */
-   display: flex;
-   justify-content: flex-end;
+   height:11.25em;
+   width: 2.5em;
+   /* display: flex;
+   justify-content: flex-end; */
 }
 .imgBookWrapper img{
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   /* padding: 24px 0;
   width: 55%;
   margin-left: auto; 
   margin-right: auto; 
-  cursor: pointer; */
-   width: auto;
+  /* cursor: pointer;   */
+   /* width: auto;
+  height: auto;  */
+  width: auto; 
   height: auto; 
+  max-width: 100%;
   max-height: 100%;
-  max-width:100%;
   object-fit:cover;
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 .imgBookWrapper img{
@@ -255,6 +253,10 @@ button.read-more {
 .swiper-new-releases .swiper-wrapper {
   justify-content: center; 
 }
+/* For adjusting space between rew-releases and follow us part */
+.swiper-new-releases {
+  margin-bottom: 230px;
+}
 
 
 
@@ -276,28 +278,28 @@ button.read-more {
 
 }
 
+.swiperButtons {
+  position: relative;
+  margin-top: 20px; 
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
-  top: 62%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 9999;
+  margin-top: 10px;
 }
 
-.swiper-button-prev {
-  left: 20px; /* Sol kenardan 20 piksel uzaklıkta */
-}
-
-.swiper-button-next {
-  right: 20px; /* Sağ kenardan 20 piksel uzaklıkta */
-}
 
 .swiper-button-next,
 .swiper-button-prev{
+  display: block !important;
   width: initial;
   height: initial;
   font-size: 3rem;
-  color: #720418 ;
+  color: #720418 !important;
   /* display: none; */
 } 
 
@@ -358,20 +360,32 @@ button.read-more {
     padding: 0.1rem;
   }
   .swiper-button-next, .swiper-button-prev{
-    display: none;
+    display: none !important;
   }
 
-  .imgBookWrapper img{
+  
+  .imgBookWrapper{
+    height:180px;
     width: 100px;
-    height: 170px;
-    margin-left: 29px;
+    display: flex;
+    justify-content: flex-end; 
+  }
 
-}
-}
+    
+  .imgBookWrapper img{
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+    margin-right: -38px; 
+    padding-bottom: 10px;
+  }
+ }  
+
+
 
 @media screen and (min-width: 400px){
 .swiper-button-next, .swiper-button-prev{
-    display: none;
+    display: none !important;
   }
   .navBook {
     flex-direction: column;
@@ -404,16 +418,20 @@ button.read-more {
   }
  
   .imgBookWrapper{
-    height:140px;
+    height:180px;
     width: 100px;
-   }
-   .imgBookWrapper img{
-        height: 140;
-        width: 100;
-        /* object-fit: cover; */
-        margin-right: 20px;
-        align-items: center;
-   }
+    display: flex;
+    justify-content: flex-end; 
+  }
+
+    
+  .imgBookWrapper img{
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+    margin-right: -38px; 
+    padding-bottom: 10px;
+  }
 }
 
 /* Burada belke oxlari display-none etdim */
@@ -472,7 +490,7 @@ button.read-more {
 }
    .swiper-button-next,
   .swiper-button-prev{
-    display: block;
+    display: block !important;
   }
   .navBook h2{
     font-size: 2.2em;
@@ -480,6 +498,16 @@ button.read-more {
   .navBook li {
     font-size: 12px;
   }
+
+  .imgBookWrapper{
+    height:110px;
+    width: 90px;
+   }
+   .imgBookWrapper img{
+        height: 100%;
+        width: 100%;
+        margin-left: 17px;
+   }
 }
 
 @media screen and (min-width: 1000px){
