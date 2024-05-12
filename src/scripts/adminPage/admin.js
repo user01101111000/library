@@ -13,6 +13,8 @@ const searchBtn = document.querySelector(".searchBtn");
 const searchInput = document.querySelector(".searchInput");
 const results = document.querySelector(".results");
 const searchListItemTemp = document.querySelector(".searchListItemTemp");
+const loading = document.querySelector(".loading");
+const searchIcon = document.querySelector(".searchIcon");
 
 const bookNameInp = document.querySelector(".bookNameInp");
 const authorNameInp = document.querySelector(".authorNameInp");
@@ -124,19 +126,24 @@ const displayData = (data) => {
       listItemClicked(currentitem, element);
 
       results.append(currentitem);
+
+      searchIcon.style.opacity = 1;
+      loading.classList.add("hideLoading");
     });
   } else {
     const h1 = document.createElement("h1");
     h1.textContent = "No results found";
     h1.style.paddingBottom = "1em";
     results.append(h1);
+    searchIcon.style.opacity = 1;
+    loading.classList.add("hideLoading");
   }
 };
 
 // =========> LIST ITEM CLICKED <=========
 
-const listItemClicked = (currentitem, element) => {
-  currentitem.addEventListener("click", () => {
+const listItemClicked = (currentItem, element) => {
+  currentItem.addEventListener("click", () => {
     !element.volumeInfo.imageLinks?.smallThumbnail &&
       (element["currentImg"] =
         "https://m.media-amazon.com/images/I/81G8e+64W8L._AC_UF894,1000_QL80_.jpg");
@@ -158,7 +165,11 @@ const listItemClicked = (currentitem, element) => {
 searchBtn.addEventListener("click", (e) => {
   const value = searchInput.value;
 
-  value && fetchBooks(value);
+  if (value) {
+    fetchBooks(value);
+    searchIcon.style.opacity = 0;
+    loading.classList.remove("hideLoading");
+  } else results.innerHTML = "";
 });
 
 searchInput.addEventListener("keyup", (e) => {
@@ -168,6 +179,10 @@ searchInput.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
     searchBtn.click();
   }
+});
+
+document.body.addEventListener("click", (e) => {
+  results.innerHTML = "";
 });
 
 // =================================> ADD BOOK TO FORM <===================================
@@ -208,6 +223,7 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
     authorNameInp.value = "";
     bookUrlInp.value = "";
     bookDescInp.value = "";
+    selectInput.removeAttribute("disabled");
   }
 });
 
