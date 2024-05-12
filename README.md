@@ -1,10 +1,23 @@
 # Project : Library
 
-EACAMP GROUP M2 TEAM2 - Library project
+![image](src/assets/icons/logoWhite.svg)
+\
+EACAMP GROUP M2 "TEAM-TU" - Library project
 
 ---
 
-## Folder sistemi :
+### İstifadə olunan texnologiyalar : 
+<div>
+  <img src ="./src/assets/mdicons/html.svg" alt="HTML5 logo" width="3%" title='HTML5'/>
+  <img src ="./src/assets/mdicons/css.svg" alt="CSS3 logo" width="3%" title='CSS3'/>
+  <img src ="./src/assets/mdicons/javascript.svg" alt="Javascript logo" width="3.5%" title='Javascript'/>
+  <img src ="./src/assets/mdicons/swiper.svg" alt="Swiper logo" width="3.5%" title='Swiper'/>
+  <img src ="./src/assets/mdicons/firebase.svg" alt="Firebase logo" width="3.5%" title='Firebase'/>
+  </div
+
+---
+
+### Folder sistemi :
 
 **_src_** Folder - Proyektin mənbə folder'i\
 **_assets_** Folder - Proyektin şəkil, ikon və s. elementlərinin saxlandığı folder\
