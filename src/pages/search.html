@@ -9,7 +9,7 @@
 
     <link
       rel="shortcut icon"
-      href="../assets/icons/booksStackWhite.svg"
+      href="../assets/icons/logoColored.svg"
       type="image/x-icon"
     />
                                             <!-- slide css -->
@@ -18,10 +18,91 @@
 
 
   <body>
- 
-    <main>
+  <!-- ========================> HEADER <======================== -->
 
-      <!-- Search part -->
+  <header class="navBar">
+    <figure class="logo">
+      <img
+        src="/library/src/assets/icons/logoColored.svg"
+        alt="logoColored"
+        class="logoImg"
+      />
+    </figure>
+
+    <nav class="navMenu">
+      <a href="/library/index.html" class="homeLink">Home</a>
+      <a href="/library/src/pages/catalog.html" class="catalogLink"
+        >Catalog</a
+      >
+      <a href="/library/src/pages/about.html" class="aboutStoreLink"
+        >About Store</a
+      >
+      <a href="/library/src/pages/contact.html" class="contactUsLink"
+        >Contact Us</a
+      >
+      <a href="/library/src/pages/search.html" class="searchLink">Search</a>
+
+      <img
+        src="/library/src/assets/icons/close.svg"
+        alt="close"
+        class="closeBtn"
+      />
+    </nav>
+
+    <div class="joinUsIcon joinUs">
+      <figure>
+        <img
+          src="/library/src/assets/icons/person.svg"
+          alt="person"
+          class="joinUsIcon iconP"
+        />
+      </figure>
+      <figure class="hamburger">
+        <img
+          src="/library/src/assets/icons/hamburger.svg"
+          alt="hamburger"
+          class="iconH"
+        />
+      </figure>
+      <p class="joinUsIcon joinerName">Join Us</p>
+    </div>
+  </header>
+
+  <!-- ========================> JOIN US MODAL <======================== -->
+
+  <article class="joinUsModalArea">
+    <article class="joinUsModal">
+      <h1>Join Us</h1>
+
+      <form class="inputBoxes">
+        <input
+          type="text"
+          class="inputBox inputName"
+          placeholder="Full Name"
+          required
+        />
+        <input
+          type="email"
+          class="inputBox inputEmail"
+          placeholder="Email"
+          required
+        />
+      </form>
+      <div class="alertModal">
+        <p class="alertModalP">
+          Please fill in all fields, or enter a valid email
+        </p>
+      </div>
+      <button type="submit" class="joinUsModalBtn">Join</button>
+    </article>
+  </article>
+
+
+
+  <!-- my work area-->
+  <main>
+
+    <!-- Search part -->
 
 <div class="searchArea">
 
@@ -33,51 +114,76 @@
 </div>
 
 
-     <!-- Slider main container -->
-
-
+   <!-- Slider main container -->
+   
+<div class="swiper">
+<!-- Additional required wrapper -->
 <div class="swiper-wrapper">
-
+<!-- Slides -->
+<div class="swiper-slide">
 <div class="aboutBook">
 <div class="book">
-<img src="./assets/images/book.svg" >
+<img class="bookImg"  src="../assets/images/image 2.png" >
 <div class="headline">
 <h2 class="title">Order Book</h2>
 <h3  class="title_author">Author</h3>
 
 <div class="author">                                                              
-<p>
+<p class="paragraph">
 We work without holidays and weekends! Residents of Kiev can receive an order on the day                                                        
 of its registration. Customers from other cities of Ukraine can receive an order within
 1-5 days, depending on the location of the settlement and the selected delivery method.                                                     
 Orders over UAH 1000 are delivered free of charge *. You can see the available methods,                                                      
 exact terms and cost of delivery during checkout in the order basket, after selecting                                                      
 the delivery city</p>
-        
+          
 </div>
 </div>  
+</div>
+                
+</div>
+
+</div>
+
+<div class="swiper-slide">
+<!-- <div class="aboutBook2">
+<div class="book">
+<img class="bookImg"  src="./img/book.svg" >
+<div class="headline">
+<h2 class="title">Order Book</h2>
+<h3  class="title_author">Author</h3>
+
+<div class="author">                                                              
+<p class="paragraph">
+We work without holidays and weekends! Residents of Kiev can receive an order on the day                                                        
+of its registration. Customers from other cities of Ukraine can receive an order within
+1-5 days, depending on the location of the settlement and the selected delivery method.                                                     
+Orders over UAH 1000 are delivered free of charge *. You can see the available methods,                                                      
+exact terms and cost of delivery during checkout in the order basket, after selecting                                                      
+the delivery city</p>
+          
+</div>
+</div>  
+</div>
+                
+</div>
+-->
+</div>
+</div>
 
 </div>
 
 
 
+<!-- If we need pagination -->
+<div class="swiper-pagination"></div>
 
+<!-- If we need navigation buttons -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
 
-</div>
-
-</div>   
-
-
-                                                             <!-- Navigation buttons -->
-<div class="swiper-button-next">
-<i class="ri-arrow-right-s-line"></i>
-</div>
-
-<div class="swiper-button-prev">
-<i class="ri-arrow-left-s-line"></i>
-</div>
-
-
+<!-- If we need scrollbar -->
+<div class="swiper-scrollbar"></div>                      
 
 
 
@@ -85,13 +191,132 @@ the delivery city</p>
 </main>
 
 
-         
-                                                                <!-- Slide JS -->
+       
+
+
+
+
+
+
+
+<!-- ========================> FOLLOW US <======================== -->
+
+<section class="followUs">
+  <article class="followUsBox">
+    <h1>Follow us on social media</h1>
+    <div class="iconArea">
+      <img
+        src="/library/src/assets/icons/facebook.svg"
+        alt="fb"
+        class="iconF"
+      />
+      <img
+        src="/library/src/assets/icons/twitter.svg"
+        alt="tw"
+        class="iconF"
+      />
+      <img
+        src="/library/src/assets/icons/instagram.svg"
+        alt="ig"
+        class="iconF"
+      />
+    </div>
+  </article>
+</section>
+
+<!-- ========================> FOOTER <======================== -->
+
+<footer class="footer">
+  <article class="footerMiddlePart">
+    <figure class="footerLogo">
+      <img src="/library/src/assets/icons/logoWhite.svg" alt="logoWhite" />
+    </figure>
+
+    <article class="footerMiddlePartBoxes">
+      <div class="footerMiddlePartBox">
+        <ul>
+          <li>Popular</li>
+          <li>Programming</li>
+          <li>Books for children</li>
+          <li>Psychology</li>
+          <li>Business</li>
+        </ul>
+      </div>
+
+      <div class="footerMiddlePartBox">
+        <ul>
+          <li>Information</li>
+          <li>Delivery</li>
+          <li>Payment</li>
+          <li>About the store</li>
+        </ul>
+      </div>
+
+      <div class="footerMiddlePartBox">
+        <ul>
+          <li>Help</li>
+          <li>Contacts</li>
+          <li>Purchase returns</li>
+          <li>Buyer help</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="footerTel">
+      <h1>+38 (071) 339-16-26</h1>
+      <a href="" class="footerTelBtn">Request a call</a>
+    </article>
+  </article>
+  <article class="footerEndPart">
+    <h1>
+      All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+    </h1>
+  </article>
+
+  <!-- =======================> MOBILE VERSION <======================== -->
+
+  <article class="footerMobile">
+    <article class="footerMobileUp">
+      <figure class="footerLogo">
+        <img
+          src="/library/src/assets/icons/logoWhite.svg"
+          alt="logoWhite"
+        />
+      </figure>
+
+      <div class="footerMobileUpLinks">
+        <a href="/library/index.html" class="homeLink">Home</a>
+        <a href="/library/src/pages/catalog.html" class="catalogLink"
+          >Catalog</a
+        >
+        <a href="/library/src/pages/about.html" class="aboutStoreLink"
+          >About Store</a
+        >
+        <a href="/library/src/pages/contact.html" class="contactUsLink"
+          >Contact Us</a
+        >
+        <a href="/library/src/pages/search.html" class="searchLink"
+          >Search</a
+        >
+      </div>
+    </article>
+    <article class="footerMobileDown">
+      <div class="divider"></div>
+      <h1>Library BookStore EACamp © 2003-2021</h1>
+    </article>
+  </article>
+</footer>
+
+
+
+
+                                                         <!-- Slide JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- MAIN JS -->
-<script type="module" src="./scripts/searchPage/search.js"></script>
 
+                                                         <!-- MAIN JS -->
 
+<script src="../scripts/searchPage/search.js" type="module"></script>
 
   </body>
 </html>
