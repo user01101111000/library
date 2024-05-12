@@ -1,5 +1,8 @@
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/fonts/crimsonTextFont.css");
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
+
+@import url("../general/commonStyle.css");
 
 :root {
   --font-montserrat: "Montserrat", sans-serif;
@@ -7,25 +10,29 @@
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
 
-/* GLOBAL STYLES */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  margin: 0;
+
+
+
+.navBar .navMenu a:nth-of-type(4) {
+  color: #e16a00;
+  text-decoration: underline !important;
+  font-weight: 700;
+}
+
+
+body, html {
+  overflow-x: hidden;
   background-color: #FFFAF5;
 }
 
 .form-container {
+  position: relative;
   width: 78.563rem;
-  height: 29.25rem;
-  margin-top: 11.563rem;
   border-radius: 10px;
   padding: 1.25rem;
-  position: relative;
+  margin: 3.125rem  auto ;
+
 }
 
 h1 {
@@ -76,7 +83,8 @@ input,textarea {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 3.313rem;
+  margin-top: 40px;
+
 }
 
 .send-button {
@@ -90,11 +98,14 @@ input,textarea {
   cursor: pointer;
   font-weight: 400;
   font-family: var(--font-crimson);
+  
 }
 
-.send-button:hover {
-  background-color: #7d3a00;
+.send-button:hover{
+  background-color: #80410a;
 }
+
+
 
 input {
   padding-left: 1%;
@@ -111,22 +122,22 @@ textarea {
   resize: none;
 }
 
-/******* Media Queries ********/
+
 
 @media (max-width: 768px) {
   .form-container {
       width: 90%;  
-      padding: 15px;
-  }
+      padding: 1rem;
+}
 
-  .row {
+ .row {
       flex-direction: column; 
-      gap: 25px;
+      gap: 1.875rem;
   }
 
   .input-large {
       width: 100%;  
-      height: 60px;  
+      height: 3.75rem;  
   }
 
   .input-note {
@@ -135,18 +146,17 @@ textarea {
 
   .send-button {
       width: 100%;  
-      height: 60px;  
+      height: 3.75rem;  
   }
 
   .form-container h1 {
-      font-size: 45px;
+      font-size: 30px;
       text-align: center; 
   }
 
   input {
     padding-left: 4%;
   }
-
 
 }
 
@@ -163,18 +173,18 @@ textarea {
   }
 
   .input-note {
-      height: 100px;  
+      height: 6.25rem;  
       font-size: 16px;  
       display: none;
   }
 
   .send-button {
-      height: 50px;
+      height: 3.125rem;
       font-size: 16px;
   }
 
   .form-container h1 {
-      font-size: 45px;  
+      font-size: 1.875rem;  
       text-align: center; 
   }
 

@@ -7,6 +7,13 @@
 
     <link rel="stylesheet" href="../styles/general/reset.css" />
     <link rel="stylesheet" href="../styles/adminPage/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link
       rel="shortcut icon"
@@ -50,6 +57,7 @@
       <!-- ================ ASIDE MENU ================= -->
 
       <aside class="adminAside">
+        <img src="../assets/icons/close.svg" alt="" class="closeBtnAside" />
         <article class="adminAsideMenu">
           <figure class="adminAsideLogo">
             <img src="../assets/icons/adminLogo.svg" alt="adminLogo" />
@@ -118,6 +126,16 @@
             <img src="../assets/icons/person.svg" alt="adminPerson" />
             <h1>Admin</h1>
           </article>
+          <img
+            src="../assets/icons/logoColored.svg"
+            alt=""
+            class="mobileLogo"
+          />
+          <img
+            src="../assets/icons/hamburger.svg"
+            alt=""
+            class="mobileHamburger"
+          />
         </header>
 
         <!-- ================ ADD BOOK ================= -->
@@ -131,12 +149,17 @@
             <div class="searchInputArea">
               <div class="searchInputBox">
                 <input
-                  type="text"
+                  type="search"
                   class="searchInput"
                   placeholder="Etika, Spinoza"
                 />
                 <button class="searchBtn">
-                  <img src="../assets/icons/search.svg" alt="searchIcon" />
+                  <img
+                    src="../assets/icons/search.svg"
+                    alt="searchIcon"
+                    class="searchIcon"
+                  />
+                  <div class="loading hideLoading"></div>
                 </button>
               </div>
 
@@ -226,19 +249,14 @@
 
             <article class="bookFormBox">
               <h1>Category</h1>
-              <select class="bookCategoryInp">
-                <option value="fiction">Fiction</option>
-                <option value="novel">Novel</option>
-                <option value="mystery">Mystery</option>
-                <option value="historical-fiction">Historical Fiction</option>
-              </select>
+              <select class="bookCategoryInp"></select>
             </article>
 
             <input type="submit" class="bookFomrSubmitBtn" value="Add" />
           </form>
         </section>
 
-        <!-- ================ ABOUT STORE================= -->
+        <!-- ================ ABOUT STORE ================= -->
 
         <section class="aboutStoreSec">
           <h1>About Store</h1>
@@ -270,6 +288,78 @@
               value="About info add"
             />
           </form>
+        </section>
+
+        <!-- ================ JOIN US TABLE ================= -->
+
+        <section class="joinUsTableArea">
+          <h1>Join Us</h1>
+
+          <table class="joinUsTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Full Name</th>
+                <th>Email Address</th>
+              </tr>
+            </thead>
+            <tbody class="joinUsTableBody"></tbody>
+          </table>
+        </section>
+
+        <!-- ================ BOOKS TABLE ================= -->
+
+        <section class="booksTableArea">
+          <h1>Books</h1>
+
+          <table class="booksTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody class="booksTableBody">
+              <template class="bookTableBodyTemplate">
+                <tr>
+                  <td class="booksTabelBodyId"></td>
+                  <td>
+                    <div class="bookTableTitle">
+                      <img src="" alt="" class="bookTableImg" />
+                      <h1 class="bookTableBodyTitle"></h1>
+                    </div>
+                  </td>
+                  <td class="bookTableBodyDesc"></td>
+                  <td class="bookTableBodyCategory"></td>
+                  <td class="bookTableBodyAuthor"></td>
+                  <td><i class="fa-solid fa-trash trashIcon"></i></td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ================ CONTACT US TABLE ================= -->
+
+        <section class="contactUsArea">
+          <h1>Contact Us</h1>
+
+          <table class="contactUsTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Full Name</th>
+                <th>Addres</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
+              </tr>
+            </thead>
+            <tbody class="contactUsTableBody"></tbody>
+          </table>
         </section>
       </section>
     </main>

@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="../styles/general/reset.css" />
     <link rel="stylesheet" href="../styles/catalogPage/catalog.css" />
 
+    <!--====== SWIPER CSS========== -->
+    <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
     <link
       rel="shortcut icon"
       href="../assets/icons/booksStackWhite.svg"
@@ -15,8 +21,595 @@
     />
   </head>
   <body>
-    <h1>Catalog Page</h1>
+     <!-- ========================> HEADER <======================== -->
 
-    <script src="../scripts/catalogPage/catalog.js"></script>
+     <header class="navBar">
+      <figure class="logo">
+        <img
+          src="../assets/icons/logoColored.svg"
+          alt="logoColored"
+          class="logoImg"
+        />
+      </figure>
+
+      <nav class="navMenu">
+        <a href="../../index.html" class="homeLink">Home</a>
+        <a href="../../src/pages/catalog.html" class="catalogLink"
+          >Catalog</a
+        >
+        <a href="../../src/pages/about.html" class="aboutStoreLink"
+          >About Store</a
+        >
+        <a href="../../src/pages/contact.html" class="contactUsLink"
+          >Contact Us</a
+        >
+        <a href="../../src/pages/search.html" class="searchLink">Search</a>
+
+        <img
+          src="../assets/icons/close.svg"
+          alt="close"
+          class="closeBtn"
+        />
+      </nav>
+
+      <div class="joinUsIcon joinUs">
+        <figure>
+          <img
+            src="../assets/icons/person.svg"
+            alt="person"
+            class="joinUsIcon iconP"
+          />
+        </figure>
+        <figure class="hamburger">
+          <img
+            src="../assets/icons/hamburger.svg"
+            alt="hamburger"
+            class="iconH"
+          />
+        </figure>
+        <p class="joinUsIcon joinerName">Join Us</p>
+      </div>
+    </header>
+
+    <!-- ========================> JOIN US MODAL <======================== -->
+
+    <article class="joinUsModalArea">
+      <article class="joinUsModal">
+        <h1>Join Us</h1>
+
+        <form class="inputBoxes">
+          <input
+            type="text"
+            class="inputBox inputName"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            class="inputBox inputEmail"
+            placeholder="Email"
+            required
+          />
+        </form>
+        <div class="alertModal">
+          <p class="alertModalP">
+            Please fill in all fields, or enter a valid email
+          </p>
+        </div>
+        <button type="submit" class="joinUsModalBtn">Join</button>
+      </article>
+    </article>
+
+
+    <!-- ===================================== MY WORK ============================== -->
+    
+
+    <!--======== ALL SWIPERS AND CONTENT PLACES HERE ========-->
+  <main>
+  <section class="swiper">
+    <div class="card__content">
+      <div class="navBook">
+        <h2 class="allBooks-h2">All Books</h2>
+        <ul>
+          <li id="catg1">Fantastic</li>
+          <li id="catg2">Self-development</li>
+          <li id="catg3">Baby</li>
+          <li id="catg4">Clas</li>
+        </ul>
+
+        <ul id="dinamic-catg"></ul>
+      </div>
+        <!-- Slides -->
+        <div class="swiper-wrapper">
+
+          <!-- SLIDE BOX FOR EACH -->
+         
+            
+                <!-- KITAB CARDLARI Container-->
+                <article class="card__article swiper-slide">
+                  
+                    <div class="card">
+                      <div class="new-sign">New</div>
+                      <div class="imgBookWrapper">
+                        <img src="../assets/images/emptyBook.jpg">
+                      </div>
+                        <div class="cardText">
+                           <h3>Order in Chaos</h3>
+                           <h4>Konstantin Koptelov</h4>
+                        </div>
+                        <button class="read-more">Read More</button>
+                    </div>
+                  </article>
+
+                    <article class="card__article swiper-slide">
+                      <div class="card">
+                        <div class="imgBookWrapper">
+                          <img src="./assets/img/image 3.png">
+                        </div>
+                          <div class="cardText">
+                            <h3>Order in Chaos xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h3>
+                            <h4>Konstantin Koptelov xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h4>
+                         </div>
+                         <button class="read-more">Read More</button>
+                      </div>
+                     </article>
+
+                    <article class="card__article swiper-slide">
+                      <div class="card">
+                        <div class="imgBookWrapper">
+                          <img src="./assets/img/image 2.png">
+                        </div>
+                          <div class="cardText">
+                            <h3>Order in Chaos</h3>
+                            <h4>Konstantin Koptelov</h4>
+                         </div>
+                         <button class="read-more">Read More</button>
+                      </div>
+                     </article>
+
+                    <article class="card__article swiper-slide">
+                      <div class="card">
+                        <div class="imgBookWrapper">
+                          <img src="./assets/img/image 2.png">
+                        </div>
+                          <div class="cardText">
+                            <h3>Order in Chaos</h3>
+                            <h4>Konstantin Koptelov</h4>
+                         </div>
+                         <button class="read-more">Read More</button>
+                      </div>
+                     </article>
+
+                    <article class="card__article swiper-slide">
+                      <div class="card">
+                        <div class="imgBookWrapper">
+                          <img src="./assets/img/image 2.png">
+                        </div>
+                          <div class="cardText">
+                            <h3>Order in Chaos</h3>
+                            <h4>Konstantin Koptelov</h4>
+                         </div>
+                         <button class="read-more">Read More</button>
+                      </div>
+                     </article>
+
+
+
+                    <article class="card__article swiper-slide">
+                      <div class="card">
+                        <div class="imgBookWrapper">
+                          <img src="./assets/img/image 2.png">
+                        </div>
+                          <div class="cardText">
+                            <h3>Order in Chaos</h3>
+                            <h4>Konstantin Koptelov</h4>
+                         </div>
+                         <button class="read-more">Read More</button>
+                      </div>
+                     </article>
+
+                  <article class="card__article swiper-slide">
+                    <div class="card">
+                      <div class="imgBookWrapper">
+                        <img src="./assets/img/image 2.png">
+                      </div>
+                        <div class="cardText">
+                          <h3>Order in Chaos</h3>
+                          <h4>Konstantin Koptelov</h4>
+                       </div>
+                       <button class="read-more">Read More</button>
+                    </div>
+                   </article>
+
+                  <article class="card__article swiper-slide">
+                    <div class="card">
+                      <div class="imgBookWrapper">
+                        <img src="./assets/img/image 2.png">
+                      </div>
+                        <div class="cardText">
+                          <h3>Order in Chaos</h3>
+                          <h4>Konstantin Koptelov</h4>
+                       </div>
+                       <button class="read-more">Read More</button>
+                    </div>
+                   </article>
+
+
+                  <article class="card__article swiper-slide">
+                  <div class="card">
+                    <div class="imgBookWrapper">
+                      <img src="./assets/img/image 2.png">
+                    </div>
+                      <div class="cardText">
+                        <h3>Order in Chaos</h3>
+                        <h4>Konstantin Koptelov</h4>
+                     </div>
+                     <button class="read-more">Read More</button>
+                  </div>
+                 </article>
+
+                  <article class="card__article swiper-slide">
+                  <div class="card">
+                    <div class="imgBookWrapper">
+                      <img src="./assets/img/image 2.png">
+                    </div>
+                      <div class="cardText">
+                        <h3>Order in Chaos</h3>
+                        <h4>Konstantin Koptelov</h4>
+                     </div>
+                     <button class="read-more">Read More</button>
+                  </div>
+                </article>
+                
+              </div> 
+        
+        <!-- ADD OTHER BOOKCARDS HERE WITH DINAMIC JS-->
+    </div>
+                  <!-- Navigation buttons-->
+              <div class="swiper-button-prev">
+                  <!-- <i class="ri-arrow-left-s-line"></i> -->
+              </div>
+
+              <div class="swiper-button-next">
+                <!-- <i class="ri-arrow-right-s-line"></i>   -->
+              </div>
+   
+</section>
+
+
+        <!-- SECOND PART----------------------------------------BESTSELLER PART -->
+
+
+
+       
+<!-- yeni elave etdim -->
+      <section class="swiper">
+        <div class="card__content">
+          <article class="navBook">
+            <h2 class="section-header">Besteller</h2>
+           
+        </article>
+            <!-- Slides -->
+            <div class="swiper-wrapper">
+              
+    
+              <!-- SLIDE BOX FOR EACH -->
+             
+                
+                    <!-- KITAB CARDLARI -->
+                    <article class="card__article swiper-slide">
+                      
+                        <div class="card">
+                          <div class="imgBookWrapper">
+                            <img src="./assets/img/image 2.png">
+                          </div>
+                            <div class="cardText">
+                               <h3>Order in Chaos</h3>
+                               <h4>Konstantin Koptelov</h4>
+                            </div>
+                            <button class="read-more">Read More</button>
+                        </div>
+                      </article>
+    
+                        <article class="card__article swiper-slide">
+                          <div class="card">
+                            <div class="imgBookWrapper">
+                              <img src="./assets/img/image 2.png">
+                            </div>
+                              <div class="cardText">
+                                <h3>Order in Chaos</h3>
+                                <h4>Konstantin Koptelov</h4>
+                             </div>
+                             <button class="read-more">Read More</button>
+                          </div>
+                         </article>
+    
+                        <article class="card__article swiper-slide">
+                          <div class="card">
+                            <div class="imgBookWrapper">
+                              <img src="./assets/img/image 2.png">
+                            </div>
+                              <div class="cardText">
+                                <h3>Order in Chaos</h3>
+                                <h4>Konstantin Koptelov</h4>
+                             </div>
+                             <button class="read-more">Read More</button>
+                          </div>
+                         </article>
+    
+                        <article class="card__article swiper-slide">
+                          <div class="card">
+                            <div class="imgBookWrapper">
+                              <img src="./assets/img/image 2.png">
+                            </div>
+                              <div class="cardText">
+                                <h3>Order in Chaos</h3>
+                                <h4>Konstantin Koptelov</h4>
+                             </div>
+                             <button class="read-more">Read More</button>
+                          </div>
+                         </article>
+    
+                        <article class="card__article swiper-slide">
+                          <div class="card">
+                            <div class="imgBookWrapper">
+                              <img src="./assets/img/image 2.png">
+                            </div>
+                              <div class="cardText">
+                                <h3>Order in Chaos</h3>
+                                <h4>Konstantin Koptelov</h4>
+                             </div>
+                             <button class="read-more">Read More</button>
+                          </div>
+                         </article>
+                      
+                                         
+                    
+                  </div> 
+            
+            <!-- ADD OTHER BOOKCARDS HERE WITH DINAMIC JS-->
+        </div>
+                      <!-- Navigation buttons-->
+                  <div class="swiper-button-prev">
+                      <!-- <i class="ri-arrow-left-s-line"></i> -->
+                  </div>
+    
+                  <div class="swiper-button-next">
+                    <!-- <i class="ri-arrow-right-s-line"></i>   -->
+                  </div>
+       
+    </section>
+
+
+
+      <!-- THIRD PART------------------------NEW REALESES -->
+
+    
+
+    <!-- yeniden elave etdim -->
+    <section class="swiper swiper-new-releases">
+      <div class="card__content">
+        <article class="navBook">
+          <h2 class="section-header">New releases</h2>
+         
+      </article>
+          <!-- Slides -->
+          <div class="swiper-wrapper">
+ 
+                  <!-- KITAB CARDLARI -->
+                  <article class="card__article swiper-slide">
+                    
+                      <div class="card">
+                        <div class="new-sign">New</div>
+                        <div class="imgBookWrapper">
+                          <img src="./assets/img/image 2.png">
+                        </div>
+                          <div class="cardText">
+                             <h3>Order in Chaos</h3>
+                             <h4>Konstantin Koptelov</h4>
+                          </div>
+                          <button class="read-more">Read More</button>
+                      </div>
+                    </article>
+  
+                      <article class="card__article swiper-slide">
+                        <div class="card">
+                          <div class="new-sign">New</div>
+                          <div class="imgBookWrapper">
+                            <img src="./assets/img/image 2.png">
+                          </div>
+                            <div class="cardText">
+                              <h3>Order in Chaos</h3>
+                              <h4>Konstantin Koptelov</h4>
+                           </div>
+                           <button class="read-more">Read More</button>
+                        </div>
+                       </article>
+  
+                      <article class="card__article swiper-slide">
+                        <div class="card">
+                          <div class="new-sign">New</div>
+                          <div class="imgBookWrapper">
+                            <img src="./assets/img/image 2.png">
+                          </div>
+                            <div class="cardText">
+                              <h3>Order in Chaos</h3>
+                              <h4>Konstantin Koptelov</h4>
+                           </div>
+                           <button class="read-more">Read More</button>
+                        </div>
+                       </article>
+  
+                      <!-- <article class="card__article swiper-slide">
+                        <div class="card">
+                           <div class="imgBookWrapper">
+                        <img src="./assets/img/image 2.png">
+                      </div>
+                            <div class="cardText">
+                              <h3>Order in Chaos</h3>
+                              <h4>Konstantin Koptelov</h4>
+                           </div>
+                           <button class="read-more">Read More</button>
+                        </div>
+                       </article>
+  
+                      <article class="card__article swiper-slide">
+                        <div class="card">
+                            <div class="imgBookWrapper">
+                        <img src="./assets/img/image 2.png">
+                      </div>
+                            <div class="cardText">
+                              <h3>Order in Chaos</h3>
+                              <h4>Konstantin Koptelov</h4>
+                           </div>
+                           <button class="read-more">Read More</button>
+                        </div>
+                       </article>
+                     -->
+                                       
+                  
+                </div> 
+          
+          <!-- ADD OTHER BOOKCARDS HERE WITH DINAMIC JS-->
+      </div>
+                    <!-- Navigation buttons-->
+            <section class="swiperButtons" style="display: none;">
+                <div class="swiper-button-prev">
+                    <!-- <i class="ri-arrow-left-s-line"></i> -->
+                </div>
+  
+                <div class="swiper-button-next">
+                  <!-- <i class="ri-arrow-right-s-line"></i>   -->
+                </div>
+            </section>
+     
+  </section>
+    
+      </main>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ========================> FOLLOW US <======================== -->
+
+    <section class="followUs">
+      <article class="followUsBox">
+        <h1>Follow us on social media</h1>
+        <div class="iconArea">
+          <img
+            src="../assets/icons/facebook.svg"
+            alt="fb"
+            class="iconF"
+          />
+          <img
+            src="../assets/icons/twitter.svg"
+            alt="tw"
+            class="iconF"
+          />
+          <img
+            src="../assets/icons/instagram.svg"
+            alt="ig"
+            class="iconF"
+          />
+        </div>
+      </article>
+    </section>
+
+    
+    <!-- ========================> FOOTER <======================== -->
+
+    <footer class="footer">
+      <article class="footerMiddlePart">
+        <figure class="footerLogo">
+          <img src="../assets/icons/logoWhite.svg" alt="logoWhite" />
+        </figure>
+
+        <article class="footerMiddlePartBoxes">
+          <div class="footerMiddlePartBox">
+            <ul>
+              <li>Popular</li>
+              <li>Programming</li>
+              <li>Books for children</li>
+              <li>Psychology</li>
+              <li>Business</li>
+            </ul>
+          </div>
+
+          <div class="footerMiddlePartBox">
+            <ul>
+              <li>Information</li>
+              <li>Delivery</li>
+              <li>Payment</li>
+              <li>About the store</li>
+            </ul>
+          </div>
+
+          <div class="footerMiddlePartBox">
+            <ul>
+              <li>Help</li>
+              <li>Contacts</li>
+              <li>Purchase returns</li>
+              <li>Buyer help</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="footerTel">
+          <h1>+38 (071) 339-16-26</h1>
+          <a href="" class="footerTelBtn">Request a call</a>
+        </article>
+      </article>
+      <article class="footerEndPart">
+        <h1>
+          All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+        </h1>
+      </article>
+
+      <!-- =======================> MOBILE VERSION <======================== -->
+
+      <article class="footerMobile">
+        <article class="footerMobileUp">
+          <figure class="footerLogo">
+            <img
+              src="../assets/icons/logoWhite.svg"
+              alt="logoWhite"
+            />
+          </figure>
+
+          <div class="footerMobileUpLinks">
+            <a href="../../index.html" class="homeLink">Home</a>
+            <a href="../../src/pages/catalog.html" class="catalogLink"
+              >Catalog</a
+            >
+            <a href="../../src/pages/about.html" class="aboutStoreLink"
+              >About Store</a
+            >
+            <a href="../../src/pages/contact.html" class="contactUsLink"
+              >Contact Us</a
+            >
+            <a href="../../src/pages/search.html" class="searchLink"
+              >Search</a
+            >
+          </div>
+        </article>
+        <article class="footerMobileDown">
+          <div class="divider"></div>
+          <h1>Library BookStore EACamp © 2003-2021</h1>
+        </article>
+      </article>
+    </footer>
+
+     <!-- =========== SWIPER JS ================= -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+     <!--================ CATALOG JS =================== -->
+    <script src="../scripts/catalogPage/catalog.js" type="module"></script>
   </body>
 </html>

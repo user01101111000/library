@@ -1,4 +1,5 @@
 /* ===============> IMPORT <============= */
+@import url("../general/loadingSpinner.css");
 
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/fonts/crimsonTextFont.css");
@@ -54,11 +55,21 @@
 
   --globalPadding: 3%;
 }
+/* =======================================================> HELPER CLASSES <====================================================== */
+
+.showAside {
+  left: 0% !important;
+}
+
+.hideLoading {
+  display: none !important;
+}
 
 /* ======================================================> GENERAL <====================================================== */
 
 ::-webkit-scrollbar {
   width: 0.4em;
+  height: 0.4em;
 }
 ::-webkit-scrollbar-track {
   background-color: #f1f0f0;
@@ -168,17 +179,16 @@
 .adminMain {
   width: 100%;
   background-color: var(--home-bgColor);
-
   display: flex;
 }
 
-/* ======================================================> ADMIN MAIN <====================================================== */
+/* ======================================================> ADMIN ASIDE <====================================================== */
 
 .adminAside {
   background-color: var(--admin-bgColor);
 }
 
-/* ======================================================> ADMIN MAIN <====================================================== */
+/* ======================================================> ADMIN AREA <====================================================== */
 
 .adminArea {
   width: 100%;
@@ -189,6 +199,7 @@
 
 .adminAside {
   padding: 1.5em;
+  transition: all 0.3s;
 }
 
 .adminAsideLogo {
@@ -218,6 +229,15 @@
   height: auto;
 }
 
+.adminAside .closeBtnAside {
+  width: 1.5em;
+  height: auto;
+  position: absolute;
+  top: 1.5em;
+  right: 2em;
+  display: none;
+}
+
 /* ======================================================> ADMIN HEADER <====================================================== */
 
 .adminHeader {
@@ -238,11 +258,16 @@
   font-family: var(--font-montserrat);
   color: var(--text-color2);
 }
-
+.adminHeader .mobileLogo {
+  display: none;
+}
+.adminHeader .mobileHamburger {
+  display: none;
+}
 /* ======================================================> ADD BOOK SECTION <====================================================== */
 
 .addBookSec {
-  margin-bottom: 10.75em;
+  margin-block: 2em 10.75em;
 }
 
 .addBookSec > h1 {
@@ -277,7 +302,7 @@
   outline: none;
   border-radius: 34px;
   padding: 0.5em 1em;
-  font-size: var(--fontSize6);
+  font-size: calc(var(--fontSize6) - 0.2em);
   font-weight: var(--fontWeight1);
   font-family: var(--font-montserrat);
 }
@@ -289,6 +314,18 @@
   padding: 0.5em 1.5em;
   background-color: var(--button-color);
   cursor: pointer;
+  position: relative;
+}
+.searchBtn .loading {
+  height: 1.5em;
+  width: 1.5em;
+  border: 0.2em solid white;
+  border-top: 0.2em solid transparent;
+}
+
+.searchBtn img {
+  width: 1em;
+  height: auto;
 }
 
 .results {
@@ -520,7 +557,172 @@
   color: var(--text-color3);
   cursor: pointer;
 }
+
+/* ======================================================> JOIN US TABLE SECTION <====================================================== */
+.joinUsTableArea {
+  margin-bottom: 10.75em;
+  overflow-x: auto;
+}
+.joinUsTableArea > h1 {
+  font-size: var(--fontSize3);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 0.5em;
+}
+.joinUsTable {
+  width: 512px;
+  border-collapse: collapse;
+  letter-spacing: 1px;
+}
+thead {
+  font-family: var(--font-nunitoSans);
+  background-color: var(--admin-bgColor);
+  color: var(--text-color3);
+  font-size: var(--fontSize6);
+}
+
+th,
+td {
+  font-weight: var(--fontWeight1);
+  padding: 1em;
+  text-align: center;
+}
+td {
+  border-bottom: 2px solid #e2e6ee;
+}
+
+tbody {
+  font-family: var(--font-nunitoSans);
+  font-size: calc(var(--fontSize6) - 0.2em);
+  font-weight: var(--fontWeight1);
+}
+tbody > tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+tbody > tr:nth-of-type(even) {
+  background-color: #f9fafc;
+}
+
+/* ======================================================> BOOKS TABLE SECTION <====================================================== */
+.booksTableArea {
+  margin-bottom: 10.75em;
+  overflow-x: auto;
+}
+
+.booksTableArea > h1 {
+  font-size: var(--fontSize3);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 0.5em;
+}
+.booksTable {
+  width: 100%;
+  border-collapse: collapse;
+  letter-spacing: 1px;
+}
+
+.trashIcon {
+  cursor: pointer;
+  color: red;
+  font-size: 1.3em;
+}
+
+.bookTableTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.bookTableTitle > h1 {
+  font-family: var(--font-nunitoSans);
+  font-size: calc(var(--fontSize6) - 0.2em);
+  font-weight: var(--fontWeight1);
+}
+
+.bookTableImg {
+  width: 1.2em;
+  height: auto;
+}
+
+td {
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ======================================================> CONTACT US TABLE SECTION <====================================================== */
+.contactUsArea {
+  margin-bottom: 10.75em;
+  overflow-x: auto;
+}
+
+.contactUsArea > h1 {
+  font-size: var(--fontSize3);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 0.5em;
+}
+
+.contactUsTable > h1 {
+  font-size: var(--fontSize3);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+  color: var(--text-color2);
+  margin-bottom: 0.5em;
+}
+.contactUsTable {
+  width: 100%;
+  border-collapse: collapse;
+  letter-spacing: 1px;
+}
+
 /* !======================================================> MEDIA QUERIES <====================================================== */
+
+@media screen and (max-width: 1000px) {
+  /* ===================================> ADMIN ASIDE <===================================  */
+  .adminAside {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 70%;
+  }
+
+  .adminAside .closeBtnAside {
+    display: block;
+  }
+
+  /* ===================================> ADMIN HEADER <===================================  */
+
+  .adminHeaderPerson {
+    display: none;
+  }
+  .adminHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+  .adminHeader .mobileLogo {
+    display: block;
+  }
+  .adminHeader .mobileHamburger {
+    display: block;
+  }
+
+  /* =====================================> TABLES <===================================  */
+  .joinUsTableArea {
+    font-size: 14px;
+  }
+  .booksTableArea {
+    font-size: 14px;
+  }
+  .contactUsArea {
+    font-size: 14px;
+  }
+}
 
 @media screen and (max-width: 900px) {
   /* ===================================> JOIN US MODAL <===================================  */
@@ -541,6 +743,51 @@
   .loginBox {
     font-size: 12px;
   }
+
+  /* ===================================> ADMIN ASIDE <===================================  */
+
+  .adminAside {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 70%;
+    font-size: 10px;
+  }
+
+  .adminAsideLogo {
+    margin-bottom: 5em;
+  }
+
+  .adminAsideLogo img {
+    width: 15em;
+    height: auto;
+  }
+  .adminAsideMenuList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .adminAside .closeBtnAside {
+    width: 1.5em;
+    height: auto;
+    position: absolute;
+    top: 3em;
+    right: 2.2em;
+  }
+
+  /* =====================================> TABLES <===================================  */
+  .joinUsTableArea {
+    font-size: 12px;
+  }
+  .booksTableArea {
+    font-size: 12px;
+  }
+  .contactUsArea {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -552,5 +799,49 @@
   .adminLogo {
     width: 9.438em;
     height: auto;
+  }
+
+  /* ======================================================> ADD BOOK SECTION <====================================================== */
+
+  .addBookSec {
+    margin-block: 2em 10.75em;
+    font-size: 10px;
+  }
+
+  .searchBtn {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    background-color: var(--button-color);
+    cursor: pointer;
+  }
+
+  .searchBtn img {
+    width: 0.7em;
+    height: auto;
+  }
+
+  .searchBtn .loading {
+    height: 1em;
+    width: 1em;
+    border: 0.2em solid white;
+    border-top: 0.2em solid transparent;
+  }
+
+  .searchInput {
+    padding: 0.6em 1em;
+    font-size: var(--fontSize6);
+  }
+
+  /* =====================================> TABLES <===================================  */
+  .joinUsTableArea {
+    font-size: 11px;
+  }
+  .booksTableArea {
+    font-size: 11px;
+  }
+  .contactUsArea {
+    font-size: 11px;
   }
 }
