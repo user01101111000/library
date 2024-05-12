@@ -144,6 +144,9 @@ let swiperCards = new Swiper('.card__content', {
       400: {
         slidesPerView: 2,
       },
+      // 320: {
+      //   slidesPerView: 1,
+      // }
       
   },
 });
