@@ -1,4 +1,5 @@
 /* ===============> IMPORT <============= */
+@import url("../general/loadingSpinner.css");
 
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/fonts/crimsonTextFont.css");
@@ -58,6 +59,10 @@
 
 .showAside {
   left: 0% !important;
+}
+
+.hideLoading {
+  display: none !important;
 }
 
 /* ======================================================> GENERAL <====================================================== */
@@ -309,7 +314,15 @@
   padding: 0.5em 1.5em;
   background-color: var(--button-color);
   cursor: pointer;
+  position: relative;
 }
+.searchBtn .loading {
+  height: 1.5em;
+  width: 1.5em;
+  border: 0.2em solid white;
+  border-top: 0.2em solid transparent;
+}
+
 .searchBtn img {
   width: 1em;
   height: auto;
@@ -636,7 +649,6 @@ tbody > tr:nth-of-type(even) {
 td {
   max-width: 100px;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -766,30 +778,6 @@ td {
     right: 2.2em;
   }
 
-  /*
-  .asideListItem {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    cursor: pointer;
-  }
-  
-  .asideListItem h1 {
-    font-size: var(--fontSize1);
-    font-weight: var(--fontWeight1);
-    font-family: var(--font-montserrat);
-    color: var(--text-color3);
-  }
-  .asideListIcon {
-    width: 2.5em;
-    height: auto;
-  } 
-  
-  
-
-  
-  */
-
   /* =====================================> TABLES <===================================  */
   .joinUsTableArea {
     font-size: 12px;
@@ -823,15 +811,27 @@ td {
   .searchBtn {
     border: none;
     outline: none;
-    border-radius: 34px;
+    border-radius: 10px;
     padding: 0.5em 1em;
     background-color: var(--button-color);
     cursor: pointer;
   }
 
   .searchBtn img {
-    width: 0.8em;
+    width: 0.7em;
     height: auto;
+  }
+
+  .searchBtn .loading {
+    height: 1em;
+    width: 1em;
+    border: 0.2em solid white;
+    border-top: 0.2em solid transparent;
+  }
+
+  .searchInput {
+    padding: 0.6em 1em;
+    font-size: var(--fontSize6);
   }
 
   /* =====================================> TABLES <===================================  */
