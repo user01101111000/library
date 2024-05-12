@@ -1,1 +1,129 @@
 @import url("../../styles/general/reset.css");
+
+ /* FONTS FAMILY*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    background-color: rgb(255, 244, 249);
+    
+}
+
+.information{
+    margin-top: 10.9rem;
+    margin-left: 10.9rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    
+}
+.book-details{
+    display: flex;
+}
+
+#goBackBtn{
+    background-color: rgb(226, 110, 27);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 4px 20px;
+    font-weight: 700;
+    margin-bottom: 72px;
+}
+#bookYear{
+    color: rgb(255, 255, 255);
+    background-color: royalblue;
+    width: 69px;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.bookAbout h2{
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+.bookAbout h6{
+    margin-bottom: 10px;
+    font-size: 15px;
+    
+}
+
+#bookText{
+   margin-bottom: 15px;
+   font-size: 20px;
+}
+#bookText2{
+  line-height: 27px;
+  font-size: 18px;  
+}
+#bookImg{
+   margin-left: 10%;
+   margin-top: -160px;
+   padding: 20px;
+   width: 355px;    
+}
+.comments-section{
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+}
+#inputAnonim{
+    width: 55%;
+    padding: 13px;
+    padding-left: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px 2px rgb(196, 186, 186);
+}
+#sendSvg{
+    background-color: rgb(221, 108, 27);
+    border-radius: 5px;
+    padding: 14px;
+    text-align: center;
+    width: 45px;
+    margin-left: -40px;
+    position: relative;
+    z-index: 1;
+    
+}
+.anonim{
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.anonim h6{
+    font-size: 15px;
+    
+}
+.dinamic-time{
+    padding-left: 23px;
+}
+.comment-box1{
+    background-color: rgb(253, 253, 253);
+    box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
+    width: 55%;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+#comment{
+    line-height: 25px;
+}
+.comment-box2{
+    background-color: rgb(253, 253, 253);
+    box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
+    width: 55%;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+    
+
+    
