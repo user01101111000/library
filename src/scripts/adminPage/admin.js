@@ -20,6 +20,7 @@ const bookNameInp = document.querySelector(".bookNameInp");
 const authorNameInp = document.querySelector(".authorNameInp");
 const bookUrlInp = document.querySelector(".bookUrlInp");
 const bookDescInp = document.querySelector(".bookDescInp");
+const publishedDateInp = document.querySelector(".publishedDateInp");
 const selectInput = document.querySelector(".bookCategoryInp");
 const bookFomrSubmitBtn = document.querySelector(".bookFomrSubmitBtn");
 
@@ -146,16 +147,14 @@ const displayData = (data) => {
 
 const listItemClicked = (currentItem, element) => {
   currentItem.addEventListener("click", () => {
-    !element.volumeInfo.imageLinks?.smallThumbnail &&
-      (element["currentImg"] =
-        "https://m.media-amazon.com/images/I/81G8e+64W8L._AC_UF894,1000_QL80_.jpg");
-
     bookNameInp.value = element.volumeInfo.title;
     authorNameInp.value =
       element.volumeInfo.authors?.join(", ") ?? "Unknown author";
     bookUrlInp.value =
-      element.volumeInfo.imageLinks?.thumbnail ?? element["currentImg"];
+      element.volumeInfo.imageLinks?.thumbnail ??
+      "https://m.media-amazon.com/images/I/81G8e+64W8L._AC_UF894,1000_QL80_.jpg";
     bookDescInp.value = element.volumeInfo.description ?? "No Description";
+    publishedDateInp.value = element.volumeInfo.publishedDate;
 
     results.innerHTML = "";
     searchInput.value = "";
@@ -202,6 +201,7 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
       bookTitle: bookNameInp.value.trim(),
       bookAuthor: authorNameInp.value.trim(),
       bookUrl: bookUrlInp.value.trim(),
+      bookPublishedDate: publishedDateInp.value.trim(),
       bookDescription: bookDescInp.value.trim(),
       bookType: document.querySelector('input[name="bookType"]:checked').value,
       bookCategory: selectInput.disabled
@@ -212,19 +212,20 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
 
     console.log(currentBook);
 
-    let date1 = new Date("05/09/2024");
+    // let date1 = new Date("05/09/2024");
 
-    let diff = Math.round(
-      (1715421597974 - date1.getTime()) / (1000 * 3600 * 24)
-    );
+    // let diff = Math.round(
+    //   (1715421597974 - date1.getTime()) / (1000 * 3600 * 24)
+    // );
 
-    console.log(diff);
+    // console.log(diff);
 
     newCategory.value = "";
     bookNameInp.value = "";
     authorNameInp.value = "";
     bookUrlInp.value = "";
     bookDescInp.value = "";
+    publishedDateInp.value = "";
     selectInput.removeAttribute("disabled");
   }
 });
@@ -270,7 +271,7 @@ function fetchOptions(data) {
   data.forEach((element) => {
     const option = document.createElement("option");
     option.textContent = element;
-    option.value = element;
+    option.value = element.toLowerCase();
 
     bookCategoryInp.append(option);
   });
