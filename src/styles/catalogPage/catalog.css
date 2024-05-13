@@ -31,22 +31,35 @@
 /* .swiper-wrapper {
   flex-wrap: nowrap !important;
 } */
+
+
+/* BU OXLARA MESAFE VERMEK UCUN */
+.card__content{
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+/* BASLIQ HISSELER */
 .navBook {
   display: flex;
-  justify-content: space-between;
+  margin-left: 18px;
+  /* justify-content: space-between; */
   align-items: center; 
   background-color: #FFFAF5;
   /* max-width: 1440px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .allBooks-h2 {
-  margin-left: 0.5em;
-  margin-right: 3.5em; 
+  /* height: 100px; */
+  /* background-color:  red; */
+  margin-left: 0em;
+  margin-right: 0em; 
   font-family: Montserrat;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 900;
-  line-height: 49.05px;
-  transition: transform 0.3s ease;
+  color: #241400;
+  line-height: 24.5px;
+  transition: transform 0.3s ease; 
 }
 .allBooks-h2:hover{
   transform: scale(1.1);
@@ -56,32 +69,50 @@
 .navBook h2 {
   /* margin-left: -3.5em; */
   /* margin-top: 1em; */
-  font-family: Montserrat;
+
+  /* font-family: Montserrat;
   color: #241400;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  width: 30%;
   font-weight: 900;
-  line-height: 49.05px;
-  /* text-align: center; */
+  line-height: 24.05px;
+  text-align: center; */
   
  }
 /* only new releases and bestseller header align to the center */
  .section-header {
   margin: 0 auto;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
+  font-family: Montserrat;
+  color: #241400;
+  font-size: 1.6rem;
+  width: 30%;
+  font-weight: 900;
+  line-height: 24.05px;
+  text-align: center; 
+}
+.van {
+  /* border: 1px solid red; */
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.navBook ul {
+.van ul {
+  width: 400px;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: baseline;
-  margin-bottom: 60px;
+  /* margin-left: 40px; */
+  /* margin-bottom: 60px; */
 }
-.navBook li {
+.van li {
  color: #241400;
  text-decoration: none;
   list-style: none;
   margin-right: 2em;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   margin-top: 25px;
   font-family: Montserrat;
   font-size: 13px;
@@ -91,29 +122,17 @@
   margin-inline: 10px;
   transition: transform 0.3s ease;
 }
-.navBook li:hover {
+.van li:hover {
   transform: scale(1.1);
 }
-.navBook h3 {
-  font-family: Montserrat;
-  font-size: 25px;
-  font-weight: 900;
-  line-height: 49.05px;
-  text-align: left;
-}
 
 
-
-
-
-
-
-
+/* ------------------------------------------Book card hissesi */
 .card__article {
   background-color: #FFFAF5;
   display: flex;
   justify-content: center;
-  
+   
 }
 
 .card {
@@ -127,7 +146,6 @@
   text-align: center;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
 }
-
 .new-sign {
   position: absolute;
   top: 0;
@@ -150,48 +168,48 @@
 
 }
 
-/* FOR ADJUSTING IMAGES INTO SAME SIZE */
-.imgBookWrapper{
-   height:11.25em;
-   width: 2.5em;
-   /* display: flex;
-   justify-content: flex-end; */
-}
-.imgBookWrapper img{
-  padding-top: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  /* padding: 24px 0;
-  width: 55%;
-  margin-left: auto; 
-  margin-right: auto; 
-  /* cursor: pointer;   */
-   /* width: auto;
-  height: auto;  */
-  width: auto; 
-  height: auto; 
-  max-width: 100%;
-  max-height: 100%;
-  object-fit:cover;
-  /* margin-right: 10px; */
+/* FOR ADJUSTING IMAGES INTO SAME SIZE -----------------Image part*/
+.card img{
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+.card img:hover{
+  transform: scale(1.1);
+}
+
+.imgBookWrapper{
+  height: 170px; 
+  width: 110px;
+}
+.imgBookWrapper img{
+  height: 100%;
+  width: 100%;
+  margin-left: 25px;
+  margin-top: 30px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
 .imgBookWrapper img{
   transform: scale(1.1);
 }
 
-/* CARD TEXT */
+/* CARD TEXT  ----------------------------Book aurthor and Book name*/
 .cardText{
-  margin-top: 20px;
+  margin-top: 50px;
+}
+button.read-more{
+  margin-top: 2px;
 }
 
-.cardText h4{
-  font-size: 12px;
+.cardText p{
+  font-size: 11px;
   color: #241400;
   font-family: Montserrat;
-  margin-bottom: 10px;
-  padding-left: 10px;
+  margin-bottom: 5px;
+  padding-left: 5px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -215,15 +233,15 @@
 }
 
 .cardText h3:hover,
-h4:hover {
+p:hover {
   transform: scale(1.1);
 }
 button {
   display: flex;
   justify-content: center;
   margin-bottom: 17px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  /* margin-right: auto; */
   text-align: center;
   width: 60%;
   height: 9%;
@@ -271,13 +289,17 @@ button.read-more {
 
 .swiper {
   background-color: #FFFAF5;
-  width: 85%;
+  width: 80%;
   height: 90%;
   margin-top: 100px;
   margin: 100  auto; 
 
 }
-
+.swiper-wrapper{
+  margin: 30px; 
+  margin-left: 1px; 
+  background-color: #FFFAF5; 
+}
 .swiperButtons {
   position: relative;
   margin-top: 20px; 
@@ -285,30 +307,32 @@ button.read-more {
 
 .swiper-button-prev,
 .swiper-button-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 9999;
-  margin-top: 10px;
+  position: absolute !important;
+  top: 58% !important;
+  transform: translateY(-50%) !important;
+  z-index: 9999 !important;
+  /* margin-top: 10px; */
 }
 
 
 .swiper-button-next,
 .swiper-button-prev{
   display: block !important;
-  width: initial;
-  height: initial;
-  font-size: 3rem;
+  width: initial !important;
+  height: initial !important;
+  font-size: 3rem !important;
+  width: 40px; 
+  height: 40px;
   color: #720418 !important;
   /* display: none; */
 } 
 
 .swiper-button-prev{
-  left: 0;
-}
+  left: 0 !important;
+  }
 
 .swiper-button-next{
-  right: 0;
+  right: 0 !important;
 }
 
 
@@ -317,8 +341,7 @@ button.read-more {
 
 /* FOR SMALL DEVICES */
 @media screen and (max-width: 320px){
-
-  .navBook {
+    .navBook {
     flex-direction: column;
     align-items: center;
   }
@@ -327,24 +350,31 @@ button.read-more {
     font-size: 1.6em;
   }
   
-  .navBook ul {
-    margin: 0;
+  .van ul {
+    height: 40px;
+    /* width: 400px; */
+    margin-left: 30px;
   }
 
   .allBooks-h2 {
     order: -1;
     text-align: left;
-    margin-left: 0;
+    margin-left: -10px;
     margin-bottom: -20px;
    
   }
-  .navBook li {
+  .van li {
     font-size: 8.5px;
     margin-inline: 10px;
     /* text-align: left; */
     margin-left: 0;
     margin-right: 20px;
     margin-bottom: 10px;
+  }
+
+  .section-header{
+    width: 80%;
+    margin-bottom: 5px;
   }
 /* BURA QAYIDIB BAX, DEYISIKLIK ET! */
   /* button{
@@ -365,7 +395,7 @@ button.read-more {
 
   
   .imgBookWrapper{
-    height:180px;
+    height:150px;
     width: 100px;
     display: flex;
     justify-content: flex-end; 
@@ -454,7 +484,7 @@ button.read-more {
     font-size: 1.9em;
   }
   
-  .navBook ul {
+  .van ul {
     margin: 0;
   }
   
@@ -466,7 +496,7 @@ button.read-more {
     margin-bottom: -20px;
    
   }
-  .navBook li {
+  .van li {
     font-size: 10px;
     margin-inline: 10px;
     /* text-align: left; */
