@@ -27,10 +27,10 @@
     }         
     
     main {
+      background-color: #FFFAF5;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      margin-top: 100px;
+      margin-top: 80px;
       
     }
     
@@ -42,15 +42,18 @@
       display: flex;
       flex-direction: column;
       width: 45%;  
-      margin-left: 11rem; 
+      margin-left: 7rem; 
      
     }
     
     .searchArea h2 {
-      margin-left: 0.5rem;
+      color:#241400;
+      font-family: Montserrat;
+      margin-bottom: 20px;
+      margin-left: 0rem;
       font-size: 2em;
       font-weight: 700;
-      color: #241400;
+      
     } 
     
     .input {
@@ -82,94 +85,76 @@
     
                                                                                     /* About Book */
     
-    .aboutBook {
-      display: flex;
-      flex-direction: row;
-      background-color:#FFFFFF;
-       margin: auto;
-      margin-top: 2rem;
-      margin-bottom: 10rem;
-      width: 80%;
-      height: 38rem;
-      box-shadow: 0.3rem 0.3rem 0.2rem #CECECE;
-    }
-    
-    .book{
-      margin-left: 3rem;
-      display: flex;
-      justify-content: space-evenly;
-     
-    }
-    
-    .headline {
-      display: flex;
-      flex-direction: column;
-      margin-top:50px;
-      margin-left: 30px;
-    
-    }
-    
-    .headline h2 {
-      height: 5rem;
-      font-family: Montserrat;
-      font-size: 1.8rem;
-      font-weight: 700;
-      text-align: left;
-      margin-bottom: 100px;
-      width: 200px;
-      overflow: hidden;
-      display: inline-block;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    
-    }
-     h3 {
-      text-align: left;
-      width: 20%;
-      font-family: Montserrat;
-      font-size: 1.2rem;
-      font-weight: 450;
-      margin-top: -8rem;
-    }
-    
-    .paragraph{
-      color:#241400;
-      font-family: Montserrat;
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.5rem;
-      width: 480px; 
-      height: 400px;
-      overflow-y: scroll;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
- 
-    
-    }
-    
-    .bookImg {
+.aboutBook{
+  display: block;
+    display: flex;
+    justify-content: space-evenly;
+    background-color:#ffffff;
+    width: 45rem;
+    height: 28rem;
+    margin-top: 3.7rem;
+    box-shadow: 0.3rem 0.3rem 0.2rem  #CECECE;
+   }
+
+.bookImage{
       width: 220px;
-      height: 325px;
-    margin-left: 15px;
-    margin-top: 70px;
+      height: 270px;
+    margin-top: 40px;
+    margin-left: 25px;
+  
     }
-    
-    .bookImg img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-                                                  /* Swiper class */
+.bookImage img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.textBook{
+  margin-top: 40px;
+  margin-left: 15px;
+  width: 100%;
+  height: 100%;
+  overflow-y:scroll;
+  background-color:#FFFFFF;
+
+ }
+
+ .bookName{
+  color:#241400;
+  font-family: Montserrat;
+  margin-left: 10px;
+  font-size: 20px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+ }
+ .bookAuthor{
+  color:#241400;
+  font-family: Montserrat;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+ }
+.description{
+  color:#241400;
+  font-family: Montserrat;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-left: 10px;
+  width: 400px;
+  height: 250px;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+
+}
+                                                                          /* Swiper class */
                                                   
-     swiper-button-prev::after,
-    .swiper-button-next::after{
+ swiper-button-prev::after,
+.swiper-button-next::after{
       content: '',
     }
-    .swiper-button-next,
-    .swiper-button-prev{
+.swiper-button-next,
+.swiper-button-prev{
       display: block !important;
       width: initial;
       height: initial;
@@ -178,22 +163,24 @@
     
       
     }
-    .swiper-button-prev{
-      margin-left:550px ;
-      margin-top: 100px  !important;
-    }
-    .swiper-button-next{
-      margin-right: 350px !important;
-      margin-top: 100px  !important;
+.swiper-button-prev{
+ margin-left:500px !important;
+ margin-bottom: 80px  !important;
+
+   
+}
+.swiper-button-next{
+      margin-right: 90px !important;
+      margin-bottom: 80px  !important;
     }
     
-    .swiper {
+.swiper {
       width: 100%;
       height:40% !important;
-      margin-right: 20% !important;
+      margin-left: 5% !important;
       background-color:#FFFAF5;
     }
-    .swiper-slide{
+.swiper-slide{
       margin: 0px !important;
       display: flex;
       justify-content: space-between;
@@ -208,124 +195,26 @@
     
                                                                         /* Responsive Design */
                                                                         
-@media screen and (max-width: 1440px) {
-  html {
-    font-size: 10px;
-  }
-  .aboutBook {
-    display: flex;
-    flex-direction: row;
-    background-color:#FFFFFF;
-     margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 10rem;
-    width: 80%;
-    height: 28rem;
-    box-shadow: 0.3rem 0.3rem 0.2rem #CECECE;
-  }
-  
-  .book{
-    margin-left: 3rem;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: -10%;
-   
-  }
-  
-  .headline {
-    display: flex;
-    flex-direction: column;
-    margin-top:50px;
-    margin-left: 30px;
-  
-  }
-  
-  .headline h2 {
-    height: 5rem;
-    font-family: Montserrat;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: left;
-    margin-bottom: 100px;
-    width: 200px;
-    overflow: hidden;
-    display: inline-block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  
-  }
-   h3 {
-    text-align: left;
-    width: 20%;
-    font-family: Montserrat;
-    font-size: 1.2rem;
-    font-weight: 450;
-    margin-top: -8rem;
-  }
-  
-  .paragraph{
-    color:#241400;
-    font-family: Montserrat;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
-    width: 300px; 
-    height: 600px;
-    overflow-y: scroll;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
 
-  
-  }
-  
-  .bookImg {
-    width: 100px;
-    height: 325px;
-  margin-left: 15px;
-  margin-top: 10px;
-  }
-  
-  .bookImg img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .swiper-button-prev{
-    margin-right:1050px ;
-    margin-top: -50rem  !important;
-  }
-  .swiper-button-next{
-    margin-right: 350px !important;
-    margin-top: 100px  !important;
-  }
 
-}
+/* Search Area
+@media screen and (max-width: 540px) {
 
-@media screen and (max-width: 320px) {
-  html {
-    font-size: 8px;
-  }
-}
-
-/* Search Area */
-@media screen and (max-width: 730px) {
-
-    main{
-        display: flex;
-        flex-direction: column;
+main{
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-gap:10px;
     }
 .searchArea {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    width: 243px;
     margin-left: 15%;
   }
 .input{
-    max-width: 20.10rem;
+    width: 20.10rem;
     margin-left: 10px;
 }
 button{
@@ -333,80 +222,60 @@ button{
     margin-left: 10px;
 }
 .searchArea h2{
-    margin-left: 10px;
+    margin-left: 15px;
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
+    width: 150px;
 }
-  .aboutBook {
-    display: flex;
-    flex-direction: column;
-    display: inline;
-    margin-left: -2%;
-    width: 90%;
-    margin-top: 100px;
-   
-  }
-
-  .book {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 120px;
-    height: 250px;
-    margin-top: 126px;
-    
-  }
-
-  .bookImg {
-    width: 110px;
-  height: 160px;
-  margin-left: 50px;
-  margin-top: 180px;
-  }
+.aboutBook{
+  display: flex;
+  flex-direction: column;
+ background-color: #FFFAF5;
+}
+.textBook{
+  display: flex;
+  flex-direction: column;
+  background-color:#FFFAF5;
+  width: 250px;
+  height: 350px;
+}
+.bookImage{
+margin-left: 125px;
+margin-top: -10px;
+  width: 210px;
+  height: 325px;
+  display: inline;
   
-  .bookImg img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
-  .headline {
-    margin-top: 1.875rem; /* Adjust as needed */
-    margin-left: 0; /* Reset margin */
-    text-align: center; /* Center align */
-  }
+}
+.bookImage img {
+  width: 100%;
+  height: 100%;
+}
+.bookName{
+  margin-left: 160px;
+}
+.bookAuthor{
 
-  .headline h2 {
-    height: 5rem;
-    font-family: Montserrat;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 100px;
-    width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  
-  }
-  h3 {
-    width: auto; 
-    margin-top: 0;
-    text-align: right; 
-  }
-
-  .paragraph {
-    width: 220px;
-    height: 156px;
-    font-size: 10px;
-    margin-top:2rem;
-    margin-right: 150px;
-    
-  }
-  swiper-button-next,
-    .swiper-button-prev{
+}
+.description{
+  color:#241400;
+  font-family: Montserrat;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-left: 100px;
+  width: 150px;
+  height: 0px;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+}
+.swiper-button-next,
+.swiper-button-prev{
       display: none !important;
-     
+    
+      
     }
 
-}
+} */
+
