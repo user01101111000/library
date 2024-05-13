@@ -22,9 +22,9 @@ EACAMP GROUP M2 "TEAM-TU" - Library project
 
 ### Folder sistemi :
 
-📁 **src** - Proyektin mənbə folder'i
-📁 **assets** - Proyektin şəkil, ikon və s. elementlərinin saxlandığı folder
-📁 **scripts** - Proyektin Javascript kodlarının saxlandığı folder
-📁 **styles** - Proyektin css kodlarının saxlandığı folder
-📁 **pages** - Proyektin html kodlarının saxlandığı folder
-📁 **tests** - Testlərin aparıldığı folder
+📁 **src -** Proyektin mənbə kodlarının saxlandığı folder\
+📁 **assets -** Proyektin şəkil, ikon və s. elementlərinin saxlandığı folder\
+📁 **scripts -** Proyektin Javascript kodlarının saxlandığı folder\
+📁 **styles -** Proyektin css kodlarının saxlandığı folder\
+📁 **pages -** Proyektin html kodlarının saxlandığı folder\
+📁 **tests -** Testlərin aparıldığı folder
