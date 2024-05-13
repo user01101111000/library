@@ -218,7 +218,7 @@
   cursor: pointer;
 }
 
-.asideListItem h1 {
+.asideListItem a {
   font-size: var(--fontSize1);
   font-weight: var(--fontWeight1);
   font-family: var(--font-montserrat);
