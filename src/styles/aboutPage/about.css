@@ -9,6 +9,11 @@
   text-decoration: underline !important;
   font-weight: 700;
 }
+
+body{
+  background: #FFFAF5;
+
+}
 .main{
   display: flex;
   justify-content: center;
@@ -266,6 +271,38 @@
     margin-top: 6rem;
   }
 }
-  
 
+@media screen and (max-width:460px){
+  .paragraph{
+    width:26rem;
+    padding: 1rem;
+    margin-bottom: 10rem;
+  }
+}
+  
+@media screen and (max-width:350px) {
+  .img{
+    width:20rem; /* Makes the image width responsive to the main size */
+    height: auto; /* Adjusts the height to maintain aspect ratio */
+    margin-left: 1rem;
+  }
+  .paragraph{
+    width:22rem;
+    padding: 2rem;
+    margin-top:0rem;
+    margin-bottom: 10rem;
+    height: auto;
+  }
+
+  .p{
+    font-family:"Montserrat", sans-serif ;
+    font-weight: 400;
+    color: black;
+    font-size: 0.75rem; /* Scales down the font size */
+    line-height: 1.5rem; /* Adjusts line height for readability */
+    padding: 0.5rem; /* Adds padding for spacing */
+  }
+
+  
+}
   
