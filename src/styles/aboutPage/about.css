@@ -75,6 +75,7 @@ body{
       max-width: 100%; 
       padding: 0 10px;
      text-align: center;
+     overflow: hidden;
       
     }
   
@@ -119,7 +120,7 @@ body{
     @media only screen and (max-width: 1000px) {
       .main {
        
-       
+        overflow: hidden;
         padding-inline: 5%; /* Reduce padding for smaller screens */
         text-align: center;
       }
@@ -164,7 +165,8 @@ body{
     @media (max-width: 900px) {
       .main {
         padding-inline: 5%;
-        align-items: center;
+        overflow: hidden;
+
       }
     
       .heading{
@@ -203,6 +205,7 @@ body{
     align-items: center;
     max-width: 100%;
     padding-inline: 4%;
+    overflow: hidden;
   }
 
   .heading{
@@ -249,7 +252,8 @@ body{
 @media only screen and (max-width: 540px) {
     .main {
       text-align: center;
-        font-size: 13px; 
+      font-size: 13px; 
+      overflow: hidden;
     }
   .paragraph{
     width:30rem;
@@ -277,18 +281,24 @@ body{
     width:26rem;
     padding: 1rem;
     margin-bottom: 10rem;
+    overflow: hidden;
   }
 }
   
 @media screen and (max-width:350px) {
+  .main{
+    width: 90%;
+    overflow: hidden;
+  }
   .img{
-    width:20rem; /* Makes the image width responsive to the main size */
+    width:15rem; /* Makes the image width responsive to the main size */
     height: auto; /* Adjusts the height to maintain aspect ratio */
     margin-left: 1rem;
   }
   .paragraph{
-    width:22rem;
-    padding: 2rem;
+    width:18.125rem;
+    margin-left: 1rem;
+    padding: 1rem;
     margin-top:0rem;
     margin-bottom: 10rem;
     height: auto;
