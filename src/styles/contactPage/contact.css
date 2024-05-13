@@ -1,7 +1,6 @@
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/fonts/crimsonTextFont.css");
 @import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
-
 @import url("../general/commonStyle.css");
 
 :root {
@@ -22,14 +21,12 @@
 
 
 body, html {
-  overflow-x: hidden;
   background-color: #FFFAF5;
 }
 
 .form-container {
   position: relative;
   width: 78.563rem;
-  border-radius: 10px;
   padding: 1.25rem;
   margin: 3.125rem  auto ;
 
@@ -60,13 +57,17 @@ input,textarea {
   font-family: var(--font-crimson);
 }
 
+input,textarea::placeholder{
+  font-family: var(--font-crimson);
+}
+
+
 .input-large {
   width: 38.125rem;
   height: 4.688rem;
   padding: 0.625;
   font-size: 18px;
   border: 2px solid #ccc;
-  border-radius: 8px;
   box-sizing: border-box;
 }
 
@@ -78,6 +79,7 @@ input,textarea {
   border: 2px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
+  display: block;
 }
 
 .button-container {
@@ -122,11 +124,9 @@ textarea {
   resize: none;
 }
 
-
-
-@media (max-width: 768px) {
+@media  (max-width: 1000px) {
   .form-container {
-      width: 90%;  
+      width:100%;  
       padding: 1rem;
 }
 
@@ -136,7 +136,8 @@ textarea {
   }
 
   .input-large {
-      width: 100%;  
+    margin: 0 auto;
+      width: 90%;  
       height: 3.75rem;  
   }
 
@@ -145,7 +146,9 @@ textarea {
   }
 
   .send-button {
-      width: 100%;  
+      width: 90%;
+      margin: 0 auto;
+ 
       height: 3.75rem;  
   }
 
@@ -161,7 +164,7 @@ textarea {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width:320px) {
   .form-container {
       width: 100%;  
       padding: 10px;
@@ -174,7 +177,7 @@ textarea {
 
   .input-note {
       height: 6.25rem;  
-      font-size: 16px;  
+      font-size: 6px;  
       display: none;
   }
 
@@ -192,9 +195,9 @@ textarea {
     padding-left: 4%;
   }
 
-
-
 }
+
+
 
 
 
