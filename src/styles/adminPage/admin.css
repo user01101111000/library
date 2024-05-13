@@ -72,7 +72,7 @@
   height: 0.4em;
 }
 ::-webkit-scrollbar-track {
-  background-color: #f1f0f0;
+  background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--admin-bgColor);
@@ -233,9 +233,10 @@
   width: 1.5em;
   height: auto;
   position: absolute;
-  top: 1.5em;
+  top: 3.5em;
   right: 2em;
   display: none;
+  cursor: pointer;
 }
 
 /* ======================================================> ADMIN HEADER <====================================================== */
@@ -253,7 +254,7 @@
   cursor: pointer;
 }
 .adminHeaderPerson h1 {
-  font-size: var(--fontSize1);
+  font-size: calc(var(--fontSize1) - 0.2em);
   font-weight: var(--fontWeight1);
   font-family: var(--font-montserrat);
   color: var(--text-color2);
@@ -263,6 +264,7 @@
 }
 .adminHeader .mobileHamburger {
   display: none;
+  cursor: pointer;
 }
 /* ======================================================> ADD BOOK SECTION <====================================================== */
 
@@ -336,7 +338,6 @@
   left: 1%;
   border-radius: 34px;
   max-height: 30em;
-  padding-inline: 1em;
   overflow: auto;
   font-size: var(--fontSize5);
   font-weight: var(--fontWeight2);
@@ -344,7 +345,7 @@
   color: var(--text-color2);
 }
 .results ul {
-  padding: 0.5em;
+  padding: 1em;
 }
 .searchListItem {
   padding: 1em;
@@ -370,6 +371,12 @@
   gap: 0.2em;
 }
 .searchListItem h1 {
+  width: 18em;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   font-size: var(--fontSize5);
   font-weight: var(--fontWeight2);
   font-family: var(--font-montserrat);
@@ -377,6 +384,11 @@
 }
 
 .searchListItem h2 {
+  width: 15em;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: calc(var(--fontSize1) - 0.2em);
   font-weight: var(--fontWeight1);
   font-family: var(--font-montserrat);
@@ -570,6 +582,7 @@
   color: var(--text-color2);
   margin-bottom: 0.5em;
 }
+
 .joinUsTable {
   width: 512px;
   border-collapse: collapse;
@@ -584,10 +597,11 @@ thead {
 
 th,
 td {
+  text-align: center;
   font-weight: var(--fontWeight1);
   padding: 1em;
-  text-align: center;
 }
+
 td {
   border-bottom: 2px solid #e2e6ee;
 }
@@ -631,7 +645,6 @@ tbody > tr:nth-of-type(even) {
 
 .bookTableTitle {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 1em;
 }
@@ -639,6 +652,9 @@ tbody > tr:nth-of-type(even) {
   font-family: var(--font-nunitoSans);
   font-size: calc(var(--fontSize6) - 0.2em);
   font-weight: var(--fontWeight1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bookTableImg {
@@ -647,8 +663,9 @@ tbody > tr:nth-of-type(even) {
 }
 
 td {
-  max-width: 100px;
+  max-width: 12.5em;
   overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -680,6 +697,19 @@ td {
 }
 
 /* !======================================================> MEDIA QUERIES <====================================================== */
+
+@media screen and (max-width: 1250px) {
+  /* =====================================> TABLES <===================================  */
+  .joinUsTableArea {
+    font-size: 12px;
+  }
+  .booksTableArea {
+    font-size: 12px;
+  }
+  .contactUsArea {
+    font-size: 12px;
+  }
+}
 
 @media screen and (max-width: 1000px) {
   /* ===================================> ADMIN ASIDE <===================================  */
@@ -757,7 +787,7 @@ td {
   }
 
   .adminAsideLogo {
-    margin-bottom: 5em;
+    margin-bottom: 3em;
   }
 
   .adminAsideLogo img {
@@ -771,11 +801,15 @@ td {
   }
 
   .adminAside .closeBtnAside {
-    width: 1.5em;
-    height: auto;
-    position: absolute;
     top: 3em;
     right: 2.2em;
+  }
+
+  /* =====================================> ADMIN HEADER <===================================  */
+
+  .adminHeader .mobileHamburger {
+    width: 1em;
+    height: auto;
   }
 
   /* =====================================> TABLES <===================================  */
