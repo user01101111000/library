@@ -113,33 +113,49 @@ const sendJoinerInfoToDb = () => {
 const sendButton = document.querySelector(".send-button");
 
 sendButton.addEventListener("click", () => {
-  const inputRows = document.querySelectorAll(".input-large, .input-note");
+  const inputRows = document.querySelectorAll(".input-large, .input-note"); 
+  let isEmpty = false;
 
-  const newData = {};
   inputRows.forEach(inputRow => {
+    var computedStyle = window.getComputedStyle(inputRow);
+    var displayPropertyValue = computedStyle.getPropertyValue('display');
     const fieldName = inputRow.getAttribute("placeholder");
-    newData[fieldName] = inputRow.value;
+    if (!inputRow.value.trim() && displayPropertyValue !== 'none') {
+      isEmpty = true
+      inputRow.style.borderColor = "red";
+
+    } else {
+      inputRow.style.borderColor = "#ccc";
+    }
+
+    inputRow.addEventListener("input", () => {
+      if (inputRow.value.trim()) {
+        inputRow.style.borderColor = "#ccc";
+      }
+    });
   });
+  
+if (!isEmpty) {
+    const newData = {};
+    inputRows.forEach(inputRow => {
+      const fieldName = inputRow.getAttribute("placeholder");
+      newData[fieldName] = inputRow.value;
+    });
+    console.log(newData);
 
-     console.log(newData);
-
-  // Inputlari bosaltmaq ucun//
-
-  inputRows.forEach(inputRow => {
-    inputRow.value = "";
-  });
-});
-hamburger.addEventListener("click", () => {
-  if (navMenu.classList.contains("showNavMenu")  ) {  
-    document.getElementById("form-remove").style.zIndex = "-1";
+    inputRows.forEach(inputRow => {
+      inputRow.value = "";
+    });
   }
 });
 
-closeBtn.addEventListener("click", () => {
-  if (!navMenu.classList.contains("showNavMenu")){
-    document.getElementById("form-remove").style.zIndex = "100";
-  }
-});
+
+
+
+
+
+
+
 
 
 // ==================================> Inputs value <===================================
