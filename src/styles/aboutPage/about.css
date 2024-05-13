@@ -11,7 +11,7 @@
 }
 .main{
   display: flex;
-  max-width: 1440px;
+  justify-content: center;
   padding-inline: 8%;
   
 
@@ -82,25 +82,31 @@
   
    
     .paragraph {
-      width: auto; 
+      width: 40rem; 
       height: auto; 
       padding: 1rem; 
       margin-bottom: 5rem;
       
     }
   
+    .p{
+      font-family:"Montserrat", sans-serif ;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 2.2rem;
+      color: black;}
     
-    .image {
+      .image {
       order: -1; /* Place image container above the text */
       margin: 1rem 0; 
       margin-bottom: 1rem;
-      width: 100%; 
+      /* width: 100%;  */
       height: auto; 
     }
   
     /* Adjust image styles */
     .img {
-      width: 100%; 
+      width: 28rem; 
       height: auto; 
       object-fit: cover; 
     }
@@ -108,7 +114,7 @@
     @media only screen and (max-width: 1000px) {
       .main {
        
-        max-width: 100%; /* Adjust to fit the viewport */
+       
         padding-inline: 5%; /* Reduce padding for smaller screens */
         text-align: center;
       }
@@ -124,15 +130,18 @@
       }
     
       .paragraph {
-        width: 100%; /* Full width for paragraphs */
+        width: 38rem; /* Full width for paragraphs */
         height: auto;
         margin-bottom: 10rem;
       }
     
       .p {
+        font-family:"Montserrat", sans-serif ;
+        font-weight: 400;
         font-size: 1rem; /* Smaller font size for readability */
         line-height: 2rem;
-      }
+       color: black;}
+      
     
       .image {
        margin-top: 3rem; /* Adjust spacing for smaller screens */
@@ -143,7 +152,7 @@
       }
     
       .img {
-        width: 100%; /* Full width for images */
+        width:26rem; /* Full width for images */
         height: auto; /* Maintain aspect ratio */
       }
     }
@@ -153,17 +162,23 @@
         align-items: center;
       }
     
-      .heading,
-      .paragraph {
+      .heading{
         margin-top: 2rem;
         width: auto;
+        height: auto;
+      }
+      .paragraph {
+        margin-top: 2rem;
+        width: 36rem;
         height: auto;
       }
     
       .h1,
       .p {
+        font-family:"Montserrat", sans-serif ;
         font-size: normal;
-        line-height: normal;
+        line-height: 2rem;
+        color: black;
       }
     
       .image {
@@ -172,7 +187,7 @@
       }
     
       .img {
-        width: 100%;
+        width:24rem;
         height: auto;
       }
     }
@@ -197,13 +212,16 @@
   }
 
   .paragraph{
-    width: auto; /* Adjusts width to the size of the main */
+    width: 34rem; /* Adjusts width to the size of the main */
     height: auto; /* Adjusts height to fit the content */
     margin-bottom: 20rem;
     line-height: 2rem;
   }
 
   .p{
+    font-family:"Montserrat", sans-serif ;
+    font-weight: 400;
+    color: black;
     font-size: 1rem; /* Scales down the font size */
     line-height: 1.8rem; /* Adjusts line height for readability */
     padding: 0.5rem; /* Adds padding for spacing */
@@ -217,20 +235,30 @@
   }
 
   .img{
-    width: 100%; /* Makes the image width responsive to the main size */
+    width:22rem; /* Makes the image width responsive to the main size */
     height: auto; /* Adjusts the height to maintain aspect ratio */
   }
 }
 
 /* Styles for screens with max-width of 320px */
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 540px) {
     .main {
       text-align: center;
         font-size: 13px; 
     }
   .paragraph{
+    width:32rem;
     padding: 0rem;
     margin-bottom: 10rem;
+  }
+
+  .p{
+    font-family:"Montserrat", sans-serif ;
+    font-weight: 400;
+    color: black;
+    font-size: 1rem; /* Scales down the font size */
+    line-height: 1.8rem; /* Adjusts line height for readability */
+    padding: 0.5rem; /* Adds padding for spacing */
   }
 
   .image{
