@@ -22,6 +22,7 @@ EACAMP GROUP M2 "TEAM-TU" - Library project
 
 ### Folder sistemi :
 
+<div style="display:flex; flex-direction:column">
  <div style="display: flex; justify-content: center; align-items: center;gap:5px">
   <img src ="./src/assets/mdicons/folder.png" alt="Firebase logo" width="3.5%" title='Firebase'/>
   <h5>src - Proyektin mənbə folder'i</h5>
@@ -46,3 +47,4 @@ EACAMP GROUP M2 "TEAM-TU" - Library project
   <img src ="./src/assets/mdicons/folder.png" alt="Firebase logo" width="3.5%" title='Firebase'/>
   <h5>tests - Testlərin aparıldığı folder</h5>
  </div>
+</div>
