@@ -30,7 +30,7 @@
       background-color: #FFFAF5;
       display: flex;
       flex-direction: row;
-      margin-top: 80px;
+      margin-top: 90px;
       
     }
     
@@ -163,15 +163,25 @@
     
       
     }
+/* .swiper-button-next,.swiper-button-prev{
+  z-index: 9999 !important;
+  top: 38%  !important;
+  position: absolute;
+} */
+
+
+
 .swiper-button-prev{
  margin-left:500px !important;
- margin-bottom: 80px  !important;
+ margin-top: -0% !important;
+ margin-bottom: 30%  !important;
 
    
 }
 .swiper-button-next{
       margin-right: 90px !important;
-      margin-bottom: 80px  !important;
+      margin-top: -0% !important;
+      margin-bottom: 10%  !important;
     }
     
 .swiper {
@@ -179,6 +189,7 @@
       height:40% !important;
       margin-left: 5% !important;
       background-color:#FFFAF5;
+      margin-bottom: 5%;
     }
 .swiper-slide{
       margin: 0px !important;
@@ -196,9 +207,24 @@
                                                                         /* Responsive Design */
                                                                         
 
+ @media screen  and (max-width:1440px) {
 
-/* Search Area
-@media screen and (max-width: 540px) {
+  .swiper-button-prev{
+ margin-left:500px !important;
+ margin-top: -10% !important;
+ margin-bottom: 30%  !important;
+
+   
+}
+.swiper-button-next{
+      margin-right: 90px !important;
+      margin-top: -10% !important;
+      margin-bottom: 10%  !important;
+    }
+    
+ }
+
+/* @media screen and (max-width: 540px) {
 
 main{
   display: grid;
@@ -277,5 +303,4 @@ margin-top: -10px;
       
     }
 
-} */
-
+}  */
