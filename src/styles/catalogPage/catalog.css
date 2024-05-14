@@ -111,8 +111,11 @@
   transform: scale(1.1);
 }
 
+<<<<<<< catalogHelper
+=======
 
 /* ------------------------------------------Book card hissesi */
+>>>>>>> main
 .card__article {
   background-color: #FFFAF5;
   display: flex;
