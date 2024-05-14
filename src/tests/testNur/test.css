@@ -1,17 +1,19 @@
 @import url("../../styles/general/reset.css");
 
- /* FONTS FAMILY*/
+ /* FONTS FAMILY  Bumu ozum cixracam ki ozunde var*/
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+/* book page-in main hissesi */
 body{
-    background-color: rgb(255, 244, 249);
+    background-color: rgb(253, 240, 246);
     
 }
 
 .information{
     margin-top: 10.9rem;
-    margin-left: 10.9rem;
+    margin-left: 9.5rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     
@@ -50,25 +52,24 @@ body{
     font-size: 15px;
     
 }
-
-#bookText{
+#bookAuthor{
    margin-bottom: 15px;
    font-size: 20px;
 }
-#bookText2{
+#bookDescription{
   line-height: 27px;
   font-size: 18px;  
 }
-#bookImg{
+#bookImg{   
    margin-left: 10%;
-   margin-top: -160px;
-   padding: 20px;
-   width: 355px;    
+   margin-top: -115px;
+   padding: 13px;
+   width: 365px;    
 }
 .comments-section{
     display: flex;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 60px;
 }
 #inputAnonim{
     width: 55%;
@@ -109,7 +110,7 @@ body{
     width: 55%;
     padding: 15px;
     font-size: 14px;
-    margin-top: 50px;
+    margin-top: 55px;
     border-radius: 5px;
 }
 #comment{
@@ -121,9 +122,63 @@ body{
     width: 55%;
     padding: 15px;
     font-size: 14px;
-    margin-top: 50px;
+    margin-top: 55px;
     border-radius: 5px;
 }
+
+                                    /* BOOK PAGE-IN MOBILE HISSESI  */
+
+@media screen and (max-width:540px) {
+.information{
+    margin-left: 30px;
+    
+}
+#goBackBtn{
+        width: 100px;
+        padding: 6px;
+    
+        
+    }
+#bookYear{
+    padding: 6px;
+    width: 90px;
+}
+#bookImg{
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    margin-left: 0px;
+   padding-right: 35px;
+
+}
+.bookAbout{
+    padding-top: 50px;
+    padding-bottom: 0px;
+    width: 100%;
+}
+
+.book-details{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.bookAbout h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+.bookAbout h6{
+    display: none
+}
+#bookAuthor, #bookDescription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+}
+
+
     
 
     
