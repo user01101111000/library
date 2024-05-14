@@ -107,7 +107,7 @@ const createListItem = (data) => {
 
   img.src =
     data.volumeInfo.imageLinks?.smallThumbnail ??
-    "https://m.media-amazon.com/images/I/81G8e+64W8L._AC_UF894,1000_QL80_.jpg";
+    "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
   h1.textContent = data.volumeInfo.title;
   h2.textContent = data.volumeInfo.authors?.join(", ") ?? "Unknown author";
 
@@ -152,7 +152,7 @@ const listItemClicked = (currentItem, element) => {
       element.volumeInfo.authors?.join(", ") ?? "Unknown author";
     bookUrlInp.value =
       element.volumeInfo.imageLinks?.thumbnail ??
-      "https://m.media-amazon.com/images/I/81G8e+64W8L._AC_UF894,1000_QL80_.jpg";
+      "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
     bookDescInp.value = element.volumeInfo.description ?? "No Description";
     publishedDateInp.value = element.volumeInfo.publishedDate;
 
@@ -208,6 +208,7 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
         ? newCategory.value.trim()
         : selectInput.value,
       bookAddedTime: Date.now(),
+      bookComments: [],
     };
 
     console.log(currentBook);
@@ -407,7 +408,10 @@ function createContactUsTable(data) {
 // ===============================> DELETE ELEMENT FROM BOOK TABLE <===================================
 
 booksTableBody.addEventListener("click", (e) => {
-  if (e.target.classList.contains("trashIcon")) {
+  if (
+    e.target.classList.contains("trashIcon") &&
+    confirm("Are you sure you want to delete this book?")
+  ) {
     console.log("book deleted : ", e.target.closest(".bookTableRow"));
   }
 });

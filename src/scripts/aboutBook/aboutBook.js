@@ -11,10 +11,6 @@ const alertModal = document.querySelector(".alertModal");
 const inputName = document.querySelector(".inputName");
 const inputEmail = document.querySelector(".inputEmail");
 
-const catalogBoxesArea = document.querySelector(".catalogBoxesArea");
-const catalogBoxTemplate = document.querySelector(".catalogBoxTemplate");
-const loading = document.querySelector(".loading");
-
 const joinerName = document.querySelector(".joinerName");
 
 // ==================================> SHOW HIDE MENU <===================================
@@ -114,51 +110,4 @@ const sendJoinerInfoToDb = () => {
   console.log(joinerInfo);
 };
 
-// ===========================================================================================================================
-// ===========================================================================================================================
-// ===========================================================================================================================
-// ===========================================================================================================================
-// ===========================================================================================================================
-// ===========================================================================================================================
-
-// ==================================> FETCHING DATA <===================================
-
-const fetchData = async () => {
-  const response = await fetch("/library/src/scripts/homePage/data.json");
-
-  if (!response.ok) throw Error(response.statusText);
-
-  const data = await response.json();
-
-  return data;
-};
-
-fetchData()
-  .then((data) => {
-    displayData(data);
-  })
-  .catch((err) => console.log(err))
-  .finally(() => {
-    loading.style.display = "none";
-  });
-
-// ==================================> DISPLAY DATA <===================================
-
-const displayData = (dataArray) => {
-  dataArray.forEach((element) => {
-    catalogBoxesArea.append(createCatalogBox(element));
-  });
-};
-
-// ==================================> CREATE CATALOG BOX <===================================
-
-const createCatalogBox = (data) => {
-  const catalogBox = catalogBoxTemplate.content.cloneNode(true).children[0];
-
-  const a = catalogBox.querySelector("a");
-
-  a.textContent = data;
-  a.setAttribute("href", "/library/src/pages/catalog.html");
-
-  return catalogBox;
-};
+// =================================================================> YOUR CODE <==============================================================================
