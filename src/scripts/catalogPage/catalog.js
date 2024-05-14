@@ -116,7 +116,7 @@ const sendJoinerInfoToDb = () => {
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
 
-let swiperCards = new Swiper('.card__content', {
+let card__content1 = new Swiper('.card__content1', {
    loop: true,
    spaceBetween: 32,
    grabCursor: true,
@@ -141,6 +141,9 @@ let swiperCards = new Swiper('.card__content', {
         slidesPerView: 2,
       },
      
+      540: {
+        slidesPerView: 1,
+      },
       400: {
         slidesPerView: 1,
       },
@@ -152,3 +155,101 @@ let swiperCards = new Swiper('.card__content', {
 });
 
 
+
+let card__content2 = new Swiper('.card__content2', {
+  loop: true,
+  spaceBetween: 32,
+  grabCursor: true,
+ 
+ navigation: {
+   nextEl: '.swiper-button-next',
+   prevEl: '.swiper-button-prev',
+ },
+
+
+ breakpoints: {
+     1440: {
+       slidesPerView: 5,
+     },
+     1020: {
+       slidesPerView: 4,
+     },
+     900: {
+       slidesPerView: 3
+     },
+     600: {
+       slidesPerView: 2,
+     },
+     
+     540: {
+      slidesPerView: 1,
+    },
+    
+     400: {
+       slidesPerView: 1,
+     },
+     320: {
+       slidesPerView: 1,
+     }
+     
+ },
+});
+
+
+let card__content3 = new Swiper('.card__content3', {
+  loop: true,
+  spaceBetween: 32,
+  grabCursor: true,
+ 
+ navigation: {
+   nextEl: '.swiper-button-next',
+   prevEl: '.swiper-button-prev',
+ },
+
+
+ breakpoints: {
+     1440: {
+       slidesPerView: 5,
+     },
+     1000: {
+       slidesPerView: 4,
+     },
+     900: {
+       slidesPerView: 3
+     },
+    
+     600: {
+       slidesPerView: 2,
+     },
+     
+     540: {
+      slidesPerView: 2,
+    },
+    
+     400: {
+       slidesPerView: 1,
+     },
+     320: {
+       slidesPerView: 1,
+     }
+     
+ },
+});
+
+
+
+// ============================Read More Button Click Function
+
+
+const readMoreButton = document.querySelector('.read-more');
+
+
+readMoreButton.addEventListener('click', function() {
+
+  const catalogHtml = document.querySelector('.hidden-html');
+  const bookHtml = document.querySelector('.visible-html');
+
+  catalogHtml.style.display ='none'
+  bookHtml.style.displa = 'block'
+
+})
