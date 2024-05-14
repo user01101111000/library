@@ -79,13 +79,27 @@
        
         <input type="email" class="input-large" id="input-email" placeholder="Email" onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Email'">
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <p>Please enter a valid email</p>
+            </div>
+          </div>
+
       </div>
 
       <div class="row">
         <input type="text" class="input-large" placeholder="Address" onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Adress'">
-        <input type="text" class="input-large" placeholder="Phone" onfocus="this.placeholder = ''"
+        <input type="text" class="input-large" id="phone-input" pattern="[1-9]"  placeholder="Phone" onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Phone'">
+
+          <div id="myModal-2" class="modal">
+            <div class="modal-content">
+              <p>Please enter a valid number</p>
+            </div>
+          </div>
+          
       </div>
       <div class="row">
         <textarea class="input-note" placeholder="Note" onfocus="this.placeholder = ''"
@@ -95,6 +109,13 @@
       <div class="button-container">
         <button class="send-button">Send</button>
       </div>
+
+      <div id="myModal-3" class="modal">
+        <div class="modal-content">
+          <p>Please fill in the information</p>
+        </div>
+      </div>
+
 
 
     </div>
