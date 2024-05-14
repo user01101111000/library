@@ -18,14 +18,14 @@ body{
   display: flex;
   justify-content: center;
   padding-inline: 8%;
+
   
 
 }
 .heading{
   width: 14.7rem;
   height: 4.4rem;
-  margin-top:11.5rem;
-  
+  margin-top:11.5rem;  
 }
 
 .h1{
@@ -34,27 +34,28 @@ body{
   font-weight: 900;
   font-size: 2.25rem;
   line-height: 4.4rem;
+  margin-left: 2rem;
+  width: 100%;
+  
 }
 
 .paragraph{
-  width: 42.9rem;
+  width: 45rem;
   height: 15.9rem;
-
  
-  
-}
+ }
 
 .p{
   font-family:"Montserrat", sans-serif ;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   line-height: 2.2rem;
   color: black;
-  padding: 0.188rem;
+  margin-left: 2rem;
 }
 .image{
   display: flex;
-  margin-top: 16.6rem;
+  margin-top: 15.5rem;
   margin-left: 31.25rem;
   margin-bottom: 10rem;
   height: 26rem;
@@ -152,7 +153,7 @@ body{
       .image {
        margin-top: 3rem; /* Adjust spacing for smaller screens */
        margin-left: 2rem; /* Add space on the left side */
-       margin-right: 2rem; /* Add space on the right side */
+       /* margin-right: 2rem; Add space on the right side */
        margin-bottom: 5rem; /* Adjust spacing for smaller screens */
        height: auto; /* Adjust height as needed */
       }
@@ -237,7 +238,7 @@ body{
 
   .image{
     margin-top: 6rem;
-    margin-left: 0; /* Aligns image to the center */
+    margin-left: 3rem; /* Aligns image to the center */
     margin-bottom: 2rem;
     justify-content: center; /* Centers the image in the flex main */
   }
@@ -299,7 +300,7 @@ body{
   .img{
     width:18rem; /* Makes the image width responsive to the main size */
     height: auto; /* Adjusts the height to maintain aspect ratio */
-    margin: 1rem;
+    margin-right: 1rem;
   }
   .paragraph{
     
