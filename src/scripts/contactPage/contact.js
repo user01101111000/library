@@ -111,43 +111,82 @@ const sendJoinerInfoToDb = () => {
 // ==================================> Inputs value <=================================== //
 
 const sendButton = document.querySelector(".send-button");
+const contactEmail = document.getElementById("input-email");
+const phoneInput = document.getElementById("phone-input");
+const modal = document.getElementById("myModal");
+const modal2 = document.getElementById("myModal-2");
+const modal3 = document.getElementById("myModal-3");
 
 sendButton.addEventListener("click", () => {
   const inputRows = document.querySelectorAll(".input-large, .input-note"); 
   let isEmpty = false;
-  
+  let emailIsValid = true;
+  let phoneIsValid = true;
 
   inputRows.forEach(inputRow => {
-    var computedStyle = window.getComputedStyle(inputRow);
-    var displayValue = computedStyle.getPropertyValue('display');
     const fieldName = inputRow.getAttribute("placeholder");
 
-    if(!inputRow.value.trim() && displayValue !== 'none'){
-      isEmpty = true
+    if (!inputRow.value.trim()) {
+      isEmpty = true;
+      modal3.style.display = "block";
       inputRow.style.borderColor = "red";
-
       setTimeout(() => {
-        inputRow.style.borderColor = "#ccc"
-      }, "1000");
-    } 
-    
-    else {
+        modal3.style.display = "none";
+      }, 1000);
+    } else {
       inputRow.style.borderColor = "green";
-     
-     setTimeout(() => {
-        inputRow.style.borderColor = "#ccc"
-      }, "1000");
+      setTimeout(() => {
+        inputRow.style.borderColor = "#ccc";
+      }, 1000);
     }
- 
+
+    if (inputRow === contactEmail) {
+      if (!inputRow.value.includes('@')) {
+        emailIsValid = false;
+        modal.style.display = "block"; 
+        modal2.style.display = "none"; 
+        inputRow.style.borderColor = "red";
+      }
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 1000);
+    }
+
+    if (inputRow === phoneInput) {
+      if (!(/^\+?\d+$/.test(inputRow.value)) || !(/^\+/.test(inputRow.value))) {
+        phoneIsValid = false;
+        modal2.style.display = "block"; 
+        modal.style.display = "none"; 
+        inputRow.style.borderColor = "red";
+      }
+      setTimeout(() => {
+        modal2.style.display = "none";
+      }, 1000);
+    }
 
     inputRow.addEventListener("input", () => {
       if (inputRow.value.trim()) {
         inputRow.style.borderColor = "#ccc";
       }
     });
+
+   
   });
-  
-if (!isEmpty) {
+
+  if (isEmpty || !emailIsValid || !phoneIsValid) {
+    if (emailIsValid && !phoneIsValid) {
+      modal2.style.display = "block";
+    } else if (!emailIsValid && phoneIsValid) {
+      modal.style.display = "block";
+    } else {
+      modal3.style.display = "block";
+    }
+    setTimeout(() => {
+      modal2.style.display = "none";
+      modal.style.display = "none";
+      modal3.style.display = "none";
+    }, 1000);
+  } else {
     const newData = {};
     inputRows.forEach(inputRow => {
       const fieldName = inputRow.getAttribute("placeholder");
@@ -160,6 +199,17 @@ if (!isEmpty) {
     });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
