@@ -40,9 +40,9 @@ body{
 }
 
 .paragraph{
-  width: 42.9rem;
+  width: 45rem;
   height: 15.9rem;
-  padding: 0rem;
+ 
  }
 
 .p{
@@ -51,7 +51,6 @@ body{
   font-size: 1.125rem;
   line-height: 2.2rem;
   color: black;
-  padding: 0.188rem;
   margin-left: 2rem;
 }
 .image{
