@@ -45,6 +45,14 @@ joinUsModalArea.addEventListener("click", (e) => {
   }
 });
 
+// ==================================> SHOW JOINER NAME <===================================
+
+(() => {
+  if (localStorage.getItem("joinerName"))
+    joinerName.textContent = localStorage.getItem("joinerName");
+  else joinerName.textContent = "Join Us";
+})();
+
 // ==================================> SHOW MODAL ALERT <===================================
 
 const alertMessageType = (type) => {
@@ -54,7 +62,7 @@ const alertMessageType = (type) => {
         sendJoinerInfoToDb();
 
         alertModal.classList.add("showSuccessAlert");
-        alertModal.children[0].textContent = `Thank you ${inputName.value}, for joining us!`;
+        alertModal.children[0].textContent = `Thank you ${inputName.value.trim()}, for joining us!`;
 
         alertModal.classList.add("showAlertModal");
 
@@ -63,7 +71,7 @@ const alertMessageType = (type) => {
           alertModal.children[0].textContent = `Please fill in all fields, or enter a valid email`;
           alertModal.classList.remove("showAlertModal");
 
-          localStorage.setItem("joinerName", inputName.value);
+          localStorage.setItem("joinerName", inputName.value.trim());
 
           joinerName.textContent = localStorage.getItem("joinerName");
 
@@ -87,27 +95,21 @@ const alertMessageType = (type) => {
 };
 
 joinUsModalBtn.addEventListener("click", () => {
-  if (inputName.value && inputEmail.value && inputEmail.value.includes("@"))
+  if (
+    inputName.value.trim() &&
+    inputEmail.value.trim() &&
+    inputEmail.value.includes("@")
+  )
     alertMessageType("success");
   else alertMessageType("error");
 });
-
-// ==================================> SHOW JOINER NAME <===================================
-
-(function () {
-  if (localStorage.getItem("joinerName")) {
-    joinerName.textContent = localStorage.getItem("joinerName");
-  } else {
-    joinerName.textContent = "Join Us";
-  }
-})();
 
 // ==================================> SEND JOINER INFO TO DB <===================================
 
 const sendJoinerInfoToDb = () => {
   const joinerInfo = {
-    name: inputName.value,
-    email: inputEmail.value,
+    name: inputName.value.trim(),
+    email: inputEmail.value.trim(),
   };
   console.log(joinerInfo);
 };
@@ -153,9 +155,10 @@ const displayData = (dataArray) => {
 const createCatalogBox = (data) => {
   const catalogBox = catalogBoxTemplate.content.cloneNode(true).children[0];
 
-  const h1 = catalogBox.querySelector("h1");
+  const a = catalogBox.querySelector("a");
 
-  h1.textContent = data;
+  a.textContent = data;
+  a.setAttribute("href", "/library/src/pages/catalog.html");
 
   return catalogBox;
 };

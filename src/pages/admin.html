@@ -70,7 +70,7 @@
                 alt=""
                 class="asideListIcon"
               />
-              <h1>Home</h1>
+              <a href="/library/index.html">Home</a>
             </li>
             <li class="asideListItem">
               <img
@@ -78,7 +78,7 @@
                 alt=""
                 class="asideListIcon"
               />
-              <h1>Books</h1>
+              <a href="/library/src/pages/catalog.html">Books</a>
             </li>
             <li class="asideListItem">
               <img
@@ -86,7 +86,7 @@
                 alt=""
                 class="asideListIcon"
               />
-              <h1>About</h1>
+              <a href="/library/src/pages/about.html">About</a>
             </li>
             <li class="asideListItem">
               <img
@@ -94,7 +94,7 @@
                 alt=""
                 class="asideListIcon"
               />
-              <h1>Join Us</h1>
+              <a href="">Join Us</a>
             </li>
             <li class="asideListItem">
               <img
@@ -102,7 +102,7 @@
                 alt=""
                 class="asideListIcon"
               />
-              <h1>Contact</h1>
+              <a href="/library/src/pages/contact.html">Contact</a>
             </li>
             <li class="asideListItem logout">
               <img
@@ -110,7 +110,7 @@
                 alt=""
                 class="asideListIcon"
               />
-              <h1>Logout</h1>
+              <a href="">Logout</a>
             </li>
           </ul>
         </article>
@@ -201,6 +201,14 @@
                 type="text"
                 placeholder="Book Image Url"
                 class="bookUrlInp"
+              />
+            </article>
+            <article class="bookFormBox">
+              <h1>Published Date</h1>
+              <input
+                type="text"
+                placeholder="2017-09-22"
+                class="publishedDateInp"
               />
             </article>
             <article class="bookFormBox">
@@ -325,7 +333,7 @@
             </thead>
             <tbody class="booksTableBody">
               <template class="bookTableBodyTemplate">
-                <tr>
+                <tr class="bookTableRow">
                   <td class="booksTabelBodyId"></td>
                   <td>
                     <div class="bookTableTitle">

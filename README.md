@@ -4,9 +4,10 @@
 \
 EACAMP GROUP M2 "TEAM-TU" - Library project
 
----
+<hr style="border-top:3px solid white; width:100%">
 
-### İstifadə olunan texnologiyalar : 
+### İstifadə olunan texnologiyalar :
+
 <div>
   <img src ="./src/assets/mdicons/html.svg" alt="HTML5 logo" width="3%" title='HTML5'/>
   <img src ="./src/assets/mdicons/css.svg" alt="CSS3 logo" width="3%" title='CSS3'/>
@@ -17,11 +18,13 @@ EACAMP GROUP M2 "TEAM-TU" - Library project
 
 ---
 
+<hr style="border-top:3px solid white; width:100%">
+
 ### Folder sistemi :
 
-**_src_** Folder - Proyektin mənbə folder'i\
-**_assets_** Folder - Proyektin şəkil, ikon və s. elementlərinin saxlandığı folder\
-**_scripts_** Folder - Proyektin Javascript kodlarının saxlandığı folder\
-**_styles_** Folder - Proyektin css kodlarının saxlandığı folder\
-**_pages_** Folder - Proyektin html kodlarının saxlandığı folder\
-**_tests_** Folder - Testlərinizi apara biləcəyiniz folder
+📁 **src -** Proyektin mənbə kodlarının saxlandığı folder\
+📁 **assets -** Proyektin şəkil, ikon və s. elementlərinin saxlandığı folder\
+📁 **scripts -** Proyektin Javascript kodlarının saxlandığı folder\
+📁 **styles -** Proyektin css kodlarının saxlandığı folder\
+📁 **pages -** Proyektin html kodlarının saxlandığı folder\
+📁 **tests -** Testlərin aparıldığı folder

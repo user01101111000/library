@@ -1,100 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library</title>
 
-    <link rel="stylesheet" href="../styles/general/reset.css" />
-    <link rel="stylesheet" href="../styles/contactPage/contact.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library</title>
 
-    <link
-      rel="shortcut icon"
-      href="../../src/assets/images/bookBackground.svg"
-      type="image/x-icon"
-    />
-  </head>
-  <body>
+  <link rel="stylesheet" href="../styles/general/reset.css" />
+  <link rel="stylesheet" href="../styles/contactPage/contact.css" />
+
+  <link rel="shortcut icon" href="../assets/icons/booksStackWhite.svg"
+   type="image/x-icon" >
+</head>
+
+<body>
 
 
-    <!-- ========================> HEADER <======================== -->
+  <!-- ========================> HEADER <======================== -->
 
-    <header class="navBar">
-      <figure class="logo">
-        <img
-          src="../assets/icons/logoColored.svg"
-          alt="logoColored"
-          class="logoImg"
-        />
+  <header class="navBar">
+    <figure class="logo">
+      <img src="../assets/icons/logoColored.svg" alt="logoColored" class="logoImg" />
+    </figure>
+
+    <nav class="navMenu">
+      <a href="../../index.html" class="homeLink">Home</a>
+      <a href="../pages/catalog.html" class="catalogLink">Catalog</a>
+      <a href="../pages/about.html" class="aboutStoreLink">About Store</a>
+      <a href="../pages/contact.html" class="contactUsLink">Contact Us</a>
+      <a href="../pages/search.html" class="searchLink">Search</a>
+
+      <img src="../assets/icons/close.svg" alt="close" class="closeBtn" />
+    </nav>
+
+    <div class="joinUsIcon joinUs">
+      <figure>
+        <img src="../assets/icons/person.svg" alt="person" class="joinUsIcon iconP" />
       </figure>
+      <figure class="hamburger">
+        <img src="../assets/icons/hamburger.svg" alt="hamburger" class="iconH" />
+      </figure>
+      <p class="joinUsIcon joinerName">Join Us</p>
+    </div>
+  </header>
 
-      <nav class="navMenu">
-        <a href="../../index.html" class="homeLink">Home</a>
-        <a href="/src/pages/catalog.html" class="catalogLink"
-          >Catalog</a
-        >
-        <a href="/src/pages/about.html" class="aboutStoreLink"
-          >About Store</a
-        >
-        <a href="/src/pages/contact.html" class="contactUsLink"
-          >Contact Us</a
-        >
-        <a href="/src/pages/search.html"  class="searchLink">Search</a>
+  <!-- ========================> JOIN US MODAL <======================== -->
 
-        <img
-          src="../assets/icons/close.svg"
-          alt="close"
-          class="closeBtn"
-        />
-      </nav>
+  <article class="joinUsModalArea">
+    <article class="joinUsModal">
+      <h1>Join Us</h1>
 
-      <div class="joinUsIcon joinUs">
-        <figure>
-          <img
-            src="../assets/icons/person.svg"
-            alt="person"
-            class="joinUsIcon iconP"
-          />
-        </figure>
-        <figure class="hamburger">
-          <img
-            src="../assets/icons/hamburger.svg"
-            alt="hamburger"
-            class="iconH"
-          />
-        </figure>
-        <p class="joinUsIcon joinerName">Join Us</p>
+      <form class="inputBoxes">
+        <input type="text" class="inputBox inputName" placeholder="Full Name" required />
+        <input type="email" class="inputBox inputEmail" placeholder="Email" required />
+      </form>
+      <div class="alertModal">
+        <p class="alertModalP">
+          Please fill in all fields, or enter a valid email
+        </p>
       </div>
-    </header>
-
-    <!-- ========================> JOIN US MODAL <======================== -->
-
-    <article class="joinUsModalArea">
-      <article class="joinUsModal">
-        <h1>Join Us</h1>
-
-        <form class="inputBoxes">
-          <input
-            type="text"
-            class="inputBox inputName"
-            placeholder="Full Name"
-            required
-          />
-          <input
-            type="email"
-            class="inputBox inputEmail"
-            placeholder="Email"
-            required
-          />
-        </form>
-        <div class="alertModal">
-          <p class="alertModalP">
-            Please fill in all fields, or enter a valid email
-          </p>
-        </div>
-        <button type="submit" class="joinUsModalBtn">Join</button>
-      </article>
+      <button type="submit" class="joinUsModalBtn">Join</button>
     </article>
+  </article>
 
 
 
@@ -103,27 +70,34 @@
 
 
 
- <div class="form-container" id ="form-remove">
-      <h1>Contact Us</h1>
-      <div class="input-container">
-          <div class="row">
-              <input type="text"  class="input-large" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'">
-              <input type="email" class="input-large" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
-          </div>
-          <div class="row">
-              <input type="text" class="input-large" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adress'">
-              <input type="text" class="input-large" placeholder="Phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'">
-          </div>
-          <div class="row">
-              <textarea class="input-note" placeholder="Note"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Note'" ></textarea>
-          </div>
-
-          <div class="button-container">
-            <button class="send-button">Send</button>
-        </div>
-
-
+  <div class="form-container" id="form-remove">
+    <h1>Contact Us</h1>
+    <div class="input-container">
+      <div class="row">
+        <input type="text" class="input-large" id="username" placeholder="Full Name" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Full Name'">
+       
+        <input type="email" class="input-large" id="input-email" placeholder="Email" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Email'">
       </div>
+
+      <div class="row">
+        <input type="text" class="input-large" placeholder="Address" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Adress'">
+        <input type="text" class="input-large" placeholder="Phone" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Phone'">
+      </div>
+      <div class="row">
+        <textarea class="input-note" placeholder="Note" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Note'" ></textarea>
+      </div>
+
+      <div class="button-container">
+        <button class="send-button">Send</button>
+      </div>
+
+
+    </div>
   </div>
 
 
@@ -133,7 +107,7 @@
 
 
 
-  
+
 
   <!-- ========================> FOLLOW US <======================== -->
 
@@ -141,21 +115,9 @@
     <article class="followUsBox">
       <h1>Follow us on social media</h1>
       <div class="iconArea">
-        <img
-          src="../assets/icons/facebook.svg"
-          alt="fb"
-          class="iconF"
-        />
-        <img
-          src="../assets/icons/twitter.svg"
-          alt="tw"
-          class="iconF"
-        />
-        <img
-          src="../assets/icons/instagram.svg"
-          alt="ig"
-          class="iconF"
-        />
+        <img src="../assets/icons/facebook.svg" alt="fb" class="iconF" />
+        <img src="../assets/icons/twitter.svg" alt="tw" class="iconF" />
+        <img src="../assets/icons/instagram.svg" alt="ig" class="iconF" />
       </div>
     </article>
   </section>
@@ -214,26 +176,15 @@
     <article class="footerMobile">
       <article class="footerMobileUp">
         <figure class="footerLogo">
-          <img
-            src="../assets/icons/logoWhite.svg"
-            alt="logoWhite"
-          />
+          <img src="../assets/icons/logoWhite.svg" alt="logoWhite" />
         </figure>
 
         <div class="footerMobileUpLinks">
           <a href="/library/index.html" class="homeLink">Home</a>
-          <a href="/library/src/pages/catalog.html" class="catalogLink"
-            >Catalog</a
-          >
-          <a href="/library/src/pages/about.html" class="aboutStoreLink"
-            >About Store</a
-          >
-          <a href="/library/src/pages/contact.html" class="contactUsLink"
-            >Contact Us</a
-          >
-          <a href="/library/src/pages/search.html" class="searchLink"
-            >Search</a
-          >
+          <a href="/library/src/pages/catalog.html" class="catalogLink">Catalog</a>
+          <a href="/library/src/pages/about.html" class="aboutStoreLink">About Store</a>
+          <a href="/library/src/pages/contact.html" class="contactUsLink">Contact Us</a>
+          <a href="/library/src/pages/search.html" class="searchLink">Search</a>
         </div>
       </article>
       <article class="footerMobileDown">
@@ -247,9 +198,13 @@
 
 
 
-  
-   
-   
-<script src="../scripts/contactPage/contact.js"></script>
+
+
+
+  <script src="../scripts/contactPage/contact.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.11.0/sweetalert2.min.js"
+    integrity="sha512-Wi5Ms24b10EBwWI9JxF03xaAXdwg9nF51qFUDND/Vhibyqbelri3QqLL+cXCgNYGEgokr+GA2zaoYaypaSDHLg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>

@@ -20,6 +20,7 @@ const bookNameInp = document.querySelector(".bookNameInp");
 const authorNameInp = document.querySelector(".authorNameInp");
 const bookUrlInp = document.querySelector(".bookUrlInp");
 const bookDescInp = document.querySelector(".bookDescInp");
+const publishedDateInp = document.querySelector(".publishedDateInp");
 const selectInput = document.querySelector(".bookCategoryInp");
 const bookFomrSubmitBtn = document.querySelector(".bookFomrSubmitBtn");
 
@@ -106,7 +107,7 @@ const createListItem = (data) => {
 
   img.src =
     data.volumeInfo.imageLinks?.smallThumbnail ??
-    "https://m.media-amazon.com/images/I/81G8e+64W8L._AC_UF894,1000_QL80_.jpg";
+    "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
   h1.textContent = data.volumeInfo.title;
   h2.textContent = data.volumeInfo.authors?.join(", ") ?? "Unknown author";
 
@@ -117,7 +118,7 @@ const createListItem = (data) => {
 
 const displayData = (data) => {
   results.innerHTML = "";
-  results.append(document.createElement("ul"));
+  const myUl = document.createElement("ul");
 
   if (data.totalItems != 0) {
     data.items.forEach((element) => {
@@ -125,11 +126,13 @@ const displayData = (data) => {
 
       listItemClicked(currentitem, element);
 
-      results.append(currentitem);
+      myUl.append(currentitem);
 
       searchIcon.style.opacity = 1;
       loading.classList.add("hideLoading");
     });
+
+    results.append(myUl);
   } else {
     const h1 = document.createElement("h1");
     h1.textContent = "No results found";
@@ -144,16 +147,14 @@ const displayData = (data) => {
 
 const listItemClicked = (currentItem, element) => {
   currentItem.addEventListener("click", () => {
-    !element.volumeInfo.imageLinks?.smallThumbnail &&
-      (element["currentImg"] =
-        "https://m.media-amazon.com/images/I/81G8e+64W8L._AC_UF894,1000_QL80_.jpg");
-
     bookNameInp.value = element.volumeInfo.title;
     authorNameInp.value =
       element.volumeInfo.authors?.join(", ") ?? "Unknown author";
     bookUrlInp.value =
-      element.volumeInfo.imageLinks?.thumbnail ?? element["currentImg"];
+      element.volumeInfo.imageLinks?.thumbnail ??
+      "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
     bookDescInp.value = element.volumeInfo.description ?? "No Description";
+    publishedDateInp.value = element.volumeInfo.publishedDate;
 
     results.innerHTML = "";
     searchInput.value = "";
@@ -191,38 +192,41 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (
-    bookNameInp.value != "" &&
-    authorNameInp.value != "" &&
-    bookUrlInp.value != "" &&
-    bookDescInp.value != ""
+    bookNameInp.value.trim() != "" &&
+    authorNameInp.value.trim() != "" &&
+    bookUrlInp.value.trim() != "" &&
+    bookDescInp.value.trim() != ""
   ) {
     const currentBook = {
-      bookTitle: bookNameInp.value,
-      bookAuthor: authorNameInp.value,
-      bookUrl: bookUrlInp.value,
-      bookDescription: bookDescInp.value,
+      bookTitle: bookNameInp.value.trim(),
+      bookAuthor: authorNameInp.value.trim(),
+      bookUrl: bookUrlInp.value.trim(),
+      bookPublishedDate: publishedDateInp.value.trim(),
+      bookDescription: bookDescInp.value.trim(),
       bookType: document.querySelector('input[name="bookType"]:checked').value,
       bookCategory: selectInput.disabled
-        ? newCategory.value
+        ? newCategory.value.trim()
         : selectInput.value,
       bookAddedTime: Date.now(),
+      bookComments: [],
     };
 
     console.log(currentBook);
 
-    let date1 = new Date("05/09/2024");
+    // let date1 = new Date("05/09/2024");
 
-    let diff = Math.round(
-      (1715421597974 - date1.getTime()) / (1000 * 3600 * 24)
-    );
+    // let diff = Math.round(
+    //   (1715421597974 - date1.getTime()) / (1000 * 3600 * 24)
+    // );
 
-    console.log(diff);
+    // console.log(diff);
 
     newCategory.value = "";
     bookNameInp.value = "";
     authorNameInp.value = "";
     bookUrlInp.value = "";
     bookDescInp.value = "";
+    publishedDateInp.value = "";
     selectInput.removeAttribute("disabled");
   }
 });
@@ -240,14 +244,14 @@ bookFomrSubmitBtnAbout.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (
-    bookNameAboutInp.value != "" &&
-    bookUrlAboutInp.value != "" &&
-    bookDescAboutInp.value != ""
+    bookNameAboutInp.value.trim() != "" &&
+    bookUrlAboutInp.value.trim() != "" &&
+    bookDescAboutInp.value.trim() != ""
   ) {
     const currentAboutData = {
-      bookTitle: bookNameAboutInp.value,
-      bookUrl: bookUrlAboutInp.value,
-      bookDescription: bookDescAboutInp.value,
+      bookTitle: bookNameAboutInp.value.trim(),
+      bookUrl: bookUrlAboutInp.value.trim(),
+      bookDescription: bookDescAboutInp.value.trim(),
     };
 
     console.log(currentAboutData);
@@ -268,7 +272,7 @@ function fetchOptions(data) {
   data.forEach((element) => {
     const option = document.createElement("option");
     option.textContent = element;
-    option.value = element;
+    option.value = element.toLowerCase();
 
     bookCategoryInp.append(option);
   });
@@ -277,10 +281,10 @@ function fetchOptions(data) {
 // =================================> DYNAMIC TABLES <===================================
 
 const joinUsFormDatas = [
-  { fullName: "ares", email: "ares@gmail" },
-  { fullName: "odin", email: "odin@gmail" },
-  { fullName: "thor", email: "thor@gmail" },
-  { fullName: "freya", email: "freya@gmail" },
+  { fullName: "ares", email: "ares@gmail.com" },
+  { fullName: "odin", email: "odin@gmail.com" },
+  { fullName: "thor", email: "thor@gmail.com" },
+  { fullName: "freya", email: "freya@gmail.com" },
 ];
 
 createJoinUsTable(joinUsFormDatas);
@@ -400,6 +404,17 @@ function createContactUsTable(data) {
     contactUsTableBody.append(tr);
   });
 }
+
+// ===============================> DELETE ELEMENT FROM BOOK TABLE <===================================
+
+booksTableBody.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("trashIcon") &&
+    confirm("Are you sure you want to delete this book?")
+  ) {
+    console.log("book deleted : ", e.target.closest(".bookTableRow"));
+  }
+});
 
 // =================================> RESPONSIVE JS <===================================
 

@@ -41,6 +41,14 @@ joinUsModalArea.addEventListener("click", (e) => {
   }
 });
 
+// ==================================> SHOW JOINER NAME <===================================
+
+(() => {
+  if (localStorage.getItem("joinerName"))
+    joinerName.textContent = localStorage.getItem("joinerName");
+  else joinerName.textContent = "Join Us";
+})();
+
 // ==================================> SHOW MODAL ALERT <===================================
 
 const alertMessageType = (type) => {
@@ -50,7 +58,7 @@ const alertMessageType = (type) => {
         sendJoinerInfoToDb();
 
         alertModal.classList.add("showSuccessAlert");
-        alertModal.children[0].textContent = `Thank you ${inputName.value}, for joining us!`;
+        alertModal.children[0].textContent = `Thank you ${inputName.value.trim()}, for joining us!`;
 
         alertModal.classList.add("showAlertModal");
 
@@ -59,7 +67,7 @@ const alertMessageType = (type) => {
           alertModal.children[0].textContent = `Please fill in all fields, or enter a valid email`;
           alertModal.classList.remove("showAlertModal");
 
-          localStorage.setItem("joinerName", inputName.value);
+          localStorage.setItem("joinerName", inputName.value.trim());
 
           joinerName.textContent = localStorage.getItem("joinerName");
 
@@ -83,103 +91,23 @@ const alertMessageType = (type) => {
 };
 
 joinUsModalBtn.addEventListener("click", () => {
-  if (inputName.value && inputEmail.value && inputEmail.value.includes("@"))
+  if (
+    inputName.value.trim() &&
+    inputEmail.value.trim() &&
+    inputEmail.value.includes("@")
+  )
     alertMessageType("success");
   else alertMessageType("error");
 });
-
-// ==================================> SHOW JOINER NAME <===================================
-
-(function () {
-  if (localStorage.getItem("joinerName")) {
-    joinerName.textContent = localStorage.getItem("joinerName");
-  } else {
-    joinerName.textContent = "Join Us";
-  }
-})();
 
 // ==================================> SEND JOINER INFO TO DB <===================================
 
 const sendJoinerInfoToDb = () => {
   const joinerInfo = {
-    name: inputName.value,
-    email: inputEmail.value,
+    name: inputName.value.trim(),
+    email: inputEmail.value.trim(),
   };
   console.log(joinerInfo);
 };
 
-// ==================================> Inputs value <=================================== //
-
-const sendButton = document.querySelector(".send-button");
-
-sendButton.addEventListener("click", () => {
-  const inputRows = document.querySelectorAll(".input-large, .input-note"); 
-  let isEmpty = false;
-  
-
-  inputRows.forEach(inputRow => {
-    var computedStyle = window.getComputedStyle(inputRow);
-    var displayValue = computedStyle.getPropertyValue('display');
-    const fieldName = inputRow.getAttribute("placeholder");
-
-    if(!inputRow.value.trim() && displayValue !== 'none'){
-      isEmpty = true
-      inputRow.style.borderColor = "red";
-
-      setTimeout(() => {
-        inputRow.style.borderColor = "#ccc"
-      }, "1000");
-    } 
-    
-    else {
-      inputRow.style.borderColor = "green";
-     
-     setTimeout(() => {
-        inputRow.style.borderColor = "#ccc"
-      }, "1000");
-    }
- 
-
-    inputRow.addEventListener("input", () => {
-      if (inputRow.value.trim()) {
-        inputRow.style.borderColor = "#ccc";
-      }
-    });
-  });
-  
-if (!isEmpty) {
-    const newData = {};
-    inputRows.forEach(inputRow => {
-      const fieldName = inputRow.getAttribute("placeholder");
-      newData[fieldName] = inputRow.value;
-    });
-    console.log(newData);
-
-    inputRows.forEach(inputRow => {
-      inputRow.value = "";
-    });
-  }
-});
-
-
-
-
-
-
-
-
-
-
-// ==================================> Inputs value <===================================//
-// _________________________________________________________________________________________//
-
-
-
-
-
-
-
-
-
-
-
+// =================================================================> YOUR CODE <==============================================================================
