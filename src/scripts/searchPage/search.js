@@ -122,16 +122,31 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 
 const swiperCard = new Swiper(".swiper", {
   direction: "horizontal",
-  // loop: true,
-
-  navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-  },
-
+  // loop: true, 
   speed: 800,
+  breakpoints: {
+    899: {
+      navigation: {
+        nextEl: null,
+        prevEl: null,
+      }, 
+    },
+    900: {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    },
+  },
+  navigation: { 
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
-                                                                 
+
+    
+
+
    //  MAIN  JS
 
    document.addEventListener("DOMContentLoaded", function () {
