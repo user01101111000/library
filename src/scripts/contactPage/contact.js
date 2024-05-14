@@ -108,25 +108,37 @@ const sendJoinerInfoToDb = () => {
   console.log(joinerInfo);
 };
 
-// ==================================> Inputs value <===================================
+// ==================================> Inputs value <=================================== //
 
 const sendButton = document.querySelector(".send-button");
 
 sendButton.addEventListener("click", () => {
   const inputRows = document.querySelectorAll(".input-large, .input-note"); 
   let isEmpty = false;
+  
 
   inputRows.forEach(inputRow => {
     var computedStyle = window.getComputedStyle(inputRow);
-    var displayPropertyValue = computedStyle.getPropertyValue('display');
+    var displayValue = computedStyle.getPropertyValue('display');
     const fieldName = inputRow.getAttribute("placeholder");
-    if (!inputRow.value.trim() && displayPropertyValue !== 'none') {
+
+    if(!inputRow.value.trim() && displayValue !== 'none'){
       isEmpty = true
       inputRow.style.borderColor = "red";
 
-    } else {
-      inputRow.style.borderColor = "#ccc";
+      setTimeout(() => {
+        inputRow.style.borderColor = "#ccc"
+      }, "1000");
+    } 
+    
+    else {
+      inputRow.style.borderColor = "green";
+     
+     setTimeout(() => {
+        inputRow.style.borderColor = "#ccc"
+      }, "1000");
     }
+ 
 
     inputRow.addEventListener("input", () => {
       if (inputRow.value.trim()) {
@@ -158,7 +170,16 @@ if (!isEmpty) {
 
 
 
-// ==================================> Inputs value <===================================
+// ==================================> Inputs value <===================================//
+// _________________________________________________________________________________________//
+
+
+
+
+
+
+
+
 
 
 
