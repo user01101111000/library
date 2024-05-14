@@ -1,0 +1,13 @@
+@import url("../general/commonStyle.css ");
+
+.navBar .navMenu a:nth-of-type(2) {
+  color: #e16a00;
+  text-decoration: underline !important;
+  font-weight: 700;
+}
+
+.test {
+  height: 80vh;
+  width: 100%;
+  background-color: red;
+}
