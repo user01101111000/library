@@ -4,52 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="test.css" />
   </head>
   <body>
     <main>
-      <!-- Search part -->
-<div class="text">
-<h2>Search</h2>
-<div class="input">
-<input class="search" type="search" placeholder="Add book name">
-<button>Search</button>
+                                                            <!-- Section One -->
+<button>&lt; back</button>
+
+<section  class="firstArea">
+<div class="bookAbout">
+  <p id="bookYear">2017</p>
+<h1 class="bookName">Order in Chaos</h1>
+<h5 class="addedDay">2 days ago added</h5><br>
+<p class="bookAuthor">Konstantin Koptelov</p>
+<p class="bookInfo"> s of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city.
+More details  </p>
+</div>
+<div class="bookImage">
+<img src="../../assets/images/image 2.png" >
+</div>
+</section>
+ 
+
+                                         <!-- Section Two -->
+<section class="secondArea">
+<div class="commentObvious">
+<input type="text"  placeholder=" your anonim comment..."  >
+<img class="sendIcon"  src="../../assets/icons/send.svg" >
+</div>
+                                                         <!-- Dinamic anonim comment div -->
+<div class="commentAnonymous">
+<div class="yourComment">
+<div class="headLine">
+<h4>anonim</h4>
+<p class="time">18:32 today</p>
+</div>
+<p class="comment">Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!"></p>
 </div>
 
+<div class="yourComment">
+<div class="headLine">
+<h4>anonim</h4>
+<p class="time">2 days ago</p>
 </div>
-
-<!-- Slider main container -->
-<div class="swiper">
-<!-- Additional required wrapper -->
-<div class="swiper-wrapper">
-<!-- Slides -->
-<div class="swiper-slide">
-<div class="aboutBook">
-<img src="./img/book.svg" >
-<div class="book">
-<h2> Order Book</h2>
-<div class="author">
-<h3> Author</h3>
-<p>We work without holidays and weekends! Residents of Kiev can receive an order on the day
-    of its registration. Customers from other cities of Ukraine can receive an order within
-    1-5 days, depending on the location of the settlement and the selected delivery method.
-    Orders over UAH 1000 are delivered free of charge *. You can see the available methods,
-    exact terms and cost of delivery during checkout in the order basket, after selecting
-    the delivery city </p>
+<p  class="comment">Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
 </div>
-
 </div>
-
-</div>
-
-</div>
-...
-</div>
-<!-- If we need navigation buttons -->
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
-
+</section>
 </main>
+
 
 
     <script src="test.js" type="module"></script>
