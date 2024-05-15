@@ -1,11 +1,13 @@
 @import url("../../styles/general/reset.css");
 
+
     
 
                                                           /* Section One */
   body{
     background-color: rgba(255, 250, 245, 1);
   }
+ 
   .firstArea{
     margin-top:  4rem;
     left: 12rem;
@@ -18,8 +20,8 @@
     font-size: 1rem;
     padding: 0.2rem 1.1rem;
     font-weight: 700;
-    margin-top: 8rem;
-    margin-left: 25rem;
+    margin-top: 9rem;
+    margin-left: 23rem;
  }
  #bookYear{
   margin-bottom: 1.5em ;
@@ -39,7 +41,7 @@
  .bookAbout{
   display: flex;
   flex-direction: column;
-  margin-left: 25rem;
+  margin-left: 23rem;
   background-color:rgba(255, 250, 245, 1);
  }
  .bookInfo{
@@ -100,7 +102,7 @@ font-size: 1em;
 .commentObvious{
   display: flex;
   flex-direction: row;
-  margin-left: 25rem;
+  margin-left: 23rem;
   margin-top: 10rem;
   background-color: grey;
   width: 42rem;
@@ -126,7 +128,7 @@ font-size:larger;
 .commentAnonymous{
   display: flex;
   flex-direction: column;
-  margin-left: 25rem;
+  margin-left: 23rem;
   margin-top: 10rem;
   width: 42rem;
 
