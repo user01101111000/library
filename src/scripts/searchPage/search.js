@@ -122,32 +122,20 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 
 const swiperCard = new Swiper(".swiper", {
   direction: "horizontal",
-  // loop: true, 
+  // loop: true,
+
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+
   speed: 800,
-  breakpoints: {
-    899: {
-      navigation: {
-        nextEl: null,
-        prevEl: null,
-      }, 
-    },
-    900: {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    },
-  },
-  navigation: { 
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
 });
 
     
 
 
-   //  MAIN  JS
+                                                                             //  MAIN  JS
 
    document.addEventListener("DOMContentLoaded", function () {
     const inputSearch = document.querySelector(".searchArea input");
@@ -184,7 +172,7 @@ const swiperCard = new Swiper(".swiper", {
                 const authorList = authors.map(author => `<h4 class="title_author">${author}</h4>`).join('');
                 slideArea.innerHTML += `
                   <div class="swiper-slide"> 
-                    <div class="aboutBook">
+                    <div class="book">
                       <img class="bookImage" src="${thumbnail}" alt="${title}" />
                       <div class="textBook">
                         <h2 class="bookName">${title}</h2>
