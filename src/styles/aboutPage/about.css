@@ -286,7 +286,8 @@ body{
   }
 }
   
-@media screen and (max-width:350px) {
+
+@media screen and (max-width:400px) {
   .main{
     width: 100%;
     overflow: hidden;
@@ -334,6 +335,8 @@ body{
     max-width: 90%;
     font-size: 1.406rem;
   }
-  
 }
+
+  
+
   
