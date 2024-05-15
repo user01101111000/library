@@ -7,19 +7,21 @@
 
 /* book page-in main hissesi */
 body{
-    background-color: rgb(253, 240, 246);
+    background-color: rgb(250, 241, 245);
     
 }
 
 .information{
-    margin-top: 10.9rem;
-    margin-left: 9.5rem;
+    padding-top: 10.9rem;
+    padding-left: 9.6rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     
 }
 .book-details{
     display: flex;
+    
+    
 }
 
 #goBackBtn{
@@ -30,7 +32,7 @@ body{
     font-size: 15px;
     padding: 4px 20px;
     font-weight: 700;
-    margin-bottom: 72px;
+    margin-bottom: 76px;
 }
 #bookYear{
     color: rgb(255, 255, 255);
@@ -60,11 +62,12 @@ body{
   line-height: 27px;
   font-size: 18px;  
 }
+.book-image{
+    margin-left: 8%;  
+     
+}
 #bookImg{   
-   margin-left: 10%;
-   margin-top: -115px;
-   padding: 13px;
-   width: 365px;    
+    margin-top: -7em;  
 }
 .comments-section{
     display: flex;
@@ -130,26 +133,26 @@ body{
 
 @media screen and (max-width:540px) {
 .information{
-    margin-left: 30px;
+    padding: 20px;
+    width: 100%;
     
 }
 #goBackBtn{
         width: 100px;
-        padding: 6px;
-    
-        
+        padding: 6px;  
     }
 #bookYear{
     padding: 6px;
     width: 90px;
 }
+.book-image{
+    margin-left: 10px;
+}
 #bookImg{
     width: 100%;
     height: 100%;
     padding-top: 100px;
-    margin-left: 0px;
-   padding-right: 35px;
-
+    
 }
 .bookAbout{
     padding-top: 50px;
@@ -161,20 +164,29 @@ body{
     display: flex;
     flex-direction: column-reverse;
 }
-.bookAbout h2{
+.bookInformation{
+    margin-top: 60px;   
+}
+#bookDescription{
+    justify-content: center;
+    text-align: center;
+    font-size:17px;
+    line-height: 30px;
+}
+.bookInformation h2, #bookAuthor{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    
 }
 .bookAbout h6{
     display: none
 }
-#bookAuthor, #bookDescription{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.comments-section ,.boxes{
+    display: none;
 }
+
+
     
 }
 
