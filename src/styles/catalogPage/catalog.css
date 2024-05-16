@@ -298,8 +298,8 @@ button.read-more {
   margin-top: 20px; 
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.swiper-button-prev1,
+.swiper-button-next1 {
   position: absolute !important;
   top: 58% !important;
   transform: translateY(-50%) !important;
@@ -307,9 +307,9 @@ button.read-more {
   /* margin-top: 10px; */
 }
 
-
-.swiper-button-next,
-.swiper-button-prev{
+/* ALL BOOKS SECTION BUTTON */
+.swiper-button-next1,
+.swiper-button-prev1{
   display: block !important;
   width: initial !important;
   height: initial !important;
@@ -320,13 +320,81 @@ button.read-more {
   /* display: none; */
 } 
 
-.swiper-button-prev{
+.swiper-button-prev1{
   left: 0 !important;
   }
 
-.swiper-button-next{
+.swiper-button-next1{
   right: 0 !important;
 }
+
+/* BESTSELLER PART */
+
+
+.swiper-button-prev2,
+.swiper-button-next2 {
+  position: absolute !important;
+  top: 58% !important;
+  transform: translateY(-50%) !important;
+  z-index: 9999 !important;
+  /* margin-top: 10px; */
+}
+
+
+.swiper-button-next2,
+.swiper-button-prev2{
+  display: block !important;
+  width: initial !important;
+  height: initial !important;
+  font-size: 3rem !important;
+  width: 40px; 
+  height: 40px;
+  color: #720418 !important;
+  /* display: none; */
+} 
+
+.swiper-button-prev2{
+  left: 0 !important;
+  }
+
+.swiper-button-next2{
+  right: 0 !important;
+}
+
+/* NEW RELEASES PART */
+
+
+.swiper-button-prev3,
+.swiper-button-next3 {
+  position: absolute !important;
+  top: 58% !important;
+  transform: translateY(-50%) !important;
+  z-index: 9999 !important;
+  /* margin-top: 10px; */
+}
+
+
+.swiper-button-next3,
+.swiper-button-prev3{
+  display: block !important;
+  width: initial !important;
+  height: initial !important;
+  font-size: 3rem !important;
+  width: 40px; 
+  height: 40px;
+  color: #720418 !important;
+  /* display: none; */
+} 
+
+.swiper-button-prev3{
+  left: 0 !important;
+  }
+
+.swiper-button-next3{
+  right: 0 !important;
+}
+
+
 
 
 

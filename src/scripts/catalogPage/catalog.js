@@ -122,8 +122,8 @@ let card__content1 = new Swiper('.card__content1', {
    grabCursor: true,
   
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next1',
+    prevEl: '.swiper-button-prev1',
   },
 
 
@@ -156,14 +156,14 @@ let card__content1 = new Swiper('.card__content1', {
 
 
 
-let card__content2 = new Swiper('.card__content2', {
+let swiper2 = new Swiper('.swiper2', {
   loop: true,
   spaceBetween: 32,
   grabCursor: true,
  
  navigation: {
-   nextEl: '.swiper-button-next',
-   prevEl: '.swiper-button-prev',
+   nextEl: '.swiper-button-next2',
+   prevEl: '.swiper-button-prev2',
  },
 
 
@@ -202,8 +202,8 @@ let card__content3 = new Swiper('.card__content3', {
   grabCursor: true,
  
  navigation: {
-   nextEl: '.swiper-button-next',
-   prevEl: '.swiper-button-prev',
+   nextEl: '.swiper-button-next3',
+   prevEl: '.swiper-button-prev3',
  },
 
 
@@ -241,15 +241,15 @@ let card__content3 = new Swiper('.card__content3', {
 // ============================Read More Button Click Function
 
 
-const readMoreButton = document.querySelector('.read-more');
+// const readMoreButton = document.querySelector('.read-more');
 
 
-readMoreButton.addEventListener('click', function() {
+// readMoreButton.addEventListener('click', function() {
 
-  const catalogHtml = document.querySelector('.hidden-html');
-  const bookHtml = document.querySelector('.visible-html');
+//   const catalogHtml = document.querySelector('.hidden-html');
+//   const bookHtml = document.querySelector('.visible-html');
 
-  catalogHtml.style.display ='none'
-  bookHtml.style.displa = 'block'
+//   catalogHtml.style.display ='none'
+//   bookHtml.style.displa = 'block'
 
-})
+// })
