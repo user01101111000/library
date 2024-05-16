@@ -14,7 +14,6 @@
   font-weight: 700;
 }
 
-
 body,
 html {
   background-color: #FFFAF5;
@@ -46,18 +45,6 @@ h1 {
   display: flex;
   gap: 35px;
 }
-
-input,
-textarea {
-
-  font-family: var(--font-crimson);
-}
-
-input,
-textarea::placeholder {
-  font-family: var(--font-crimson);
-}
-
 
 .input-large {
   width: 38.125rem;
@@ -104,7 +91,6 @@ textarea::placeholder {
 }
 
 
-
 input {
   padding-left: 1%;
 }
@@ -116,90 +102,62 @@ input {
 
 }
 
-textarea {
+textarea::placeholder{
+font-family: var(--font-crimson);
+font-weight: 500;
+color: #241400;
+}
+
+input::placeholder {
+  font-family: var(--font-crimson);
+  font-weight: 500;
+  color: #241400;
+}
+input {
+  font-family: var(--font-crimson);
+  font-weight: 500;
+  color: #241400;
+}
+
+textarea{
+  font-family: var(--font-crimson);
+  font-weight: 500;
+  color: #241400;
   resize: none;
-}
+  }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.modal p{
-  color: rgb(0, 0, 0);
-  font-family: var(--font-montserrat);
-  font-weight: 700;
-  font-size: 35px;
-  text-align: center;
-  margin-top: 45px;
-}
-
-.modal-content {
-  background-color: #ffffff;
-  margin: 12% auto; 
-  padding: 15px;
-  border: 4px solid #ff0000;
-  width: 85%; 
-  max-width: 450px; 
-  border-radius: 15px; 
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2); 
-  height: 200px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-
-@media (max-width: 2491px){
+@media (max-width: 2491px) {
   .form-container {
     margin-top: -2rem;
     width: 100%;
   }
+
   .send-button {
     width: 40%;
   }
+
   .input-large {
     width: 85%;
   }
+
   .row {
     width: 86%;
     margin: 0 auto;
   }
-  .input-note{
+
+  .input-note {
     width: 100%;
+    font-weight: 400;
+    color: #241400;
   }
 
   .form-container h1 {
     font-size: 36px;
     width: 86%;
     margin: 0 auto;
-    margin-top: 5rem; 
+    margin-top: 5rem;
 
-}
-
-input::placeholder {
-  font-weight: 400;
-  font-family: var(--font-crimson);
-  color: #241400;
-}
+  }
 
 }
 
@@ -208,13 +166,16 @@ input::placeholder {
     width: 100%;
     padding: 8%;
   }
+
   .send-button {
     width: 40%;
   }
+
   .row {
     width: 100%;
     margin: 0 auto;
   }
+
   .form-container h1 {
     font-size: 32px;
     width: 100%;
@@ -223,31 +184,27 @@ input::placeholder {
 }
 
 
- @media (max-width: 1024px) {
+@media (max-width: 1024px) {
   .form-container {
-    width:100% ;
+    width: 100%;
     padding: 8%;
   }
+
   .send-button {
-    width: 60% ;
+    width: 60%;
   }
+
   .form-container h1 {
     font-size: 30px;
     width: 95%;
-
-
   }
+
   .row {
     width: 95%;
     margin: 0 auto;
   }
-  input {
-    padding-left: 3%;
-  }
 
-
-
- }
+}
 
 @media (max-width: 768px) {
   .form-container {
@@ -264,10 +221,6 @@ input::placeholder {
     margin: 0 auto;
   }
 
-  .input-note {
-    display: none;
-  }
-
   .row {
     display: flex;
     flex-direction: column;
@@ -281,7 +234,6 @@ input::placeholder {
     text-align: center;
   }
 
-  
 }
 
 @media (max-width: 480px) {
@@ -299,36 +251,22 @@ input::placeholder {
   .send-button {
     width: 100%;
     height: 3.5rem;
-
     margin: 0 auto;
   }
-
-  .input-note {
-    display: none;
-  }
-
   .form-container h1 {
     font-size: 35px;
     width: 100%;
     text-align: center;
   }
 
-  input {
-    padding-left: 3%;
+  input{
     border-radius: 10px;
-    
-} 
 
-.modal-content{margin-top: 150px;
-  height:180px ;
-}
-.modal-content p{
-  font-size: 25px;
- }
+  }
 
+  textarea{
+    border-radius: 10px;
 
-
+  }
 
 }
-
- 
