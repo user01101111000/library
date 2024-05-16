@@ -193,6 +193,7 @@ body {
   font-family: var(--font-montserrat);
 }
 .catalogBoxesArea {
+  position: relative;
   width: 100%;
   gap: 2.25em;
   display: flex;

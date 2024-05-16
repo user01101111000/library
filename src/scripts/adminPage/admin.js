@@ -1,3 +1,128 @@
+// =================================> IMPORT FIREBASE <===================================
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  onValue,
+  push,
+  remove,
+  update,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA4Sb2LCfKwA3GW4R3VM9L34pTVqh6xnAY",
+  authDomain: "library-7fefd.firebaseapp.com",
+  projectId: "library-7fefd",
+  storageBucket: "library-7fefd.appspot.com",
+  messagingSenderId: "1078426865027",
+  appId: "1:1078426865027:web:47c0a65064eb5cd0493ab6",
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+// ==================================> DOM ASSIGMENTS <===================================
+
+// ==================================> FECTH CATEGORIES <===================================
+
+onValue(ref(database, "categories"), (snapshot) => {
+  bookCategoryInp.innerHTML = "";
+  if (snapshot.exists()) {
+    const categories = Object.values(snapshot.val());
+
+    categories.forEach((data) => {
+      const option = document.createElement("option");
+      option.textContent = data.category;
+      option.value =
+        data.category[0].toUpperCase() + data.category.slice(1).toLowerCase();
+
+      bookCategoryInp.append(option);
+    });
+  } else console.log("no categories");
+});
+
+// ==================================> FECTH BOOKS <===================================
+
+onValue(ref(database, "books"), (snapshot) => {
+  booksTableBody.innerHTML = "";
+  if (snapshot.exists()) {
+    const books = Object.entries(snapshot.val());
+    createBooksTable(books);
+  } else console.log("no books");
+});
+
+// ==================================> FECTH JOINERS <===================================
+
+onValue(ref(database, "joiners"), (snapshot) => {
+  joinUsTableBody.innerHTML = "";
+  if (snapshot.exists()) {
+    const joiners = Object.values(snapshot.val());
+
+    createJoinUsTable(joiners);
+  } else console.log("no joiners");
+});
+
+// ==================================> FECTH CONTACT <===================================
+
+onValue(ref(database, "contact"), (snapshot) => {
+  contactUsTableBody.innerHTML = "";
+  if (snapshot.exists()) {
+    const contact = Object.values(snapshot.val());
+
+    createContactUsTable(contact);
+  } else console.log("no contact");
+});
+
+// ==================================> ADMIN LOGIN FIREABSE <===================================
+
+function checkLogin(data) {
+  onValue(ref(database, "adminLogin"), (snapshot) => {
+    const login = snapshot.val();
+
+    if (data.username === login.username && data.password === login.password) {
+      alert("Login Successfully");
+      localStorage.setItem("loggedIn", true);
+
+      loginMain.style.display = "none";
+      adminMain.style.display = "flex";
+    } else alert("Login Failed");
+  });
+}
+
+// ==================================> UPDATE ABOUT STORE FIREABSE <===================================
+
+function updateAboutStoreData(data) {
+  update(ref(database, "aboutStore"), data);
+}
+
+// ==================================> SEND BOOK DATA TO FIREABSE <===================================
+
+function sendBookData(data) {
+  push(ref(database, "books"), data);
+}
+
+// ==================================> CHECK CATEGORIES <===================================
+
+function checkCategories(data) {
+  onValue(ref(database, "categories"), (snapshot) => {
+    if (snapshot.exists()) {
+      const categories = Object.values(snapshot.val());
+
+      const isExist = categories.some(
+        (currentCate) =>
+          currentCate.category.toLowerCase() === data.toLowerCase()
+      );
+
+      !isExist &&
+        push(ref(database, "categories"), {
+          category: data[0].toUpperCase() + data.slice(1).toLowerCase(),
+        });
+    } else console.log("no categories");
+  });
+}
+
 // ==================================> DOM ASSIGMENTS <===================================
 
 const loginMain = document.querySelector(".loginMain");
@@ -43,9 +168,23 @@ const booksTableBody = document.querySelector(".booksTableBody");
 const contactUsTableBody = document.querySelector(".contactUsTableBody");
 const bookTableBodyTemplate = document.querySelector(".bookTableBodyTemplate");
 
+// ==================================> HELPER FUNCTIONS <===================================
+
+function clearInputs() {
+  newCategory.value = "";
+  bookNameInp.value = "";
+  authorNameInp.value = "";
+  bookUrlInp.value = "";
+  bookDescInp.value = "";
+  publishedDateInp.value = "";
+  selectInput.value = "Science";
+  document.querySelector('input[value="new"]').checked = true;
+  selectInput.removeAttribute("disabled");
+}
+
 // ==================================> CHECK LOGGED IN <===================================
 
-(function () {
+(() => {
   document.querySelector(".adminMain").style.display = "none";
 
   if (
@@ -60,13 +199,10 @@ const bookTableBodyTemplate = document.querySelector(".bookTableBodyTemplate");
 // ==================================> LOGIN <===================================
 
 loginBtn.addEventListener("click", () => {
-  if (userName.value === "admin" && inputPassword.value === "admin") {
-    alert("Login Successfully");
-    localStorage.setItem("loggedIn", true);
-
-    loginMain.style.display = "none";
-    adminMain.style.display = "flex";
-  } else alert("Login Failed");
+  checkLogin({
+    username: userName.value,
+    password: inputPassword.value,
+  });
 });
 
 // ==================================> LOGOUT <===================================
@@ -136,7 +272,7 @@ const displayData = (data) => {
   } else {
     const h1 = document.createElement("h1");
     h1.textContent = "No results found";
-    h1.style.paddingBottom = "1em";
+    h1.style.padding = "1em";
     results.append(h1);
     searchIcon.style.opacity = 1;
     loading.classList.add("hideLoading");
@@ -154,7 +290,7 @@ const listItemClicked = (currentItem, element) => {
       element.volumeInfo.imageLinks?.thumbnail ??
       "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
     bookDescInp.value = element.volumeInfo.description ?? "No Description";
-    publishedDateInp.value = element.volumeInfo.publishedDate;
+    publishedDateInp.value = element.volumeInfo.publishedDate ?? "Unknown date";
 
     results.innerHTML = "";
     searchInput.value = "";
@@ -163,7 +299,7 @@ const listItemClicked = (currentItem, element) => {
 
 // =========> INPUT AND BUTTON LISTENERS <=========
 
-searchBtn.addEventListener("click", (e) => {
+searchBtn.addEventListener("click", () => {
   const value = searchInput.value;
 
   if (value) {
@@ -182,7 +318,7 @@ searchInput.addEventListener("keyup", (e) => {
   }
 });
 
-document.body.addEventListener("click", (e) => {
+document.body.addEventListener("click", () => {
   results.innerHTML = "";
 });
 
@@ -191,43 +327,73 @@ document.body.addEventListener("click", (e) => {
 bookFomrSubmitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (
-    bookNameInp.value.trim() != "" &&
-    authorNameInp.value.trim() != "" &&
-    bookUrlInp.value.trim() != "" &&
-    bookDescInp.value.trim() != ""
-  ) {
-    const currentBook = {
+  if (bookFomrSubmitBtn.value === "Add") {
+    console.log("work1");
+    if (
+      bookNameInp.value.trim() &&
+      authorNameInp.value.trim() &&
+      publishedDateInp.value.trim() &&
+      bookUrlInp.value.trim() &&
+      bookDescInp.value.trim()
+    ) {
+      const currentBook = {
+        bookTitle: bookNameInp.value.trim(),
+        bookAuthor: authorNameInp.value.trim(),
+        bookUrl: bookUrlInp.value.trim(),
+        bookPublishedDate: publishedDateInp.value.trim(),
+        bookDescription: bookDescInp.value.trim(),
+        bookType: document
+          .querySelector('input[name="bookType"]:checked')
+          .value.toLowerCase(),
+        bookCategory: selectInput.disabled
+          ? newCategory.value.trim()[0].toUpperCase() +
+            newCategory.value.trim().slice(1).toLowerCase()
+          : selectInput.value,
+        bookAddedTime: Date.now(),
+      };
+
+      sendBookData(currentBook);
+      checkCategories(currentBook.bookCategory);
+
+      // let date1 = new Date("05/09/2024");
+
+      // let diff = Math.round(
+      //   (1715421597974 - date1.getTime()) / (1000 * 3600 * 24)
+      // );
+
+      // console.log(diff);
+
+      clearInputs();
+    }
+  } else {
+    console.log("work2");
+    console.log(bookNameInp.dataset.id);
+    update(ref(database, "books/" + bookNameInp.dataset.id), {
       bookTitle: bookNameInp.value.trim(),
       bookAuthor: authorNameInp.value.trim(),
       bookUrl: bookUrlInp.value.trim(),
       bookPublishedDate: publishedDateInp.value.trim(),
       bookDescription: bookDescInp.value.trim(),
-      bookType: document.querySelector('input[name="bookType"]:checked').value,
+      bookType: document
+        .querySelector('input[name="bookType"]:checked')
+        .value.toLowerCase(),
       bookCategory: selectInput.disabled
-        ? newCategory.value.trim()
+        ? newCategory.value.trim()[0].toUpperCase() +
+          newCategory.value.trim().slice(1).toLowerCase()
         : selectInput.value,
       bookAddedTime: Date.now(),
-      bookComments: [],
-    };
+    });
 
-    console.log(currentBook);
+    bookFomrSubmitBtn.value = "Add";
 
-    // let date1 = new Date("05/09/2024");
+    checkCategories(
+      selectInput.disabled
+        ? newCategory.value.trim()[0].toUpperCase() +
+            newCategory.value.trim().slice(1).toLowerCase()
+        : selectInput.value
+    );
 
-    // let diff = Math.round(
-    //   (1715421597974 - date1.getTime()) / (1000 * 3600 * 24)
-    // );
-
-    // console.log(diff);
-
-    newCategory.value = "";
-    bookNameInp.value = "";
-    authorNameInp.value = "";
-    bookUrlInp.value = "";
-    bookDescInp.value = "";
-    publishedDateInp.value = "";
-    selectInput.removeAttribute("disabled");
+    clearInputs();
   }
 });
 
@@ -244,17 +410,17 @@ bookFomrSubmitBtnAbout.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (
-    bookNameAboutInp.value.trim() != "" &&
-    bookUrlAboutInp.value.trim() != "" &&
-    bookDescAboutInp.value.trim() != ""
+    bookNameAboutInp.value.trim() &&
+    bookUrlAboutInp.value.trim() &&
+    bookDescAboutInp.value.trim()
   ) {
     const currentAboutData = {
-      bookTitle: bookNameAboutInp.value.trim(),
-      bookUrl: bookUrlAboutInp.value.trim(),
-      bookDescription: bookDescAboutInp.value.trim(),
+      title: bookNameAboutInp.value.trim(),
+      imageUrl: bookUrlAboutInp.value.trim(),
+      description: bookDescAboutInp.value.trim(),
     };
 
-    console.log(currentAboutData);
+    updateAboutStoreData(currentAboutData);
 
     bookNameAboutInp.value = "";
     bookUrlAboutInp.value = "";
@@ -262,32 +428,7 @@ bookFomrSubmitBtnAbout.addEventListener("click", (e) => {
   }
 });
 
-// =================================> DYNAMIC OPTIONS <===================================
-
-const categories = ["Action", "Comedy", "Drama", "Fantasy", "Horror"];
-
-fetchOptions(categories);
-
-function fetchOptions(data) {
-  data.forEach((element) => {
-    const option = document.createElement("option");
-    option.textContent = element;
-    option.value = element.toLowerCase();
-
-    bookCategoryInp.append(option);
-  });
-}
-
-// =================================> DYNAMIC TABLES <===================================
-
-const joinUsFormDatas = [
-  { fullName: "ares", email: "ares@gmail.com" },
-  { fullName: "odin", email: "odin@gmail.com" },
-  { fullName: "thor", email: "thor@gmail.com" },
-  { fullName: "freya", email: "freya@gmail.com" },
-];
-
-createJoinUsTable(joinUsFormDatas);
+// =========================> CREATE JOIN US TABLE <=========================
 
 function createJoinUsTable(data) {
   data.forEach((element, index) => {
@@ -305,37 +446,7 @@ function createJoinUsTable(data) {
   });
 }
 
-const booksFormDatas = [
-  {
-    bookAuthor: "Nea Anna Simone",
-    bookCategory: "Action",
-    bookDescription:
-      'Are You Ready to Say "YES" to Yourself? "Finding Y.E.S.: Your Essential Self" is more than a book; it\'s an invitation to a life-changing adventure. Open its pages and let Nea Anna Simone\'s words ignite the flame within you. Say "YES" to your Essential Self, and embark on a transformative journey toward a life filled with purpose, passion, and boundless joy. In the hustle and bustle of our daily lives, we often find ourselves caught in a whirlwind of obligations and expectations, losing sight of the one person who truly matters the person staring back at us in the mirror. Renowned New York Times bestselling author Nea Anna Simone brings you a dose of inspiration and self-discovery in "Finding Y.E.S.: Your Essential Self." "Finding Y.E.S." is not just a book; it\'s your companion on the road to self-discovery to inspire you to cultivate self-love, pursue your passions, and navigate life with renewed clarity. Allow these pages to be the mirror reflecting the brilliance of Your Essential Self. Nea Anna Simone, a New York Times bestselling author, is celebrated for her ability to illuminate the human spirit. Through her writing, she has touched hearts and transformed lives worldwide. Her authenticity and compassion shine through, making her the perfect guide on your journey to rediscover your Essential Self.',
-    bookTitle: "Finding Y.E.S.",
-    bookUrl:
-      "http://books.google.com/books/content?id=Z4fwEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-  },
-  {
-    bookAuthor: "İsmail Tunalı",
-    bookCategory: "Action",
-    bookDescription:
-      "Kim demiş felsefe anlaşılmaz diye! İsmail Tunalı’nın birçok dile çevrilen Felsefeye Giriş kitabı, uzun soluklu bir birikimin ve yalın üslubun bireşiminin ürünüdür. İsmail Tunalı, siyaset, bilim, ahlak, sanat ve din felsefesinin temel problemlerini ve felsefe tarihine yön veren filozofların görüşlerini, örnek okuma metinleri eşliğinde ele almaktadır. Elinizdeki kitap, felsefe akımlarını kavramak isteyen gençler, yeni başlayanlar ve hafıza tazelemek isteyenler için hazırlandı.",
-    bookTitle: "Felsefeye Giriş",
-    bookUrl:
-      "http://books.google.com/books/content?id=LXdgEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-  },
-  {
-    bookAuthor: "Hakan Ertuğral",
-    bookCategory: "Action",
-    bookDescription:
-      "Generally, outside of the academic word, nomads are not considered as the part of the civilization process. Most of the times, due to the Eurocentric thoughts that were developed in the 19th century, scientific and technological improvements of the humanity were considered unique to Europe. Therefore, other people that were conquered by European armies were thought that they were completely out of the civilization process and the lived as ‘barbarians’ because they did not live or think like Europeans. According to this view, if they will civilize or they can be considered as ‘developed nation’, they had to live like Europeans, at least, they had to have same cultural attitudes or they must mimic. This bias made hard to understand how other cultures lived and what they developed in their material culture. However, during the 20th century, this linear and positivist understanding of history have been changed. In this book, first of all intellectual process on scientific progress was evaluated and then, the place where the Turks could be placed in this progress was examined.",
-    bookTitle: "History Of Chemistry in Ancient Turks (Yeditepe Yayınevi)",
-    bookUrl:
-      "http://books.google.com/books/content?id=0MrfEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-  },
-];
-
-createBooksTable(booksFormDatas);
+// =========================> CREATE BOOKS TABLE <=========================
 
 function createBooksTable(data) {
   data.forEach((element, index) => {
@@ -350,39 +461,59 @@ function createBooksTable(data) {
     const category = newRow.querySelector(".bookTableBodyCategory");
     const author = newRow.querySelector(".bookTableBodyAuthor");
 
+    const trashIcon = newRow.querySelector(".trashIcon");
+    const editIcon = newRow.querySelector(".editIcon");
+
     id.textContent = index + 1;
-    img.src = element.bookUrl;
-    title.textContent = element.bookTitle;
-    desc.textContent = element.bookDescription;
-    category.textContent = element.bookCategory;
-    author.textContent = element.bookAuthor;
+    img.src = element[1].bookUrl;
+    title.textContent = element[1].bookTitle;
+    desc.textContent = element[1].bookDescription;
+    category.textContent = element[1].bookCategory;
+    author.textContent = element[1].bookAuthor;
+
+    trashIcon.setAttribute("data-id", element[0]);
+    editIcon.setAttribute("data-id", element[0]);
+
+    trashIcon.addEventListener("click", () => {
+      console.log(trashIcon.dataset.id);
+      confirm("Are you sure you want to delete this book?") &&
+        remove(ref(database, "books/" + trashIcon.dataset.id));
+    });
+
+    editIcon.addEventListener("click", () => {
+      bookFomrSubmitBtn.value = "Update Book";
+
+      onValue(ref(database, "books/" + editIcon.dataset.id), (snapshot) => {
+        if (snapshot.exists()) {
+          const editedBook = snapshot.val();
+          console.log(editedBook);
+          console.log(editIcon.dataset.id);
+
+          bookNameInp.value = editedBook.bookTitle;
+          authorNameInp.value = editedBook.bookAuthor;
+          bookUrlInp.value = editedBook.bookUrl;
+          bookDescInp.value = editedBook.bookDescription;
+          publishedDateInp.value = editedBook.bookPublishedDate;
+
+          bookNameInp.setAttribute("data-id", element[0]);
+
+          selectInput.value = editedBook.bookCategory;
+
+          document
+            .querySelectorAll('input[name="bookType"]')
+            .forEach((input) => {
+              input.value.toLowerCase() == editedBook.bookType &&
+                (input.checked = true);
+            });
+        } else console.log("no edit books");
+      });
+    });
 
     booksTableBody.append(newRow);
   });
 }
 
-const contactUsTableDatas = [
-  {
-    fullName: "ares",
-    address: "Neftciler Birlesmis Statlari, aza vilayeti",
-    emailAddress: "ares@gmail.com",
-    phoneNumber: "(055)-070-1222-34-12",
-  },
-  {
-    fullName: "odin",
-    address: "Azadliq Birlesmis Statlari, ers vilayeti",
-    emailAddress: "odin@gmail.com",
-    phoneNumber: "(055)-070-3424-12-11",
-  },
-  {
-    fullName: "thor",
-    address: "Nizami Birlesmis Statlari, ter vilayeti",
-    emailAddress: "thor@gmail.com",
-    phoneNumber: "(055)-070-4322-12-77",
-  },
-];
-
-createContactUsTable(contactUsTableDatas);
+// =========================> CREATE CONTACT TABLE <=========================
 
 function createContactUsTable(data) {
   data.forEach((element, index) => {
@@ -392,29 +523,20 @@ function createContactUsTable(data) {
     const td3 = document.createElement("td");
     const td4 = document.createElement("td");
     const td5 = document.createElement("td");
+    const td6 = document.createElement("td");
 
     td1.textContent = index + 1;
     td2.textContent = element.fullName;
     td3.textContent = element.address;
-    td4.textContent = element.emailAddress;
+    td4.textContent = element.email;
     td5.textContent = element.phoneNumber;
+    td6.textContent = element.note;
 
-    tr.append(td1, td2, td3, td4, td5);
+    tr.append(td1, td2, td3, td4, td5, td6);
 
     contactUsTableBody.append(tr);
   });
 }
-
-// ===============================> DELETE ELEMENT FROM BOOK TABLE <===================================
-
-booksTableBody.addEventListener("click", (e) => {
-  if (
-    e.target.classList.contains("trashIcon") &&
-    confirm("Are you sure you want to delete this book?")
-  ) {
-    console.log("book deleted : ", e.target.closest(".bookTableRow"));
-  }
-});
 
 // =================================> RESPONSIVE JS <===================================
 
