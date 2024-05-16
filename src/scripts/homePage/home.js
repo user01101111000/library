@@ -1,3 +1,28 @@
+// =================================> IMPORT FIREBASE <===================================
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  onValue,
+  push,
+  remove,
+  update,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA4Sb2LCfKwA3GW4R3VM9L34pTVqh6xnAY",
+  authDomain: "library-7fefd.firebaseapp.com",
+  projectId: "library-7fefd",
+  storageBucket: "library-7fefd.appspot.com",
+  messagingSenderId: "1078426865027",
+  appId: "1:1078426865027:web:47c0a65064eb5cd0493ab6",
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
 // ==================================> DOM ASSIGMENTS <===================================
 
 const hamburger = document.querySelector(".iconH");
@@ -108,10 +133,10 @@ joinUsModalBtn.addEventListener("click", () => {
 
 const sendJoinerInfoToDb = () => {
   const joinerInfo = {
-    name: inputName.value.trim(),
+    fullName: inputName.value.trim(),
     email: inputEmail.value.trim(),
   };
-  console.log(joinerInfo);
+  push(ref(database, "joiners"), joinerInfo);
 };
 
 // ===========================================================================================================================
@@ -121,33 +146,25 @@ const sendJoinerInfoToDb = () => {
 // ===========================================================================================================================
 // ===========================================================================================================================
 
-// ==================================> FETCHING DATA <===================================
+// ==================================> FETCHING CATEGORIES <===================================
 
-const fetchData = async () => {
-  const response = await fetch("/library/src/scripts/homePage/data.json");
+(() => {
+  onValue(ref(database, "categories"), (snapshot) => {
+    if (snapshot.exists()) {
+      const categories = Object.values(snapshot.val());
 
-  if (!response.ok) throw Error(response.statusText);
-
-  const data = await response.json();
-
-  return data;
-};
-
-fetchData()
-  .then((data) => {
-    displayData(data);
-  })
-  .catch((err) => console.log(err))
-  .finally(() => {
-    loading.style.display = "none";
+      displayData(categories);
+    } else console.log("no categories");
   });
+})();
 
 // ==================================> DISPLAY DATA <===================================
 
 const displayData = (dataArray) => {
   dataArray.forEach((element) => {
-    catalogBoxesArea.append(createCatalogBox(element));
+    catalogBoxesArea.append(createCatalogBox(element.category));
   });
+  loading.style.display = "none";
 };
 
 // ==================================> CREATE CATALOG BOX <===================================

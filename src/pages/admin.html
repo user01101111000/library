@@ -180,7 +180,7 @@
 
         <!-- ================ BOOK FORM ================= -->
 
-        <section class="bookFormSec">
+        <section class="bookFormSec" id="bookFormSecUnique">
           <h1>Book Form</h1>
           <form class="bookForm">
             <article class="bookFormBox">
@@ -211,6 +211,7 @@
                 class="publishedDateInp"
               />
             </article>
+
             <article class="bookFormBox">
               <h1>Description</h1>
               <textarea
@@ -328,6 +329,7 @@
                 <th>Description</th>
                 <th>Category</th>
                 <th>Author</th>
+                <th>Edit</th>
                 <th>Delete</th>
               </tr>
             </thead>
@@ -344,6 +346,11 @@
                   <td class="bookTableBodyDesc"></td>
                   <td class="bookTableBodyCategory"></td>
                   <td class="bookTableBodyAuthor"></td>
+                  <td>
+                    <a href="#bookFormSecUnique"
+                      ><i class="fa-solid fa-pen-to-square editIcon"></i
+                    ></a>
+                  </td>
                   <td><i class="fa-solid fa-trash trashIcon"></i></td>
                 </tr>
               </template>
@@ -364,6 +371,7 @@
                 <th>Addres</th>
                 <th>Email Address</th>
                 <th>Phone Number</th>
+                <th>Note</th>
               </tr>
             </thead>
             <tbody class="contactUsTableBody"></tbody>
@@ -372,6 +380,6 @@
       </section>
     </main>
 
-    <script src="../scripts/adminPage/admin.js"></script>
+    <script src="../scripts/adminPage/admin.js" type="module"></script>
   </body>
 </html>

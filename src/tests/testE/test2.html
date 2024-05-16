@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="test2.css" />
 
     <link rel="stylesheet" href="../testE/swiper-bundle.min.css" />
   </head>
@@ -79,100 +79,74 @@
     <!-- ========================> ypur code <======================== -->
 
     <main class="main">
-      <!-- SEC 1 -->
-
-      <section class="sec1">
-        <article class="sec1Header">
-          <h1 class="sec1HeaderTitle">All Books</h1>
-
-          <!-- <article class="swiper">
-            <div class="swiper-wrapper">
-              <p class="category swiper-slide">Programming</p>
-              <p class="category swiper-slide">Psychology</p>
-              <p class="category swiper-slide">History</p>
-              <p class="category swiper-slide">Science</p>
-              <p class="category swiper-slide">Fiction</p>
-              <p class="category swiper-slide">Fantasy</p>
-              <p class="category swiper-slide">Programming</p>
-              <p class="category swiper-slide">Psychology</p>
-              <p class="category swiper-slide">History</p>
-              <p class="category swiper-slide">Science</p>
-              <p class="category swiper-slide">Fiction</p>
-              <p class="category swiper-slide">Fantasy</p>
-            </div>
-          </article> -->
+      <section class="home">
+        <article class="searchArea">
+          <h1>Search</h1>
+          <input type="search" placeholder="Search" class="searchInp" />
+          <button class="searchBtn">Search</button>
         </article>
 
-        <section class="swiper">
-          <div class="loading"></div>
-          <div class="cont swiper-wrapper">
-            <template class="cardTemp">
+        <article class="searchSwiper">
+          <section class="swiper">
+            <div class="cont swiper-wrapper">
               <div class="card swiper-slide">
-                <p class="newFlag">NEW</p>
                 <figure class="cardImg">
                   <img
-                    src="http://books.google.com/books/content?id=LXdgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
-                    alt="book"
+                    src="https://img.kitapyurdu.com/v1/getImage/fn:11635300/wh:true/wi:800"
+                    alt=""
                   />
                 </figure>
 
-                <div class="cardTitles">
-                  <h1 class="bookTitle">Felsefeye Giris</h1>
-                  <p class="bookAuthor">Ahmet Arslan</p>
+                <div class="cardTextArea">
+                  <h1 class="cardTitle">Felsefeye Giris</h1>
+                  <p class="cardAuthor">Ahmet Arslan</p>
+                  <p class="cardDesc">
+                    We work without holidays and weekends! Residents of Kiev can
+                    receive an order on the day of its registration. Customers
+                    from other cities of Ukraine can receive an order within 1-5
+                    days, depending on the location of the settlement and the
+                    selected delivery method. Orders over UAH 1000 are delivered
+                    free of charge *. You can see the available methods, exact
+                    terms and cost of delivery during checkout in the order
+                    basket, after selecting the delivery city
+                  </p>
                 </div>
-
-                <button class="readMore">READ MORE</button>
               </div>
-            </template>
-          </div>
 
-          <div class="swiper-button-prev">
-            <img src="../../assets/icons/prev.svg" alt="" class="customPrev" />
-          </div>
-          <div class="swiper-button-next">
-            <img src="../../assets/icons/next.svg" alt="" class="customNext" />
-          </div>
-        </section>
-      </section>
+              <template class="cardTemp">
+                <div class="card swiper-slide">
+                  <figure class="cardImg">
+                    <img
+                      src="https://img.kitapyurdu.com/v1/getImage/fn:11635300/wh:true/wi:800"
+                      alt=""
+                    />
+                  </figure>
 
-      <!-- SEC 2 -->
+                  <div class="cardTextArea">
+                    <h1 class="cardTitle"></h1>
+                    <p class="cardAuthor"></p>
+                    <p class="cardDesc"></p>
+                  </div>
+                </div>
+              </template>
+            </div>
 
-      <section class="sec2">
-        <article class="sec2Header">
-          <h1 class="sec2HeaderTitle">Bestseller</h1>
+            <div class="swiper-button-prev">
+              <img
+                src="../../assets/icons/prev.svg"
+                alt=""
+                class="customPrev"
+              />
+            </div>
+            <div class="swiper-button-next">
+              <img
+                src="../../assets/icons/next.svg"
+                alt=""
+                class="customNext"
+              />
+            </div>
+          </section>
         </article>
-
-        <section class="swiper">
-          <div class="loading"></div>
-          <div class="cont2 swiper-wrapper"></div>
-
-          <div class="swiper-button-prev">
-            <img src="../../assets/icons/prev.svg" alt="" class="customPrev" />
-          </div>
-          <div class="swiper-button-next">
-            <img src="../../assets/icons/next.svg" alt="" class="customNext" />
-          </div>
-        </section>
-      </section>
-
-      <!-- SEC 3 -->
-
-      <section class="sec3">
-        <article class="sec3Header">
-          <h1 class="sec3HeaderTitle">New</h1>
-        </article>
-
-        <section class="swiper">
-          <div class="loading"></div>
-          <div class="cont3 swiper-wrapper"></div>
-
-          <div class="swiper-button-prev">
-            <img src="../../assets/icons/prev.svg" alt="" class="customPrev" />
-          </div>
-          <div class="swiper-button-next">
-            <img src="../../assets/icons/next.svg" alt="" class="customNext" />
-          </div>
-        </section>
       </section>
     </main>
 
@@ -264,6 +238,6 @@
 
     <script src="../testE/swiper-bundle.min.js"></script>
 
-    <script src="test.js" type="module"></script>
+    <script src="test2.js" type="module"></script>
   </body>
 </html>

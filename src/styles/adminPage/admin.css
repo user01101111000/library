@@ -642,6 +642,12 @@ tbody > tr:nth-of-type(even) {
   color: red;
   font-size: 1.3em;
 }
+.editIcon{
+  cursor: pointer;
+  color: orange;
+  font-size: 1.3em;
+
+}
 
 .bookTableTitle {
   display: flex;

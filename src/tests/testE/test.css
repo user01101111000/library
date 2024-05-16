@@ -1,15 +1,228 @@
 @import url("../../styles/general/reset.css");
-
-@import url("/library/src/styles/general/commonStyle.css");
-
+@import url("../../styles/general/fonts/montserratFont.css");
+@import url("../../styles/general/commonStyle.css");
+@import url("../../styles/general/loadingSpinner.css");
 .navBar .navMenu a:nth-of-type(2) {
   color: #e16a00;
   text-decoration: underline !important;
   font-weight: 700;
 }
-
-.test {
-  height: 80vh;
+.loading {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 0.2rem solid black;
+  border-top: 0.2rem solid transparent;
+}
+body {
+  background-color: #fffaf5;
+}
+/* =====================================> MAIN <=================================== */
+.main {
+  padding: 5% 7%;
   width: 100%;
+  background-color: #fffaf5;
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-next::after {
+  display: none;
+}
+
+/* =====================================> SECTION1 <=================================== */
+
+.sec1 {
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  padding: 20px !important ;
+  background-color: #fffaf5;
+}
+.swiper-wrapper {
+  width: 100%;
+}
+
+.sec1Header {
+  padding-inline: 1.2em;
+  width: 100%;
+
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sec1HeaderTitle {
+  font-size: 1.5em;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* .categoriesDiv {
   background-color: red;
+  width: 50%;
+} */
+
+.categoriesDiv p {
+  font-size: 0.9em;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+/* .cateContainer {
+  width: 100%;
+}
+.cateContent {
+  width: 200px;
+} */
+
+/* =====================================> SECTION2 <=================================== */
+
+.sec2 {
+  width: 100%;
+}
+
+.sec2Header {
+  text-align: center;
+  width: 100%;
+}
+.sec2HeaderTitle {
+  flex: 1;
+  font-size: 1.5em;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* =====================================> SECTION2 <=================================== */
+
+.sec3 {
+  width: 100%;
+}
+
+.sec3Header {
+  text-align: center;
+  width: 100%;
+}
+.sec3HeaderTitle {
+  flex: 1;
+  font-size: 1.5em;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* =====================================> CARD <=================================== */
+
+.card {
+  position: relative;
+  font-size: 16px;
+  background-color: white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  gap: 0.7em;
+}
+
+.cardImg {
+  width: 8.5em;
+  height: 14.5em;
+}
+.cardImg img {
+  height: 100%;
+  width: 100%;
+  object-fit: fit;
+}
+
+.cardTitles {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9em;
+}
+
+.cardTitles > p,
+.cardTitles > h1 {
+  width: 9em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.readMore {
+  width: 9em;
+  background-color: #e16a00;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 900;
+  font-size: 0.8em;
+  padding: 10px 0;
+  box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+  cursor: pointer;
+}
+.newFlag {
+  top: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #eb5757;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.6em;
+  padding: 3px 10px;
+  font-weight: 900;
+  color: white;
+}
+/* =====================================> MEDIA QUERIES <=================================== */
+
+@media screen and (max-width: 1400px) {
+  .card {
+    font-size: 15px;
+  }
+  .sec1Header {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .card {
+    font-size: 13px;
+  }
+  .sec1Header {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .sec1Header {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .card {
+    font-size: 12px;
+  }
+  .sec1Header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .categoriesDiv {
+    justify-content: start;
+  }
+}
+@media screen and (max-width: 420px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
 }
