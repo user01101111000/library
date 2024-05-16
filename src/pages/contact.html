@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="../styles/general/reset.css" />
   <link rel="stylesheet" href="../styles/contactPage/contact.css" />
 
-  <link rel="shortcut icon" href="../assets/icons/booksStackWhite.svg"
-   type="image/x-icon" >
+  <link rel="shortcut icon" href="../assets/icons/booksStackWhite.svg" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </head>
 
 <body>
@@ -76,48 +78,26 @@
       <div class="row">
         <input type="text" class="input-large" id="username" placeholder="Full Name" onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Full Name'">
-       
+
         <input type="email" class="input-large" id="input-email" placeholder="Email" onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Email'">
-
-          <div id="myModal" class="modal">
-            <div class="modal-content">
-              <p>Please enter a valid email</p>
-            </div>
-          </div>
-
       </div>
 
       <div class="row">
         <input type="text" class="input-large" placeholder="Address" onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Adress'">
-        <input type="text" class="input-large" id="phone-input" pattern="[1-9]"  placeholder="Phone" onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'Phone'">
 
-          <div id="myModal-2" class="modal">
-            <div class="modal-content">
-              <p>Please enter a valid number</p>
-            </div>
-          </div>
-          
+        <input type="tel" class="input-large" id="phone-input" pattern="[1-9]" placeholder="Phone"
+          onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'">
       </div>
       <div class="row">
-        <textarea class="input-note" placeholder="Note" onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'Note'" ></textarea>
+        <textarea class="input-note" placeholder="Notes (optional)" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Notes (optional)'"></textarea>
       </div>
 
       <div class="button-container">
         <button class="send-button">Send</button>
       </div>
-
-      <div id="myModal-3" class="modal">
-        <div class="modal-content">
-          <p>Please fill in the information</p>
-        </div>
-      </div>
-
-
-
     </div>
   </div>
 
