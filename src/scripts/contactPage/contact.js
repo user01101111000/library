@@ -172,7 +172,7 @@ sendButton.addEventListener("click", () => {
         title: "Attention...",
         text: "Please enter a valid number!"
       });
-    }
+    } 
 
     if (isEmpty) {
       Swal.fire({
@@ -181,6 +181,7 @@ sendButton.addEventListener("click", () => {
         text: "Please fill in the information!",
       });
     }
+  
   } else {
     const newData = {};
     inputRows.forEach(inputRow => {
