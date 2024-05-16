@@ -10,6 +10,342 @@
   font-weight: 700;
 }
 
+
+
+/* YENI BOOK PAGE CSS */
+body{
+  background: #FFFAF5;
+ }
+
+ main{
+  padding-inline: 8%;
+  margin-bottom: 12rem;
+ } 
+
+
+
+ /* ================================== SECTION 1 ============================= */
+
+ .firstArea{
+ 
+  justify-content: start;
+  display: flex;
+ 
+ } 
+
+ /* ----------BACK BUTTON------- */
+  button{
+  margin-top: 11.1em;
+  width: 7.5em;
+  height: 2.5em;
+  background-color: #E16A00;
+   border: none;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+  padding: 0.25em 1,25em;
+ 
+  color: #FFF;
+font-family: Montserrat;
+font-size: 12px;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; 
+text-transform: uppercase;
+
+} 
+
+/* -----------YEAR PART-------------- */
+#bookYear{
+  margin-top: 5rem;
+  padding-left: 1.5em;
+  width: 6em;
+  height: 2.1em;
+  background-color:  #2F80ED;
+  border-radius: 0.25em;
+ 
+   justify-content: start;
+  color: #FFF;
+  font-family: Montserrat;
+font-size: 0.75em;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; 
+
+} 
+
+/* ----------BOOK NAME PART */
+ .bookName{
+  width: 17em;
+
+color: #241400;
+font-family: Montserrat;
+font-size: 2.2em;
+font-style: normal;
+font-weight: 700;
+line-height: 196.187%; 
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+} 
+
+/* ------------WHEN ADDED THE BOOK ------------- */
+.addedDay{
+ color: #241400;
+ font-family: Montserrat;
+font-size: 1em;
+font-style: normal;
+font-weight: 700;
+line-height: 196.187%; 
+margin-bottom: 0.5em;
+margin-top: -0.8em;
+} 
+
+/* ------------------AUTHOR NAME PART--------- */
+.authorName{
+  color: #241400;
+  font-family: Montserrat;
+  font-size: 1.3em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+   margin-bottom: 0.1em;
+
+   overflow: hidden;       
+   text-overflow: ellipsis;
+   white-space: nowrap; 
+
+} 
+
+
+/* ----------------------BOOK DESCRIPTION------------ */
+
+.bookInfo{
+  width: 35em;
+   height: 15rem;
+  color: #241400;
+font-family: Montserrat;
+font-size: 1.12em;
+font-style: normal;
+font-weight: 400;
+line-height: 196.187%; /* 35.314px */
+/* display: flex; */
+/* flex-direction: column;  */
+/* justify-content: center; */
+/* display: -webkit-box; */
+/* -webkit-line-clamp: 7; */
+/* overflow: hidden; */
+/* text-overflow: ellipsis; */
+
+ } 
+
+
+
+
+/* ------------------IMAGE PART------------ */
+ .bookImage{
+  margin-left: 12em;
+   width: 23.6em;
+  height: 33em;
+ }
+
+ .bookImage img{
+  position: relative;
+  margin-top: -2em;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+ } 
+
+
+
+ /* --------------NEW BOOK SIGN --------------- */
+
+ 
+ .new-sign{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  width: 5.8em;
+height: 1.75em;
+color: #FFF;
+font-family: Montserrat;
+font-size: 0.75em;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; 
+text-transform: uppercase;
+
+ }
+
+ 
+ .new-sign{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 15px;
+  background-color: #EB5757;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 8px 0px #E16A0030;
+  z-index: 1; 
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 17.66px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+ }  
+
+
+
+ /* =================================== SECOND AREA ======================== */
+
+ /* .secondArea{
+    display: flex;
+  flex-direction: column;
+  justify-content: start;
+ } */
+
+ /* .commentObvious{
+  display: flex;
+  } */
+
+ /* .anonim-input{
+  width: 31em;
+  height: auto;
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 0 10px 2px rgb(196, 186, 186);
+   padding: 0.6em;
+  padding-left: 2.3em;
+  font-size: 1.2rem;
+  border: none;
+  color: #232323;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: 1px;
+
+} */
+/* -----------SEND ICON----------- */
+ 
+/* .sendIcon{
+  border-radius: 0.3rem;
+background-color: #E16A00;
+width: 3.2em;
+height: 3.2em;
+/* width: 1.7em; */
+/* height: 1.7em; */
+/* flex-shrink: 0;
+position: relative;
+    z-index: 1;
+
+}  */
+
+/* Umumi div hansiki dinamik gelecek olan commentleri saxlayir */
+/* .commentAnonymous{
+  display: flex;
+  flex-direction: column;
+} */
+
+/* BU DINAMIK DIVIN OZUDUR */
+/* .yourComment{
+  width: 40em;
+  background-color: rgb(253, 253, 253);
+  box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
+  width: 55%;
+  padding: 0.9;
+  
+  font-size: 0.8rem;
+  margin-top: 3.4em;
+  border-radius: 0.3rem;
+} */
+
+
+/* BU HISSEYE YENIDEN BAX GORUNMURDU DEYISIKLIK */
+
+/* .anonim{
+  display: flex;
+} */
+/* ANONIM YAZISI */
+/* .anonim h4{
+  color: #232323;
+font-family: Rubik;
+font-size: 1rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+} */
+/* NECE GUN EVVEL YAZILDIGI */
+/* 
+.anonim p{
+  color: #232323;
+font-family: Rubik;
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+/* display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+overflow: hidden;
+text-overflow: ellipsis;
+max-height: calc(1.2rem * 4);
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 375px){
+      .bookAbout{
+        width: 20%;
+      }
+}  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* :root {
   --font-montserrat: "Montserrat", sans-serif;
   --font-roboto: "Roboto", sans-serif;
@@ -814,3 +1150,186 @@ line-height: 196.187%; /* 23.542px */
     }                                    */ 
 
 
+    @import url("../general/commonStyle.css ");
+
+
+    .navBar .navMenu a:nth-of-type(2) {
+      color: #e16a00;
+      text-decoration: underline !important;
+      font-weight: 700;
+    }
+    
+    
+    /* book page-in main hissesi */
+    body{
+      background-color: rgb(250, 241, 245);
+    }
+    
+    main{
+      padding-inline: 8%;
+    }
+    .information{
+      padding-top: 10.9rem;
+      padding-left: 9.6rem;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+    }
+    .book-details{
+      display: flex;
+    }
+    #goBackBtn{
+      background-color: rgb(226, 110, 27);
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      padding: 4px 20px;
+      font-weight: 700;
+      margin-bottom: 76px;
+    }
+    #bookYear{
+      color: rgb(255, 255, 255);
+      background-color: royalblue;
+      width: 69px;
+      text-align: center;
+      padding: 3px 0;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .bookAbout h2{
+      margin-bottom: 5px;
+      font-size: 32px;
+    }
+    .bookAbout h6{
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    #bookAuthor{
+     margin-bottom: 15px;
+     font-size: 20px;
+    }
+    #bookDescription{
+    line-height: 27px;
+    font-size: 18px;
+    }
+    .book-image{
+      width: 21.6em;
+      height: 31em;
+      margin-left: 8%;
+    }
+    .bookImg{
+      margin-top: -7em;
+      object-fit: cover;
+      width: 100%;
+    }
+    .comments-section{
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+    }
+    #inputAnonim{
+      width: 55%;
+      padding: 13px;
+      padding-left: 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 0 10px 2px rgb(196, 186, 186);
+    }
+    #sendSvg{
+      background-color: rgb(221, 108, 27);
+      border-radius: 5px;
+      padding: 14px;
+      text-align: center;
+      width: 45px;
+      margin-left: -40px;
+      position: relative;
+      z-index: 1;
+    }
+    .anonim{
+      display: flex;
+      align-items: center;
+      padding-bottom: 15px;
+      padding-top: 15px;
+    }
+    .anonim h6{
+      font-size: 15px;
+    }
+    .dinamic-time{
+      padding-left: 23px;
+    }
+    .comment-box1{
+      background-color: rgb(253, 253, 253);
+      box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
+      width: 55%;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 55px;
+      border-radius: 5px;
+    }
+    #comment{
+      line-height: 25px;
+    }
+    .comment-box2{
+      background-color: rgb(253, 253, 253);
+      box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
+      width: 55%;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 55px;
+      border-radius: 5px;
+    }
+                                      /* BOOK PAGE-IN MOBILE HISSESI  */
+    @media screen and (max-width:540px) {
+    .information{
+      padding: 20px;
+      width: 100%;
+    }
+    #goBackBtn{
+          width: 100px;
+          padding: 6px;
+      }
+    #bookYear{
+      padding: 6px;
+      width: 90px;
+    }
+    .book-image{
+      margin-left: 10px;
+    }
+    .bookImg{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding-top: 100px;
+    }
+    .bookAbout{
+      padding-top: 50px;
+      padding-bottom: 0px;
+      width: 100%;
+    }
+    .book-details{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .bookInformation{
+      margin-top: 60px;
+    }
+    #bookDescription{
+      justify-content: center;
+      text-align: center;
+      font-size:17px;
+      line-height: 30px;
+    }
+    .bookInformation h2, #bookAuthor{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bookAbout h6{
+      display: none
+    }
+    .comments-section ,.boxes{
+      display: none;
+    }
+    }

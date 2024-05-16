@@ -1,13 +1,322 @@
 @import url("../general/commonStyle.css ");
 
+
 .navBar .navMenu a:nth-of-type(2) {
   color: #e16a00;
   text-decoration: underline !important;
   font-weight: 700;
 }
 
-.test {
-  height: 80vh;
+ /* MAIN PART OF ABOUTPAGE CSS */
+  body{
+  background: #FFFAF5;
+ }
+
+ main{
+  padding-inline: 8%;
+  margin-bottom: 12rem;
+ } 
+
+
+
+ /* ================================== SECTION 1 ============================= */
+
+ .firstArea{
+ 
+  justify-content: start;
+  display: flex;
+ 
+ } 
+
+ /* ----------BACK BUTTON------- */
+  button{
+  margin-top: 11.1em;
+  width: 7.5em;
+  height: 2.5em;
+  background-color: #E16A00;
+   border: none;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+  padding: 0.25em 1,25em;
+ 
+  color: #FFF;
+font-family: Montserrat;
+font-size: 12px;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; 
+text-transform: uppercase;
+
+} 
+
+/* -----------YEAR PART-------------- */
+#bookYear{
+  margin-top: 5rem;
+  padding-left: 1.5em;
+  width: 6em;
+  height: 2.1em;
+  background-color:  #2F80ED;
+  border-radius: 0.25em;
+ 
+   justify-content: start;
+  color: #FFF;
+  font-family: Montserrat;
+font-size: 0.75em;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; 
+
+} 
+
+/* ----------BOOK NAME PART */
+ .bookName{
+  width: 17em;
+
+color: #241400;
+font-family: Montserrat;
+font-size: 2.2em;
+font-style: normal;
+font-weight: 700;
+line-height: 196.187%; 
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+} 
+
+/* ------------WHEN ADDED THE BOOK ------------- */
+.addedDay{
+ color: #241400;
+ font-family: Montserrat;
+font-size: 1em;
+font-style: normal;
+font-weight: 700;
+line-height: 196.187%; 
+margin-bottom: 0.5em;
+margin-top: -0.8em;
+} 
+
+/* ------------------AUTHOR NAME PART--------- */
+.authorName{
+  color: #241400;
+  font-family: Montserrat;
+  font-size: 1.3em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+   margin-bottom: 0.1em;
+
+   overflow: hidden;       
+   text-overflow: ellipsis;
+   white-space: nowrap; 
+
+} 
+
+
+/* ----------------------BOOK DESCRIPTION------------ */
+
+.bookInfo{
+  width: 35em;
+   height: 15rem;
+  color: #241400;
+font-family: Montserrat;
+font-size: 1.12em;
+font-style: normal;
+font-weight: 400;
+line-height: 196.187%; /* 35.314px */
+display: -webkit-box;
+-webkit-line-clamp: 7;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+
+ } 
+
+
+
+
+/* ------------------IMAGE PART------------ */
+ .bookImage{
+  margin-left: 12em;
+   width: 23.6em;
+  height: 33em;
+ }
+
+ .bookImage img{
+  position: relative;
+  margin-top: -2em;
   width: 100%;
-  background-color: red;
+  height: 100%;
+  /* object-fit: cover; */
+  
+ } 
+
+
+
+ /* --------------NEW BOOK SIGN --------------- */
+
+ 
+ /* .new-sign{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  width: 5.8em;
+height: 1.75em;
+color: #FFF;
+font-family: Montserrat;
+font-size: 0.75em;
+font-style: normal;
+font-weight: 900;
+line-height: 196.187%; 
+text-transform: uppercase;
+
+ } */
+
+/*  
+ .new-sign{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 15px;
+  background-color: #EB5757;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 8px 0px #E16A0030;
+  z-index: 1; 
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 17.66px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+ }   */
+
+
+
+ /* =================================== SECOND AREA ======================== */
+
+ .secondArea{
+    display: flex;
+  flex-direction: column;
+  justify-content: start;
+ } 
+
+ .commentObvious{
+  display: flex;
+  } 
+
+ .anonim-input{
+  width: 31em;
+  height: auto;
+  margin-top: 5em;
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 0 10px 2px rgb(196, 186, 186);
+   padding: 0.6em;
+  padding-left: 2.3em;
+  font-size: 1.2rem;
+  border: none;
+  color: #232323;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: 1px;
+
+} 
+/* -----------SEND ICON----------- */
+ 
+.sendIcon{
+  border-radius: 0.3rem;
+
+padding: 1rem;
+background-color: #E16A00;
+margin-top: 6em;
+width: 3.7em;
+height: 3.7em;
+/* width: 1.7em; */
+/* height: 1.7em; */
+flex-shrink: 0;
+position: relative;
+    z-index: 1;
+
+ }  
+
+/* Umumi div hansiki dinamik gelecek olan commentleri saxlayir */
+ .commentAnonymous{
+  display: flex;
+  flex-direction: column;
+} 
+
+/* BU DINAMIK DIVIN OZUDUR */
+.yourComment{
+  width: 40.5em;
+  font-family: Rubik;
+  background-color: rgb(253, 253, 253);
+  box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
+  /* width: 55%; */
+  padding: 2em;
+  
+  font-size: 1rem;
+  margin-top: 3.4em;
+  border-radius: 0.3rem;
+} 
+
+
+/* BU HISSEYE YENIDEN BAX GORUNMURDU DEYISIKLIK */
+
+.anonim{
+  display: flex;
+  padding-bottom: 1em;
+} 
+/* ANONIM YAZISI */
+.anonim h4{
+ 
+  color: #232323;
+font-family: Rubik;
+font-size: 1rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+} 
+/* NECE GUN EVVEL YAZILDIGI */
+
+.time{
+  margin-left: 1rem;
 }
+.anonim p{
+  color: #232323;
+font-family: Rubik;
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; 
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+overflow: hidden;
+text-overflow: ellipsis;
+max-height: calc(1.2rem * 4);
+} 
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 375px){
+      .bookAbout{
+        width: 20%;
+      }
+}  */
+
+
