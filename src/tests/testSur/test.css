@@ -3,8 +3,7 @@
 
     
 
-                                                          /* Section One */
-  body{
+ body{
     background-color: rgba(255, 250, 245, 1);
   }
  
@@ -46,13 +45,15 @@
  }
  .bookInfo{
 margin-top: 2em;
-width: 42rem;
+width: 45rem;
 height: 15rem;
 font-family: Montserrat;
 font-size: 1.2em;
 font-weight: 400;
 line-height: 2rem;
 text-align: left;
+display: flex;
+gap:100px;
  }
  .bookName{
 width: 18rem;
@@ -84,27 +85,28 @@ font-size: 1em;
   height: 150%;
  }
  img{
-  margin-left: 15%;
+  margin-left: 10%;
    margin-top: -6em;
    padding: 13px;
-   width: 24rem;  
+   width: 24rem; 
+ 
   
  }
 
 
-                                                                    /* Section Two */
+
+                                                                   
 
 .secondArea{
   display: flex;
   flex-direction: column;
 }
-                                                                    /* Obvious comment*/
+                                                                 
 .commentObvious{
   display: flex;
   flex-direction: row;
   margin-left: 23rem;
   margin-top: 10rem;
-  background-color: grey;
   width: 42rem;
 }
 input{
@@ -122,9 +124,9 @@ font-size:larger;
   height: 4em;
   margin-top: 0%;
   margin-left: 1px;
-  z-index: 1;
+ 
 }
-                                                                    /* Anonim comment*/
+                                                                   
 .commentAnonymous{
   display: flex;
   flex-direction: column;
@@ -165,4 +167,4 @@ font-weight: 400;
 line-height: 24px;
 text-align: left;
 
-}                                                               
+}  
