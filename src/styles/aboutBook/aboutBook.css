@@ -31,7 +31,7 @@
  /* ----------BACK BUTTON------- */
   button{
   margin-top: 11.1em;
-  width: 7.5em;
+  width: 7.8em;
   height: 2.5em;
   background-color: #E16A00;
    border: none;
@@ -41,6 +41,7 @@
  
   color: #FFF;
 font-family: Montserrat;
+text-align: center;
 font-size: 12px;
 font-style: normal;
 font-weight: 900;
@@ -52,7 +53,8 @@ text-transform: uppercase;
 /* -----------YEAR PART-------------- */
 #bookYear{
   margin-top: 5rem;
-  padding-left: 1.5em;
+  text-align: center;
+  /* padding-left: 1.5em; */
   width: 6em;
   height: 2.1em;
   background-color:  #2F80ED;
@@ -70,14 +72,13 @@ line-height: 196.187%;
 
 /* ----------BOOK NAME PART */
  .bookName{
-  width: 17em;
-
-color: #241400;
+ color: #241400;
 font-family: Montserrat;
 font-size: 2.2em;
 font-style: normal;
 font-weight: 700;
 line-height: 196.187%; 
+width: 9em;
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
@@ -105,7 +106,7 @@ margin-top: -0.8em;
   font-weight: 400;
   line-height: 196.187%;
    margin-bottom: 0.1em;
-
+   width: 11em;
    overflow: hidden;       
    text-overflow: ellipsis;
    white-space: nowrap; 
@@ -137,7 +138,7 @@ text-overflow: ellipsis;
 
 /* ------------------IMAGE PART------------ */
  .bookImage{
-  margin-left: 12em;
+  margin-left: 11em;
    width: 23.6em;
   height: 33em;
  }
@@ -147,7 +148,7 @@ text-overflow: ellipsis;
   margin-top: -2em;
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
   
  } 
 
@@ -205,12 +206,14 @@ text-transform: uppercase;
   justify-content: start;
  } 
 
+ 
  .commentObvious{
   display: flex;
   } 
 
  .anonim-input{
-  width: 31em;
+  /* position:absolute; */
+  width: 29.5em;
   height: auto;
   margin-top: 5em;
   border-radius: 0.3rem;
@@ -226,13 +229,13 @@ font-style: normal;
 font-weight: 300;
 line-height: normal;
 letter-spacing: 1px;
+overflow-y: auto;
 
 } 
 /* -----------SEND ICON----------- */
  
 .sendIcon{
   border-radius: 0.3rem;
-
 padding: 1rem;
 background-color: #E16A00;
 margin-top: 6em;
@@ -241,8 +244,8 @@ height: 3.7em;
 /* width: 1.7em; */
 /* height: 1.7em; */
 flex-shrink: 0;
-position: relative;
-    z-index: 1;
+/* position: relative;
+    z-index: 1; */
 
  }  
 
@@ -254,7 +257,7 @@ position: relative;
 
 /* BU DINAMIK DIVIN OZUDUR */
 .yourComment{
-  width: 40.5em;
+  width: 39em;
   font-family: Rubik;
   background-color: rgb(253, 253, 253);
   box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
@@ -310,13 +313,387 @@ max-height: calc(1.2rem * 4);
 
 
 
+/* ===================== MEDIA QUERY PART ============================ */
 
 
+@media screen and (min-width: 1440px){
 
-/* @media screen and (max-width: 375px){
-      .bookAbout{
-        width: 20%;
-      }
-}  */
+  .firstArea{
+    display: flex;
+    justify-content: space-between;
+  }
+  /* INPUT PART +*/
+ 
+}
+
+@media screen and (max-width: 1418px){
+  .firstArea{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+  .bookImage {
+    width: 100%; 
+    max-width: 22.6em; 
+    height: 100%;
+    object-fit: cover; 
+    margin-left: 0.5em; 
+  }
+ /* INPUT PART */
+  .secondArea{
+    justify-content: start;
+    font-size: 14px;
+  }
+  .anonim-input{
+    width: 27em;
+  }
+  .sendIcon{
+   margin-top: 6.8em;
+   padding: 0.5rem;
+  }
+  .yourComment{
+    width: 36em;
+  }
+}
+
+@media screen and (max-width: 1232px){
+    .firstArea{
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .bookImage {
+      width: 100%; 
+      max-width: 22.6em;
+      height: 100%; 
+      object-fit: cover; 
+      margin-left: 0.5em; 
+    }
+ /* INPUT PART */
+    .secondArea{
+      justify-content: start;
+      font-size: 13px;
+    }
+    .anonim-input{
+      width: 24em;
+    }
+    .sendIcon{
+     margin-top: 7.3em;
+     padding: 0.5rem;
+    }
+    .yourComment{
+    width: 32em;
+   }
+}
+
+@media screen and (max-width:1161px){
+  .firstArea{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .bookImage {
+    width: 100%; 
+    max-width: 21.6em;
+    height: 100%; 
+    object-fit: cover; 
+    margin-left: 0.5em; 
+  }
+   /* INPUT PART */
+   .secondArea{
+    justify-content: start;
+    font-size: 12px;
+  }
+  .anonim-input{
+    width: 22em;
+    /* font-size: 12px; */
+  }
+  .sendIcon{
+   margin-top: 8em;
+   padding: 0.5rem;
+  }
+  .yourComment{
+  width: 29em;
+  height: auto;
+ }
+
+}
+
+@media screen and (max-width:1090px){
+  .firstArea{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+  }
+  .bookImage {
+    width: 100%; 
+    max-width: 21.6em;
+    height: 100%; 
+    object-fit: cover; 
+    margin-left: 0.5em; 
+  }
+   /* INPUT PART */
+
+   .secondArea{
+    justify-content: start;
+    font-size: 11px;
+  }
+  .anonim-input{
+    width: 20em;
+  }
+  .sendIcon{
+   margin-top: 8.9em;
+   padding: 0.5rem;
+  }
+  .yourComment{
+  width: 26.5em;
+ }
+}
+
+@media screen and (max-width: 1000px){
+ 
+  button{
+    margin-top: 5em;
+  }
+  .firstArea{
+    font-size: 13px;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 10em;
+  }
+
+  .bookImage {
+    font-size: 14px;
+    width: 100%; 
+    max-width: 21.6em;
+    height: 100%; 
+    object-fit: cover; 
+    display: flex;
+    align-self: center;
+    /* margin-left: 0.5em;  */
+  }
+
+  #bookYear{
+    text-align: center;
+    /* width: 6em ;
+    height: 3em; */
+    font-size: 11px;
+  }
+
+  .bookAbout{
+    margin-top: 4em;
+    font-size: 14px;
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 8%;
+  }
+  .bookInfo{
+    text-align: center;
+    width: 45em;
+  }
+  .bookName{
+    font-family: Montserrat;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%;  
+  }
+  .authorName{
+    color: #241400;
+    /* text-align: center; */
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 196.187%;
+    margin-top: -0.5em;
+  }
+  .addedDay{
+    display: none;
+  }
+   /* INPUT PART */
+   .secondArea{
+    /* justify-content: center; */
+    align-items: center;
+    margin-inline: 8%;
+    font-size: 13px;
+  }
+  .anonim-input{
+    width: 25em;
+  }
+  .sendIcon{
+   margin-top: 7.5em;
+   padding: 0.2rem;
+  }
+  .yourComment{
+  width: 33.5em;
+ }
+}
+
+@media screen and (max-width:842px){
+  .bookAbout{
+    margin-top: 4em;
+  }
+
+  .bookInfo{
+    text-align: center;
+    width: 35em;
+  }
+   /* INPUT PART */
+   .commentAnonymous{
+    font-size: 9px;
+   }
+}
+
+@media screen and(max-width:662px){
+  .bookAbout{
+    margin-top: 4em;
+  }
+  .bookInfo{
+    text-align: center;
+    width: 25em;
+  }
+   /* INPUT PART */
+}
+
+@media screen and (max-width:648px){
+  .bookAbout{
+    margin-top: 4em;
+  }
+  .bookInfo{
+    text-align: center;
+    width: 25em;
+  }
+   /* INPUT PART */
+   .commentAnonymous{
+    font-size: 6px;
+   }
+   .secondArea{
+    margin-inline: 8%;
+   }
+   .anonim-input{
+    width: 17em;
+  }
+  .sendIcon{
+   margin-top: 7.5em;
+   padding: 0.5rem;
+  }
+  .yourComment{
+  width: 23.5em;
+ }
 
 
+}
+
+@media screen and (max-width:479px){
+  
+  .bookInfo{
+    text-align: center;
+    width: 22em;
+  }
+   /* INPUT PART */
+   .commentAnonymous{
+    font-size: 5px;
+   }
+   .secondArea{
+    margin-inline: 8%;
+   }
+   .anonim-input{
+    width: 15em;
+  }
+  .sendIcon{
+   margin-top: 7.5em;
+   padding: 0.8rem;
+  }
+  .yourComment{
+  width: 21em;
+ }
+}
+@media screen and (max-width: 416px){
+  .bookInfo{
+    text-align: center;
+    width: 20em;
+  }
+   /* INPUT PART */
+   .commentAnonymous{
+    font-size: 4px;
+   }
+   .secondArea{
+    margin-inline: 8%;
+   }
+   .anonim-input{
+    width: 13em;
+    height: 30px;
+    padding: -10px;
+    padding-left: 5px;
+  }
+  .sendIcon{
+   margin-top: 7.3em;
+   padding: 0.5rem;
+   width: 2.5em;
+   height: 2.5em;
+  }
+  .yourComment{
+  width: 18em;
+ }
+}
+
+@media screen and (max-width: 374px){
+  .bookInfo{
+    text-align: center;
+    width: 19em;
+  }
+   /* INPUT PART */
+   .commentAnonymous{
+    font-size: 4px;
+   }
+   .secondArea{
+    margin-inline: 8%;
+   }
+   .anonim-input{
+    width: 13em;
+    height: 30px;
+    padding: -10px;
+    padding-left: 5px;
+  }
+  .sendIcon{
+   margin-top: 7.3em;
+   padding: 0.5rem;
+   width: 2.5em;
+   height: 2.5em;
+  }
+  .yourComment{
+  width: 18em;
+ }
+}
+@media screen and (max-width:354px){
+  .bookInfo{
+    text-align: center;
+    width: 17em;
+  }
+   /* INPUT PART */
+   .commentAnonymous{
+    font-size: 4px;
+   }
+   .secondArea{
+    margin-inline: 8%;
+   }
+   .anonim-input{
+    width: 11.5em;
+    height: 30px;
+    padding: -10px;
+    padding-left: 5px;
+  }
+  .sendIcon{
+   margin-top: 7.3em;
+   padding: 0.5rem;
+   width: 2.5em;
+   height: 2.5em;
+  }
+  .yourComment{
+  width: 15.5em;
+ }
+}
