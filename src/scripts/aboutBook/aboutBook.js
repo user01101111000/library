@@ -144,6 +144,11 @@ const sendJoinerInfoToDb = () => {
 //   if()
 // })
 
+const backBtn = document.querySelector(".backBtn")
+backBtn.addEventListener('click', function(){
+  window.location.href = '../../pages/catalog.html'
+})
+
 
 const bookYear = document.querySelector("#bookYear")
 const bookName = document.querySelector(".bookName")
@@ -252,6 +257,7 @@ function sendCommentDataToDB(data) {
 
 
 onValue(ref(database, "books/" + id + "/bookComments"), (snapshot) => {
+  commentAnonymous.innerHTML = ""
   if (snapshot.exists()) {
     const comments = Object.values(snapshot.val());
 
