@@ -6,55 +6,82 @@
     <title>Book Page</title>
     <link rel="stylesheet" href="test.css" />
     <link rel="stylesheet" href="../../styles/general/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   </head>
   <body>
-         <!-- INFORMATION PART -->
-        <div class="information">
-          <button id="goBackBtn">Go Back</button>
-          <div class="book-details">
-            <div class="bookAbout">
-              <p id="bookYear">2017</p>
-              <div class="bookInformation">
-                <h2>Order in Chaos</h2>
-                <h6>2 days ago added</h6>
-                <p id="bookAuthor">Konstantin Koptelov</p>
-                <p id="bookDescription"> s of Kiev can receive an order on the day of its registration.
-                   Customers from<br> other cities of Ukraine can receive an order within 1-5 days, depending on<br> the location of the settlement and the selected delivery method.
-                   Orders<br> over UAH 1000 are delivered  free of charge *. You can see the available<br> methods, exact terms and
-                   cost of delivery during checkout in the order<br> basket, after selecting the delivery city.<br>
-                   More details     </p>
-              </div>
-            </div>
-            <div class="book-image">
-                <img src="./image 2 (2).png" alt="Book 1" id="bookImg">
-            </div>
+   
+    <main>
+      <!-- ================================= SECTION ONE =========================== -->
+         <button>&lt; Back</button>
+        <section  class="firstArea">
+          <div>
+           <div class="bookYear-adjust">
+            <p id="bookYear">2017</p>
+           </div>
+           <div class="bookAbout">
+            <h1 class="bookName">Order in Chaos</h1>
+            <h5 class="addedDay">2 days ago added</h5>
+            <h3 class="authorName">Konstantin Koptelov</h3>
+            <p class="bookInfo"> s of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city.
+              More details    </p>
           </div>
-                  <!-- ANONIM COMMENT SECTION -->
-              <div class="comments-section">
-                  <input id="inputAnonim" placeholder="your anonim comment...">
-                  <img src="../../assets/icons/send.svg" alt="Send" id="sendSvg">
-              </div>
-              <!-- PREVIOUS COMMENT BOXES -->
-            <div class="boxes">
-              <div class="comment-box1">
-                <div class="anonim">
-                    <h6>anonim</h6>
-                    <p class="dinamic-time">18:32 today</p>
-                </div>
-                <p id="comment">Woah, your project looks awesome! How long have you been coding for?
-                   I’m still new,<br> but think I want to dive into React as well soon.
-                   Perhaps you can give me an insight on<br> where I can learn React? Thanks!</p>
-              </div>
-              <div class="comment-box2">
-                <div class="anonim">
-                    <h6>anonim</h6>
-                    <p class="dinamic-time">2 days ago</p>
-                </div>
-                <p id="comment">Woah, your project looks awesome! How long have you been coding for? I’m still new,<br>
-                     but think I want to dive into </p>
-              </div>
-            </div>
+           </div>
+          <div class="bookImage">
+            <div class="new-sign">New</div>
+            <img src="../../assets/images/image 2.png" >
           </div>
+        </section>
+                 <!-- =============== SECTION TWO ========================= -->
+      <section class="secondArea">
+      <div class="commentObvious">
+        <input type="text" class="anonim-input" placeholder="your anonim comment..."  >
+        <img class="sendIcon"  src="../../assets/icons/send.svg" >
+      </div>
+      <!-- Dinamic anonim comment div -->
+       <div class="commentAnonymous">
+        <div class="yourComment">
+          <div class="anonim">
+            <h4>anonim</h4>
+            <p class="time">18:32 today</p>
+          </div>
+          <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!"></p>
+        </div>
+        <div class="yourComment">
+              <div class="anonim">
+            <h4>anonim</h4>
+            <p class="time">2 days ago</p>
+          </div>
+          <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
+        </div>
+        <div class="yourComment">
+          <div class="anonim">
+        <h4>anonim</h4>
+        <p class="time">2 days ago</p>
+      </div>
+      <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
+      </div>
+      <!-- DINAMIK HISSE -->
+      <div class="yourComment">
+        <div class="anonim">
+      <h4>anonim</h4>
+      <p class="time">2 days ago</p>
+      </div>
+      <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
+      </div>
+      <div class="yourComment">
+        <div class="anonim">
+      <h4>anonim</h4>
+      <p class="time">2 days ago</p>
+      </div>
+      <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
+      </div>
+      </div>
+      </section>
+         
+    </main>
+          
+    
     <script src="test.js"></script>
   </body>
 </html>
