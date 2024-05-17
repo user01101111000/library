@@ -1,3 +1,28 @@
+// =================================> IMPORT FIREBASE <===================================
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  onValue,
+  push,
+  remove,
+  update,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA4Sb2LCfKwA3GW4R3VM9L34pTVqh6xnAY",
+  authDomain: "library-7fefd.firebaseapp.com",
+  projectId: "library-7fefd",
+  storageBucket: "library-7fefd.appspot.com",
+  messagingSenderId: "1078426865027",
+  appId: "1:1078426865027:web:47c0a65064eb5cd0493ab6",
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
 // ==================================> DOM ASSIGMENTS <===================================
 
 const hamburger = document.querySelector(".iconH");
@@ -10,6 +35,10 @@ const joinUsModalBtn = document.querySelector(".joinUsModalBtn");
 const alertModal = document.querySelector(".alertModal");
 const inputName = document.querySelector(".inputName");
 const inputEmail = document.querySelector(".inputEmail");
+
+const catalogBoxesArea = document.querySelector(".catalogBoxesArea");
+const catalogBoxTemplate = document.querySelector(".catalogBoxTemplate");
+const loading = document.querySelector(".loading");
 
 const joinerName = document.querySelector(".joinerName");
 
@@ -41,6 +70,14 @@ joinUsModalArea.addEventListener("click", (e) => {
   }
 });
 
+// ==================================> SHOW JOINER NAME <===================================
+
+(() => {
+  if (localStorage.getItem("joinerName"))
+    joinerName.textContent = localStorage.getItem("joinerName");
+  else joinerName.textContent = "Join Us";
+})();
+
 // ==================================> SHOW MODAL ALERT <===================================
 
 const alertMessageType = (type) => {
@@ -50,7 +87,7 @@ const alertMessageType = (type) => {
         sendJoinerInfoToDb();
 
         alertModal.classList.add("showSuccessAlert");
-        alertModal.children[0].textContent = `Thank you ${inputName.value}, for joining us!`;
+        alertModal.children[0].textContent = `Thank you ${inputName.value.trim()}, for joining us!`;
 
         alertModal.classList.add("showAlertModal");
 
@@ -59,7 +96,7 @@ const alertMessageType = (type) => {
           alertModal.children[0].textContent = `Please fill in all fields, or enter a valid email`;
           alertModal.classList.remove("showAlertModal");
 
-          localStorage.setItem("joinerName", inputName.value);
+          localStorage.setItem("joinerName", inputName.value.trim());
 
           joinerName.textContent = localStorage.getItem("joinerName");
 
@@ -83,31 +120,29 @@ const alertMessageType = (type) => {
 };
 
 joinUsModalBtn.addEventListener("click", () => {
-  if (inputName.value && inputEmail.value && inputEmail.value.includes("@"))
+  if (
+    inputName.value.trim() &&
+    inputEmail.value.trim() &&
+    inputEmail.value.includes("@")
+  )
     alertMessageType("success");
   else alertMessageType("error");
 });
-
-// ==================================> SHOW JOINER NAME <===================================
-
-(function () {
-  if (localStorage.getItem("joinerName")) {
-    joinerName.textContent = localStorage.getItem("joinerName");
-  } else {
-    joinerName.textContent = "Join Us";
-  }
-})();
 
 // ==================================> SEND JOINER INFO TO DB <===================================
 
 const sendJoinerInfoToDb = () => {
   const joinerInfo = {
-    name: inputName.value,
-    email: inputEmail.value,
+    fullName: inputName.value.trim(),
+    email: inputEmail.value.trim(),
   };
-  console.log(joinerInfo);
+  push(ref(database, "joiners"), joinerInfo);
 };
 
+
+const pushDataToDB = (data) => {
+  push(ref(database, "contact"), data)
+}
 // ==================================> Inputs value <=================================== //
 
 const sendButton = document.querySelector(".send-button");
@@ -127,7 +162,7 @@ sendButton.addEventListener("click", () => {
     } else {
       inputRow.style.borderColor = "green";
     }
-    
+
     if (inputRow.classList.contains('input-note') && !inputRow.value.trim()) {
       inputRow.style.borderColor = "red";
     }
@@ -142,11 +177,9 @@ sendButton.addEventListener("click", () => {
     }
 
     if (inputRow === phoneInput) {
-      if (!(/^\+?\d{9,}$/.test(inputRow.value))) {
+      if (!(/^\d+$/.test(inputRow.value))) {
         phoneIsValid = false;
         inputRow.style.borderColor = "red";
-      } else if (inputRow.value.trim()) {
-        inputRow.style.borderColor = "green";
       }
     }
 
@@ -172,7 +205,7 @@ sendButton.addEventListener("click", () => {
         title: "Attention...",
         text: "Please enter a valid number!"
       });
-    } 
+    }
 
     if (isEmpty) {
       Swal.fire({
@@ -181,18 +214,17 @@ sendButton.addEventListener("click", () => {
         text: "Please fill in the information!",
       });
     }
-  
+
   } else {
+    const fieldNames = ["fullName", "email", "address", "phoneNumber", "note"]
     const newData = {};
-    inputRows.forEach(inputRow => {
-      const fieldName = inputRow.getAttribute("placeholder");
-      if (inputRow.classList.contains('input-note')) {
-        newData[fieldName] = inputRow.value.trim() || "No Note";
-      } else {
-        newData[fieldName] = inputRow.value;
-      }
+    inputRows.forEach((inputRow, i) => {
+      if (inputRow.classList.contains("input-note") && !inputRow.value) newData[fieldNames[i]] = "No note"
+      else newData[fieldNames[i]] = inputRow.value
     });
     console.log(newData);
+    pushDataToDB(newData)
+
 
     inputRows.forEach(inputRow => {
       inputRow.style.borderColor = "green";
@@ -208,6 +240,7 @@ sendButton.addEventListener("click", () => {
     });
   }
 });
+
 
 
 
