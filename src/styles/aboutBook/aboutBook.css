@@ -1,6 +1,5 @@
 @import url("../general/commonStyle.css ");
 
-
 .navBar .navMenu a:nth-of-type(2) {
   color: #e16a00;
   text-decoration: underline !important;
@@ -17,8 +16,6 @@
   margin-bottom: 12rem;
  } 
 
-
-
  /* ================================== SECTION 1 ============================= */
 
  .firstArea{
@@ -29,7 +26,7 @@
  } 
 
  /* ----------BACK BUTTON------- */
-  button{
+  .backBtn{
   margin-top: 11.1em;
   width: 7.8em;
   height: 2.5em;
@@ -118,7 +115,8 @@ margin-top: -0.8em;
 
 .bookInfo{
   width: 35em;
-   height: 15rem;
+   /* height: 15rem; */
+   height: auto;
   color: #241400;
 font-family: Montserrat;
 font-size: 1.12em;
@@ -133,19 +131,30 @@ text-overflow: ellipsis;
 
  } 
 
+ .moreDetail{
+  text-decoration: none;
+  color: #241400;
+  font-family: Montserrat;
+  font-size: 1.12em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  cursor: pointer;
+ }
+
 
 
 
 /* ------------------IMAGE PART------------ */
  .bookImage{
+  position: relative;
   margin-left: 11em;
    width: 23.6em;
   height: 33em;
  }
 
  .bookImage img{
-  position: relative;
-  margin-top: -2em;
+   /* margin-top: -2em; */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -157,44 +166,22 @@ text-overflow: ellipsis;
  /* --------------NEW BOOK SIGN --------------- */
 
  
- /* .new-sign{
+ .newSign{
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 9999;
-  width: 5.8em;
-height: 1.75em;
-color: #FFF;
-font-family: Montserrat;
-font-size: 0.75em;
-font-style: normal;
-font-weight: 900;
-line-height: 196.187%; 
-text-transform: uppercase;
-
- } */
-
-/*  
- .new-sign{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 15px;
-  background-color: #EB5757;
+  background-color: rgba(235, 87, 87, 1);
   color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 0.3em 1.5em;
+  border-radius: 0.3em;
   box-shadow: 0px 3px 8px 0px #E16A0030;
-  z-index: 1; 
+  z-index: 1;
   font-family: Montserrat;
-  font-size: 10px;
+  font-size: 0.9em;
+  text-align: center;
   font-weight: 900;
-  line-height: 17.66px;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
- }   */
+
+ }
 
 
 
@@ -211,7 +198,7 @@ text-transform: uppercase;
   display: flex;
   } 
 
- .anonim-input{
+ .anonimInput{
   /* position:absolute; */
   width: 29.5em;
   height: auto;
@@ -253,6 +240,8 @@ flex-shrink: 0;
  .commentAnonymous{
   display: flex;
   flex-direction: column;
+  position: relative; 
+
 } 
 
 /* BU DINAMIK DIVIN OZUDUR */
@@ -344,7 +333,7 @@ max-height: calc(1.2rem * 4);
     justify-content: start;
     font-size: 14px;
   }
-  .anonim-input{
+  .anonimInput{
     width: 27em;
   }
   .sendIcon{
@@ -375,7 +364,7 @@ max-height: calc(1.2rem * 4);
       justify-content: start;
       font-size: 13px;
     }
-    .anonim-input{
+    .anonimInput{
       width: 24em;
     }
     .sendIcon{
@@ -405,7 +394,7 @@ max-height: calc(1.2rem * 4);
     justify-content: start;
     font-size: 12px;
   }
-  .anonim-input{
+  .anonimInput{
     width: 22em;
     /* font-size: 12px; */
   }
@@ -439,7 +428,7 @@ max-height: calc(1.2rem * 4);
     justify-content: start;
     font-size: 11px;
   }
-  .anonim-input{
+  .anonimInput{
     width: 20em;
   }
   .sendIcon{
@@ -521,7 +510,7 @@ max-height: calc(1.2rem * 4);
     margin-inline: 8%;
     font-size: 13px;
   }
-  .anonim-input{
+  .anonimInput{
     width: 25em;
   }
   .sendIcon{
@@ -548,13 +537,16 @@ max-height: calc(1.2rem * 4);
    }
 }
 
-@media screen and(max-width:662px){
+@media screen and (max-width:662px){
   .bookAbout{
     margin-top: 4em;
   }
   .bookInfo{
     text-align: center;
     width: 25em;
+  }
+  .anonimInput::placeholder{
+    font-size: 0.8em;
   }
    /* INPUT PART */
 }
@@ -574,7 +566,7 @@ max-height: calc(1.2rem * 4);
    .secondArea{
     margin-inline: 8%;
    }
-   .anonim-input{
+   .anonimInput{
     width: 17em;
   }
   .sendIcon{
@@ -601,7 +593,7 @@ max-height: calc(1.2rem * 4);
    .secondArea{
     margin-inline: 8%;
    }
-   .anonim-input{
+   .anonimInput{
     width: 15em;
   }
   .sendIcon{
@@ -624,11 +616,14 @@ max-height: calc(1.2rem * 4);
    .secondArea{
     margin-inline: 8%;
    }
-   .anonim-input{
+   .anonimInput{
     width: 13em;
     height: 30px;
-    padding: -10px;
-    padding-left: 5px;
+    
+    padding-inline: 5px;
+  }
+  .anonimInput::placeholder{
+    font-size: 0.5em;
   }
   .sendIcon{
    margin-top: 7.3em;
@@ -653,7 +648,7 @@ max-height: calc(1.2rem * 4);
    .secondArea{
     margin-inline: 8%;
    }
-   .anonim-input{
+   .anonimInput{
     width: 13em;
     height: 30px;
     padding: -10px;
@@ -681,7 +676,7 @@ max-height: calc(1.2rem * 4);
    .secondArea{
     margin-inline: 8%;
    }
-   .anonim-input{
+   .anonimInput{
     width: 11.5em;
     height: 30px;
     padding: -10px;
