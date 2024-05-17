@@ -37,51 +37,45 @@ function hideLoadings() {
 
 // =================================> FECTH ALLBOOKS <===================================
 
-(() => {
+onValue(ref(database, "books"), (snapshot) => {
   cont.innerHTML = "";
-  onValue(ref(database, "books"), (snapshot) => {
-    if (snapshot.exists()) {
-      const books = Object.entries(snapshot.val());
+  if (snapshot.exists()) {
+    const books = Object.entries(snapshot.val());
 
-      displayAllBooks(books);
-      hideLoadings();
-      console.log(books);
-    } else console.log("no books");
-  });
-})();
+    displayAllBooks(books);
+    hideLoadings();
+    console.log(books);
+  } else console.log("no books");
+});
 
 // =================================> FECTH BESTSELLER BOOKS <===================================
 
-(() => {
+onValue(ref(database, "books"), (snapshot) => {
   cont2.innerHTML = "";
-  onValue(ref(database, "books"), (snapshot) => {
-    if (snapshot.exists()) {
-      const books = Object.entries(snapshot.val());
-      const bestsellerBooks = books.filter(
-        (book) => book[1].bookType === "bestseller"
-      );
+  if (snapshot.exists()) {
+    const books = Object.entries(snapshot.val());
+    const bestsellerBooks = books.filter(
+      (book) => book[1].bookType === "bestseller"
+    );
 
-      displayBestsellerBooks(bestsellerBooks);
-      hideLoadings();
-      console.log(bestsellerBooks);
-    } else console.log("no books");
-  });
-})();
+    displayBestsellerBooks(bestsellerBooks);
+    hideLoadings();
+    console.log(bestsellerBooks);
+  } else console.log("no books");
+});
 
 // =================================> FECTH NEW BOOKS <===================================
 
-(() => {
+onValue(ref(database, "books"), (snapshot) => {
   cont3.innerHTML = "";
-  onValue(ref(database, "books"), (snapshot) => {
-    if (snapshot.exists()) {
-      const books = Object.entries(snapshot.val());
-      const newBooks = books.filter((book) => book[1].bookType === "new");
-      displayNewBooks(newBooks);
-      hideLoadings();
-      console.log(newBooks);
-    } else console.log("no books");
-  });
-})();
+  if (snapshot.exists()) {
+    const books = Object.entries(snapshot.val());
+    const newBooks = books.filter((book) => book[1].bookType === "new");
+    displayNewBooks(newBooks);
+    hideLoadings();
+    console.log(newBooks);
+  } else console.log("no books");
+});
 
 // =================================> DISPLAY ALL BOOKS <===================================
 
@@ -135,7 +129,8 @@ function displayBestsellerBooks(data) {
     readMore.setAttribute("data-id", data[0]);
 
     readMore.addEventListener("click", (e) => {
-      console.log(e.target.dataset.id);
+      window.location.href =
+        "/library/src/pages/aboutBook.html?id=" + e.target.dataset.id;
     });
 
     h1.textContent = data[1].bookTitle;
@@ -160,7 +155,8 @@ function displayNewBooks(data) {
     readMore.setAttribute("data-id", data[0]);
 
     readMore.addEventListener("click", (e) => {
-      console.log(e.target.dataset.id);
+      window.location.href =
+        "/library/src/pages/aboutBook.html?id=" + e.target.dataset.id;
     });
 
     h1.textContent = data[1].bookTitle;
