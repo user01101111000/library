@@ -103,6 +103,9 @@ function displayAllBooks(data) {
 
     readMore.addEventListener("click", (e) => {
       console.log(e.target.dataset.id);
+
+      window.location.href =
+        "../../pages/aboutBook.html?id=" + e.target.dataset.id;
     });
 
     h1.textContent = data[1].bookTitle;

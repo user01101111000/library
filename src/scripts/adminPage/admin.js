@@ -300,7 +300,7 @@ const listItemClicked = (currentItem, element) => {
       element.volumeInfo.imageLinks?.thumbnail ??
       "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
     bookDescInp.value = element.volumeInfo.description ?? "No Description";
-    publishedDateInp.value = element.volumeInfo.publishedDate ?? "Unknown date";
+    publishedDateInp.value = element.volumeInfo.publishedDate ?? "Unknown";
 
     results.innerHTML = "";
     searchInput.value = "";

@@ -148,15 +148,14 @@ const sendJoinerInfoToDb = () => {
 
 // ==================================> FETCHING CATEGORIES <===================================
 
-(() => {
-  onValue(ref(database, "categories"), (snapshot) => {
-    if (snapshot.exists()) {
-      const categories = Object.values(snapshot.val());
+onValue(ref(database, "categories"), (snapshot) => {
+  catalogBoxesArea.innerHTML = "";
+  if (snapshot.exists()) {
+    const categories = Object.values(snapshot.val());
 
-      displayData(categories);
-    } else console.log("no categories");
-  });
-})();
+    displayData(categories);
+  } else console.log("no categories");
+});
 
 // ==================================> DISPLAY DATA <===================================
 
