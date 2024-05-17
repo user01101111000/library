@@ -26,6 +26,11 @@ html {
   margin: 3.125rem auto;
 }
 
+.swal2-popup {
+  font-size: 1rem !important;
+  font-family: Montserrat, sans-serif !important;
+}
+
 h1 {
   margin-left: 0.5rem;
   font-size: 36px;
