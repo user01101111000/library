@@ -159,6 +159,7 @@ const commentTemp = document.querySelector(".commentTemp")
 const id = window.location.href.split("=")[1]
 
 
+
 onValue(ref(database, "books/" + id), (snapshot) => {
   if (snapshot.exists()) {
 
@@ -168,7 +169,7 @@ onValue(ref(database, "books/" + id), (snapshot) => {
     bookName.textContent = data.bookTitle;
     bookInfo.textContent = data.bookDescription
 
-    const diff = Math.round((Date.now() - data.bookAddedTime) / (1000 * 3600 * 24)) - 1;
+    const diff = Math.ceil((Date.now() - data.bookAddedTime) / (1000 * 3600 * 24)) - 1;
 
 
     if (diff == 0) addedDay.textContent = "Today added"
@@ -202,7 +203,21 @@ function createCommentBox(data) {
   const comment = commentBox.querySelector(".comment");
   const h4 = commentBox.querySelector("h4")
 
-  time.textContent = data.commentDate;
+  const diff = Math.ceil((Date.now() - data.commentDate) / (1000 * 3600 * 24)) - 1;
+
+
+
+  console.log(diff);
+
+
+  if (diff) time.textContent = diff + " days ago added";
+  else {
+    const date = new Date(data.commentDate)
+
+    time.textContent = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} Today`
+  }
+
+
   comment.textContent = data.comment
   h4.textContent = data.commentName
 
