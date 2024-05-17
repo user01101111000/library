@@ -64,6 +64,10 @@
 .hideLoading {
   display: none !important;
 }
+.swal2-popup {
+  font-size: 1rem !important;
+  font-family: var(--font-montserrat);
+}
 
 /* ======================================================> GENERAL <====================================================== */
 
@@ -639,14 +643,13 @@ tbody > tr:nth-of-type(even) {
 
 .trashIcon {
   cursor: pointer;
-  color: red;
+  color: #ff0028;
   font-size: 1.3em;
 }
-.editIcon{
+.editIcon {
   cursor: pointer;
-  color: orange;
+  color: #ffac00;
   font-size: 1.3em;
-
 }
 
 .bookTableTitle {
@@ -703,17 +706,42 @@ td {
 }
 
 /* !======================================================> MEDIA QUERIES <====================================================== */
-
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1400px) {
   /* =====================================> TABLES <===================================  */
   .joinUsTableArea {
-    font-size: 12px;
+    font-size: 13px;
   }
   .booksTableArea {
-    font-size: 12px;
+    font-size: 13px;
   }
   .contactUsArea {
-    font-size: 12px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* =====================================> TABLES <===================================  */
+  .joinUsTableArea {
+    font-size: 11px;
+  }
+  .booksTableArea {
+    font-size: 11px;
+  }
+  .contactUsArea {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  /* =====================================> TABLES <===================================  */
+  .joinUsTableArea {
+    font-size: 10px;
+  }
+  .booksTableArea {
+    font-size: 10px;
+  }
+  .contactUsArea {
+    font-size: 10px;
   }
 }
 

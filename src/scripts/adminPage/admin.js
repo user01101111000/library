@@ -82,12 +82,22 @@ function checkLogin(data) {
     const login = snapshot.val();
 
     if (data.username === login.username && data.password === login.password) {
-      alert("Login Successfully");
-      localStorage.setItem("loggedIn", true);
+      Swal.fire({
+        title: "SUCCESS!",
+        text: "You have successfully logged in!",
+        icon: "success",
+      }).then(() => {
+        localStorage.setItem("loggedIn", true);
 
-      loginMain.style.display = "none";
-      adminMain.style.display = "flex";
-    } else alert("Login Failed");
+        loginMain.style.display = "none";
+        adminMain.style.display = "flex";
+      });
+    } else
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
   });
 }
 
@@ -364,36 +374,57 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
       // console.log(diff);
 
       clearInputs();
+
+      Swal.fire({
+        icon: "success",
+        title: "Book added successfully!",
+      });
     }
   } else {
     console.log("work2");
     console.log(bookNameInp.dataset.id);
-    update(ref(database, "books/" + bookNameInp.dataset.id), {
-      bookTitle: bookNameInp.value.trim(),
-      bookAuthor: authorNameInp.value.trim(),
-      bookUrl: bookUrlInp.value.trim(),
-      bookPublishedDate: publishedDateInp.value.trim(),
-      bookDescription: bookDescInp.value.trim(),
-      bookType: document
-        .querySelector('input[name="bookType"]:checked')
-        .value.toLowerCase(),
-      bookCategory: selectInput.disabled
-        ? newCategory.value.trim()[0].toUpperCase() +
-          newCategory.value.trim().slice(1).toLowerCase()
-        : selectInput.value,
-      bookAddedTime: Date.now(),
+
+    Swal.fire({
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        update(ref(database, "books/" + bookNameInp.dataset.id), {
+          bookTitle: bookNameInp.value.trim(),
+          bookAuthor: authorNameInp.value.trim(),
+          bookUrl: bookUrlInp.value.trim(),
+          bookPublishedDate: publishedDateInp.value.trim(),
+          bookDescription: bookDescInp.value.trim(),
+          bookType: document
+            .querySelector('input[name="bookType"]:checked')
+            .value.toLowerCase(),
+          bookCategory: selectInput.disabled
+            ? newCategory.value.trim()[0].toUpperCase() +
+              newCategory.value.trim().slice(1).toLowerCase()
+            : selectInput.value,
+          bookAddedTime: Date.now(),
+        });
+
+        bookFomrSubmitBtn.value = "Add";
+
+        checkCategories(
+          selectInput.disabled
+            ? newCategory.value.trim()[0].toUpperCase() +
+                newCategory.value.trim().slice(1).toLowerCase()
+            : selectInput.value
+        );
+
+        clearInputs();
+
+        Swal.fire("Saved!", "", "success");
+      } else if (result.isDenied) {
+        clearInputs();
+        Swal.fire("Changes are not saved", "", "info");
+      }
     });
-
-    bookFomrSubmitBtn.value = "Add";
-
-    checkCategories(
-      selectInput.disabled
-        ? newCategory.value.trim()[0].toUpperCase() +
-            newCategory.value.trim().slice(1).toLowerCase()
-        : selectInput.value
-    );
-
-    clearInputs();
   }
 });
 
@@ -425,6 +456,11 @@ bookFomrSubmitBtnAbout.addEventListener("click", (e) => {
     bookNameAboutInp.value = "";
     bookUrlAboutInp.value = "";
     bookDescAboutInp.value = "";
+
+    Swal.fire({
+      icon: "success",
+      title: "About Store updated successfully!",
+    });
   }
 });
 
@@ -438,7 +474,7 @@ function createJoinUsTable(data) {
     const td3 = document.createElement("td");
     td1.textContent = index + 1;
     td2.textContent = element.fullName;
-    td3.textContent = element.email;
+    td3.innerHTML = `<i class="fa-regular fa-envelope" style="color:#F44336"></i> <a style="color:#F44336; font-weight:bold" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${element.email}" target="_blank">${element.email}</a>`;
 
     tr.append(td1, td2, td3);
 
@@ -476,8 +512,26 @@ function createBooksTable(data) {
 
     trashIcon.addEventListener("click", () => {
       console.log(trashIcon.dataset.id);
-      confirm("Are you sure you want to delete this book?") &&
-        remove(ref(database, "books/" + trashIcon.dataset.id));
+
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+
+          remove(ref(database, "books/" + trashIcon.dataset.id));
+        }
+      });
     });
 
     editIcon.addEventListener("click", () => {
@@ -528,8 +582,9 @@ function createContactUsTable(data) {
     td1.textContent = index + 1;
     td2.textContent = element.fullName;
     td3.textContent = element.address;
-    td4.textContent = element.email;
-    td5.textContent = element.phoneNumber;
+
+    td4.innerHTML = `<i class="fa-regular fa-envelope" style="color:#F44336"></i> <a style="color:#F44336; font-weight:bold" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${element.email}" target="_blank">${element.email}</a>`;
+    td5.innerHTML = `<i class="fa-brands fa-whatsapp" style="color:#25D366"></i> <a style="color:#25D366; font-weight:bold" href="https://wa.me/+994${element.phoneNumber}?text=Salam%20hörmətli%20oxucu,%20Library%20TEAM-TU%20komandası%207/24%20sizin%20xidmətinizdədir.%20Hər%20hansı%20bir%20sualınız,%20iradınız%20və%20ya%20təklifiniz%20varsa,%20bizimlə%20əlaqə%20saxlamağınızı%20xahiş%20edirik.%20Xoş%20günlər%20!!!%20LIBRARY%20TEAM-TU" target="_blank">${element.phoneNumber}</a>`;
     td6.textContent = element.note;
 
     tr.append(td1, td2, td3, td4, td5, td6);

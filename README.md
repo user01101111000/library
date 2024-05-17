@@ -14,6 +14,7 @@ EACAMP GROUP M2 "TEAM-TU" - Library project
   <img src ="./src/assets/mdicons/javascript.svg" alt="Javascript logo" width="3.5%" title='Javascript'/>
   <img src ="./src/assets/mdicons/swiper.svg" alt="Swiper logo" width="3.5%" title='Swiper'/>
   <img src ="./src/assets/mdicons/firebase.svg" alt="Firebase logo" width="3.5%" title='Firebase'/>
+   <img src ="./src/assets/mdicons/sweetAlert.png" alt="Firebase logo" width="20%" title='Firebase'/>
   </div
 
 ---
