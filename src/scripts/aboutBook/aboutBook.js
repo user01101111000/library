@@ -1,3 +1,28 @@
+// =================================> IMPORT FIREBASE <===================================
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  onValue,
+  push,
+  remove,
+  update,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA4Sb2LCfKwA3GW4R3VM9L34pTVqh6xnAY",
+  authDomain: "library-7fefd.firebaseapp.com",
+  projectId: "library-7fefd",
+  storageBucket: "library-7fefd.appspot.com",
+  messagingSenderId: "1078426865027",
+  appId: "1:1078426865027:web:47c0a65064eb5cd0493ab6",
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
 // ==================================> DOM ASSIGMENTS <===================================
 
 const hamburger = document.querySelector(".iconH");
@@ -104,10 +129,123 @@ joinUsModalBtn.addEventListener("click", () => {
 
 const sendJoinerInfoToDb = () => {
   const joinerInfo = {
-    name: inputName.value.trim(),
+    fullName: inputName.value.trim(),
     email: inputEmail.value.trim(),
   };
-  console.log(joinerInfo);
+  push(ref(database, "joiners"), joinerInfo);
 };
 
 // =================================================================> YOUR CODE <==============================================================================
+
+// MORE DETAIL PART
+
+// document.querySelector('.moreDetail').addEventListener('click', function(){
+//   const bookInfo = document.querySelector('.bookInfo')
+//   if()
+// })
+
+
+const bookYear = document.querySelector("#bookYear")
+const bookName = document.querySelector(".bookName")
+const addedDay = document.querySelector(".addedDay")
+const authorName = document.querySelector(".authorName")
+const bookInfo = document.querySelector(".bookInfo")
+const newSign = document.querySelector(".newSign")
+const aboutBookImg = document.querySelector(".aboutBookImg")
+const sendIcon = document.querySelector(".sendIcon")
+const anonimInput = document.querySelector(".anonimInput")
+const commentAnonymous = document.querySelector(".commentAnonymous")
+const commentTemp = document.querySelector(".commentTemp")
+const id = window.location.href.split("=")[1]
+
+
+onValue(ref(database, "books/" + id), (snapshot) => {
+  if (snapshot.exists()) {
+
+    const data = snapshot.val();
+
+    bookYear.textContent = data.bookPublishedDate == "Unknown" ? "Unknown" : data.bookPublishedDate.slice(0, 4);
+    bookName.textContent = data.bookTitle;
+    bookInfo.textContent = data.bookDescription
+
+    const diff = Math.round((Date.now() - data.bookAddedTime) / (1000 * 3600 * 24)) - 1;
+
+
+    if (diff == 0) addedDay.textContent = "Today added"
+    else addedDay.textContent = `${diff} days ago added`
+
+
+    authorName.textContent = data.bookAuthor
+    aboutBookImg.src = data.bookUrl
+
+    if (data.bookType == "bestseller") newSign.style.display = "none"
+
+
+
+
+
+
+
+
+
+  } else console.log("no data")
+})
+
+
+
+// CREATE COMMENT BOX
+
+function createCommentBox(data) {
+  const commentBox = commentTemp.content.cloneNode(true).children[0];
+
+  const time = commentBox.querySelector(".time")
+  const comment = commentBox.querySelector(".comment");
+  const h4 = commentBox.querySelector("h4")
+
+  time.textContent = data.commentDate;
+  comment.textContent = data.comment
+  h4.textContent = data.commentName
+
+
+  return commentBox;
+}
+
+
+
+sendIcon.addEventListener("click", () => {
+  if (anonimInput.value) {
+
+    const commentData = {
+      commentDate: Date.now(),
+      commentName: "anonym",
+      comment: anonimInput.value
+    }
+
+    sendCommentDataToDB(commentData)
+
+    anonimInput.value = "";
+  }
+})
+
+
+
+// SEND COMMENT DATA TO DB
+
+function sendCommentDataToDB(data) {
+  push(ref(database, "books/" + id + "/bookComments"), data)
+}
+
+
+onValue(ref(database, "books/" + id + "/bookComments"), (snapshot) => {
+  if (snapshot.exists()) {
+    const comments = Object.values(snapshot.val());
+
+    comments.forEach(comment => {
+      commentAnonymous.prepend(createCommentBox(comment))
+
+    })
+
+  }
+
+
+})

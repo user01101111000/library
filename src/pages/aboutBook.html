@@ -94,31 +94,31 @@
       <main>
 
 <!-- ================================= SECTION ONE =========================== -->
-   <button>&lt; Back</button>
+   <button class="backBtn">&lt; Back</button>
   <section  class="firstArea">
 
     <div class="respons">
 
      <div class="bookYear-adjust">
-      <p id="bookYear">2017</p>
+      <p id="bookYear"></p>
      </div>
       
     
     
      <div class="bookAbout">
      
-      <h1 class="bookName">Order in Chaos</h1>
-      <h5 class="addedDay">2 days ago added</h5>
-      <h3 class="authorName">Konstantin Koptelov</h3>
-      <p class="bookInfo"> s of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city.
-        More details    </p>
+      <h1 class="bookName"></h1>
+      <h5 class="addedDay"></h5>
+      <h3 class="authorName"></h3>
+      <p class="bookInfo"></p>
+
     </div> 
 
      </div>
 
     <div class="bookImage">
-      <div class="new-sign"></div>
-        <img src="../assets/images/image 2.png" >
+      <div class="newSign">New</div>
+        <img src="" class="aboutBookImg">
       
       
     </div>
@@ -129,28 +129,24 @@
 
   
 <div class="commentObvious">
-  <input type="text" class="anonim-input" placeholder="your anonim comment..."  >
+  <input type="text" class="anonimInput" placeholder="your anonim comment..."  >
   <img class="sendIcon"  src="../assets/icons/send.svg" >
 </div>
 
 <!-- Dinamic anonim comment div -->
  <div class="commentAnonymous">
 
-  <div class="yourComment">
-    <div class="anonim">
-      <h4>anonim</h4>
-      <p class="time">18:32 today</p>
+  <template class="commentTemp">
+    <div class="yourComment">
+      <div class="anonim">
+        <h4></h4>
+        <p class="time"></p>
+      </div>
+      <p class="comment"></p>
     </div>
-    <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!"></p>
-  </div>
+  </template>
  
-  <div class="yourComment">
-        <div class="anonim">
-      <h4>anonim</h4>
-      <p class="time">2 days ago</p>
-    </div>
-    <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
-  </div>
+ 
 
   <!-- DINAMIK HISSE -->
   <!-- <div class="yourComment">
@@ -281,6 +277,6 @@
       </article>
     </footer>
 
-    <script src="../scripts/aboutBook/aboutBook.js"></script>
+    <script src="../scripts/aboutBook/aboutBook.js" type="module"></script>
   </body>
 </html>
