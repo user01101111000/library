@@ -146,7 +146,7 @@ const sendJoinerInfoToDb = () => {
 
 const backBtn = document.querySelector(".backBtn")
 backBtn.addEventListener('click', function(){
-  window.location.href = '../../pages/catalog.html'
+  window.location.href = '/library/src/pages/catalog.html'
 })
 
 
