@@ -105,7 +105,7 @@ function displayAllBooks(data) {
       console.log(e.target.dataset.id);
 
       window.location.href =
-        "../../pages/aboutBook.html?id=" + e.target.dataset.id;
+        "/library/src/pages/aboutBook.html?id=" + e.target.dataset.id;
     });
 
     h1.textContent = data[1].bookTitle;
