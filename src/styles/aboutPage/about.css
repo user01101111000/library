@@ -36,7 +36,7 @@ body{
   height: 15rem;
 }
 
-.h1{
+.storeTitle{
   width: 14.688rem;
   height: 4.438rem;
   font-family: "Montserrat", sans-serif;
@@ -46,7 +46,7 @@ body{
   text-align: left;
 }
  
-.p{
+.storeDesc{
   width:42.5rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -55,23 +55,23 @@ body{
 }
 .image{
   width: 35.625rem;
-  height: auto;
-  
+  height: 100%;
+  object-fit: cover;
  }
 
-.img{
+.storeImg{
   margin-top: 4rem;
   width:100%
-  
 }
 
 @media (max-width: 1200px) {
   .container {
    
-    align-items: center;
-    gap: 3%;
-    margin-top: 4%;
+    /* align-items: center; */
+    gap: 4%;
+    margin-top: 10%;
     margin-bottom: 40%;
+    
   }
 
   .heading {
@@ -80,7 +80,7 @@ body{
 
   }
 
-  .h1 {
+  .storeTitle {
     margin-left: 1.1rem;
     width: 90%;
     height: auto;
@@ -89,7 +89,7 @@ body{
     
   }
 
-  .p {
+  .storeDesc {
     width: 90%;
     font-size: 90%;
     line-height: 1.5rem;
@@ -97,10 +97,10 @@ body{
   }
 
   .image {
-    width: 60%;
+    width: 40%;
   }
 
-  .img {
+  .storeImg {
     margin-top: 2%;
     width: 100%;
   }
@@ -109,13 +109,20 @@ body{
 @media (max-width: 768px) {
   .container {
     flex-direction: column-reverse;
-    align-items: center;
+    /* align-items: center; */
     gap: 3.5rem;
     margin-top: 4%;
     margin-bottom: 40%;
   }
 .image{
-  max-width: 95%;
+  max-width: 100%;
+  margin-left: 10rem;
+}
+.storeTitle{
+  margin-left: 6rem;
+}
+.storeImg{
+  width: 100%;
 }
 }
 @media (max-width: 480px) {
@@ -133,13 +140,17 @@ body{
   .image{
     margin-top: 2.5rem;
     margin-bottom: 3.6rem;
+    margin:5%;
     width:90%
     }
 
-    .p{ 
+    .storeDesc{ 
       font-size: 90%;
       line-height: 1.5rem;
       width:100%;
     }
 }
   
+/* @media (max-width:) {
+  
+} */
