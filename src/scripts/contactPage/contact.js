@@ -225,7 +225,6 @@ sendButton.addEventListener("click", () => {
     console.log(newData);
     pushDataToDB(newData)
 
-
     inputRows.forEach(inputRow => {
       inputRow.style.borderColor = "green";
       inputRow.value = "";
