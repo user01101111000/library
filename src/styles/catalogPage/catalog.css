@@ -16,6 +16,13 @@
 body {
   background-color: #fffaf5;
 }
+
+/* =====================================> HELPER CLASSES <=================================== */
+
+.hideLoading {
+  display: none !important;
+}
+
 /* =====================================> MAIN <=================================== */
 .main {
   padding: 5% 7%;
@@ -64,28 +71,31 @@ body {
 }
 
 .categoryArea {
-  background-color: pink;
+  font-size: 16px;
   display: flex;
   gap: 2em;
   width: 40em;
   overflow: auto;
-  padding-inline: 1.5em;
+  padding: 1em 1.5em;
   margin-inline: auto;
 }
 
 .categoryArea::-webkit-scrollbar {
   height: 0.3em;
-  background-color: black;
+  background-color: transparent;
 }
 .categoryArea::-webkit-scrollbar-thumb {
-  background-color: #e16a00;
+  background-color: black;
   height: 0.1em;
+  cursor: pointer;
 }
-.categoryArea p {
+.category {
+  text-wrap: nowrap;
   font-size: 0.9em;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
+  user-select: none;
 }
 
 /* =====================================> SECTION2 <=================================== */
@@ -211,10 +221,11 @@ body {
   .card {
     font-size: 13px;
   }
+  .categoryArea {
+    font-size: 13px;
+  }
 }
 
-@media screen and (max-width: 1000px) {
-}
 @media screen and (max-width: 900px) {
   .card {
     font-size: 12px;
@@ -225,10 +236,12 @@ body {
     gap: 10px;
   }
   .categoryArea {
-    width: 20em;
+    padding-inline: 0;
+    width: 100%;
     margin: 0;
   }
 }
+
 @media screen and (max-width: 420px) {
   .swiper-button-prev,
   .swiper-button-next {

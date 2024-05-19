@@ -10,10 +10,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import {
   getDatabase,
   ref,
-  onValue,
   push,
-  remove,
-  update,
+  get,
+  child,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -33,7 +32,7 @@ const database = getDatabase(app);
 function fetchBooks(data) {
   cont.innerHTML = "";
 
-  onValue(ref(database, "books"), (snapshot) => {
+  get(child(ref(database), "books")).then((snapshot) => {
     if (snapshot.exists()) {
       const books = Object.values(snapshot.val());
 
@@ -70,6 +69,10 @@ function displayData(data) {
 
 searchBtn.addEventListener("click", () => {
   searchInp.value.trim() && fetchBooks(searchInp.value);
+});
+
+searchInp.addEventListener("keyup", (e) => {
+  e.code == "Enter" && searchBtn.click();
 });
 
 // ==================================> DOM ASSIGMENTS <===================================
@@ -191,6 +194,12 @@ let swiperCard = new Swiper(".swiper", {
   grabCursor: true,
   speed: 800,
   slidesPerView: "auto",
+
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+    waitForTransition: false,
+  },
 
   navigation: {
     nextEl: ".swiper-button-next",

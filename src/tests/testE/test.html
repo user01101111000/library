@@ -4,10 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../styles/general/reset.css">
+    <link rel="stylesheet" href="../../styles/general/reset.css" />
     <link rel="stylesheet" href="test.css" />
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+        margin: 20px;
+      }
+
+      .readSec {
+        border: thin solid black;
+        padding: 20px;
+      }
+      .writeSec {
+        border: thin solid black;
+        padding: 20px;
+      }
+      .dataSec {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .dataSec li {
+        background-color: green;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <script src="test.js"></script>
+    <div class="writeSec">
+      <input type="text" class="emailInp" placeholder="email" />
+      <input type="password" class="passwordInp" placeholder="password" />
+
+      <button class="send">send</button>
+    </div>
+
+    <div class="readSec">
+      <input type="text" placeholder="path" class="pathInp" />
+      <button class="read">read</button>
+    </div>
+
+    <ul class="myList"></ul>
+
+    <script src="test.js" type="module"></script>
   </body>
 </html>
