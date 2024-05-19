@@ -137,13 +137,7 @@ const sendJoinerInfoToDb = () => {
 
 // =================================================================> YOUR CODE <==============================================================================
 
-// MORE DETAIL PART
-
-// document.querySelector('.moreDetail').addEventListener('click', function(){
-//   const bookInfo = document.querySelector('.bookInfo')
-//   if()
-// })
-
+// Relate back button to catalog page
 const backBtn = document.querySelector(".backBtn")
 backBtn.addEventListener('click', function(){
   window.location.href = '/library/src/pages/catalog.html'
@@ -165,6 +159,7 @@ const id = window.location.href.split("=")[1]
 
 
 
+
 onValue(ref(database, "books/" + id), (snapshot) => {
   if (snapshot.exists()) {
 
@@ -177,8 +172,8 @@ onValue(ref(database, "books/" + id), (snapshot) => {
     const diff = Math.ceil((Date.now() - data.bookAddedTime) / (1000 * 3600 * 24)) - 1;
 
 
-    if (diff == 0) addedDay.textContent = "Today added"
-    else addedDay.textContent = `${diff} days ago added`
+    if (diff == 0) addedDay.textContent = "Today"
+    else addedDay.textContent = `${diff} days ago`
 
 
     authorName.textContent = data.bookAuthor
@@ -215,7 +210,7 @@ function createCommentBox(data) {
   console.log(diff);
 
 
-  if (diff) time.textContent = diff + " days ago added";
+  if (diff) time.textContent = diff + " days ago";
   else {
     const date = new Date(data.commentDate)
 

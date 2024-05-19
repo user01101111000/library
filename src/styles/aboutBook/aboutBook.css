@@ -44,19 +44,22 @@ font-style: normal;
 font-weight: 900;
 line-height: 196.187%; 
 text-transform: uppercase;
+cursor: pointer;
 
 } 
 
 /* -----------YEAR PART-------------- */
 #bookYear{
+  /* padding: 0.25em 1,25em; */
   margin-top: 5rem;
   text-align: center;
+  /* padding-top: 0.25em; */
   /* padding-left: 1.5em; */
   width: 6em;
   height: 2.1em;
   background-color:  #2F80ED;
   border-radius: 0.25em;
- 
+  
    justify-content: start;
   color: #FFF;
   font-family: Montserrat;
@@ -75,7 +78,7 @@ font-size: 2.2em;
 font-style: normal;
 font-weight: 700;
 line-height: 196.187%; 
-width: 9em;
+width: 11em;
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
@@ -124,14 +127,14 @@ font-style: normal;
 font-weight: 400;
 line-height: 196.187%; /* 35.314px */
 display: -webkit-box;
--webkit-line-clamp: 7;
+-webkit-line-clamp: 8;
 -webkit-box-orient: vertical;
 overflow: hidden;
 text-overflow: ellipsis;
 
  } 
 
- .moreDetail{
+ /* .moreDetail{
   text-decoration: none;
   color: #241400;
   font-family: Montserrat;
@@ -140,7 +143,7 @@ text-overflow: ellipsis;
   font-weight: 400;
   line-height: 196.187%;
   cursor: pointer;
- }
+ } */
 
 
 
@@ -148,6 +151,7 @@ text-overflow: ellipsis;
 /* ------------------IMAGE PART------------ */
  .bookImage{
   position: relative;
+  margin-top: -2em;
   margin-left: 11em;
    width: 23.6em;
   height: 33em;
@@ -199,15 +203,16 @@ text-overflow: ellipsis;
   } 
 
  .anonimInput{
-  /* position:absolute; */
-  width: 29.5em;
-  height: auto;
+  /* position: relative; */
+  width: 30em;
+  height: 3em;
+  /* height: auto; */
   margin-top: 5em;
   border-radius: 0.3rem;
   background: rgba(255, 255, 255, 0.80);
   box-shadow: 0 0 10px 2px rgb(196, 186, 186);
    padding: 0.6em;
-  padding-left: 2.3em;
+  padding-left: 1.5em;
   font-size: 1.2rem;
   border: none;
   color: #232323;
@@ -222,19 +227,19 @@ overflow-y: auto;
 /* -----------SEND ICON----------- */
  
 .sendIcon{
-  border-radius: 0.3rem;
+border-radius: 0.3rem;
+margin-left: -0.5em;
 padding: 1rem;
 background-color: #E16A00;
-margin-top: 6em;
+margin-top: 5.95em;
 width: 3.7em;
 height: 3.7em;
 /* width: 1.7em; */
 /* height: 1.7em; */
 flex-shrink: 0;
-/* position: relative;
-    z-index: 1; */
+  /* z-index: 1;  */
 
- }  
+  }   
 
 /* Umumi div hansiki dinamik gelecek olan commentleri saxlayir */
  .commentAnonymous{
@@ -252,6 +257,7 @@ flex-shrink: 0;
   box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
   /* width: 55%; */
   padding: 2em;
+  padding-left: 1em;
   
   font-size: 1rem;
   margin-top: 3.4em;
@@ -267,8 +273,7 @@ flex-shrink: 0;
 } 
 /* ANONIM YAZISI */
 .anonim h4{
- 
-  color: #232323;
+color: #232323;
 font-family: Rubik;
 font-size: 1rem;
 font-style: normal;
@@ -278,7 +283,7 @@ line-height: normal;
 /* NECE GUN EVVEL YAZILDIGI */
 
 .time{
-  margin-left: 1rem;
+  margin-left: 1em;
 }
 .anonim p{
   color: #232323;
@@ -286,7 +291,7 @@ font-family: Rubik;
 font-size: 1rem;
 font-style: normal;
 font-weight: 400;
-line-height: 24px; 
+/* line-height: 24px;  */
 display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 4;
@@ -334,14 +339,16 @@ max-height: calc(1.2rem * 4);
     font-size: 14px;
   }
   .anonimInput{
-    width: 27em;
+    width: 28.2em;
+    height: 2.7em;
   }
   .sendIcon{
+   
    margin-top: 6.8em;
-   padding: 0.5rem;
+   padding: 0.7rem;
   }
   .yourComment{
-    width: 36em;
+    width: 36.9em;
   }
 }
 
@@ -365,14 +372,17 @@ max-height: calc(1.2rem * 4);
       font-size: 13px;
     }
     .anonimInput{
-      width: 24em;
+      width: 24.2em;
+      height: 2.5em;
     }
     .sendIcon{
+      width: 3.7em;
+      height: 3.8em;
      margin-top: 7.3em;
-     padding: 0.5rem;
+     padding: 0.7rem;
     }
     .yourComment{
-    width: 32em;
+    width: 31.7em;
    }
 }
 
@@ -384,7 +394,7 @@ max-height: calc(1.2rem * 4);
   }
   .bookImage {
     width: 100%; 
-    max-width: 21.6em;
+    max-width: 22em;
     height: 100%; 
     object-fit: cover; 
     margin-left: 0.5em; 
@@ -395,15 +405,20 @@ max-height: calc(1.2rem * 4);
     font-size: 12px;
   }
   .anonimInput{
-    width: 22em;
+    width: 22.5em;
+    height: 2.3em;
     /* font-size: 12px; */
+  }
+
+  .anonimInput::placeholder{
+    font-size: 1em;
   }
   .sendIcon{
    margin-top: 8em;
-   padding: 0.5rem;
+   padding: 0.6rem;
   }
   .yourComment{
-  width: 29em;
+  width: 29.5em;
   height: auto;
  }
 
@@ -429,14 +444,18 @@ max-height: calc(1.2rem * 4);
     font-size: 11px;
   }
   .anonimInput{
-    width: 20em;
+    width: 20.5em;
+    height: 2.2em;
+  }
+  .anonimInput::placeholder{
+    font-size: 0.99em;
   }
   .sendIcon{
-   margin-top: 8.9em;
+   margin-top: 8.7em;
    padding: 0.5rem;
   }
   .yourComment{
-  width: 26.5em;
+  width: 27em;
  }
 }
 
@@ -484,11 +503,13 @@ max-height: calc(1.2rem * 4);
     width: 45em;
   }
   .bookName{
+    margin-left: 1.5em;
     font-family: Montserrat;
     font-size: 25px;
     font-style: normal;
     font-weight: 900;
-    line-height: 196.187%;  
+    line-height: 196.187%;
+    padding-left: 0.7em;
   }
   .authorName{
     color: #241400;
@@ -499,6 +520,8 @@ max-height: calc(1.2rem * 4);
     font-weight: 700;
     line-height: 196.187%;
     margin-top: -0.5em;
+    margin-left: 2em;
+    padding-left: 0.5em;
   }
   .addedDay{
     display: none;
@@ -511,11 +534,12 @@ max-height: calc(1.2rem * 4);
     font-size: 13px;
   }
   .anonimInput{
-    width: 25em;
+    width: 25.5em;
+    height: 2.5em;
   }
   .sendIcon{
-   margin-top: 7.5em;
-   padding: 0.2rem;
+   margin-top: 7.3em;
+   padding: 0.5rem;
   }
   .yourComment{
   width: 33.5em;
@@ -535,6 +559,10 @@ max-height: calc(1.2rem * 4);
    .commentAnonymous{
     font-size: 9px;
    }
+   
+   .sendIcon{
+    padding: 0.8em;
+   }
 }
 
 @media screen and (max-width:662px){
@@ -545,10 +573,20 @@ max-height: calc(1.2rem * 4);
     text-align: center;
     width: 25em;
   }
-  .anonimInput::placeholder{
-    font-size: 0.8em;
-  }
-   /* INPUT PART */
+    /* INPUT PART */
+    .anonimInput{
+      width: 17em;
+    }
+    .sendIcon{
+      padding: 1em;
+    }
+
+    .anonimInput::placeholder{
+      font-size: 0.8em;
+    }
+    .yourComment{
+      width: 23em;
+    }
 }
 
 @media screen and (max-width:648px){
@@ -570,8 +608,8 @@ max-height: calc(1.2rem * 4);
     width: 17em;
   }
   .sendIcon{
-   margin-top: 7.5em;
-   padding: 0.5rem;
+   margin-top: 7.3em;
+   padding: 0.7rem;
   }
   .yourComment{
   width: 23.5em;
@@ -596,8 +634,11 @@ max-height: calc(1.2rem * 4);
    .anonimInput{
     width: 15em;
   }
+  .anonimInput::placeholder{
+     font-size: 0.87em;
+  }
   .sendIcon{
-   margin-top: 7.5em;
+   margin-top: 7.3em;
    padding: 0.8rem;
   }
   .yourComment{
@@ -617,22 +658,22 @@ max-height: calc(1.2rem * 4);
     margin-inline: 8%;
    }
    .anonimInput{
-    width: 13em;
-    height: 30px;
-    
-    padding-inline: 5px;
+    width: 14.5em;
+    height: 2em;
+    padding-left: 1em;
+    /* padding-inline: 5px; */
   }
   .anonimInput::placeholder{
-    font-size: 0.5em;
+    font-size: 0.87em;
   }
   .sendIcon{
-   margin-top: 7.3em;
+   margin-top: 7.4em;
    padding: 0.5rem;
-   width: 2.5em;
-   height: 2.5em;
+   width: 2.8em;
+   height: 2.8em;
   }
   .yourComment{
-  width: 18em;
+  width: 19.5em;
  }
 }
 
@@ -649,16 +690,17 @@ max-height: calc(1.2rem * 4);
     margin-inline: 8%;
    }
    .anonimInput{
-    width: 13em;
-    height: 30px;
-    padding: -10px;
-    padding-left: 5px;
+    width: 13.5em;
+    height: 2em;
+    /* padding: -10px; */
+    padding-left: 1em;
   }
-  .sendIcon{
-   margin-top: 7.3em;
-   padding: 0.5rem;
-   width: 2.5em;
-   height: 2.5em;
+
+    .sendIcon{
+   margin-top: 7.4em;
+   padding: 0.7em;
+   width: 2.9em;
+   height: 2.9em;
   }
   .yourComment{
   width: 18em;
@@ -677,18 +719,24 @@ max-height: calc(1.2rem * 4);
     margin-inline: 8%;
    }
    .anonimInput{
-    width: 11.5em;
-    height: 30px;
-    padding: -10px;
-    padding-left: 5px;
+    width: 11.3em;
+    height: 2em;
+    /* padding: -10px; */
+    padding-left: 0.8em;
+  }
+  .anonimInput::placeholder{
+    font-size: 0.8em;
   }
   .sendIcon{
-   margin-top: 7.3em;
-   padding: 0.5rem;
-   width: 2.5em;
-   height: 2.5em;
+   margin-top: 7.45em;
+   padding: 0.6rem;
+   width: 2.95em;
+   height: 2.95em;
   }
   .yourComment{
   width: 15.5em;
+  /* ADDED this paddings for Added word */
+  padding-left: 0.5em;
+  padding-right: 0.5em;
  }
 }
