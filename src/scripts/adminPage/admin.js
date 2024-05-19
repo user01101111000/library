@@ -11,6 +11,11 @@ import {
   update,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA4Sb2LCfKwA3GW4R3VM9L34pTVqh6xnAY",
   authDomain: "library-7fefd.firebaseapp.com",
@@ -22,6 +27,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const auth = getAuth(app);
 
 // ==================================> DOM ASSIGMENTS <===================================
 
@@ -78,10 +84,8 @@ onValue(ref(database, "contact"), (snapshot) => {
 // ==================================> ADMIN LOGIN FIREABSE <===================================
 
 function checkLogin(data) {
-  onValue(ref(database, "adminLogin"), (snapshot) => {
-    const login = snapshot.val();
-
-    if (data.username === login.username && data.password === login.password) {
+  signInWithEmailAndPassword(auth, data.email, data.password)
+    .then(() => {
       Swal.fire({
         title: "SUCCESS!",
         text: "You have successfully logged in!",
@@ -92,13 +96,20 @@ function checkLogin(data) {
         loginMain.style.display = "none";
         adminMain.style.display = "flex";
       });
-    } else
+
+      inputEmail.value = "";
+      inputPassword.value = "";
+    })
+    .catch(() => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Something went wrong!",
       });
-  });
+
+      inputEmail.value = "";
+      inputPassword.value = "";
+    });
 }
 
 // ==================================> UPDATE ABOUT STORE FIREABSE <===================================
@@ -138,7 +149,7 @@ function checkCategories(data) {
 const loginMain = document.querySelector(".loginMain");
 const adminMain = document.querySelector(".adminMain");
 
-const userName = document.querySelector(".userName");
+const inputEmail = document.querySelector(".inputEmail");
 const inputPassword = document.querySelector(".inputPassword");
 const loginBtn = document.querySelector(".loginBtn");
 
@@ -210,7 +221,7 @@ function clearInputs() {
 
 loginBtn.addEventListener("click", () => {
   checkLogin({
-    username: userName.value,
+    email: inputEmail.value,
     password: inputPassword.value,
   });
 });

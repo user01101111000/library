@@ -148,12 +148,14 @@ const sendJoinerInfoToDb = () => {
 
 // ==================================> FETCHING CATEGORIES <===================================
 
-onValue(ref(database, "categories"), (snapshot) => {
+onValue(ref(database, "books"), (snapshot) => {
   catalogBoxesArea.innerHTML = "";
   if (snapshot.exists()) {
-    const categories = Object.values(snapshot.val());
+    const books = Object.values(snapshot.val());
 
-    displayData(categories);
+    const allCategories = [...new Set(books.map((x) => x.bookCategory))];
+
+    displayData(allCategories);
   } else console.log("no categories");
 });
 
@@ -161,7 +163,7 @@ onValue(ref(database, "categories"), (snapshot) => {
 
 const displayData = (dataArray) => {
   dataArray.forEach((element) => {
-    catalogBoxesArea.append(createCatalogBox(element.category));
+    catalogBoxesArea.append(createCatalogBox(element));
   });
   loading.style.display = "none";
 };
@@ -171,10 +173,14 @@ const displayData = (dataArray) => {
 const createCatalogBox = (data) => {
   const catalogBox = catalogBoxTemplate.content.cloneNode(true).children[0];
 
-  const a = catalogBox.querySelector("a");
+  const p = catalogBox.querySelector("p");
 
-  a.textContent = data;
-  a.setAttribute("href", "/library/src/pages/catalog.html");
+  p.textContent = data;
+
+  catalogBox.addEventListener("click", () => {
+    localStorage.setItem("selectedCategory", data);
+    window.location.href = `/library/src/pages/catalog.html`;
+  });
 
   return catalogBox;
 };

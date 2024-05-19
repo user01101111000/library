@@ -15,6 +15,8 @@ import {
   push,
   remove,
   update,
+  child,
+  get,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -29,57 +31,45 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+const categoryArea = document.querySelector(".categoryArea");
+
 function hideLoadings() {
   loading.forEach((loading) => {
-    loading.style.display = "none";
+    loading.classList.add("hideLoading");
   });
 }
 
 // =================================> FECTH ALLBOOKS <===================================
 
-onValue(ref(database, "books"), (snapshot) => {
-  cont.innerHTML = "";
-  if (snapshot.exists()) {
-    const books = Object.entries(snapshot.val());
-
-    displayAllBooks(books);
-    hideLoadings();
-    console.log(books);
-  } else console.log("no books");
-});
-
-// =================================> FECTH BESTSELLER BOOKS <===================================
-
-onValue(ref(database, "books"), (snapshot) => {
-  cont2.innerHTML = "";
+get(child(ref(database), "books")).then((snapshot) => {
   if (snapshot.exists()) {
     const books = Object.entries(snapshot.val());
     const bestsellerBooks = books.filter(
       (book) => book[1].bookType === "bestseller"
     );
-
-    displayBestsellerBooks(bestsellerBooks);
-    hideLoadings();
-    console.log(bestsellerBooks);
-  } else console.log("no books");
-});
-
-// =================================> FECTH NEW BOOKS <===================================
-
-onValue(ref(database, "books"), (snapshot) => {
-  cont3.innerHTML = "";
-  if (snapshot.exists()) {
-    const books = Object.entries(snapshot.val());
     const newBooks = books.filter((book) => book[1].bookType === "new");
+
+    displayAllCategories(books);
+    displayBestsellerBooks(bestsellerBooks);
     displayNewBooks(newBooks);
+    displayAllBooks(books);
     hideLoadings();
-    console.log(newBooks);
+
+    if (localStorage.getItem("selectedCategory")) {
+      const pElements = document.querySelectorAll(".categoryArea p");
+
+      pElements.forEach((p) => {
+        p.textContent == localStorage.getItem("selectedCategory") && p.click();
+      });
+
+      localStorage.removeItem("selectedCategory");
+    }
   } else console.log("no books");
 });
-
 // =================================> DISPLAY ALL BOOKS <===================================
 
 function displayAllBooks(data) {
+  cont.innerHTML = "";
   data.forEach((data) => {
     const card = cardTemp.content.cloneNode(true).children[0];
 
@@ -113,6 +103,7 @@ function displayAllBooks(data) {
 // =================================> DISPLAY BESTSELLER BOOKS <===================================
 
 function displayBestsellerBooks(data) {
+  cont2.innerHTML = "";
   data.forEach((data) => {
     const card = cardTemp.content.cloneNode(true).children[0];
 
@@ -144,6 +135,7 @@ function displayBestsellerBooks(data) {
 // =================================> DISPLAY NEW BOOKS <===================================
 
 function displayNewBooks(data) {
+  cont3.innerHTML = "";
   data.forEach((data) => {
     const card = cardTemp.content.cloneNode(true).children[0];
 
@@ -166,6 +158,38 @@ function displayNewBooks(data) {
     cont3.append(card);
   });
 }
+
+// ==================================> DISPLAY ALL CATEGORIES <===================================
+
+const displayAllCategories = (data) => {
+  let allCategories = [...new Set(data.map((x) => x[1].bookCategory))];
+  allCategories.unshift("All");
+
+  allCategories.forEach((category) => {
+    const p = document.createElement("p");
+    p.classList.add("category");
+    p.textContent = category;
+
+    p.addEventListener("click", () => {
+      cont.innerHTML = "";
+      get(child(ref(database), "books")).then((snp) => {
+        if (snp.exists()) {
+          const allBooks = Object.entries(snp.val());
+
+          if (p.textContent == "All") displayAllBooks(allBooks);
+          else
+            displayAllBooks(
+              allBooks.filter((x) => x[1].bookCategory == p.textContent)
+            );
+        } else console.log("no categ");
+      });
+
+      loading[0].classList.add("hideLoading");
+    });
+
+    categoryArea.append(p);
+  });
+};
 
 // =======================================================================================================================
 

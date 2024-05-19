@@ -235,7 +235,7 @@ body {
   opacity: 1;
 }
 
-.catalogBox a {
+.catalogBox p {
   font-size: var(--fontSize3);
   font-weight: var(--fontWeight2);
   font-family: var(--font-montserrat);
