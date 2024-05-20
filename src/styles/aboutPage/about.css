@@ -116,7 +116,7 @@ body{
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px){
   .main{
     padding-inline: 8%;
     overflow: hidden;
@@ -125,6 +125,46 @@ body{
   .container{
     max-width: 100%;
     flex-direction: column-reverse;
+    gap: 3.5rem;
+    margin-bottom: 8.5rem;
+  }
+
+  .heading{
+    max-width: 100%;
+    /* height: 10rem; */
+  }
+
+  .storeTitle{
+    text-align: center;
+    max-width: 100%;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .storeDesc{
+    text-align: center;
+    max-width: 100%;
+    font-size: 1.3rem;
+    /* margin: 0 auto; */
+    /* padding: 1rem; */
+  }
+
+  .image{
+    margin: 0 auto;
+    width:100%;
+    height: auto;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main{
+    padding-inline: 8%;
+    overflow: hidden;
+  }
+
+  .container{
+    max-width: 100%;
     gap: 2rem;
   }
 
@@ -151,7 +191,7 @@ body{
   .image{
     margin: 0 auto;
     width:100%;
-    height: 18rem;
+    height: auto;
     margin-top: 2rem;
   }
 }
@@ -193,7 +233,7 @@ body{
   .image{
     margin: 0 auto;
     width: 100%;
-    height: 14em;
+    height: auto;
     margin-top: 1rem;
   }
 }
