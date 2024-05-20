@@ -85,7 +85,8 @@ font-size: 2.2em;
 font-style: normal;
 font-weight: 700;
 line-height: 196.187%; 
-width: 11em;
+width: 100%;
+/* background-color: #E16A00; */
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
@@ -107,13 +108,13 @@ margin-top: -0.8em;
 /* ------------------AUTHOR NAME PART--------- */
 .authorName{
   color: #241400;
+  width: 100%;
   font-family: Montserrat;
   font-size: 1.3em;
   font-style: normal;
   font-weight: 400;
   line-height: 196.187%;
    margin-bottom: 0.1em;
-   width: 11em;
    overflow: hidden;       
    text-overflow: ellipsis;
    white-space: nowrap; 
@@ -229,6 +230,7 @@ font-weight: 300;
 line-height: normal;
 letter-spacing: 1px;
 overflow-y: auto;
+outline: none;
 
 } 
 /* -----------SEND ICON----------- */
@@ -244,6 +246,7 @@ height: 3.7em;
 /* width: 1.7em; */
 /* height: 1.7em; */
 flex-shrink: 0;
+cursor: pointer;
   /* z-index: 1;  */
 
   }   
@@ -510,7 +513,9 @@ max-height: calc(1.2rem * 4);
     width: 45em;
   }
   .bookName{
-    margin-left: 1.5em;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
     font-family: Montserrat;
     font-size: 25px;
     font-style: normal;
@@ -520,15 +525,16 @@ max-height: calc(1.2rem * 4);
   }
   .authorName{
     color: #241400;
-    /* text-align: center; */
+    width: 100%;
+    text-align: center;
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: 196.187%;
     margin-top: -0.5em;
-    margin-left: 2em;
-    padding-left: 0.5em;
+    /* margin-left: 2em; */
+    /* padding-left: 0.5em; */
   }
   .addedDay{
     display: none;
