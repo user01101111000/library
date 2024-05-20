@@ -11,6 +11,8 @@ import {
   getDatabase,
   ref,
   onValue,
+  get,
+  child,
   push,
   remove,
   update,
@@ -27,8 +29,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-
-// ==================================> DOM ASSIGMENTS <===================================
 
 // ==================================> FECTH CATEGORIES <===================================
 
@@ -95,7 +95,7 @@ function sendBookData(data) {
 // ==================================> CHECK CATEGORIES <===================================
 
 function checkCategories(data) {
-  onValue(ref(database, "categories"), (snapshot) => {
+  get(child(ref(database), "categories")).then((snapshot) => {
     if (snapshot.exists()) {
       const categories = Object.values(snapshot.val());
 
@@ -107,6 +107,33 @@ function checkCategories(data) {
       !isExist &&
         push(ref(database, "categories"), {
           category: data[0].toUpperCase() + data.slice(1).toLowerCase(),
+        });
+    } else console.log("no categories");
+  });
+}
+
+// ==================================> CHECK BOOKS <===================================
+
+function checkBooks(data) {
+  get(child(ref(database), "books")).then((snapshot) => {
+    if (snapshot.exists()) {
+      const books = Object.values(snapshot.val());
+
+      const isExist = books.some(
+        (currentBook) =>
+          currentBook.bookTitle.toLowerCase() === data.bookTitle.toLowerCase()
+      );
+
+      if (!isExist) {
+        sendBookData(data);
+        Swal.fire({
+          icon: "success",
+          title: "Book added successfully!",
+        });
+      } else
+        Swal.fire({
+          icon: "info",
+          title: "This book already exists in the library!",
         });
     } else console.log("no categories");
   });
@@ -314,23 +341,11 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
         bookAddedTime: Date.now(),
       };
 
-      sendBookData(currentBook);
+      checkBooks(currentBook);
+
       checkCategories(currentBook.bookCategory);
 
-      // let date1 = new Date("05/09/2024");
-
-      // let diff = Math.round(
-      //   (1715421597974 - date1.getTime()) / (1000 * 3600 * 24)
-      // );
-
-      // console.log(diff);
-
       clearInputs();
-
-      Swal.fire({
-        icon: "success",
-        title: "Book added successfully!",
-      });
     }
   } else {
     console.log("work2");

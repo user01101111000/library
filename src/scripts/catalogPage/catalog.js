@@ -170,7 +170,9 @@ const displayAllCategories = (data) => {
     p.textContent = category;
 
     p.addEventListener("click", () => {
+      loading[0].classList.remove("hideLoading");
       cont.innerHTML = "";
+
       get(child(ref(database), "books")).then((snp) => {
         if (snp.exists()) {
           const allBooks = Object.entries(snp.val());
@@ -180,10 +182,10 @@ const displayAllCategories = (data) => {
             displayAllBooks(
               allBooks.filter((x) => x[1].bookCategory == p.textContent)
             );
+
+          loading[0].classList.add("hideLoading");
         } else console.log("no categ");
       });
-
-      loading[0].classList.add("hideLoading");
     });
 
     categoryArea.append(p);
