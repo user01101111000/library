@@ -1,0 +1,177 @@
+/* ===============> IMPORT <============= */
+@import url("../general/loadingSpinner.css");
+
+@import url("../general/fonts/montserratFont.css");
+@import url("../general/fonts/crimsonTextFont.css");
+@import url("../general/fonts/preahvihear.css");
+@import url("../general/fonts/nunitoSansFont.css");
+@import url("../general/fonts/robotoFont.css");
+
+:root {
+  /* =============> FONTS <============= */
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-crimson: "Crimson Text", sans-serif;
+  --font-preahvihear: "Preahvihear", sans-serif;
+  --font-nunitoSans: "Nunito Sans", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+
+  /* =============> COLORS <============= */
+
+  --button-color: #ff8b00;
+
+  --text-color1: #000000;
+  --text-color2: #241400;
+  --text-color3: #ffffff;
+  --text-color4: #797667;
+
+  --admin-bgColor: #720418;
+  --home-bgColor: #fffaf5;
+
+  --hamburgerMenu-bgColor: rgba(36, 20, 0, 0.7);
+
+  /* =============> FONT SIZES <============= */
+
+  --fontSize1: 1em;
+  /* 16px */
+  --fontSize2: 2.75em;
+  /* 44px */
+  --fontSize3: 1.875em;
+  /* 30px */
+  --fontSize4: 0.875em;
+  /* 14px */
+  --fontSize5: 0.983em;
+  /* 15px */
+  --fontSize6: 1.125em;
+  /* 18px */
+
+  /* =============> FONT WEIGHTS <============= */
+
+  --fontWeight1: 400;
+  --fontWeight2: 700;
+  --fontWeight3: 900;
+
+  /* =============> PADDINGS <============= */
+
+  --globalPadding: 3%;
+}
+/* =======================================================> HELPER CLASSES <====================================================== */
+
+.showAside {
+  left: 0% !important;
+}
+
+.hideLoading {
+  display: none !important;
+}
+.swal2-popup {
+  font-size: 1rem !important;
+  font-family: var(--font-montserrat);
+}
+
+/* ======================================================> GENERAL <====================================================== */
+
+::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--admin-bgColor);
+}
+
+/* !======================================================> LOGIN PAGE <====================================================== */
+
+.loginMain {
+  background-color: var(--admin-bgColor);
+  height: 100vh;
+  width: 100%;
+}
+
+/* ======================================================> HEADER <====================================================== */
+
+.adminLogo {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+.adminLogo img {
+  width: 100%;
+  width: 100%;
+}
+
+/* ======================================================> LOGIN BOX <====================================================== */
+
+.loginBox {
+  background-color: #ffffff;
+  width: 38.188em;
+  height: 29.688em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 3.438em;
+  transition: all 0.3s;
+}
+
+.loginBox h1 {
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeight2);
+  font-family: var(--font-montserrat);
+}
+
+.inputBoxes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.125em;
+}
+.inputBox {
+  padding: 1em;
+  border: 1px solid #797667;
+  outline: none;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeight1);
+}
+.loginBtn {
+  width: 100%;
+  background-color: var(--button-color);
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1.2em;
+  color: #ffffff;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeight2);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  z-index: 2;
+}
+.loginBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: white;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.loginBtn:hover::before {
+  height: 100%;
+  border: none;
+}
+.loginBtn:hover {
+  color: #e16a00;
+}
