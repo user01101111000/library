@@ -118,7 +118,7 @@ body{
 
 @media only screen and (max-width: 768px) {
   .main{
-    padding-inline: 4%;
+    padding-inline: 8%;
     overflow: hidden;
   }
 
@@ -160,7 +160,7 @@ body{
 /* Styles for screens smaller than 480px */
 @media only screen and (max-width: 480px) {
   .main{
-    padding-inline: 3%;
+    padding-inline: 8%;
     overflow: hidden;
   }
 
@@ -198,8 +198,7 @@ body{
 
 @media only screen and (max-width: 330px) {
   .main {
-    padding-inline: 2%;
-  }
+    padding-inline: 8%;}
 
   .container {
     max-width: 100%;
@@ -209,6 +208,7 @@ body{
   .heading {
     max-width: 100%;
     height: auto;
+    /* padding-inline: 8%; */
   }
 
   .storeTitle {
@@ -228,6 +228,7 @@ body{
 
   .image {
     margin: 0 auto;
+    /* padding-inline: 8%; */
     width: 100%;
     height: auto;
     margin-top: 1rem;
