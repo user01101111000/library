@@ -159,9 +159,14 @@ const anonimInput = document.querySelector(".anonimInput")
 const commentAnonymous = document.querySelector(".commentAnonymous")
 const commentTemp = document.querySelector(".commentTemp")
 const id = window.location.href.split("=")[1]
+// const id = "-Ny1HkzCWPOglo_VzDVw"
 
 
+anonimInput.addEventListener("keyup", (e) => {
+  e.code === 'Enter' &&
+    sendIcon.click()
 
+})
 
 onValue(ref(database, "books/" + id), (snapshot) => {
   if (snapshot.exists()) {
@@ -237,7 +242,7 @@ sendIcon.addEventListener("click", () => {
 
     const commentData = {
       commentDate: Date.now(),
-      commentName: "anonym",
+      commentName: localStorage.getItem("joinerName") ? localStorage.getItem("joinerName") : "anonym",
       comment: anonimInput.value
     }
 
