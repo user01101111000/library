@@ -37,6 +37,9 @@ const inputName = document.querySelector(".inputName");
 const inputEmail = document.querySelector(".inputEmail");
 
 const joinerName = document.querySelector(".joinerName");
+const loading = document.querySelector(".loading")
+
+
 
 // ==================================> SHOW HIDE MENU <===================================
 
@@ -139,7 +142,7 @@ const sendJoinerInfoToDb = () => {
 
 // Relate back button to catalog page
 const backBtn = document.querySelector(".backBtn")
-backBtn.addEventListener('click', function(){
+backBtn.addEventListener('click', function () {
   window.location.href = '/library/src/pages/catalog.html'
 })
 
@@ -184,7 +187,9 @@ onValue(ref(database, "books/" + id), (snapshot) => {
 
 
 
+    loading.classList.add("hideLaoding")
 
+    document.querySelector("main").style.visibility = "visible"
 
 
 
