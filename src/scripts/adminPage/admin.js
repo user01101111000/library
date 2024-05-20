@@ -1,3 +1,8 @@
+// ==================================> CHECK LOGGED IN <===================================
+
+if (!localStorage.getItem("loggedIn"))
+  window.location.href = "/library/src/pages/adminLogin.html";
+
 // =================================> IMPORT FIREBASE <===================================
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -11,11 +16,6 @@ import {
   update,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyA4Sb2LCfKwA3GW4R3VM9L34pTVqh6xnAY",
   authDomain: "library-7fefd.firebaseapp.com",
@@ -27,7 +27,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const auth = getAuth(app);
 
 // ==================================> DOM ASSIGMENTS <===================================
 
@@ -81,37 +80,6 @@ onValue(ref(database, "contact"), (snapshot) => {
   } else console.log("no contact");
 });
 
-// ==================================> ADMIN LOGIN FIREABSE <===================================
-
-function checkLogin(data) {
-  signInWithEmailAndPassword(auth, data.email, data.password)
-    .then(() => {
-      Swal.fire({
-        title: "SUCCESS!",
-        text: "You have successfully logged in!",
-        icon: "success",
-      }).then(() => {
-        localStorage.setItem("loggedIn", true);
-
-        loginMain.style.display = "none";
-        adminMain.style.display = "flex";
-      });
-
-      inputEmail.value = "";
-      inputPassword.value = "";
-    })
-    .catch(() => {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
-      });
-
-      inputEmail.value = "";
-      inputPassword.value = "";
-    });
-}
-
 // ==================================> UPDATE ABOUT STORE FIREABSE <===================================
 
 function updateAboutStoreData(data) {
@@ -145,13 +113,6 @@ function checkCategories(data) {
 }
 
 // ==================================> DOM ASSIGMENTS <===================================
-
-const loginMain = document.querySelector(".loginMain");
-const adminMain = document.querySelector(".adminMain");
-
-const inputEmail = document.querySelector(".inputEmail");
-const inputPassword = document.querySelector(".inputPassword");
-const loginBtn = document.querySelector(".loginBtn");
 
 const logout = document.querySelector(".logout");
 
@@ -203,38 +164,18 @@ function clearInputs() {
   selectInput.removeAttribute("disabled");
 }
 
-// ==================================> CHECK LOGGED IN <===================================
+// ==================================> LOGOUT FUNCTION <===================================
 
-(() => {
-  document.querySelector(".adminMain").style.display = "none";
-
-  if (
-    localStorage.getItem("loggedIn") &&
-    localStorage.getItem("loggedIn") === "true"
-  ) {
-    loginMain.style.display = "none";
-    adminMain.style.display = "flex";
+function doLogout(e) {
+  if (e.target.closest(".logout").classList[1] === "logout") {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "/library/src/pages/adminLogin.html";
   }
-})();
-
-// ==================================> LOGIN <===================================
-
-loginBtn.addEventListener("click", () => {
-  checkLogin({
-    email: inputEmail.value,
-    password: inputPassword.value,
-  });
-});
+}
 
 // ==================================> LOGOUT <===================================
 
-logout.addEventListener("click", (e) => {
-  if (e.target.closest(".logout").classList[1] === "logout") {
-    localStorage.setItem("loggedIn", false);
-    loginMain.style.display = "block";
-    adminMain.style.display = "none";
-  }
-});
+logout.addEventListener("click", doLogout);
 
 // ============================================================================> ADMIN <============================================================================
 

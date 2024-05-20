@@ -148,7 +148,7 @@ function displayNewBooks(data) {
 
     readMore.addEventListener("click", (e) => {
       window.location.href =
-        "../../pages/aboutBook.html?id=" + e.target.dataset.id;
+        "/library/src/pages/aboutBook.html?id=" + e.target.dataset.id;
     });
     h1.textContent = data[1].bookTitle;
     p1.textContent = data[1].bookAuthor;
