@@ -1,9 +1,15 @@
 @import url("../general/commonStyle.css ");
+@import url("../general/loadingSpinner.css");
 
 .navBar .navMenu a:nth-of-type(2) {
   color: #e16a00;
   text-decoration: underline !important;
   font-weight: 700;
+}
+
+/* HELPER CLASSES */
+.hideLoading{
+  display: none !important;
 }
 
  /* MAIN PART OF ABOUTPAGE CSS */
@@ -13,7 +19,8 @@
 
  main{
   padding-inline: 8%;
-  margin-bottom: 12rem;
+  margin-bottom: 12rem; 
+visibility: hidden;
  } 
 
  /* ================================== SECTION 1 ============================= */

@@ -1,155 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library</title>
 
-    <link rel="stylesheet" href="../styles/general/reset.css" />
-    <link rel="stylesheet" href="../styles/aboutBook/aboutBook.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library</title>
+
+  <link rel="stylesheet" href="../styles/general/reset.css" />
+  <link rel="stylesheet" href="../styles/aboutBook/aboutBook.css" />
 
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
 
-    <link
-      rel="shortcut icon"
-      href="/library/src/assets/icons/booksStackWhite.svg"
-      type="image/x-icon"
-    />
-  </head>
-  <body>
-    <!-- ========================> HEADER <======================== -->
+  <link rel="shortcut icon" href="/library/src/assets/icons/booksStackWhite.svg" type="image/x-icon" />
+</head>
 
-    <header class="navBar">
-      <figure class="logo">
-        <img
-          src="../assets/icons/logoColored.svg"
-          alt="logoColored"
-          class="logoImg"
-        />
+<body>
+  <!-- ========================> HEADER <======================== -->
+
+  <header class="navBar">
+    <figure class="logo">
+      <img src="../assets/icons/logoColored.svg" alt="logoColored" class="logoImg" />
+    </figure>
+
+    <nav class="navMenu">
+      <a href="../../index.html" class="homeLink">Home</a>
+      <a href="../pages/catalog.html" class="catalogLink">Catalog</a>
+      <a href="../pages/about.html" class="aboutStoreLink">About Store</a>
+      <a href="../pages/contact.html" class="contactUsLink">Contact Us</a>
+      <a href="../pages/search.html" class="searchLink">Search</a>
+
+      <img src="../assets/icons/close.svg" alt="close" class="closeBtn" />
+    </nav>
+
+    <div class="joinUsIcon joinUs">
+      <figure>
+        <img src="../assets/icons/person.svg" alt="person" class="joinUsIcon iconP" />
       </figure>
+      <figure class="hamburger">
+        <img src="../assets/icons/hamburger.svg" alt="hamburger" class="iconH" />
+      </figure>
+      <p class="joinUsIcon joinerName">Join Us</p>
+    </div>
+  </header>
 
-      <nav class="navMenu">
-        <a href="/library/index.html" class="homeLink">Home</a>
-        <a href="../pages/catalog.html" class="catalogLink">Catalog</a>
-        <a href="../pages/about.html" class="aboutStoreLink">About Store</a>
-        <a href="../pages/contact.html" class="contactUsLink">Contact Us</a>
-        <a href="../pages/search.html" class="searchLink">Search</a>
+  <!-- ========================> JOIN US MODAL <======================== -->
 
-        <img src="../assets/icons/close.svg" alt="close" class="closeBtn" />
-      </nav>
+  <article class="joinUsModalArea">
+    <article class="joinUsModal">
+      <h1>Join Us</h1>
 
-      <div class="joinUsIcon joinUs">
-        <figure>
-          <img
-            src="../assets/icons/person.svg"
-            alt="person"
-            class="joinUsIcon iconP"
-          />
-        </figure>
-        <figure class="hamburger">
-          <img
-            src="../assets/icons/hamburger.svg"
-            alt="hamburger"
-            class="iconH"
-          />
-        </figure>
-        <p class="joinUsIcon joinerName">Join Us</p>
+      <form class="inputBoxes">
+        <input type="text" class="inputBox inputName" placeholder="Full Name" required />
+        <input type="email" class="inputBox inputEmail" placeholder="Email" required />
+      </form>
+      <div class="alertModal">
+        <p class="alertModalP">
+          Please fill in all fields, or enter a valid email
+        </p>
       </div>
-    </header>
-
-    <!-- ========================> JOIN US MODAL <======================== -->
-
-    <article class="joinUsModalArea">
-      <article class="joinUsModal">
-        <h1>Join Us</h1>
-
-        <form class="inputBoxes">
-          <input
-            type="text"
-            class="inputBox inputName"
-            placeholder="Full Name"
-            required
-          />
-          <input
-            type="email"
-            class="inputBox inputEmail"
-            placeholder="Email"
-            required
-          />
-        </form>
-        <div class="alertModal">
-          <p class="alertModalP">
-            Please fill in all fields, or enter a valid email
-          </p>
-        </div>
-        <button type="submit" class="joinUsModalBtn">Join</button>
-      </article>
+      <button type="submit" class="joinUsModalBtn">Join</button>
     </article>
+  </article>
 
-    <!-- ========================> YOUR CODE <======================== -->
+  <!-- ========================> YOUR CODE <======================== -->
 
-        
-      <main>
+  <div class="loading"></div>
+  <main>
+   
+    <!-- ================================= SECTION ONE =========================== -->
+    <button class="backBtn">&lt; Back</button>
+    <section class="firstArea">
 
-<!-- ================================= SECTION ONE =========================== -->
-   <button class="backBtn">&lt; Back</button>
-  <section  class="firstArea">
+      <div class="respons">
 
-    <div class="respons">
+        <div class="bookYear-adjust">
+          <p id="bookYear"></p>
+        </div>
 
-     <div class="bookYear-adjust">
-      <p id="bookYear"></p>
-     </div>
-      
-    
-    
-     <div class="bookAbout">
-     
-      <h1 class="bookName"></h1>
-      <h5 class="addedDay"></h5>
-      <h3 class="authorName"></h3>
-      <p class="bookInfo"></p>
 
-    </div> 
 
-     </div>
+        <div class="bookAbout">
 
-    <div class="bookImage">
-      <div class="newSign">New</div>
-        <img src="" class="aboutBookImg">
-      
-      
-    </div>
-  </section>  
+          <h1 class="bookName"></h1>
+          <h5 class="addedDay"></h5>
+          <h3 class="authorName"></h3>
+          <p class="bookInfo"></p>
 
-           <!-- =============== SECTION TWO ========================= -->
-<section class="secondArea">
+        </div>
 
-  
-<div class="commentObvious">
-  <input type="text" class="anonimInput" placeholder="your anonim comment..."  >
-  <img class="sendIcon"  src="../assets/icons/send.svg" >
-</div>
-
-<!-- Dinamic anonim comment div -->
- <div class="commentAnonymous">
-
-  <template class="commentTemp">
-    <div class="yourComment">
-      <div class="anonim">
-        <h4></h4>
-        <p class="time"></p>
       </div>
-      <p class="comment"></p>
-    </div>
-  </template>
- 
- 
 
-  <!-- DINAMIK HISSE -->
-  <!-- <div class="yourComment">
+      <div class="bookImage">
+        <div class="newSign">New</div>
+        <img src="" class="aboutBookImg">
+
+
+      </div>
+    </section>
+
+    <!-- =============== SECTION TWO ========================= -->
+    <section class="secondArea">
+
+
+      <div class="commentObvious">
+        <input type="text" class="anonimInput" placeholder="your anonim comment...">
+        <img class="sendIcon" src="../assets/icons/send.svg">
+      </div>
+
+      <!-- Dinamic anonim comment div -->
+      <div class="commentAnonymous">
+
+        <template class="commentTemp">
+          <div class="yourComment">
+            <div class="anonim">
+              <h4></h4>
+              <p class="time"></p>
+            </div>
+            <p class="comment"></p>
+          </div>
+        </template>
+
+
+
+        <!-- DINAMIK HISSE -->
+        <!-- <div class="yourComment">
     <div class="anonim">
   <h4>anonim</h4>
   <p class="time">2 days ago</p>
@@ -157,7 +134,7 @@
 <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
 </div>   -->
 
-<!-- <div class="yourComment">
+        <!-- <div class="yourComment">
   <div class="anonim">
 <h4>anonim</h4>
 <p class="time">2 days ago</p>
@@ -173,110 +150,111 @@
 <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into</p>
 </div> -->
 
-</div>
+      </div>
 
 
-</section> 
-
-   </main>
-
-
-
-
-     
-
-
-
-
-    <!-- ========================> YOUR CODE <======================== -->
-    
-
-
-    <!-- ========================> FOLLOW US <======================== -->
-
-    <section class="followUs">
-      <article class="followUsBox">
-        <h1>Follow us on social media</h1>
-        <div class="iconArea">
-          <img src="../assets/icons/facebook.svg" alt="fb" class="iconF" />
-          <img src="../assets/icons/twitter.svg" alt="tw" class="iconF" />
-          <img src="../assets/icons/instagram.svg" alt="ig" class="iconF" />
-        </div>
-      </article>
     </section>
 
-    <!-- ========================> FOOTER <======================== -->
+  </main>
 
-    <footer class="footer">
-      <article class="footerMiddlePart">
+
+
+
+
+
+
+
+
+  <!-- ========================> YOUR CODE <======================== -->
+
+
+
+  <!-- ========================> FOLLOW US <======================== -->
+
+  <section class="followUs">
+    <article class="followUsBox">
+      <h1>Follow us on social media</h1>
+      <div class="iconArea">
+        <img src="../assets/icons/facebook.svg" alt="fb" class="iconF" />
+        <img src="../assets/icons/twitter.svg" alt="tw" class="iconF" />
+        <img src="../assets/icons/instagram.svg" alt="ig" class="iconF" />
+      </div>
+    </article>
+  </section>
+
+  <!-- ========================> FOOTER <======================== -->
+
+  <footer class="footer">
+    <article class="footerMiddlePart">
+      <figure class="footerLogo">
+        <img src="../assets/icons/logoWhite.svg" alt="logoWhite" />
+      </figure>
+
+      <article class="footerMiddlePartBoxes">
+        <div class="footerMiddlePartBox">
+          <ul>
+            <li>Popular</li>
+            <li>Programming</li>
+            <li>Books for children</li>
+            <li>Psychology</li>
+            <li>Business</li>
+          </ul>
+        </div>
+
+        <div class="footerMiddlePartBox">
+          <ul>
+            <li>Information</li>
+            <li>Delivery</li>
+            <li>Payment</li>
+            <li>About the store</li>
+          </ul>
+        </div>
+
+        <div class="footerMiddlePartBox">
+          <ul>
+            <li>Help</li>
+            <li>Contacts</li>
+            <li>Purchase returns</li>
+            <li>Buyer help</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="footerTel">
+        <h1>+38 (071) 339-16-26</h1>
+        <a href="" class="footerTelBtn">Request a call</a>
+      </article>
+    </article>
+    <article class="footerEndPart">
+      <h1>
+        All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+      </h1>
+    </article>
+
+    <!-- =======================> MOBILE VERSION <======================== -->
+
+    <article class="footerMobile">
+      <article class="footerMobileUp">
         <figure class="footerLogo">
           <img src="../assets/icons/logoWhite.svg" alt="logoWhite" />
         </figure>
 
-        <article class="footerMiddlePartBoxes">
-          <div class="footerMiddlePartBox">
-            <ul>
-              <li>Popular</li>
-              <li>Programming</li>
-              <li>Books for children</li>
-              <li>Psychology</li>
-              <li>Business</li>
-            </ul>
-          </div>
-
-          <div class="footerMiddlePartBox">
-            <ul>
-              <li>Information</li>
-              <li>Delivery</li>
-              <li>Payment</li>
-              <li>About the store</li>
-            </ul>
-          </div>
-
-          <div class="footerMiddlePartBox">
-            <ul>
-              <li>Help</li>
-              <li>Contacts</li>
-              <li>Purchase returns</li>
-              <li>Buyer help</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="footerTel">
-          <h1>+38 (071) 339-16-26</h1>
-          <a href="" class="footerTelBtn">Request a call</a>
-        </article>
+        <div class="footerMobileUpLinks">
+          <a href="/library/index.html" class="homeLink">Home</a>
+          <a href="../pages/catalog.html" class="catalogLink">Catalog</a>
+          <a href="../pages/about.html" class="aboutStoreLink">About Store</a>
+          <a href="../pages/contact.html" class="contactUsLink">Contact Us</a>
+          <a href="../pages/search.html" class="searchLink">Search</a>
+        </div>
       </article>
-      <article class="footerEndPart">
-        <h1>
-          All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
-        </h1>
+      <article class="footerMobileDown">
+        <div class="divider"></div>
+        <h1>Library BookStore EACamp © 2003-2021</h1>
       </article>
+    </article>
+  </footer>
 
-      <!-- =======================> MOBILE VERSION <======================== -->
+  <script src="../scripts/aboutBook/aboutBook.js" type="module"></script>
+</body>
 
-      <article class="footerMobile">
-        <article class="footerMobileUp">
-          <figure class="footerLogo">
-            <img src="../assets/icons/logoWhite.svg" alt="logoWhite" />
-          </figure>
-
-          <div class="footerMobileUpLinks">
-            <a href="/library/index.html" class="homeLink">Home</a>
-            <a href="../pages/catalog.html" class="catalogLink">Catalog</a>
-            <a href="../pages/about.html" class="aboutStoreLink">About Store</a>
-            <a href="../pages/contact.html" class="contactUsLink">Contact Us</a>
-            <a href="../pages/search.html" class="searchLink">Search</a>
-          </div>
-        </article>
-        <article class="footerMobileDown">
-          <div class="divider"></div>
-          <h1>Library BookStore EACamp © 2003-2021</h1>
-        </article>
-      </article>
-    </footer>
-
-    <script src="../scripts/aboutBook/aboutBook.js" type="module"></script>
-  </body>
 </html>
