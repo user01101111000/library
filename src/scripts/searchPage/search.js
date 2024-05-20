@@ -30,16 +30,15 @@ const database = getDatabase(app);
 // ==================================> FECTH BOOKS <===================================
 
 function fetchBooks(data) {
-  cont.innerHTML = "";
-
   get(child(ref(database), "books")).then((snapshot) => {
+    cont.innerHTML = "";
+
     if (snapshot.exists()) {
       const books = Object.values(snapshot.val());
 
       const filteredArray = books.filter((book) =>
         book.bookTitle.toLowerCase().includes(data.toLowerCase())
       );
-      console.log(filteredArray);
       displayData(filteredArray);
     } else console.log("no books");
   });
@@ -89,6 +88,11 @@ const inputName = document.querySelector(".inputName");
 const inputEmail = document.querySelector(".inputEmail");
 
 const joinerName = document.querySelector(".joinerName");
+
+document.querySelector(".logoImg").addEventListener("click", () => {
+  window.location.href = "/library/index.html";
+});
+
 
 // ==================================> SHOW HIDE MENU <===================================
 
@@ -193,8 +197,13 @@ let swiperCard = new Swiper(".swiper", {
   spaceBetween: 30,
   grabCursor: true,
   speed: 800,
-  slidesPerView: "auto",
+  slidesPerView: 1,
 
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+  },
   autoplay: {
     delay: 2000,
     disableOnInteraction: false,

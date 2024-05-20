@@ -39,7 +39,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2em;
-
   flex: 1;
 }
 
@@ -82,28 +81,21 @@ body {
   display: none;
 }
 
-.searchSwiper {
-  position: relative;
-  width: 800px;
-  height: 600px;
-}
-
 .swiper {
-  width: 100%;
-  height: 100%;
-  padding: 20px !important ;
+  width: 800px;
+  padding: 10px !important ;
 }
 .swiper-wrapper {
   width: 100%;
-  height: 100%;
 }
 
 .card {
-  padding: 1.5em;
+  user-select: none;
+  padding: 2em;
   background-color: white;
   display: flex;
   align-items: start;
-  gap: 1em;
+  gap: 2em;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
 }
 .cardImg {
@@ -145,7 +137,7 @@ body {
 }
 
 .cardTextArea p:nth-of-type(2) {
-  line-height: 1.5em;
+  line-height: 1.8em;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
 
@@ -158,8 +150,8 @@ body {
 /* ======================================> MEDIA QUERIES <=================================== */
 
 @media screen and (max-width: 1400px) {
-  .searchSwiper {
-    width: 650px;
+  .swiper {
+    width: 750px;
   }
 
   .cardTextArea {
@@ -168,8 +160,8 @@ body {
 }
 
 @media screen and (max-width: 1300px) {
-  .searchSwiper {
-    width: 600px;
+  .swiper {
+    width: 700px;
   }
   /* .card,
   .searchArea {
@@ -178,14 +170,25 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .searchSwiper {
-    width: 550px;
+  .swiper {
+    width: 650px;
   }
   /* .card,
   .searchArea {
     font-size: 12px;
   } */
 }
+
+@media screen and (max-width: 1100px) {
+  .swiper {
+    width: 600px;
+  }
+  /* .card,
+  .searchArea {
+    font-size: 12px;
+  } */
+}
+
 @media screen and (max-width: 1000px) {
   .home {
     flex-direction: column;
@@ -195,8 +198,10 @@ body {
   .searchArea {
     width: 100%;
   }
-  .searchSwiper {
+  .swiper {
     width: 100%;
+    height: 600px;
+    padding-block: 20px !important;
   }
   .cardTextArea {
     width: 100%;
@@ -205,13 +210,14 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    height: 700px !important;
   }
   .cardTextArea p:nth-of-type(1) {
+    text-align: center;
     width: 100%;
   }
   .cardTextArea p:nth-of-type(2) {
-    -webkit-line-clamp: 12;
+    -webkit-line-clamp: 8;
+    text-align: center;
   }
   .cardImg {
     height: 200px;
@@ -219,7 +225,7 @@ body {
   }
   .cardTextArea h1 {
     font-size: 1.5em;
-
+    text-align: center;
     width: 100%;
   }
 }
@@ -232,48 +238,13 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
-  /* .card,
-  .searchArea {
-    font-size: 11px;
-  }
-  .searchArea {
-    text-align: center;
-    width: 100%;
-  }
-
-  .searchSwiper {
-    width: 100%;
-  }
-  .cardTextArea {
-    width: 100%;
-  }
-  .cardTextArea h1 {
-    margin-inline: auto;
-    width: 100%;
-  }
-
-  .cardTextArea p:nth-of-type(1) {
-    margin-inline: auto;
-    width: 100%;
-  }
-
-
-
- 
-
-  .cardImg {
-    width: 10em !important;
-  } */
-}
-
 @media screen and (max-width: 500px) {
-  /* .cardImg {
+  .cardImg {
     width: 10em !important;
   }
 
   .swiper-button-prev,
   .swiper-button-next {
     display: none !important;
-  } */
+  }
 }

@@ -208,6 +208,11 @@ const inputEmail = document.querySelector(".inputEmail");
 
 const joinerName = document.querySelector(".joinerName");
 
+document.querySelector(".logoImg").addEventListener("click", () => {
+  window.location.href = "/library/index.html";
+});
+
+
 // ==================================> SHOW HIDE MENU <===================================
 
 hamburger.addEventListener("click", () => {
