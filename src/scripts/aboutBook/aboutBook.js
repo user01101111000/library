@@ -187,7 +187,7 @@ onValue(ref(database, "books/" + id), (snapshot) => {
 
 
 
-    loading.classList.add("hideLaoding")
+    loading.classList.add("hideLoading")
 
     document.querySelector("main").style.visibility = "visible"
 
