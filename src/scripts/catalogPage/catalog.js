@@ -148,9 +148,8 @@ function displayNewBooks(data) {
 
     readMore.addEventListener("click", (e) => {
       window.location.href =
-        "/library/src/pages/aboutBook.html?id=" + e.target.dataset.id;
+        "../../pages/aboutBook.html?id=" + e.target.dataset.id;
     });
-
     h1.textContent = data[1].bookTitle;
     p1.textContent = data[1].bookAuthor;
     img.src = data[1].bookUrl;
@@ -211,7 +210,6 @@ const joinerName = document.querySelector(".joinerName");
 document.querySelector(".logoImg").addEventListener("click", () => {
   window.location.href = "/library/index.html";
 });
-
 
 // ==================================> SHOW HIDE MENU <===================================
 
