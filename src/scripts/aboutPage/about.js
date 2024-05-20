@@ -155,3 +155,7 @@ function updateData(data){
   storeDesc.textContent = data.description;
   storeImg.src = data.imageUrl
 }
+
+document.querySelector(".logoImg").addEventListener("click", () => {
+  window.location.href = "../../index.html";
+});
