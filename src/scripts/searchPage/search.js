@@ -2,6 +2,7 @@ const cardTemp = document.querySelector(".cardTemp");
 const searchBtn = document.querySelector(".searchBtn");
 const searchInp = document.querySelector(".searchInp");
 const cont = document.querySelector(".cont");
+const loading = document.querySelector(".loading");
 
 // =================================> IMPORT FIREBASE <===================================
 
@@ -31,8 +32,6 @@ const database = getDatabase(app);
 
 function fetchBooks(data) {
   get(child(ref(database), "books")).then((snapshot) => {
-    cont.innerHTML = "";
-
     if (snapshot.exists()) {
       const books = Object.values(snapshot.val());
 
@@ -62,11 +61,14 @@ function displayData(data) {
 
     cont.append(card);
   });
+  loading.classList.add("hide");
 }
 
 // ==================================> SEARCH BOOKS <===================================
 
 searchBtn.addEventListener("click", () => {
+  loading.classList.remove("hide");
+  cont.innerHTML = "";
   searchInp.value.trim() && fetchBooks(searchInp.value);
 });
 
@@ -92,7 +94,6 @@ const joinerName = document.querySelector(".joinerName");
 document.querySelector(".logoImg").addEventListener("click", () => {
   window.location.href = "/library/index.html";
 });
-
 
 // ==================================> SHOW HIDE MENU <===================================
 

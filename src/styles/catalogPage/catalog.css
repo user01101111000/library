@@ -96,6 +96,12 @@ body {
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   user-select: none;
+  transition: all 0.3s;
+}
+
+.category:hover {
+  font-weight: 700;
+  transform: scale(1.1);
 }
 
 /* =====================================> SECTION2 <=================================== */
@@ -151,16 +157,12 @@ body {
 .cardImg {
   width: 8.5em;
   height: 14.5em;
-  transition: all 0.3s;
   cursor: pointer;
 }
 .cardImg img {
   height: 100%;
   width: 100%;
   object-fit: fit;
-}
-.cardImg:hover {
-  transform: scale(1.05);
 }
 
 .cardTitles {
