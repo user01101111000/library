@@ -173,6 +173,13 @@ const displayAllCategories = (data) => {
       loading[0].classList.remove("hideLoading");
       cont.innerHTML = "";
 
+      categoryArea.querySelectorAll(".category").forEach((p) => {
+        p.classList.remove("highlightCategory");
+        p.classList.add("notHighlightCategory");
+      });
+      p.classList.remove("notHighlightCategory");
+      p.classList.add("highlightCategory");
+
       get(child(ref(database), "books")).then((snp) => {
         if (snp.exists()) {
           const allBooks = Object.entries(snp.val());
@@ -190,6 +197,15 @@ const displayAllCategories = (data) => {
 
     categoryArea.append(p);
   });
+
+  const allP = document.querySelectorAll(".category");
+
+  allP.forEach((p) => {
+    p.classList.add("notHighlightCategory");
+  });
+
+  allP[0].classList.remove("notHighlightCategory");
+  allP[0].classList.add("highlightCategory");
 };
 
 // =======================================================================================================================
