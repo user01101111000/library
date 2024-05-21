@@ -108,7 +108,12 @@ function checkCategories(data) {
         push(ref(database, "categories"), {
           category: data[0].toUpperCase() + data.slice(1).toLowerCase(),
         });
-    } else console.log("no categories");
+    } else {
+      push(ref(database, "categories"), {
+        category: data[0].toUpperCase() + data.slice(1).toLowerCase(),
+      });
+      console.log("first category");
+    }
   });
 }
 
@@ -135,7 +140,14 @@ function checkBooks(data) {
           icon: "info",
           title: "This book already exists in the library!",
         });
-    } else console.log("no categories");
+    } else {
+      sendBookData(data);
+      Swal.fire({
+        icon: "success",
+        title: "Book added successfully!",
+      });
+      console.log("first book");
+    }
   });
 }
 
@@ -154,6 +166,9 @@ const bookNameInp = document.querySelector(".bookNameInp");
 const authorNameInp = document.querySelector(".authorNameInp");
 const bookUrlInp = document.querySelector(".bookUrlInp");
 const bookDescInp = document.querySelector(".bookDescInp");
+const bookPreviewInp = document.querySelector(".bookPreviewInp");
+const bookPageCountInp = document.querySelector(".bookPageCountInp");
+const infoInp = document.querySelector(".infoInp");
 const publishedDateInp = document.querySelector(".publishedDateInp");
 const selectInput = document.querySelector(".bookCategoryInp");
 const bookFomrSubmitBtn = document.querySelector(".bookFomrSubmitBtn");
@@ -186,6 +201,9 @@ function clearInputs() {
   bookUrlInp.value = "";
   bookDescInp.value = "";
   publishedDateInp.value = "";
+  bookPreviewInp.value = "";
+  bookPageCountInp.value = "";
+  infoInp.value = "";
   selectInput.value = "Science";
   document.querySelector('input[value="new"]').checked = true;
   selectInput.removeAttribute("disabled");
@@ -279,6 +297,14 @@ const listItemClicked = (currentItem, element) => {
       element.volumeInfo.imageLinks?.thumbnail ??
       "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
     bookDescInp.value = element.volumeInfo.description ?? "No Description";
+
+    bookPreviewInp.value = element?.volumeInfo?.previewLink ?? "No Preview";
+    bookPageCountInp.value = element?.volumeInfo?.pageCount ?? "Unknown";
+    infoInp.value = element?.volumeInfo?.infoLink ?? "No Info";
+    newCategory.value = element?.volumeInfo?.categories?.[0] ?? "";
+    element?.volumeInfo?.categories?.[0] &&
+      selectInput.setAttribute("disabled", true);
+
     publishedDateInp.value = element.volumeInfo.publishedDate ?? "Unknown";
 
     results.innerHTML = "";
@@ -317,7 +343,6 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (bookFomrSubmitBtn.value === "Add") {
-    console.log("work1");
     if (
       bookNameInp.value.trim() &&
       authorNameInp.value.trim() &&
@@ -331,6 +356,9 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
         bookUrl: bookUrlInp.value.trim(),
         bookPublishedDate: publishedDateInp.value.trim(),
         bookDescription: bookDescInp.value.trim(),
+        bookPreview: bookPreviewInp.value.trim(),
+        bookPageCount: bookPageCountInp.value.trim(),
+        bookInfo: infoInp.value.trim(),
         bookType: document
           .querySelector('input[name="bookType"]:checked')
           .value.toLowerCase(),
@@ -346,11 +374,13 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
       checkCategories(currentBook.bookCategory);
 
       clearInputs();
+    } else {
+      Swal.fire({
+        title: "Please fill all the fields",
+        icon: "error",
+      });
     }
   } else {
-    console.log("work2");
-    console.log(bookNameInp.dataset.id);
-
     Swal.fire({
       title: "Do you want to save the changes?",
       showDenyButton: true,
@@ -365,6 +395,9 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
           bookUrl: bookUrlInp.value.trim(),
           bookPublishedDate: publishedDateInp.value.trim(),
           bookDescription: bookDescInp.value.trim(),
+          bookPreview: bookPreviewInp.value.trim(),
+          bookPageCount: bookPageCountInp.value.trim(),
+          bookInfo: infoInp.value.trim(),
           bookType: document
             .querySelector('input[name="bookType"]:checked')
             .value.toLowerCase(),
@@ -389,6 +422,7 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
         Swal.fire("Saved!", "", "success");
       } else if (result.isDenied) {
         clearInputs();
+        bookFomrSubmitBtn.value = "Add";
         Swal.fire("Changes are not saved", "", "info");
       }
     });
@@ -427,6 +461,11 @@ bookFomrSubmitBtnAbout.addEventListener("click", (e) => {
     Swal.fire({
       icon: "success",
       title: "About Store updated successfully!",
+    });
+  } else {
+    Swal.fire({
+      title: "Please fill all the fields",
+      icon: "error",
     });
   }
 });
@@ -478,8 +517,6 @@ function createBooksTable(data) {
     editIcon.setAttribute("data-id", element[0]);
 
     trashIcon.addEventListener("click", () => {
-      console.log(trashIcon.dataset.id);
-
       Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -504,30 +541,33 @@ function createBooksTable(data) {
     editIcon.addEventListener("click", () => {
       bookFomrSubmitBtn.value = "Update Book";
 
-      onValue(ref(database, "books/" + editIcon.dataset.id), (snapshot) => {
-        if (snapshot.exists()) {
-          const editedBook = snapshot.val();
-          console.log(editedBook);
-          console.log(editIcon.dataset.id);
+      get(child(ref(database), "books/" + editIcon.dataset.id)).then(
+        (snapshot) => {
+          if (snapshot.exists()) {
+            const editedBook = snapshot.val();
 
-          bookNameInp.value = editedBook.bookTitle;
-          authorNameInp.value = editedBook.bookAuthor;
-          bookUrlInp.value = editedBook.bookUrl;
-          bookDescInp.value = editedBook.bookDescription;
-          publishedDateInp.value = editedBook.bookPublishedDate;
+            bookNameInp.value = editedBook.bookTitle;
+            authorNameInp.value = editedBook.bookAuthor;
+            bookUrlInp.value = editedBook.bookUrl;
+            bookDescInp.value = editedBook.bookDescription;
+            publishedDateInp.value = editedBook.bookPublishedDate;
+            bookPreviewInp.value = editedBook.bookPreview;
+            bookPageCountInp.value = editedBook.bookPageCount;
+            infoInp.value = editedBook.bookInfo;
 
-          bookNameInp.setAttribute("data-id", element[0]);
+            bookNameInp.setAttribute("data-id", element[0]);
 
-          selectInput.value = editedBook.bookCategory;
+            selectInput.value = editedBook.bookCategory;
 
-          document
-            .querySelectorAll('input[name="bookType"]')
-            .forEach((input) => {
-              input.value.toLowerCase() == editedBook.bookType &&
-                (input.checked = true);
-            });
-        } else console.log("no edit books");
-      });
+            document
+              .querySelectorAll('input[name="bookType"]')
+              .forEach((input) => {
+                input.value.toLowerCase() == editedBook.bookType &&
+                  (input.checked = true);
+              });
+          } else console.log("no edit books");
+        }
+      );
     });
 
     booksTableBody.append(newRow);
