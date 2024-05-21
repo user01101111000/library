@@ -159,3 +159,11 @@ function updateData(data){
 document.querySelector(".logoImg").addEventListener("click", () => {
   window.location.href = "../../index.html";
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+  setTimeout(function() {
+    document.querySelector('.spinner').style.display = 'none';
+    document.querySelector('.main').style.display = 'block';
+  }, 2000); 
+});
