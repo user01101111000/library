@@ -204,7 +204,7 @@ function clearInputs() {
   bookPreviewInp.value = "";
   bookPageCountInp.value = "";
   infoInp.value = "";
-  selectInput.value = "Science";
+  selectInput.value = "Philosophy";
   document.querySelector('input[value="new"]').checked = true;
   selectInput.removeAttribute("disabled");
 }

@@ -81,7 +81,7 @@ body {
 }
 
 .categoryArea::-webkit-scrollbar {
-  height: 0.3em;
+  height: 0.2em;
   background-color: transparent;
 }
 .categoryArea::-webkit-scrollbar-thumb {
@@ -99,11 +99,15 @@ body {
   transition: all 0.3s;
 }
 
-.category:hover {
+.highlightCategory {
   font-weight: 700;
-  transform: scale(1.1);
+  transform: scale(1.2);
+  color: #ff8a23;
 }
-
+.notHighlightCategory {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
 /* =====================================> SECTION2 <=================================== */
 
 .sec2 {
@@ -187,7 +191,7 @@ body {
 .readMore {
   width: 9em;
   background-color: #e16a00;
-  border: none;
+  border: medium solid #e16a00;
   outline: none;
   color: white;
   font-weight: 900;
@@ -198,7 +202,9 @@ body {
   transition: all 0.3s;
 }
 .readMore:hover {
-  transform: scale(1.05);
+  border: medium solid #e16a00;
+  background-color: white;
+  color: #e16a00;
 }
 .newFlag {
   top: 0;
