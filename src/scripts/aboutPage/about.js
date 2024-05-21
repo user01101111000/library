@@ -163,7 +163,7 @@ document.querySelector(".logoImg").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", function() {
   
   setTimeout(function() {
-    document.querySelector('.spinner').style.display = 'none';
-    document.querySelector('.main').style.display = 'block';
-  }, 2000); 
+    document.querySelector('.spinner').style.visibility = 'hidden';
+    document.querySelector('.main').style.visibility = 'visible';
+  }, 2000);  
 });
