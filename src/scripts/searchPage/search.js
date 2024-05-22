@@ -30,34 +30,37 @@ const database = getDatabase(app);
 
 // ==================================> FECTH BOOKS <===================================
 
-function fetchBooks(data) {
+function fetchBooks(word) {
   get(child(ref(database), "books")).then((snapshot) => {
     if (snapshot.exists()) {
-      const books = Object.values(snapshot.val());
+      const books = Object.entries(snapshot.val());
 
-      const filteredArray = books.filter((book) =>
-        book.bookTitle.toLowerCase().includes(data.toLowerCase())
-      );
-      displayData(filteredArray);
+      displayData(books, word);
     } else console.log("no books");
   });
 }
 
 // ==================================> DISPLAY BOOKS <===================================
 
-function displayData(data) {
-  data.forEach((element) => {
+function displayData(data, word) {
+  const filteredArray = data.filter((book) =>
+    book[1].bookTitle.toLowerCase().includes(word.toLowerCase())
+  );
+
+  filteredArray.forEach((element) => {
     const card = cardTemp.content.cloneNode(true).children[0];
 
     const h1 = card.querySelector(".cardTitle");
     const p1 = card.querySelector(".cardAuthor");
     const p2 = card.querySelector(".cardDesc");
     const img = card.querySelector("img");
+    const link = card.querySelector("a");
 
-    h1.textContent = element.bookTitle;
-    p1.textContent = element.bookAuthor;
-    p2.textContent = element.bookDescription;
-    img.src = element.bookUrl;
+    h1.textContent = element[1].bookTitle;
+    p1.textContent = element[1].bookAuthor;
+    p2.textContent = element[1].bookDescription;
+    img.src = element[1].bookUrl;
+    link.href = "/library/src/pages/aboutBook.html?id=" + element[0];
 
     cont.append(card);
   });
@@ -67,9 +70,11 @@ function displayData(data) {
 // ==================================> SEARCH BOOKS <===================================
 
 searchBtn.addEventListener("click", () => {
-  loading.classList.remove("hide");
-  cont.innerHTML = "";
-  searchInp.value.trim() && fetchBooks(searchInp.value);
+  if (searchInp.value.trim()) {
+    loading.classList.remove("hide");
+    cont.innerHTML = "";
+    fetchBooks(searchInp.value);
+  }
 });
 
 searchInp.addEventListener("keyup", (e) => {
