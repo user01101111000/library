@@ -167,7 +167,7 @@ const genre = document.querySelector('.genre')
 const bookIconInfo = document.querySelector('.bookIconInfo')
 const bookIconRead = document.querySelector('.bookIconRead')
 const id = window.location.href.split("=")[1]
-// const id = "-NyRbVWRomQeAG-D1Lly"
+// const id = "-NyRbVWRomQeAG-D1Lly"/
 
 
 anonimInput.addEventListener("keyup", (e) => {
