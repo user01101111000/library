@@ -296,7 +296,7 @@ const listItemClicked = (currentItem, element) => {
     bookUrlInp.value =
       element.volumeInfo.imageLinks?.thumbnail ??
       "https://bookcart.azurewebsites.net/Upload/Default_image.jpg";
-    bookDescInp.value = element.volumeInfo.description ?? "No Description";
+    bookDescInp.value = element?.volumeInfo?.description ?? "No Description";
 
     bookPreviewInp.value = element?.volumeInfo?.previewLink ?? "No Preview";
     bookPageCountInp.value = element?.volumeInfo?.pageCount ?? "Unknown";
@@ -305,7 +305,7 @@ const listItemClicked = (currentItem, element) => {
     element?.volumeInfo?.categories?.[0] &&
       selectInput.setAttribute("disabled", true);
 
-    publishedDateInp.value = element.volumeInfo.publishedDate ?? "Unknown";
+    publishedDateInp.value = element?.volumeInfo?.publishedDate ?? "Unknown";
 
     results.innerHTML = "";
     searchInput.value = "";
