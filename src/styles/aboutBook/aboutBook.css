@@ -8,55 +8,59 @@
 }
 
 /* HELPER CLASSES */
-.hideLoading{
+.hideLoading {
   display: none !important;
 }
 
- /* MAIN PART OF ABOUTPAGE CSS */
-  body{
+/* MAIN PART OF ABOUTPAGE CSS */
+body {
   background: #FFFAF5;
- }
+}
 
- main{
+main {
   padding-inline: 8%;
-  margin-bottom: 12rem; 
-visibility: hidden;
- } 
+  margin-bottom: 12rem;
+  visibility: hidden;
+}
 
- /* ================================== SECTION 1 ============================= */
 
- .firstArea{
- 
+
+
+/* ================================== SECTION 1 ============================= */
+
+
+.firstArea {
+
   justify-content: start;
   display: flex;
- 
- } 
 
- /* ----------BACK BUTTON------- */
-  .backBtn{
+}
+
+/* ----------BACK BUTTON------- */
+.backBtn {
   margin-top: 11.1em;
   width: 7.8em;
   height: 2.5em;
   background-color: #E16A00;
-   border: none;
+  border: none;
   border-radius: 0.3em;
   font-size: 0.9em;
-  padding: 0.25em 1,25em;
- 
-  color: #FFF;
-font-family: Montserrat;
-text-align: center;
-font-size: 12px;
-font-style: normal;
-font-weight: 900;
-line-height: 196.187%; 
-text-transform: uppercase;
-cursor: pointer;
+  padding: 0.25em 1, 25em;
 
-} 
+  color: #FFF;
+  font-family: Montserrat;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
 
 /* -----------YEAR PART-------------- */
-#bookYear{
+#bookYear {
   /* padding: 0.25em 1,25em; */
   margin-top: 5rem;
   text-align: center;
@@ -64,85 +68,110 @@ cursor: pointer;
   /* padding-left: 1.5em; */
   width: 6em;
   height: 2.1em;
-  background-color:  #2F80ED;
+  background-color: #2F80ED;
   border-radius: 0.25em;
-  
-   justify-content: start;
+
+  justify-content: start;
   color: #FFF;
   font-family: Montserrat;
-font-size: 0.75em;
-font-style: normal;
-font-weight: 900;
-line-height: 196.187%; 
+  font-size: 0.75em;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%;
 
-} 
+}
 
 /* ----------BOOK NAME PART */
- .bookName{
- color: #241400;
-font-family: Montserrat;
-font-size: 2.2em;
-font-style: normal;
-font-weight: 700;
-line-height: 196.187%; 
-width: 100%;
-/* background-color: #E16A00; */
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
+.bookName {
+  color: #241400;
+  font-family: Montserrat;
+  font-size: 2.2em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 196.187%;
+  /* width: 100%; */
+  width: 19em;
+  /* background-color: #E16A00; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-} 
+}
 
 /* ------------WHEN ADDED THE BOOK ------------- */
-.addedDay{
- color: #241400;
- font-family: Montserrat;
-font-size: 1em;
-font-style: normal;
-font-weight: 700;
-line-height: 196.187%; 
-margin-bottom: 0.5em;
-margin-top: -0.8em;
-} 
+.addedDay {
+  color: #241400;
+  font-family: Montserrat;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 196.187%;
+  margin-bottom: 0.5em;
+  margin-top: -0.8em;
+}
 
 /* ------------------AUTHOR NAME PART--------- */
-.authorName{
+.authorName {
   color: #241400;
-  width: 100%;
+  width: 15em;
+  /* background-color: red; */
+  /* background-color: #E16A00; */
+  /* width: 100%; */
+  margin-top: -0.5em;
   font-family: Montserrat;
   font-size: 1.3em;
   font-style: normal;
   font-weight: 400;
   line-height: 196.187%;
-   margin-bottom: 0.1em;
-   overflow: hidden;       
-   text-overflow: ellipsis;
-   white-space: nowrap; 
+  margin-bottom: 0.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-} 
+}
+
+.genre {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 200;
+  color: #241400;
+  letter-spacing: 2.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0.5em;
+}
 
 
 /* ----------------------BOOK DESCRIPTION------------ */
 
-.bookInfo{
+.bookInfo {
   width: 35em;
-   /* height: 15rem; */
-   height: auto;
+  /* height: 15rem; */
+  height: auto;
   color: #241400;
-font-family: Montserrat;
-font-size: 1.12em;
-font-style: normal;
-font-weight: 400;
-line-height: 196.187%; /* 35.314px */
-display: -webkit-box;
--webkit-line-clamp: 8;
--webkit-box-orient: vertical;
-overflow: hidden;
-text-overflow: ellipsis;
+  font-family: Montserrat;
+  font-size: 1.12em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  /* 35.314px */
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
- } 
+}
 
- /* .moreDetail{
+.bookInfo.expanded {
+  -webkit-line-clamp: unset;
+}
+
+
+
+.moreDetail {
   text-decoration: none;
   color: #241400;
   font-family: Montserrat;
@@ -151,34 +180,59 @@ text-overflow: ellipsis;
   font-weight: 400;
   line-height: 196.187%;
   cursor: pointer;
- } */
+}
 
 
 
 
 /* ------------------IMAGE PART------------ */
- .bookImage{
+.bookImage {
   position: relative;
   margin-top: -2em;
   margin-left: 11em;
-   width: 23.6em;
+  width: 23.6em;
   height: 33em;
- }
+  cursor: pointer;
+}
 
- .bookImage img{
-   /* margin-top: -2em; */
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.247);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+
+.bookIcon {
+  color: white;
+  font-size: 40px;
+}
+
+.bookImage:hover .wrapper {
+opacity: 1;
+}
+
+.bookImage img {
+  /* margin-top: -2em; */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
- } 
+
+}
 
 
 
- /* --------------NEW BOOK SIGN --------------- */
+/* --------------NEW BOOK SIGN --------------- */
 
- 
- .newSign{
+
+.newSign {
   position: absolute;
   top: 0;
   right: 0;
@@ -193,24 +247,24 @@ text-overflow: ellipsis;
   text-align: center;
   font-weight: 900;
 
- }
+}
 
 
 
- /* =================================== SECOND AREA ======================== */
+/* =================================== SECOND AREA ======================== */
 
- .secondArea{
-    display: flex;
+.secondArea {
+  display: flex;
   flex-direction: column;
   justify-content: start;
- } 
+}
 
- 
- .commentObvious{
+
+.commentObvious {
   display: flex;
-  } 
+}
 
- .anonimInput{
+.anonimInput {
   /* position: relative; */
   width: 30em;
   height: 3em;
@@ -219,96 +273,99 @@ text-overflow: ellipsis;
   border-radius: 0.3rem;
   background: rgba(255, 255, 255, 0.80);
   box-shadow: 0 0 10px 2px rgb(196, 186, 186);
-   padding: 0.6em;
+  padding: 0.6em;
   padding-left: 1.5em;
   font-size: 1.2rem;
   border: none;
   color: #232323;
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-letter-spacing: 1px;
-overflow-y: auto;
-outline: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1px;
+  overflow-y: auto;
+  outline: none;
 
-} 
+}
+
 /* -----------SEND ICON----------- */
- 
-.sendIcon{
-border-radius: 0.3rem;
-margin-left: -0.5em;
-padding: 1rem;
-background-color: #E16A00;
-margin-top: 5.95em;
-width: 3.7em;
-height: 3.7em;
-/* width: 1.7em; */
-/* height: 1.7em; */
-flex-shrink: 0;
-cursor: pointer;
-  /* z-index: 1;  */
 
-  }   
+.sendIcon {
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 0 10px 2px rgb(196, 186, 186);
+  margin-left: -0.5em;
+  padding: 1rem;
+  background-color: #E16A00;
+  margin-top: 5.95em;
+  width: 3.7em;
+  height: 3.7em;
+  flex-shrink: 0;
+  cursor: pointer;
+
+}
 
 /* Umumi div hansiki dinamik gelecek olan commentleri saxlayir */
- .commentAnonymous{
+.commentAnonymous {
   display: flex;
   flex-direction: column;
-  position: relative; 
+  position: relative;
 
-} 
+}
 
 /* BU DINAMIK DIVIN OZUDUR */
-.yourComment{
+.yourComment {
   width: 39em;
   font-family: Rubik;
   background-color: rgb(253, 253, 253);
-  box-shadow:0 0 10px 2px rgb(196, 186, 186) ;
+  box-shadow: 0 0 10px 2px rgb(196, 186, 186);
   /* width: 55%; */
   padding: 2em;
   padding-left: 1em;
-  
+
   font-size: 1rem;
   margin-top: 3.4em;
   border-radius: 0.3rem;
-} 
+}
 
 
 /* BU HISSEYE YENIDEN BAX GORUNMURDU DEYISIKLIK */
 
-.anonim{
+.anonim {
   display: flex;
   padding-bottom: 1em;
-} 
+}
+
 /* ANONIM YAZISI */
-.anonim h4{
-color: #232323;
-font-family: Rubik;
-font-size: 1rem;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-} 
+.anonim h4 {
+  color: #232323;
+  font-family: Rubik;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 /* NECE GUN EVVEL YAZILDIGI */
 
-.time{
+.time {
   margin-left: 1em;
 }
-.anonim p{
+
+.anonim p {
   color: #232323;
-font-family: Rubik;
-font-size: 1rem;
-font-style: normal;
-font-weight: 400;
-/* line-height: 24px;  */
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 4;
-overflow: hidden;
-text-overflow: ellipsis;
-max-height: calc(1.2rem * 4);
-} 
+  font-family: Rubik;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  /* line-height: 24px;  */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.2rem * 4);
+}
 
 
 
@@ -320,161 +377,183 @@ max-height: calc(1.2rem * 4);
 /* ===================== MEDIA QUERY PART ============================ */
 
 
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 1440px) {
 
-  .firstArea{
+  .firstArea {
     display: flex;
     justify-content: space-between;
   }
+
   /* INPUT PART +*/
- 
+
 }
 
-@media screen and (max-width: 1418px){
-  .firstArea{
+@media screen and (max-width: 1418px) {
+  .firstArea {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
   }
+
   .bookImage {
-    width: 100%; 
-    max-width: 22.6em; 
+    width: 100%;
+    max-width: 22.6em;
     height: 100%;
-    object-fit: cover; 
-    margin-left: 0.5em; 
+    object-fit: cover;
+    margin-left: 0.5em;
   }
- /* INPUT PART */
-  .secondArea{
+
+  /* INPUT PART */
+  .secondArea {
     justify-content: start;
     font-size: 14px;
   }
-  .anonimInput{
+
+  .anonimInput {
     width: 28.2em;
     height: 2.7em;
   }
-  .sendIcon{
-   
-   margin-top: 6.8em;
-   padding: 0.7rem;
+
+  .sendIcon {
+
+    margin-top: 6.8em;
+    padding: 0.7rem;
   }
-  .yourComment{
+
+  .yourComment {
     width: 36.9em;
   }
 }
 
-@media screen and (max-width: 1232px){
-    .firstArea{
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-    }
+@media screen and (max-width: 1232px) {
+  .firstArea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+  }
 
-    .bookImage {
-      width: 100%; 
-      max-width: 22.6em;
-      height: 100%; 
-      object-fit: cover; 
-      margin-left: 0.5em; 
-    }
- /* INPUT PART */
-    .secondArea{
-      justify-content: start;
-      font-size: 13px;
-    }
-    .anonimInput{
-      width: 24.2em;
-      height: 2.5em;
-    }
-    .sendIcon{
-      width: 3.7em;
-      height: 3.8em;
-     margin-top: 7.3em;
-     padding: 0.7rem;
-    }
-    .yourComment{
+  .bookImage {
+    width: 100%;
+    max-width: 22.6em;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 0.5em;
+  }
+
+  /* INPUT PART */
+  .secondArea {
+    justify-content: start;
+    font-size: 13px;
+  }
+
+  .anonimInput {
+    width: 24.2em;
+    height: 2.5em;
+  }
+
+  .sendIcon {
+    width: 3.7em;
+    height: 3.8em;
+    margin-top: 7.3em;
+    padding: 0.7rem;
+  }
+
+  .yourComment {
     width: 31.7em;
-   }
+  }
 }
 
-@media screen and (max-width:1161px){
-  .firstArea{
+@media screen and (max-width:1161px) {
+  .firstArea {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
   }
+
   .bookImage {
-    width: 100%; 
+    width: 100%;
     max-width: 22em;
-    height: 100%; 
-    object-fit: cover; 
-    margin-left: 0.5em; 
+    height: 100%;
+    object-fit: cover;
+    margin-left: 0.5em;
   }
-   /* INPUT PART */
-   .secondArea{
+
+  /* INPUT PART */
+  .secondArea {
     justify-content: start;
     font-size: 12px;
   }
-  .anonimInput{
+
+  .anonimInput {
     width: 22.5em;
     height: 2.3em;
     /* font-size: 12px; */
   }
 
-  .anonimInput::placeholder{
+  .anonimInput::placeholder {
     font-size: 1em;
   }
-  .sendIcon{
-   margin-top: 8em;
-   padding: 0.6rem;
+
+  .sendIcon {
+    margin-top: 8em;
+    padding: 0.6rem;
   }
-  .yourComment{
-  width: 29.5em;
-  height: auto;
- }
+
+  .yourComment {
+    width: 29.5em;
+    height: auto;
+  }
 
 }
 
-@media screen and (max-width:1090px){
-  .firstArea{
+@media screen and (max-width:1090px) {
+  .firstArea {
     display: flex;
     justify-content: space-between;
     font-size: 11px;
   }
-  .bookImage {
-    width: 100%; 
-    max-width: 21.6em;
-    height: 100%; 
-    object-fit: cover; 
-    margin-left: 0.5em; 
-  }
-   /* INPUT PART */
 
-   .secondArea{
+  .bookImage {
+    width: 100%;
+    max-width: 21.6em;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 0.5em;
+  }
+
+  /* INPUT PART */
+
+  .secondArea {
     justify-content: start;
     font-size: 11px;
   }
-  .anonimInput{
+
+  .anonimInput {
     width: 20.5em;
     height: 2.2em;
   }
-  .anonimInput::placeholder{
+
+  .anonimInput::placeholder {
     font-size: 0.99em;
   }
-  .sendIcon{
-   margin-top: 8.7em;
-   padding: 0.5rem;
+
+  .sendIcon {
+    margin-top: 8.7em;
+    padding: 0.5rem;
   }
-  .yourComment{
-  width: 27em;
- }
+
+  .yourComment {
+    width: 27em;
+  }
 }
 
-@media screen and (max-width: 1000px){
- 
-  button{
+@media screen and (max-width: 1000px) {
+
+  button {
     margin-top: 5em;
   }
-  .firstArea{
+
+  .firstArea {
     font-size: 13px;
     display: flex;
     flex-direction: column-reverse;
@@ -483,23 +562,23 @@ max-height: calc(1.2rem * 4);
 
   .bookImage {
     font-size: 14px;
-    width: 100%; 
+    width: 100%;
     max-width: 21.6em;
-    height: 100%; 
-    object-fit: cover; 
+    height: 100%;
+    object-fit: cover;
     display: flex;
     align-self: center;
     /* margin-left: 0.5em;  */
   }
 
-  #bookYear{
+  #bookYear {
     text-align: center;
     /* width: 6em ;
     height: 3em; */
     font-size: 11px;
   }
 
-  .bookAbout{
+  .bookAbout {
     margin-top: 4em;
     font-size: 14px;
     /* justify-content: center; */
@@ -508,12 +587,13 @@ max-height: calc(1.2rem * 4);
     align-items: center;
     margin-inline: 8%;
   }
-  .bookInfo{
+
+  .bookInfo {
     text-align: center;
     width: 45em;
   }
-  .bookName{
-    margin-left: 0;
+
+  .bookName {
     text-align: center;
     width: 100%;
     font-family: Montserrat;
@@ -521,9 +601,10 @@ max-height: calc(1.2rem * 4);
     font-style: normal;
     font-weight: 900;
     line-height: 196.187%;
-    padding-left: 0.7em;
+
   }
-  .authorName{
+
+  .authorName {
     color: #241400;
     width: 100%;
     text-align: center;
@@ -536,220 +617,267 @@ max-height: calc(1.2rem * 4);
     /* margin-left: 2em; */
     /* padding-left: 0.5em; */
   }
-  .addedDay{
+
+  .genre {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+
+  }
+
+  .addedDay {
     display: none;
   }
-   /* INPUT PART */
-   .secondArea{
+
+  /* INPUT PART */
+  .secondArea {
     /* justify-content: center; */
     align-items: center;
     margin-inline: 8%;
     font-size: 13px;
   }
-  .anonimInput{
+
+  .anonimInput {
     width: 25.5em;
     height: 2.5em;
   }
-  .sendIcon{
-   margin-top: 7.3em;
-   padding: 0.5rem;
+
+  .sendIcon {
+    margin-top: 7.3em;
+    padding: 0.5rem;
   }
-  .yourComment{
-  width: 33.5em;
- }
+
+  .yourComment {
+    width: 33.5em;
+  }
 }
 
-@media screen and (max-width:842px){
-  .bookAbout{
+@media screen and (max-width:842px) {
+  .bookAbout {
     margin-top: 4em;
   }
 
-  .bookInfo{
+  .bookInfo {
     text-align: center;
     width: 35em;
   }
-   /* INPUT PART */
-   .commentAnonymous{
+
+  /* INPUT PART */
+  .commentAnonymous {
     font-size: 9px;
-   }
-   
-   .sendIcon{
+  }
+
+  .sendIcon {
     padding: 0.8em;
-   }
+  }
 }
 
-@media screen and (max-width:662px){
-  .bookAbout{
+@media screen and (max-width:662px) {
+  .bookAbout {
     margin-top: 4em;
   }
-  .bookInfo{
+
+  .bookInfo {
     text-align: center;
     width: 25em;
   }
-    /* INPUT PART */
-    .anonimInput{
-      width: 17em;
-    }
-    .sendIcon{
-      padding: 1em;
-    }
 
-    .anonimInput::placeholder{
-      font-size: 0.8em;
-    }
-    .yourComment{
-      width: 23em;
-    }
-}
-
-@media screen and (max-width:648px){
-  .bookAbout{
-    margin-top: 4em;
-  }
-  .bookInfo{
-    text-align: center;
-    width: 25em;
-  }
-   /* INPUT PART */
-   .commentAnonymous{
-    font-size: 6px;
-   }
-   .secondArea{
-    margin-inline: 8%;
-   }
-   .anonimInput{
+  /* INPUT PART */
+  .anonimInput {
     width: 17em;
   }
-  .sendIcon{
-   margin-top: 7.3em;
-   padding: 0.7rem;
+
+  .sendIcon {
+    padding: 1em;
   }
-  .yourComment{
-  width: 23.5em;
- }
+
+  .anonimInput::placeholder {
+    font-size: 0.8em;
+  }
+
+  .yourComment {
+    width: 23em;
+  }
+}
+
+@media screen and (max-width:648px) {
+  .bookAbout {
+    margin-top: 4em;
+  }
+
+  .bookInfo {
+    text-align: center;
+    width: 25em;
+  }
+
+  /* INPUT PART */
+  .commentAnonymous {
+    font-size: 6px;
+  }
+
+  .secondArea {
+    margin-inline: 8%;
+  }
+
+  .anonimInput {
+    width: 17em;
+  }
+
+  .sendIcon {
+    margin-top: 7.3em;
+    padding: 0.7rem;
+  }
+
+  .yourComment {
+    width: 23.5em;
+  }
 
 
 }
 
-@media screen and (max-width:479px){
-  
-  .bookInfo{
+@media screen and (max-width:479px) {
+
+  .bookInfo {
     text-align: center;
     width: 22em;
   }
-   /* INPUT PART */
-   .commentAnonymous{
+
+  /* INPUT PART */
+  .commentAnonymous {
     font-size: 5px;
-   }
-   .secondArea{
+  }
+
+  .secondArea {
     margin-inline: 8%;
-   }
-   .anonimInput{
+  }
+
+  .anonimInput {
     width: 15em;
   }
-  .anonimInput::placeholder{
-     font-size: 0.87em;
+
+  .anonimInput::placeholder {
+    font-size: 0.87em;
   }
-  .sendIcon{
-   margin-top: 7.3em;
-   padding: 0.8rem;
+
+  .sendIcon {
+    margin-top: 7.3em;
+    padding: 0.8rem;
   }
-  .yourComment{
-  width: 21em;
- }
+
+  .yourComment {
+    width: 21em;
+  }
 }
-@media screen and (max-width: 416px){
-  .bookInfo{
+
+@media screen and (max-width: 416px) {
+  .bookInfo {
     text-align: center;
     width: 20em;
   }
-   /* INPUT PART */
-   .commentAnonymous{
+
+  /* INPUT PART */
+  .commentAnonymous {
     font-size: 4px;
-   }
-   .secondArea{
+  }
+
+  .secondArea {
     margin-inline: 8%;
-   }
-   .anonimInput{
+  }
+
+  .anonimInput {
     width: 14.5em;
     height: 2em;
     padding-left: 1em;
     /* padding-inline: 5px; */
   }
-  .anonimInput::placeholder{
+
+  .anonimInput::placeholder {
     font-size: 0.87em;
   }
-  .sendIcon{
-   margin-top: 7.4em;
-   padding: 0.5rem;
-   width: 2.8em;
-   height: 2.8em;
+
+  .sendIcon {
+    margin-top: 7.4em;
+    padding: 0.5rem;
+    width: 2.9em;
+    height: 2.9em;
   }
-  .yourComment{
-  width: 19.5em;
- }
+
+  .yourComment {
+    width: 19.5em;
+  }
 }
 
-@media screen and (max-width: 374px){
-  .bookInfo{
+@media screen and (max-width: 374px) {
+  .bookInfo {
     text-align: center;
     width: 19em;
   }
-   /* INPUT PART */
-   .commentAnonymous{
+
+  /* INPUT PART */
+  .commentAnonymous {
     font-size: 4px;
-   }
-   .secondArea{
+  }
+
+  .secondArea {
     margin-inline: 8%;
-   }
-   .anonimInput{
+  }
+
+  .anonimInput {
     width: 13.5em;
     height: 2em;
     /* padding: -10px; */
     padding-left: 1em;
   }
 
-    .sendIcon{
-   margin-top: 7.4em;
-   padding: 0.7em;
-   width: 2.9em;
-   height: 2.9em;
+  .sendIcon {
+    margin-top: 7.4em;
+    padding: 0.7em;
+    width: 2.9em;
+    height: 2.9em;
   }
-  .yourComment{
-  width: 18em;
- }
+
+  .yourComment {
+    width: 18em;
+  }
 }
-@media screen and (max-width:354px){
-  .bookInfo{
+
+@media screen and (max-width:354px) {
+  .bookInfo {
     text-align: center;
     width: 17em;
   }
-   /* INPUT PART */
-   .commentAnonymous{
+
+  /* INPUT PART */
+  .commentAnonymous {
     font-size: 4px;
-   }
-   .secondArea{
+  }
+
+  .secondArea {
     margin-inline: 8%;
-   }
-   .anonimInput{
+  }
+
+  .anonimInput {
     width: 11.3em;
     height: 2em;
     /* padding: -10px; */
     padding-left: 0.8em;
   }
-  .anonimInput::placeholder{
+
+  .anonimInput::placeholder {
     font-size: 0.8em;
   }
-  .sendIcon{
-   margin-top: 7.45em;
-   padding: 0.6rem;
-   width: 2.95em;
-   height: 2.95em;
+
+  .sendIcon {
+    margin-top: 7.45em;
+    padding: 0.6rem;
+    width: 2.95em;
+    height: 2.95em;
   }
-  .yourComment{
-  width: 15.5em;
-  /* ADDED this paddings for Added word */
-  padding-left: 0.5em;
-  padding-right: 0.5em;
- }
+
+  .yourComment {
+    width: 15.5em;
+    /* ADDED this paddings for Added word */
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
 }
