@@ -3,6 +3,7 @@ const searchBtn = document.querySelector(".searchBtn");
 const searchInp = document.querySelector(".searchInp");
 const cont = document.querySelector(".cont");
 const loading = document.querySelector(".loading");
+const libraryImg = document.querySelector(".libraryImg");
 
 // =================================> IMPORT FIREBASE <===================================
 
@@ -47,23 +48,28 @@ function displayData(data, word) {
     book[1].bookTitle.toLowerCase().includes(word.toLowerCase())
   );
 
-  filteredArray.forEach((element) => {
-    const card = cardTemp.content.cloneNode(true).children[0];
+  if (filteredArray.length > 0) {
+    filteredArray.forEach((element) => {
+      const card = cardTemp.content.cloneNode(true).children[0];
 
-    const h1 = card.querySelector(".cardTitle");
-    const p1 = card.querySelector(".cardAuthor");
-    const p2 = card.querySelector(".cardDesc");
-    const img = card.querySelector("img");
-    const link = card.querySelector("a");
+      const h1 = card.querySelector(".cardTitle");
+      const p1 = card.querySelector(".cardAuthor");
+      const p2 = card.querySelector(".cardDesc");
+      const img = card.querySelector("img");
+      const link = card.querySelector("a");
 
-    h1.textContent = element[1].bookTitle;
-    p1.textContent = element[1].bookAuthor;
-    p2.textContent = element[1].bookDescription;
-    img.src = element[1].bookUrl;
-    link.href = "/library/src/pages/aboutBook.html?id=" + element[0];
+      h1.textContent = element[1].bookTitle;
+      p1.textContent = element[1].bookAuthor;
+      p2.textContent = element[1].bookDescription;
+      img.src = element[1].bookUrl;
+      link.href = "/library/src/pages/aboutBook.html?id=" + element[0];
 
-    cont.append(card);
-  });
+      cont.append(card);
+    });
+  } else {
+    libraryImg.classList.remove("hide");
+  }
+
   loading.classList.add("hide");
 }
 
@@ -72,6 +78,7 @@ function displayData(data, word) {
 searchBtn.addEventListener("click", () => {
   if (searchInp.value.trim()) {
     loading.classList.remove("hide");
+    libraryImg.classList.add("hide");
     cont.innerHTML = "";
     fetchBooks(searchInp.value);
   }
@@ -211,7 +218,7 @@ let swiperCard = new Swiper(".swiper", {
     },
   },
   autoplay: {
-    delay: 2000,
+    delay: 3000,
     disableOnInteraction: false,
     waitForTransition: false,
   },
