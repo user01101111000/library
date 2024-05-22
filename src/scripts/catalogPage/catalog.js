@@ -92,6 +92,10 @@ function displayAllBooks(data) {
         "/library/src/pages/aboutBook.html?id=" + e.target.dataset.id;
     });
 
+    img.addEventListener("click", (e) => {
+      readMore.click();
+    });
+
     h1.textContent = data[1].bookTitle;
     p1.textContent = data[1].bookAuthor;
     img.src = data[1].bookUrl;
