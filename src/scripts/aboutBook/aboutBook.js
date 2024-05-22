@@ -235,9 +235,9 @@ function createCommentBox(data) {
 
   if (diff) time.textContent = diff + " days ago";
   else {
-    const date = new Date(data.commentDate)
+    const date = new Date(data.commentDate).toLocaleTimeString("az")
 
-    time.textContent = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} Today`
+    time.textContent = `${date.split(":").map(x => x.padStart(2,"0")).join(":")} Today`
   }
 
 

@@ -134,7 +134,7 @@ main {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-style: italic;
-  font-weight: 200;
+  font-weight: 300;
   color: #241400;
   letter-spacing: 2.5px;
   overflow: hidden;
@@ -213,6 +213,26 @@ main {
 .bookIcon {
   color: white;
   font-size: 40px;
+}
+.genreArea{
+  display: flex;
+  align-items: center;
+  
+}
+.iconDiv{
+ /* background-color: aqua; */
+ display: flex;
+ gap: 0.8em;
+ justify-content: center;
+ align-items: center;
+  margin-left: 1em;
+}
+
+.bookIcon2{
+  display: block !important;
+  color: #E16A00;
+  font-size: 1.2rem;
+  margin-bottom: 5px
 }
 
 .bookImage:hover .wrapper {
@@ -439,7 +459,9 @@ opacity: 1;
     object-fit: cover;
     margin-left: 0.5em;
   }
-
+  .genre{
+    font-size: 0.9rem;
+  }
   /* INPUT PART */
   .secondArea {
     justify-content: start;
@@ -476,6 +498,9 @@ opacity: 1;
     height: 100%;
     object-fit: cover;
     margin-left: 0.5em;
+  }
+  .genre{
+    font-size: 0.8rem;
   }
 
   /* INPUT PART */
@@ -549,6 +574,25 @@ opacity: 1;
 
 @media screen and (max-width: 1000px) {
 
+  .genreArea{
+    display:flex;
+  flex-direction: column;
+  gap: 1em;
+  }
+
+  .iconDiv{
+    gap: 2em;
+  }
+
+  .bookIcon2{
+    justify-content: center;
+    align-items: center;
+     font-size: 2rem;
+     margin-bottom: 0.7em;
+    
+  }
+
+
   button {
     margin-top: 5em;
   }
@@ -608,18 +652,20 @@ opacity: 1;
     color: #241400;
     width: 100%;
     text-align: center;
-    font-family: Montserrat;
-    font-size: 14px;
+    font-family: 'Montserrat' sans-serif;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 196.187%;
-    margin-top: -0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
     /* margin-left: 2em; */
     /* padding-left: 0.5em; */
   }
 
   .genre {
     width: 100%;
+    font-size: 15px;
     text-align: center;
     margin-bottom: 0.5em;
 
