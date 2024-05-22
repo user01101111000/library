@@ -140,6 +140,11 @@ const sendJoinerInfoToDb = () => {
 
 // =================================================================> YOUR CODE <==============================================================================
 
+document.querySelector(".logoImg").addEventListener("click", () => {
+  window.location.href = "/library/index.html";
+});
+
+
 // Relate back button to catalog page
 const backBtn = document.querySelector(".backBtn")
 backBtn.addEventListener('click', function () {
@@ -158,8 +163,11 @@ const sendIcon = document.querySelector(".sendIcon")
 const anonimInput = document.querySelector(".anonimInput")
 const commentAnonymous = document.querySelector(".commentAnonymous")
 const commentTemp = document.querySelector(".commentTemp")
+const genre = document.querySelector('.genre')
+const bookIconInfo = document.querySelector('.bookIconInfo')
+const bookIconRead = document.querySelector('.bookIconRead')
 const id = window.location.href.split("=")[1]
-// const id = "-Ny1HkzCWPOglo_VzDVw"
+// const id = "-NyRbVWRomQeAG-D1Lly"
 
 
 anonimInput.addEventListener("keyup", (e) => {
@@ -176,6 +184,11 @@ onValue(ref(database, "books/" + id), (snapshot) => {
     bookYear.textContent = data.bookPublishedDate == "Unknown" ? "Unknown" : data.bookPublishedDate.slice(0, 4);
     bookName.textContent = data.bookTitle;
     bookInfo.textContent = data.bookDescription
+    genre.textContent = `${data.bookCategory}, ${data.bookPageCount} pages`
+    bookIconInfo.href = data.bookInfo
+    bookIconRead.href = data.bookPreview
+
+
 
     const diff = Math.ceil((Date.now() - data.bookAddedTime) / (1000 * 3600 * 24)) - 1;
 
@@ -275,3 +288,20 @@ onValue(ref(database, "books/" + id + "/bookComments"), (snapshot) => {
 
 
 })
+
+
+
+// MORE DETAIL PART: BOOK INFO  
+
+document.querySelector('.moreDetail').addEventListener('click', function() {
+  // let bookInfo = document.querySelector('.bookInfo');
+  if (this.innerText === 'More details') {
+      bookInfo.style.display = 'block';
+      bookInfo.style.webkitLineClamp = 'unset';
+      this.innerText = 'Less details';
+  } else {
+      bookInfo.style.webkitLineClamp = '8';
+      bookInfo.style.display = '-webkit-box';
+      this.innerText = 'More details';
+  }
+});
