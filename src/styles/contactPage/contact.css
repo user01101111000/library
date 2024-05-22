@@ -137,7 +137,7 @@ textarea{
   }
 
   .send-button {
-    width: 60%;
+    width: 50%;
   }
 
   .input-large {
@@ -173,7 +173,6 @@ textarea{
 
   .row {
     width: 100%;
-    margin: 0 auto;
   }
 
   .form-container h1 {
@@ -213,7 +212,6 @@ textarea{
 
   .send-button {
     width: 100%;
-    margin: 0 auto;
   }
 
   .row {
