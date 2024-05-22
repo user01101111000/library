@@ -192,28 +192,8 @@ main {
   margin-left: 11em;
   width: 23.6em;
   height: 33em;
-  cursor: pointer;
 }
 
-.wrapper {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.247);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  opacity: 0;
-  transition: all 0.3s;
-}
-
-
-.bookIcon {
-  color: white;
-  font-size: 40px;
-}
 .genreArea{
   display: flex;
   align-items: center;
