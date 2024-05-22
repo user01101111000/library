@@ -149,6 +149,11 @@ const sendButton = document.querySelector(".send-button");
 const contactEmail = document.getElementById("input-email");
 const phoneInput = document.getElementById("phone-input");
 
+document.querySelector(".logoImg").addEventListener("click", () => {
+  window.location.href = "../../index.html";
+});
+
+
 sendButton.addEventListener("click", () => {
   const inputRows = document.querySelectorAll(".input-large, .input-note");
   let isEmpty = false;
