@@ -154,16 +154,12 @@ function updateData(data){
   storeTitle.textContent = data.title;
   storeDesc.textContent = data.description;
   storeImg.src = data.imageUrl
+
+  document.querySelector('.loading').style.visibility = 'hidden';
+  document.querySelector('.main').style.visibility = 'visible';
 }
 
 document.querySelector(".logoImg").addEventListener("click", () => {
   window.location.href = "../../index.html";
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  
-  setTimeout(function() {
-    document.querySelector('.spinner').style.visibility = 'hidden';
-    document.querySelector('.main').style.visibility = 'visible';
-  }, 2000);  
-});

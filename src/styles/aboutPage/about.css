@@ -1,5 +1,6 @@
 @import url("../general/fonts/montserratFont.css");
 @import url("../general/commonStyle.css");
+@import url("../general/loadingSpinner.css");
 
 :root {
   --font-montserrat: "Montserrat", sans-serif;
@@ -68,23 +69,6 @@ body{
   
 }
 
-.spinner {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
 @media (max-width:1365px){
   .storeTitle {
@@ -145,7 +129,7 @@ body{
     max-width: 100%;
     flex-direction: column-reverse;
     gap: 3.5rem;
-    margin-bottom: 8.5rem;
+    margin-bottom: 10rem;
   }
 
   .heading{
@@ -185,6 +169,7 @@ body{
   .container{
     max-width: 100%;
     gap: 2rem;
+
   }
 
   .heading{
@@ -261,6 +246,11 @@ body{
   .storeDesc{
     font-size: 1.125rem;
   }
+  .container {
+    max-width: 100%;
+    gap: 1rem;
+    margin-bottom: 8rem;
+  }
 }
 
 
@@ -271,6 +261,7 @@ body{
   .container {
     max-width: 100%;
     gap: 1rem;
+    margin-bottom: 7rem;
   }
 
   .heading {
