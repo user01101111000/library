@@ -1,12 +1,15 @@
 # Project : Library
 
 ![image](src/assets/icons/logoWhite.svg)
+
 \
 **EACAMP GROUP M2 "TEAM-TU" - Library project**
+
 \
 **Library** layihəsi, **EACAMP GROUP M2 "TEAM-TU"** tərəfindən hazırlanmışdır. Responsiv dizaynı ilə birlikdə bir çox cihaz ölçüləri nəzərdə tutularaq hazırlanan bu layihənin məqsədi kitabları hər zaman üzərində gəzdirə bilməyənlər və kitabxanalara getməyə vaxtı olmayanlar üçün kitabları online bir şəkildə, istənilən yerdə və cihazda oxunmasını təmin etmək üçün hazırlanmışdır.
+
 \
-***All rights reserved © 2003-2021 LIBRARY***
+**_All rights reserved © 2003-2021 LIBRARY_**
 
 <hr style="border-top:3px solid white; width:100%">
 
