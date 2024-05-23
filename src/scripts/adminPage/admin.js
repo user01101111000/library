@@ -130,6 +130,7 @@ function checkBooks(data) {
       );
 
       if (!isExist) {
+        checkCategories(data.bookCategory);
         sendBookData(data);
         Swal.fire({
           icon: "success",
@@ -141,6 +142,7 @@ function checkBooks(data) {
           title: "This book already exists in the library!",
         });
     } else {
+      checkCategories(data.bookCategory);
       sendBookData(data);
       Swal.fire({
         icon: "success",
@@ -370,8 +372,6 @@ bookFomrSubmitBtn.addEventListener("click", (e) => {
       };
 
       checkBooks(currentBook);
-
-      checkCategories(currentBook.bookCategory);
 
       clearInputs();
     } else {
