@@ -1,7 +1,6 @@
 # Project : Library
 
 ![image](src/assets/icons/logoWhite.svg)
-
 \
 **EACAMP GROUP M2 "TEAM-TU" - Library project**
 
@@ -30,9 +29,9 @@
 
 ### Folder sistemi :
 
-📁 **src -** Proyektin mənbə kodlarının saxlandığı folder\
-📁 **assets -** Proyektin şəkil, ikon və s. elementlərinin saxlandığı folder\
-📁 **scripts -** Proyektin Javascript kodlarının saxlandığı folder\
-📁 **styles -** Proyektin css kodlarının saxlandığı folder\
-📁 **pages -** Proyektin html kodlarının saxlandığı folder\
-📁 **tests -** Testlərin aparıldığı folder
+📁 **src -** Layihənin mənbə kodlarının saxlandığı qovluq\
+📁 **assets -** Layihənin şəkil, ikon və s. elementlərinin saxlandığı qovluq\
+📁 **scripts -** Layihənin javascript kodlarının saxlandığı qovluq\
+📁 **styles -** Layihənin css kodlarının saxlandığı qovluq\
+📁 **pages -** Layihənin html kodlarının saxlandığı qovluq\
+📁 **tests -** Testlərin aparıldığı qovluq
