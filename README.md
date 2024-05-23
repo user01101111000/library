@@ -27,7 +27,7 @@
 
 <hr style="border-top:3px solid white; width:100%">
 
-### Folder sistemi :
+### Qovluq sistemi :
 
 📁 **src -** Layihənin mənbə kodlarının saxlandığı qovluq\
 📁 **assets -** Layihənin şəkil, ikon və s. elementlərinin saxlandığı qovluq\
