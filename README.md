@@ -4,7 +4,7 @@
 
 </br>
 
-**Library** layihəsi, **EACAMP GROUP M2 "TEAM-TU"** tərəfindən hazırlanmışdır. Responsiv dizaynı ilə birlikdə bir çox cihaz ölçüləri nəzərdə tutularaq hazırlanan bu layihənin məqsədi kitabları hər zaman üzərində gəzdirə bilməyənlər və kitabxanalara getməyə vaxtı olmayanlar üçün kitabları online bir şəkildə, istənilən yerdə və cihazda oxunmasını təmin etmək üçün hazırlanmışdır.
+The Library project was developed by GROUP M2 "TEAM-TU". The purpose of this project, which is designed with multiple device sizes in mind, along with responsive design, is to enable reading of books online, anywhere and on any device, for those who cannot carry books with them all the time and who do not have time to go to libraries.
 
 </br>
 
@@ -17,7 +17,7 @@
 
 </br>
 
-## İstifadə olunan texnologiyalar :
+## Technologies used :
 
 <div>
   <img src ="./src/assets/mdicons/html.svg" alt="HTML5 logo" width="3%" title='HTML5'/>
@@ -30,11 +30,11 @@
 
 </br>
 
-## Qovluq sistemi :
+## Folder system :
 
-📁 **src -** Layihənin mənbə kodlarının saxlandığı qovluq\
-📁 **assets -** Layihənin şəkil, ikon və s. elementlərinin saxlandığı qovluq\
-📁 **scripts -** Layihənin javascript kodlarının saxlandığı qovluq\
-📁 **styles -** Layihənin css kodlarının saxlandığı qovluq\
-📁 **pages -** Layihənin html kodlarının saxlandığı qovluq\
-📁 **tests -** Testlərin aparıldığı qovluq
+📁 **src -** The folder where the project's source codes are stored\
+📁 **assets -** Image, icon, etc. of the project. the folder where its elements are stored\
+📁 **scripts -** The folder where the javascript codes of the project are stored\
+📁 **styles -** The folder where the css codes of the project are stored\
+📁 **pages -** The folder where the html codes of the project are stored\
+📁 **tests -** The folder where the tests are performed
